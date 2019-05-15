@@ -1,0 +1,16 @@
+a{
+	color:black;
+}
+a:hover{
+	color: white;
+	text-decoration: none !important;
+}
+
+.table td, .table th {
+	border: unset !important;
+}
+
+.thumbnail:hover{
+	transform: scale(1.07);
+	transition: transform .20s ease;
+}

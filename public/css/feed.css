@@ -1,0 +1,106 @@
+hr{
+  margin: 2px;
+}
+
+h5{
+  margin-bottom: .1rem !important;
+}
+
+p{
+  margin-bottom: .2rem !important;
+}
+
+.user-icon{
+	border-radius: 100%;
+	width: 30%;
+  height: 30%;
+	border: solid 1px black;
+}
+
+.user-name{
+	font-size: 20px;
+}
+
+.card-lol-info{
+	margin-top: 0.5em;
+}
+
+.user-rank{
+	width: 20%;
+}
+
+.user-rank-name{
+	margin-left: 0.5em;
+	font-size: 16px;	
+}
+
+.card-feed{
+  margin: 5px;
+  border-style: 1px solid grey;
+}
+
+.user-nick-lol{
+  margin-left: 4px !important;
+}
+.player-img{
+  width: 100%;
+}
+
+.photo-change{
+	width: 25px; 
+	margin-left: -20px; 
+	margin-top: 45px;	
+	position: relative;
+	padding: 0px;
+}
+
+.btn-follow{
+  color: #a300ff !important;
+  border-radius: 100px;
+  border-color: #a300ff !important;
+  width: 100%;
+}
+
+.btn-follow:hover{
+  color: white !important;
+  background-color: #a300ff !important;
+}
+
+.user-card-pos{
+	margin-top: -40px;
+}
+
+.rank-img{
+  width: 70%;
+  margin-bottom: -10px;
+}
+
+.ranked-title{
+  font-size: 15px;
+}
+
+.rank-text{
+  font-size: 15px;
+}
+
+.rank-pdl{
+  font-size: 13px;
+}
+
+.second-stats{
+  font-size: 12px;
+}
+
+body{
+	background-color: #2c0045;
+}
+
+
+.line-margin{
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  border-color: #bbb9b9;
+}
+
+
+

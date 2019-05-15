@@ -1,0 +1,13 @@
+.btn-profile{
+  color: white !important;
+  border-radius: 100px;
+  border-color: #4a0074 !important;
+  background-color: #4a0074;
+  width: 100%;
+}
+
+.btn-profile:hover{
+  color: white !important;
+  background-color: #7700bb !important;
+  border-color: #7700bb !important;
+}

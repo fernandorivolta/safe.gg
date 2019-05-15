@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbarfeed">
+  <a class="navbar-brand"><img style="width: 90px;" src="../images/icons/safe_gg-logo-nome-branco-versao-2.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/safe.gg/view/userFeed.php">HOME <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/safe.gg/view/proPlayers.php">PROPLAYERS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/safe.gg/view/championsTable.php">CHAMPIONS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">BUILDS</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Nome" aria-label="Search" id="search-param-user">
+      <button class="btn btn-outline-light my-2 my-sm-0" id="btn-search-user" type="button"><i class="fa fa-search"></i></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 10px;">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/safe.gg/controller/signOut.php">SAIR <i class="fas fa-sign-out-alt"></i></a>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</nav>

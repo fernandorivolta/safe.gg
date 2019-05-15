@@ -1,0 +1,11 @@
+.bg-dark{
+	background-color: #1d002e !important;
+}
+
+a:hover{
+	text-decoration: none !important;
+}
+
+a{
+	cursor: pointer;
+}
