@@ -13,16 +13,16 @@
 			<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'></script>
 
 			<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'></script>
-			<script src='/safe.gg/style/alertifyjs/alertify.min.js'></script>
-			<link rel='stylesheet' href='/safe.gg/style/alertifyjs/css/alertify.min.css'/>
-			<link rel='stylesheet' href='/safe.gg/style/cropit/crop.css'/>
-			<link rel='stylesheet' href='/safe.gg/style/alertifyjs/css/themes/default.min.css'/>
-			<link rel='stylesheet' href='/safe.gg/style/css/main.css'/>
+			<script src='/alertifyjs/alertify.min.js'></script>
+			<link rel='stylesheet' href='/alertifyjs/css/alertify.min.css'/>
+			<link rel='stylesheet' href='/cropit/crop.css'/>
+			<link rel='stylesheet' href='/alertifyjs/css/themes/default.min.css'/>
+			<link rel='stylesheet' href='/css/main.css'/>
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous'>
 			<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css' />
 			<link rel='stylesheet' href='https://unpkg.com/aos@next/dist/aos.css' />
 			<script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
-			<script src='/safe.gg/style/cropit/jquery.cropit.js'></script>
-			<link rel='icon' type='imagem/png' href='/safe.gg/images/icons/owl.png' />
+			<script src='/cropit/jquery.cropit.js'></script>
+			<link rel='icon' type='imagem/png' href='/images/icons/owl.png' />
 			<title>SAFE.GG</title>";
   ?>

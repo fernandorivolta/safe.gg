@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('lib.head');
+    @include('lib.head');
   <link rel='stylesheet' type='text/css' href='/css/main.css'>
   <link rel='stylesheet' type='text/css' href='/css/loginIndex.css'>
   <script type="text/javascript" src="/js/loginIndex.js"></script>
@@ -33,7 +33,7 @@
         </div>
     </div>
   </div>
-  <?php 
+  <?php
     if(isset($_SESSION['success'])){
       echo $_SESSION['success'];
       unset($_SESSION['success']);

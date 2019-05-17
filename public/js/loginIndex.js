@@ -15,6 +15,6 @@ $(document).ready(function(){
 		window.location.href = '/safe.gg/view/registerIndex.php';
 	});
   $('#back-home').click(function(){
-    window.location.href = '/safe.gg/view/index.php';
+    window.location.href = '/';
   });
 });

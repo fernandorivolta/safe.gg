@@ -1,4 +1,4 @@
-<?php
+php<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +18,20 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/account', function (){
+    return view('account');
+});
+
+Route::get('/feed', function (){
+    return view('feed');
+});
+
+Route::get('/champions', function (){
+    return view('champions');
+});
+
+Route::get('/pro', function (){
+    return view('pro');
+});
+
