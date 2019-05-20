@@ -1,4 +1,4 @@
-php<?php
+<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login', function () {
+Route::get('/entrar', function () {
     return view('login');
 });
 
@@ -35,3 +35,15 @@ Route::get('/pro', function (){
     return view('pro');
 });
 
+Route::prefix('/user')->group( function (){
+    Route::post('/account','UserController@pre_register');
+    Route::post('/create','UserController@create');
+    Route::post('/login', 'UserController@login');
+});
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

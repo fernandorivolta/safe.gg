@@ -20,7 +20,7 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 		   	<ul class="navbar-nav">
 		   		<li class="nav-item">
-		       		<a class="nav-link" href="/login">LOGIN <i class="fas fa-sign-in-alt"></i></a>
+		       		<a class="nav-link" href="/entrar">LOGIN <i class="fas fa-sign-in-alt"></i></a>
 		   		</li>
 	    	</ul>
 	  	</div>
@@ -35,11 +35,12 @@
 			</div>
 			<div class="col-md-6">
 				<div class="align-middle bg-dark rounded form-div" style="opacity: 0.8">
-					<form id="signup-form" class="form" action="/safe.gg/view/registerIndex.php" method="post" onsubmit="return validateFormSignUp();">
-						<h4 class="white-font">Cadastre-se</h4>
+					<form id="signup-form" class="form" action="/user/account" method="post" onsubmit="return validateFormSignUp();">
+                        {{ csrf_field() }}
+                        <h4 class="white-font">Cadastre-se</h4>
 						<hr>
 						<div class="form-group">
-						    <input type="text" class="white-font form-control bg-dark" id="user" name="user" placeholder="User" aria-describedby="feedback">
+						    <input type="text" class="white-font form-control bg-dark" id="user" name="username" placeholder="User" aria-describedby="feedback">
 						  	<small id="feedback" class="form-text red-font" style="display:none;">
 							  <p class="red-font"><i class="fas fa-exclamation-circle"></i> O usuário já está sendo usado.</p>
 							</small>
@@ -48,7 +49,7 @@
 						    <input type="email" class="white-font form-control bg-dark" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
 						  </div>
 						  <div class="form-group">
-						    <input type="text" class="white-font form-control bg-dark" id="nome" name="nome" placeholder="Nome">
+						    <input type="text" class="white-font form-control bg-dark" id="nome" name="name" placeholder="Nome">
 						  </div>
 						  <button id="btn-create" type="submit" class="btn btn-block btn-outline-light white-font"><i class="fas fa-user-plus"></i> Criar Conta</button>
 						<br>

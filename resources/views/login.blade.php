@@ -11,7 +11,8 @@
   <div class="container">
     <div class="justify-content-center align-self-center col-md-12 row">
       <div class="login-form-1 animated fadeIn">
-          <form id="login-form" class="text-left" action="/safe.gg/controller/validateLogin.php" method="post" onsubmit="return validateForm();">
+          <form id="login-form" class="text-left" action="/user/login" method="post" onsubmit="return validateForm();">
+            {{ csrf_field() }}
             <img class="img-fluid" src="/images/icons/safe_gg-logo-nome-branco-versao-2.png">
             <div class="login-form-main-message white-font text-center animated fadeIn"><h4 class="line white-font">LOGIN</h4></div>
             <div class="main-login-form">
