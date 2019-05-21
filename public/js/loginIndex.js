@@ -12,7 +12,7 @@ function validateForm(form) {
 
 $(document).ready(function(){
 	$('#btn-create-account').click(function(){
-		window.location.href = '/safe.gg/view/registerIndex.php';
+		window.location.href = '/account';
 	});
   $('#back-home').click(function(){
     window.location.href = '/';

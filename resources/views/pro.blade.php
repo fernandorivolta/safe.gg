@@ -33,7 +33,48 @@
 			</div>
 			<div class="col-md-9" style="padding-left: 0px;">
 				<div class="card bg-dark feed-body" style="height: 100%;">
-
+                    @foreach ($proplayers as $proplayer)
+                        <div class="card card-feed shadow-sm">
+                            <div class="card-body" style="padding: 0.5rem !important">
+                                <div class="row">
+                                    <div class="col-md-3" >
+                                        <img class="player-img" src={{$proplayer->photo}}>
+                                </div>
+                                <div class="col-md-7 my-auto" style="font-size: 13px">
+                                    <div class="row"> <div class="col-md-12">
+                                    <h5 class="text-uppercase"><strong>{{$proplayer->nick}}</strong></h5>
+                                    </div></div><hr><div class="row">
+                                        <div class="col-md-6">
+                                            <p class="text-left">Região: </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="text-right">{{$proplayer->region}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="text-left">Time: </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="text-right">{{$proplayer->team}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="text-left">Posição: </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="text-right">{{$proplayer->position}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 my-auto">
+                                    <button type="button" class="btn btn-outline-primary btn-follow">Seguir</button>
+                                    <button type="button" class="btn btn-outline-primary btn-profile">Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
 				</div>
 			</div>
 		</div>

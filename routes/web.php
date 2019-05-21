@@ -38,8 +38,6 @@ Route::middleware(['user_validation'])->group(function () {
         return view('champions');
     });
 
-    Route::get('/pro', function (){
-        return view('pro');
-    });
+    Route::get('/pro', 'ProController@index');
 });
 

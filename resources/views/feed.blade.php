@@ -2,7 +2,6 @@
 <html>
 <head>
     @include('lib.head');
-	<script src='/js/userFeed.js'></script>
   	<link rel='stylesheet' type='text/css' href='/css/main.css'>
   	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>

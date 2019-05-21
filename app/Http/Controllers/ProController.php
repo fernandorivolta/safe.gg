@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ProPlayer;
 
 class ProController extends Controller
 {
@@ -13,7 +14,10 @@ class ProController extends Controller
      */
     public function index()
     {
-        //
+        $list_pro_players = ProPlayer::all();
+        return view('pro',[
+            'proplayers' => $list_pro_players
+        ]);
     }
 
     /**

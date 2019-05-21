@@ -20,7 +20,7 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 		   	<ul class="navbar-nav">
 		   		<li class="nav-item">
-		       		<a class="nav-link" href="/entrar">LOGIN <i class="fas fa-sign-in-alt"></i></a>
+		       		<a class="nav-link" href="/login">LOGIN <i class="fas fa-sign-in-alt"></i></a>
 		   		</li>
 	    	</ul>
 	  	</div>
