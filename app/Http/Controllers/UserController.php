@@ -58,16 +58,33 @@ class UserController extends Controller
         ]);
     }
 
+    public function set_icon(Request $request){
+        $user = Auth::user();
+        $image = $request->input('fileToUpload');
+        $image = str_replace('data:image/png;base64,', '', $image);
+        $image = str_replace(' ', '+', $image);
+        $imageName = str_random(10).'.'.'png';
+        \File::put(storage_path(). '/app/public/' . $imageName, base64_decode($image));
+        $user->icon = $imageName;
+        $user->save();
+        return redirect('/feed');
+    }
+
     public function login(Request $request){
         $data = array(
             'username' => $request->input('username'),
-            'password' => bcrypt($request->input('password'))
+            'password' => $request->input('password')
         );
 
         if(Auth::attempt($data)){
-            return view('feed');
+            return redirect('/feed');
         }else{
-            return view('index');
+            return view('login');
         }
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        return view('index');
     }
 }

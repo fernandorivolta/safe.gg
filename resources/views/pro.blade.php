@@ -2,10 +2,10 @@
 <html>
 <head>
     @include('lib.head');
-  	<script type="text/javascript" src="/style/js/proPlayerSearch.js"></script>
-  	<link rel='stylesheet' type='text/css' href='/style/css/feed.css'>
-  	<link rel='stylesheet' type='text/css' href='/style/css/navbar.css'>
-  	<link rel='stylesheet' type='text/css' href='/style/css/searchPro.css'>
+  	<script type="text/javascript" src="/js/proPlayerSearch.js"></script>
+  	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
+  	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
+  	<link rel='stylesheet' type='text/css' href='/css/searchPro.css'>
 </head>
 <body>
 	@include('lib.navbar');

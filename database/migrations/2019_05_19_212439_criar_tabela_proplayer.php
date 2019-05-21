@@ -13,7 +13,7 @@ class CriarTabelaProplayer extends Migration
      */
     public function up()
     {
-        Schema::create('ProPlayer', function (Blueprint $table) {
+        Schema::create('ProPlayers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nick', 20);
             $table->string('team', 40);

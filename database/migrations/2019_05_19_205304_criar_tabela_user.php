@@ -13,11 +13,11 @@ class CriarTabelaUser extends Migration
      */
     public function up()
     {
-        Schema::create('User', function (Blueprint $table) {
+        Schema::create('Users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 80);
-            $table->string('email', 80);
-            $table->string('username', 20);
+            $table->string('email', 80)->unique();
+            $table->string('username', 20)->unique();
             $table->string('password',80);
             $table->string('summonerName',20);
             $table->string('steam',30);

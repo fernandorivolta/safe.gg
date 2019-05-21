@@ -2,11 +2,11 @@
 <html>
 <head>
     @include('lib.head');
-	<script src='/safe.gg/style/js/userFeed.js'></script>
-  	<link rel='stylesheet' type='text/css' href='/safe.gg/style/css/main.css'>
-  	<link rel='stylesheet' type='text/css' href='/safe.gg/style/css/feed.css'>
-  	<link rel='stylesheet' type='text/css' href='/safe.gg/style/css/navbar.css'>
-  	<script src='/safe.gg/style/js/userData.js'></script>
+	<script src='/js/userFeed.js'></script>
+  	<link rel='stylesheet' type='text/css' href='/css/main.css'>
+  	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
+  	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
+  	<script src='/js/userData.js'></script>
 </head>
 <body>
 	@include('lib.navbar');
@@ -26,7 +26,8 @@
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
-	      <form method="POST" action="/safe.gg/controller/userSetIcon.php">
+          <form method="post" action="/user/icon">
+            {{ csrf_field() }}
 		      <div class="modal-body">
 		        <!--Crop-->
 				<div class="image-editor">
@@ -56,93 +57,91 @@
 						    <div class="card-title">
 						    	<div class="user-card-pos">
 							    	<div class="row">
-							    		<img class="user-icon img-fluid" id="user-icon" alt="user image">
+							    		<img class="user-icon img-fluid" id="user-icon" src="{{ asset('storage/'.$user->icon) }}" alt="user image">
 								    	<button type="button" class="btn photo-change" data-toggle="modal" data-target="#exampleModal">
 											  <i class="fas fa-camera gray-font" style="height: 200%;"></i>
 										</button>
-								    	<span class="user-name my-auto white-font" id="user-name"></span>
+                                    <span class="user-name my-auto white-font" id="user-name">{{$user->username}}</span>
 							    	</div>
 						    	</div>
 						    </div><hr class="line-margin">
 						    <p class="card-text white-font" id="user-bio">Alo alo alo</p>
 						  </div>
-					</div>
-					<div class="card bg-dark card-lol-info">
-						  <div class="card-body">
-						    <div class="card-title">
-						    	<span class="ranked-title white-font">Ranqueada Solo</span>
-						    	<hr class="line-margin">
-						    	<div class="row">
-						    		<div class="col-md-6 text-center my-auto">
-						    			<img id="solo-duo-ranked-img" class="rank-img">
-						    		</div>
-						    		<div class="col-md-6 my-auto">
-						    			<div class="row">
-						    				<span class="rank-text white-font" id="solo-duo-ranked"></span>
-						    			</div>
-						    			<div class="row">
-						    				<span class="rank-pdl white-font" id="solo-duo-pdl"></span>
-						    			</div>
-						    			<div class="row">
-						    				<span class="second-stats gray-font" id="solo-duo-win-defeat"></span>
-						    			</div>
-						    			<div class="row">
-						    				<span class="second-stats gray-font" id="solo-duo-winrate"></span>
-						    			</div>
-						    			<div class="row">
-						    				<span class="second-stats gray-font" id="solo-duo-league-name"></span>
-						    			</div>
-						    		</div>
-						    	</div>
-						    </div>
-						    <p class="card-text user-bio"></p>
-						  </div>
-					</div>
-					<div class="card bg-dark card-lol-info">
-						  <div class="card-body">
-						    <div class="card-title">
-						    	<span class="ranked-title white-font">Ranqueada Flex 5:5</span>
-						    	<hr class="line-margin">
-						    	<div class="row">
-						    		<div class="col-md-6 text-center my-auto">
-						    			<img id="flex-ranked-img" class="rank-img">
-						    		</div>
-						    		<div class="col-md-6 my-auto">
-						    			<div class="row">
-						    				<span class="rank-text white-font" id="flex-ranked"></span>
-						    			</div>
-						    			<div class="row">
-						    				<span class="rank-pdl white-font" id="flex-pdl"></span>
-						    			</div>
-						    			<div class="row">
-						    				<span class="second-stats gray-font" id="flex-win-defeat"></span>
-						    			</div>
-						    			<div class="row">
-						    				<span class="second-stats gray-font" id="flex-winrate"></span>
-						    			</div>
-						    			<div class="row">
-						    				<span class="second-stats gray-font" id="flex-league-name"></span>
-						    			</div>
-						    		</div>
-						    	</div>
-						    </div>
-						    <p class="card-text user-bio"></p>
-						  </div>
-					</div>
+                    </div>
+                    @foreach ($ranked_stats as $ranked)
+                        @if ($ranked['queueType']=='RANKED_SOLO_5x5')
+                            <div class="card bg-dark card-lol-info">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <span class="ranked-title white-font">Ranqueada Solo</span>
+                                        <hr class="line-margin">
+                                        <div class="row">
+                                            <div class="col-md-6 text-center my-auto">
+                                            <img id="solo-duo-ranked-img" src="images/elobadge/{{$ranked['tier']}}.png" class="rank-img">
+                                            </div>
+                                            <div class="col-md-6 my-auto">
+                                                <div class="row">
+                                                <span class="rank-text white-font" id="solo-duo-ranked">{{$ranked['tier']}}</span>
+                                                </div>
+                                                <div class="row">
+                                                <span class="rank-pdl white-font" id="solo-duo-pdl">{{$ranked['rank']}}</span>
+                                                </div>
+                                                <div class="row">
+                                                <span class="second-stats gray-font" id="solo-duo-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D'}}</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="second-stats gray-font" id="solo-duo-winrate"></span>
+                                                </div>
+                                                <div class="row">
+                                                <span class="second-stats gray-font" id="solo-duo-league-name">{{$ranked['leagueName']}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <p class="card-text user-bio"></p>
+                                </div>
+                            </div>
+                        @elseif ($ranked['queueType']=='RANKED_FLEX_SR')
+                            <div class="card bg-dark card-lol-info">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <span class="ranked-title white-font">Ranqueada Flex 5:5</span>
+                                        <hr class="line-margin">
+                                        <div class="row">
+                                            <div class="col-md-6 text-center my-auto">
+                                                <img id="flex-ranked-img" src="images/elobadge/{{$ranked['tier']}}.png" class="rank-img">
+                                            </div>
+                                            <div class="col-md-6 my-auto">
+                                                <div class="row">
+                                                    <span class="rank-text white-font" id="flex-ranked">{{$ranked['tier']}}</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="rank-pdl white-font" id="flex-pdl">{{$ranked['rank']}}</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="second-stats gray-font" id="flex-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D'}}</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="second-stats gray-font" id="flex-winrate"></span>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="second-stats gray-font" id="flex-league-name">{{$ranked['leagueName']}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="card-text user-bio"></p>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
 				</div>
 				<div class="col-md-9" style="padding-left: 0px;">
 					<div class="card  bg-dark feed-body" style="height: 100%;">
 
 					</div>
 				</div>
-
 		</div>
 	</div>
 </body>
 </html>
-<?php
-  if(isset($_SESSION['success'])){
-    echo $_SESSION['success'];
-    unset($_SESSION['success']);
-  }
-?>

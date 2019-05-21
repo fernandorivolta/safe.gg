@@ -20,5 +20,5 @@ class ProPlayer extends Model
         'account_id',
     ];
 
-    protected $table = 'ProPlayer';
+    protected $table = 'ProPlayers';
 }
