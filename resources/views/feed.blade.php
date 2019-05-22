@@ -137,88 +137,50 @@
 				</div>
 				<div class="col-md-9" style="padding-left: 0px;">
 					<div class="card  bg-dark feed-body" style="height: 100%;">
-                            @foreach ($player_matchs_info as $match)
-                                @if($match['win']) 
-                                    <div class="card card-feed shadow-sm card-win white-font" id="card-match">
-                                        <div class="card-body" style="padding: 0.5rem !important">
-                                            <div class="col-md-12">
+                        @foreach ($player_matchs_info as $match)
+                            @if($match['win']) 
+                                <div class="card card-feed shadow-sm card-win white-font">
+                            @else
+                                <div class="card card-feed shadow-sm card-lose white-font">
+                            @endif
+                                <div class="card-body" style="padding: 0.5rem !important">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <span>{{$match['queue']}}</span><span> - {{$match['gameDuration']}}</span>
+                                        </div>
+                                        <hr style="width:100%; margin-bottom: 10px;">
+                                        <div class="row">
+                                            <div class="col-md-3 my-auto">
                                                 <div class="row">
-                                                    <span>Ranqueada Solo</span> <span>35:49</span>
+                                                    <img class="img-champion img-fluid rounded-circle mx-auto" src="/images/squares/{{$match['championName']}}.png">
                                                 </div>
-                                                <hr style="width:100%;">
                                                 <div class="row">
-                                                    <div class="col-md-3 my-auto">
-                                                        <div class="row">
-                                                            <img class="img-fluid rounded-circle" src="/images/squares/Ezreal.png">
-                                                        </div>
-                                                        <div class="row">
-                                                            <p class="text-center">Level 17</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2 my-auto">
-                                                        <div class="row">
-                                                            <img class="img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/SummonerFlash.png">
-                                                        </div>
-                                                        <div class="row">
-                                                            <img class="img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/SummonerTeleport.png">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1 my-auto">
-                                                        <div class="row">
-                                                            20/9/10
-                                                        </div>
-                                                        <div class="row">
-                                                            3.3 KDA
-                                                        </div>
-                                                        <div class="row">
-                                                            187 CS
-                                                        </div>
-                                                    </div>
+                                                    <p class="text-center mx-auto">Level {{$match['champLevel']}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 my-auto">
+                                                <div class="row">
+                                                    <img class="img-spell img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/Summoner{{$match['spell1']}}.png">
+                                                </div>
+                                                <div class="row">
+                                                    <img class="img-spell img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/Summoner{{$match['spell2']}}.png">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 my-auto">
+                                                <div class="row">
+                                                    <span>{{$match['kills']}}/{{$match['assists']}}/{{$match['deaths']}}</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span>{{$match['kda']}} KDA</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span>{{$match['totalMinionsKilled']}} CS</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                @else
-                                <div class="card card-feed shadow-sm card-lose white-font" id="card-match">
-                                        <div class="card-body" style="padding: 0.5rem !important">
-                                            <div class="col-md-12">
-                                                <div class="row">
-                                                    <span>Ranqueada Solo</span> <span>35:49</span>
-                                                </div>
-                                                <hr style="width:100%;">
-                                                <div class="row">
-                                                    <div class="col-md-3 my-auto">
-                                                        <div class="row">
-                                                            <img class="img-fluid rounded-circle" src="/images/squares/Ezreal.png">
-                                                        </div>
-                                                        <div class="row">
-                                                            <p class="text-center">Level 17</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2 my-auto">
-                                                        <div class="row">
-                                                            <img class="img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/SummonerFlash.png">
-                                                        </div>
-                                                        <div class="row">
-                                                            <img class="img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/SummonerTeleport.png">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1 my-auto">
-                                                        <div class="row">
-                                                            20/9/10
-                                                        </div>
-                                                        <div class="row">
-                                                            3.3 KDA
-                                                        </div>
-                                                        <div class="row">
-                                                            187 CS
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
+                                </div>
+                            </div>
                         @endforeach
 
 

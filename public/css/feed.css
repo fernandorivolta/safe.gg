@@ -102,6 +102,11 @@ body{
   border-color: #bbb9b9;
 }
 
+
+
+
+
+
 .card-lose{
   background-image: linear-gradient(to right, #981c1c, #1d002e);
   border-right: unset;
@@ -110,4 +115,15 @@ body{
 .card-win{
   background-image: linear-gradient(to right, #243f71 , #1d002e);
   border-right: unset;
+}
+
+.img-champion{
+  width: 40%;
+  height: 40%;
+}
+
+.img-spell{
+  margin-bottom: 5px;
+  width: 30%;
+  height: 30%;
 }

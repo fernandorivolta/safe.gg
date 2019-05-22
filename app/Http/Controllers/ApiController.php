@@ -7,7 +7,7 @@ use Auth;
 
 class ApiController extends Controller
 {
-    public function QuIDToQuName($id){
+    public function queueid_to_queuename($id){
         switch($id){
             case 420: return "RANKED SOLO"; break;
             case 440: return "RANKED FLEX"; break;
@@ -17,7 +17,7 @@ class ApiController extends Controller
     }
 
 
-    public function ChIDToName($id){
+    public function championid_to_championname($id){
         switch($id){
             case 266: return "Aatrox"; break; 
             case 412: return "Thresh"; break;
@@ -163,6 +163,23 @@ class ApiController extends Controller
         }
     }
 
+    public function spellid_to_spellname($id){
+        switch($id){
+            case 21: return "Barrier"; break;
+            case 13: return "Mana"; break;
+            case 1: return "Boost"; break;
+            case 3: return "Exhaust"; break;
+            case 4: return "Flash"; break;
+            case 6: return "Haste"; break;
+            case 7: return "Heal"; break;
+            case 14: return "Dot"; break;
+            case 11: return "Smite"; break;
+            case 12: return "Teleport"; break;
+            case 32: return "Snowball"; break;
+            default: return "Dot"; break;
+        }
+    }
+
     public function user_info(){
         $api_array = ['RGAPI-eae68909-0af2-402b-9e31-390305def3bd'];
         $user = Auth::user();
@@ -179,8 +196,11 @@ class ApiController extends Controller
                                 if($team['teamId']==$player['teamId']){
                                     $player_matchs_info [] = [
                                         'championId' => $player['championId'],
-                                        'championName' => $this->ChIDToName($player['championId']),
+                                        'championName' => $this->championid_to_championname($player['championId']),
                                         'win' => $player['stats']['win'],
+                                        'spell1' => $this->spellid_to_spellname($player['spell1Id']),
+                                        'spell2' => $this->spellid_to_spellname($player['spell2Id']),
+                                        'kda' => round(($player['stats']['kills']+$player['stats']['assists'])/$player['stats']['deaths'],1),
                                         'item0' => $player['stats']['item0'],
                                         'item1' => $player['stats']['item1'],
                                         'item2' => $player['stats']['item2'],
@@ -193,9 +213,9 @@ class ApiController extends Controller
                                         'assists' => $player['stats']['assists'],
                                         'totalMinionsKilled' => $player['stats']['totalMinionsKilled'] + $player['stats']['neutralMinionsKilled'],
                                         'champLevel' => $player['stats']['champLevel'],
-                                        'largestKillingSpree' => $player['stats']['largestKillingSpree'],
+                                        'largestMultiKill' => $player['stats']['largestMultiKill'],
                                         'gameDuration' => gmdate('i:s',$match_stats['gameDuration']),
-                                        'queue' => $this->QuIDToQuName($match_stats['queueId'])
+                                        'queue' => $this->queueid_to_queuename($match_stats['queueId'])
                                     ];
                                 }
                             }
