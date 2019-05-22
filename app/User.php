@@ -51,7 +51,7 @@ class User extends Authenticatable
 
     public function get_match_list($id, $api_key){
 		$array = array();
-        $match_list = file_get_contents('https://br1.api.riotgames.com/lol/match/v4/matchlists/by-account/' . $id . '?endIndex=10&api_key=' . $api_key);
+        $match_list = file_get_contents('https://br1.api.riotgames.com/lol/match/v4/matchlists/by-account/' . $id . '?endIndex=5&api_key=' . $api_key);
         $match_list = json_decode($match_list, true);
 		return $match_list;
     }

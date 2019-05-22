@@ -1,7 +1,6 @@
 $(document).ready(function() {
         // Transition effect for navbar 
         $(window).scroll(function() {
-            console.log($(this).scrollTop());
             $('#cadastre').css('background-size', (100+($(this).scrollTop()/15))+'%');
             $('#cadastre').css('opacity', (1-(($(this).scrollTop())/800)));
 
