@@ -29,6 +29,7 @@ Route::prefix('/user')->group( function (){
     Route::post('/login', 'UserController@login');
     Route::get('/logout','UserController@logout');
     Route::post('/icon','UserController@set_icon');
+    Route::get('/follow/{id}','UserController@set_follow');
 });
 
 Route::middleware(['user_validation'])->group(function () {
@@ -39,5 +40,6 @@ Route::middleware(['user_validation'])->group(function () {
     });
 
     Route::get('/pro', 'ProController@index');
+    Route::get('/pro/{id}', 'ProController@profile_pro');
 });
 

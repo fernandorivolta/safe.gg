@@ -137,7 +137,13 @@
 				</div>
 				<div class="col-md-9" style="padding-left: 0px;">
 					<div class="card  bg-dark feed-body" style="height: 100%;">
-
+                        @foreach ($player_matchs_info as $match)
+                            <div class="card card-feed shadow-sm">
+                                <div class="card-body" style="padding: 0.5rem !important">
+                                    <h1>{{$match['totalMinionsKilled']}}</h1>
+                                </div>
+                            </div>
+                        @endforeach
 					</div>
 				</div>
 		</div>

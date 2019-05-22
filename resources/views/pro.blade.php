@@ -69,8 +69,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 my-auto">
-                                    <button type="button" class="btn btn-outline-primary btn-follow">Seguir</button>
-                                    <button type="button" class="btn btn-outline-primary btn-profile">Perfil</button>
+                                    <a href="/user/follow/{{$proplayer->id}}" class="btn btn-outline-primary btn-follow">Seguir</a>
+                                    <a href="/pro/{{$proplayer->id}}" class="btn btn-outline-primary btn-profile">Perfil</a>
                                 </div>
                             </div>
                         </div>

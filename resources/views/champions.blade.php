@@ -2,10 +2,10 @@
 <html>
 <head>
     @include('lib.head');
-	<link rel='stylesheet' type="text/css" href="/style/css/championTable.css">
-  	<link rel='stylesheet' type='text/css' href='/style/css/navbar.css'>
-	<script type="text/javascript" src="/style/js/championTable.js"></script>
-  	<link rel='stylesheet' type='text/css' href='/style/css/profilePro.css'>
+	<link rel='stylesheet' type="text/css" href="/css/championTable.css">
+  	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
+	<script type="text/javascript" src="/js/championTable.js"></script>
+  	<link rel='stylesheet' type='text/css' href='/css/profilePro.css'>
 </head>
 <body>
 	@include('lib.navbar');
