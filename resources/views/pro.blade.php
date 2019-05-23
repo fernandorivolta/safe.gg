@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @include('lib.head');
+    @include('lib.head')
   	<script type="text/javascript" src="/js/proPlayerSearch.js"></script>
   	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>

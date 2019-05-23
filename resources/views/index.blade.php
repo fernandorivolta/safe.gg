@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	@include('lib.head');
+	@include('lib.head')
 	<link rel='stylesheet' type='text/css' href='/css/navIndex.css'>
 	<link rel='stylesheet' type='text/css' href='/css/main.css'>
 	<link rel='stylesheet' type='text/css' href='/css/index.css'>
@@ -26,7 +26,7 @@
 	  	</div>
   	</div>
 </nav>
-<section id="cadastre" style="height: 700px;background-color: #37003f; background-image: url('../images/background/kaisaBG.png');background-size: cover; background-repeat: no-repeat; background-position: center; opacity: 1; ">
+<section id="cadastre" style="height: 700px;background-color: #37003f; background-image: url('../images/background/kaisaBG2.png');background-size: cover; background-repeat: no-repeat; background-position: center; opacity: 1; ">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12">
 			<div class="col-md-6">
@@ -59,7 +59,7 @@
 	</div>
 
 </section>
-<section style="height: 500px;background-color:	#4a0074; overflow: hidden;">
+<section style="height: 500px;background-color:	#37003f; overflow: hidden;">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
 			<div class="col-md-6">
@@ -80,7 +80,7 @@
 			</div>
 	</div>
 </section>
-<section style="height: 700px;background-color: #37003f;">
+<section style="height: 700px;background-image: url('/images/background/ireliaBG.jpg');background-size:100%;">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12" data-aos="fade-left">
 			<div class="col-md-6">

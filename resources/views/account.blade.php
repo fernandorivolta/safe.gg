@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @include('lib.head');
+    @include('lib.head')
     <link rel='stylesheet' type='text/css' href='/safe.gg/style/css/main.css'>
     <link rel='stylesheet' type='text/css' href='/safe.gg/style/css/loginIndex.css'>
 </head>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @include('lib.head');
+    @include('lib.head')
 	<link rel='stylesheet' type="text/css" href="/css/championTable.css">
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
 	<script type="text/javascript" src="/js/championTable.js"></script>
   	<link rel='stylesheet' type='text/css' href='/css/profilePro.css'>
 </head>
 <body>
-	@include('lib.navbar');
+	@include('lib.navbar')
 	<div class="container">
 		<div class="row">
 			<div class="card bg-dark" style="width: 100%;">

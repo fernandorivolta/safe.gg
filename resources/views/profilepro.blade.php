@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @include('lib.head');
+    @include('lib.head')
   	<script type="text/javascript" src="/safe.gg/style/js/proData.js"></script>
   	<link rel='stylesheet' type='text/css' href='/safe.gg/style/css/main.css'>
   	<link rel='stylesheet' type='text/css' href='/safe.gg/style/css/profilePro.css'>
@@ -9,7 +9,7 @@
   	<link rel='stylesheet' type='text/css' href='/safe.gg/style/css/searchPro.css'>
 </head>
 <body>
-    @include('lib.navbar');
+    @include('lib.navbar')
 	<div class="d-flex justify-content-center my-auto" id="loading_wrap" style="z-index: 99999999; position: fixed; overflow: hidden; background-color: black; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.998;">
 	  <div class="loader my-auto" role="status">
 	    <span class="sr-only">Loading...</span>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @include('lib.head');
+    @include('lib.head')
   	<link rel='stylesheet' type='text/css' href='/css/main.css'>
   	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
   	<script src='/js/userData.js'></script>
 </head>
 <body>
-	@include('lib.navbar');
+	@include('lib.navbar')
 	<div class="d-flex justify-content-center my-auto" id="loading_wrap" style="z-index: 99999999; position: fixed; overflow: hidden; background-color: black; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.998;">
 	  <div class="loader my-auto" role="status">
 	    <span class="sr-only">Loading...</span>
@@ -138,7 +138,7 @@
 				<div class="col-md-9" style="padding-left: 0px;">
 					<div class="card  bg-dark feed-body" style="height: 100%;">
                         @foreach ($player_matchs_info as $match)
-                            @if($match['win']) 
+                            @if($match['win'])
                                 <div class="card card-feed shadow-sm card-win white-font">
                             @else
                                 <div class="card card-feed shadow-sm card-lose white-font">
