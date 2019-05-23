@@ -8,7 +8,7 @@
 	<link rel='stylesheet' type='text/css' href='/css/index.css'>
 	<script type="text/javascript" src='/js/navIndex.js'></script>
 	<script type="text/javascript" src='/js/signUpIndex.js'></script>
-	<script type="text/javascript" src='/js/index.js'></script>
+    <script type="text/javascript" src='/js/index.js'></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -37,7 +37,7 @@
 				<div class="align-middle bg-dark rounded form-div" style="opacity: 0.8">
 					<form id="signup-form" class="form" action="/user/account" method="post" onsubmit="return validateFormSignUp();">
                         {{ csrf_field() }}
-                        <h4 class="white-font">Cadastre-se</h4>
+                        <h4 class="white-font text-center">Cadastre-se</h4>
 						<hr>
 						<div class="form-group">
 						    <input type="text" class="white-font form-control bg-dark" id="user" name="username" placeholder="User" aria-describedby="feedback">
@@ -80,7 +80,7 @@
 			</div>
 	</div>
 </section>
-<section style="height: 700px;background-image: url('/images/background/ireliaBG.jpg');background-size:100%;">
+<section style="height: 700px;background-image: url('/images/background/kindredBG.jpg');background-size:100%;">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12" data-aos="fade-left">
 			<div class="col-md-6">
