@@ -3,8 +3,12 @@
 body{
 	font-family: 'Raleway', sans-serif;
 }
+
 .form{
-	padding: 1em 1.5em;
+    padding: 1em 1.5em;
+    -webkit-box-shadow: 6px 12px 30px 14px rgba(0,0,0,0.66);
+    -moz-box-shadow: 6px 12px 30px 14px rgba(0,0,0,0.66);
+    box-shadow: 6px 12px 30px 14px rgba(0,0,0,0.66);
 }
 
 .form-div{
@@ -26,11 +30,11 @@ body{
   .form-div{
 	  margin-left: unset !important;
   }
-  
+
   .title{
 	  font-size: 2rem !important;
   }
-  
+
   h6{
 	  font-size: 0.85rem !important;
   }
@@ -72,7 +76,7 @@ body{
 }
 .card-content{
 	transform-style: preserve-3d;
-	height: 100%;	
+	height: 100%;
 }
 .hover-in{
 	transition: .3s ease-out;
