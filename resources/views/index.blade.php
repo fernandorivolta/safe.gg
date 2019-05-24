@@ -59,7 +59,7 @@
 	</div>
 
 </section>
-<section style="height: 500px;background-color:	#37003f; overflow: hidden;">
+<section style="height: 700px;background-color:	#37003f; overflow: hidden;">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
 			<div class="col-md-6">
@@ -80,7 +80,7 @@
 			</div>
 	</div>
 </section>
-<section style="height: 700px;background-image: url('/images/background/kindredBG.jpg');background-size:100%;">
+<section style="height: 700px;background-image: url('/images/background/kindredBG.jpg');background-size:100%;background-repeat:no-repeat;">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12" data-aos="fade-left">
 			<div class="col-md-6">

@@ -31,7 +31,7 @@ p{
 
 .user-rank-name{
 	margin-left: 0.5em;
-	font-size: 16px;	
+	font-size: 16px;
 }
 
 .card-feed{
@@ -47,9 +47,9 @@ p{
 }
 
 .photo-change{
-	width: 25px; 
-	margin-left: -20px; 
-	margin-top: 45px;	
+	width: 25px;
+	margin-left: -20px;
+	margin-top: 45px;
 	position: relative;
 	padding: 0px;
 }
@@ -118,12 +118,31 @@ body{
 }
 
 .img-champion{
-  width: 40%;
-  height: 40%;
+  width: 30%;
+  height: 30%;
+  border: 1px solid black !important;
 }
 
 .img-spell{
   margin-bottom: 5px;
-  width: 30%;
-  height: 30%;
+  width: 20%;
+  height: 20%;
+  border: 1px solid black !important;
+}
+
+.span-card{
+    color: #cecece;
+}
+
+.circle-card{
+    font-size: 0.1rem !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.item-card{
+    width:25%;
+    height: 25%;
+    margin: 2px 2px;
+    border: 1px solid black !important;
 }

@@ -19,7 +19,7 @@ class ApiController extends Controller
 
     public function championid_to_championname($id){
         switch($id){
-            case 266: return "Aatrox"; break; 
+            case 266: return "Aatrox"; break;
             case 412: return "Thresh"; break;
             case 23: return "Tryndamere"; break;
             case 79: return "Gragas"; break;
@@ -181,7 +181,7 @@ class ApiController extends Controller
     }
 
     public function user_info(){
-        $api_array = ['RGAPI-eae68909-0af2-402b-9e31-390305def3bd'];
+        $api_array = ['RGAPI-c2df66d6-949e-471a-8e9e-0d0fdc76fd53'];
         $user = Auth::user();
         $user_id = $user->get_summoner_id($api_array[rand(0,count($api_array)-1)]);
         $account_id = $user->get_account_id($api_array[rand(0,count($api_array)-1)]);
@@ -222,13 +222,13 @@ class ApiController extends Controller
                         }
                     }
                 }
-            } 
+            }
         }
 
         return view('feed',[
             'user' => $user,
             'ranked_stats' => $user->get_ranked_stats($user_id, $api_array[rand(0,count($api_array)-1)]),
-            'player_matchs_info' => $player_matchs_info 
+            'player_matchs_info' => $player_matchs_info
         ]);
     }
 }

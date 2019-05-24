@@ -146,7 +146,13 @@
                                 <div class="card-body" style="padding: 0.5rem !important">
                                     <div class="col-md-12">
                                         <div class="row">
-                                            <span>{{$match['queue']}}</span><span> - {{$match['gameDuration']}}</span>
+                                            <span>{{$match['queue']}} </span>
+                                            <div class="my-auto circle-card">
+                                                <i class="fas fa-circle fa-xs"></i>
+                                            </div>
+                                            <small class="span-card my-auto">
+                                                {{$match['gameDuration']}}
+                                            </small>
                                         </div>
                                         <hr style="width:100%; margin-bottom: 10px;">
                                         <div class="row">
@@ -166,15 +172,39 @@
                                                     <img class="img-spell img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/Summoner{{$match['spell2']}}.png">
                                                 </div>
                                             </div>
-                                            <div class="col-md-1 my-auto">
+                                            <div class="col-md-2 my-auto">
                                                 <div class="row">
                                                     <span>{{$match['kills']}}/{{$match['assists']}}/{{$match['deaths']}}</span>
                                                 </div>
                                                 <div class="row">
-                                                    <span>{{$match['kda']}} KDA</span>
+                                                    <span>{{$match['kda']}} <small class="span-card">KDA</small></span>
                                                 </div>
                                                 <div class="row">
-                                                    <span>{{$match['totalMinionsKilled']}} CS</span>
+                                                    <span>{{$match['totalMinionsKilled']}} <small class="span-card">CS</small></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 my-auto">
+                                                <div class="row">
+                                                    @if($match['item0'])
+                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item0']}}.png">
+                                                    @endif
+                                                    @if($match['item1'])
+                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item1']}}.png">
+                                                    @endif
+                                                    @if($match['item2'])
+                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item2']}}.png">
+                                                    @endif
+                                                </div>
+                                                <div class="row">
+                                                    @if($match['item3'])
+                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item3']}}.png">
+                                                    @endif
+                                                    @if($match['item4'])
+                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item4']}}.png">
+                                                    @endif
+                                                    @if($match['item5'])
+                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item5']}}.png">
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>

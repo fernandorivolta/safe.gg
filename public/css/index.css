@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body{
-	font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    background-image:none;
+    background-color: #37003f;
 }
 
 .form{
