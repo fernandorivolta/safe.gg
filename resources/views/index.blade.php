@@ -84,7 +84,7 @@
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12" data-aos="fade-left">
 			<div class="col-md-6">
-				<img src="https://images-na.ssl-images-amazon.com/images/I/21t8cVsCUsL._SX425_.jpg">
+				<img src="https://images-na.ssl-images-amazon.com/images/I/21t8cVsCUsL._SX425_.jpg" style="width: 100%; height: 300px;">
 			</div>
 			<div class="col-md-6">
 				<h2 class="align-middle" style="color:white">Find your duo</h2>
