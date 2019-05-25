@@ -174,7 +174,7 @@
                                             </div>
                                             <div class="col-md-2 my-auto">
                                                 <div class="row">
-                                                    <span>{{$match['kills']}}/{{$match['deaths']}}/{{$match['assists']}}</span>
+                                                    <span>{{$match['kills']}}<small class="card-bars">/</small><span style="color: #a7a7a7;">{{$match['deaths']}}</span><small class="card-bars">/</small>{{$match['assists']}}</span>
                                                 </div>
                                                 <div class="row">
                                                     <span>{{$match['kda']}} <small class="span-card">KDA</small></span>
