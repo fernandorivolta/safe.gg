@@ -130,6 +130,13 @@ body{
   border: 1px solid black !important;
 }
 
+.img-perk{
+  margin-left: 1px;
+  margin-bottom: 5px;
+  width: 20%;
+  height: 20%;
+}
+
 .span-card{
     color: #cecece;
 }

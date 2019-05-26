@@ -2,8 +2,8 @@
 <html>
 <head>
     @include('lib.head')
-    <link rel='stylesheet' type='text/css' href='/safe.gg/style/css/main.css'>
-    <link rel='stylesheet' type='text/css' href='/safe.gg/style/css/loginIndex.css'>
+    <link rel='stylesheet' type='text/css' href='/style/css/main.css'>
+    <link rel='stylesheet' type='text/css' href='/style/css/loginIndex.css'>
 </head>
 <body style="background-color:  #1d0149;">
   <div class="container">

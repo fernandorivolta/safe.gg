@@ -167,9 +167,12 @@
                                             <div class="col-md-2 my-auto">
                                                 <div class="row">
                                                     <img class="img-spell img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/Summoner{{$match['spell1']}}.png">
+                                                    <img class="img-perk img-fluid" src="https://opgg-static.akamaized.net/images/lol/perk/{{$match['runa1']}}.png">
                                                 </div>
                                                 <div class="row">
                                                     <img class="img-spell img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/Summoner{{$match['spell2']}}.png">
+                                                    <img class="img-perk img-fluid" src="https://opgg-static.akamaized.net/images/lol/perkStyle/{{$match['runa2']}}.png">
+                                                
                                                 </div>
                                             </div>
                                             <div class="col-md-2 my-auto">
@@ -186,24 +189,24 @@
                                             <div class="col-md-2 my-auto">
                                                 <div class="row">
                                                     @if($match['item0'])
-                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item0']}}.png">
+                                                        <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item0']}}.png">
                                                     @endif
                                                     @if($match['item1'])
-                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item1']}}.png">
+                                                        <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item1']}}.png">
                                                     @endif
                                                     @if($match['item2'])
-                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item2']}}.png">
+                                                        <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item2']}}.png">
                                                     @endif
                                                 </div>
                                                 <div class="row">
                                                     @if($match['item3'])
-                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item3']}}.png">
+                                                        <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item3']}}.png">
                                                     @endif
                                                     @if($match['item4'])
-                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item4']}}.png">
+                                                        <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item4']}}.png">
                                                     @endif
                                                     @if($match['item5'])
-                                                        <img class="img-fluid item-card" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{{$match['item5']}}.png">
+                                                        <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item5']}}.png">
                                                     @endif
                                                 </div>
                                             </div>

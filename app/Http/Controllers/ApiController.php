@@ -181,7 +181,7 @@ class ApiController extends Controller
     }
 
     public function user_info(){
-        $api_array = ['RGAPI-c2df66d6-949e-471a-8e9e-0d0fdc76fd53'];
+        $api_array = ['RGAPI-49e5c30a-5821-44c9-b5f7-40fc81ce2754'];
         $user = Auth::user();
         $user_id = $user->get_summoner_id($api_array[rand(0,count($api_array)-1)]);
         $account_id = $user->get_account_id($api_array[rand(0,count($api_array)-1)]);
@@ -200,6 +200,8 @@ class ApiController extends Controller
                                         'win' => $player['stats']['win'],
                                         'spell1' => $this->spellid_to_spellname($player['spell1Id']),
                                         'spell2' => $this->spellid_to_spellname($player['spell2Id']),
+                                        'runa1' => $player['stats']['perk0'],
+                                        'runa2' => $player['stats']['perkSubStyle'],
                                         'kda' => round(($player['stats']['kills']+$player['stats']['assists'])/$player['stats']['deaths'],1),
                                         'item0' => $player['stats']['item0'],
                                         'item1' => $player['stats']['item1'],
