@@ -217,6 +217,7 @@ class ApiController extends Controller
                                         'champLevel' => $player['stats']['champLevel'],
                                         'largestMultiKill' => $player['stats']['largestMultiKill'],
                                         'gameDuration' => gmdate('i:s',$match_stats['gameDuration']),
+                                        'gameDurationSec' => $match_stats['gameDuration'],
                                         'queue' => $this->queueid_to_queuename($match_stats['queueId'])
                                     ];
                                 }

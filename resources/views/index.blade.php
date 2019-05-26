@@ -82,19 +82,43 @@
 </section>
 <section style="height: 700px;background-image: url('/images/background/kindredBG.jpg');background-size:100%;background-repeat:no-repeat;">
 	<div class="container d-flex h-100">
-		<div class="row justify-content-center align-self-center col-md-12" data-aos="fade-left">
-			<div class="col-md-6">
-				<img src="https://images-na.ssl-images-amazon.com/images/I/21t8cVsCUsL._SX425_.jpg" style="width: 100%; height: 300px;">
+		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
+		<div class="col-md-6">
+				<div class="card-hover">
+					<div class="card">
+						<div class="card-content">
+							<div class="image" style="background-image: url('../images/funcs/proplayers.png');"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-6">
-				<h2 class="align-middle" style="color:white">Find your duo</h2>
+				<h2 class="align-middle white-font">Encontre seu(s) TeamMate(s)/DUO</h2>
 				<br>
-				<p style="margin-left: 2em; color:white;"> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class="text-justify white-font">Nada como achar um parceiro ideal para suas Ranqueadas, uma de nossas
+					funcionalidades é proporcionar isso aos jogadores, podendo você encontrar o jogador ideal
+					para subir de elo.</p>
+			</div>
+	</div>
+</section>
+<section style="height: 700px;background-color:	#37003f; overflow: hidden;">
+	<div class="container d-flex h-100">
+		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
+		<div class="col-md-6">
+				<h2 class="align-middle white-font">Runas e Builds</h2>
+				<br>
+				<p class="text-justify white-font">Não conhece a runa de um campeão, está com dificuldade para buildar em sua
+					partida? Aqui você encontra as runas e builds mais jogadas e com maior porcentagem de
+					vitória nas filas Ranqueadas.</p>
+			</div>
+		<div class="col-md-6">
+				<div class="card-hover">
+					<div class="card">
+						<div class="card-content">
+							<div class="image" style="background-image: url('../images/funcs/proplayers.png');"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 	</div>
 </section>

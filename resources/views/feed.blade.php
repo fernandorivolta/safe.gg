@@ -5,15 +5,19 @@
   	<link rel='stylesheet' type='text/css' href='/css/main.css'>
   	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
-  	<script src='/js/userData.js'></script>
+  	<!-- <script>$(document).ready(function(){
+            $('#loading_wrap').remove();
+        });
+    </script> -->
 </head>
 <body>
 	@include('lib.navbar')
-	<div class="d-flex justify-content-center my-auto" id="loading_wrap" style="z-index: 99999999; position: fixed; overflow: hidden; background-color: black; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.998;">
+
+	<!-- <div class="d-flex justify-content-center my-auto" id="loading_wrap" style="z-index: 99999999; position: fixed; overflow: hidden; background-color: black; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.998;">
 	  <div class="loader my-auto" role="status">
 	    <span class="sr-only">Loading...</span>
 	  </div>
-	</div>
+	</div> -->
 
 	<!-- Icone Crop  -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -63,8 +67,7 @@
                                     <span class="user-name my-auto white-font" id="user-name">{{$user->username}}</span>
 							    	</div>
 						    	</div>
-						    </div><hr class="line-margin">
-						    <p class="card-text white-font" id="user-bio">Alo alo alo</p>
+						    </div>
 						  </div>
                     </div>
                     @foreach ($ranked_stats as $ranked)
@@ -72,7 +75,7 @@
                             <div class="card bg-dark card-lol-info">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <span class="ranked-title white-font">Ranqueada Solo</span>
+                                        <span class="ranked-title white-font">Ranked Solo</span>
                                         <hr class="line-margin">
                                         <div class="row">
                                             <div class="col-md-6 text-center my-auto">
@@ -80,13 +83,10 @@
                                             </div>
                                             <div class="col-md-6 my-auto">
                                                 <div class="row">
-                                                <span class="rank-text white-font" id="solo-duo-ranked">{{$ranked['tier']}}</span>
+                                                    <span class="rank-text white-font" id="solo-duo-ranked">{{$ranked['tier'].' '. $ranked['rank']}}</span>
                                                 </div>
                                                 <div class="row">
-                                                <span class="rank-pdl white-font" id="solo-duo-pdl">{{$ranked['rank']}}</span>
-                                                </div>
-                                                <div class="row">
-                                                <span class="second-stats gray-font" id="solo-duo-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D'}}</span>
+                                                    <span class="second-stats gray-font" id="solo-duo-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D - ' .ceil((($ranked['wins']/($ranked['wins']+$ranked['losses']))*100)).'%'}}</span>
                                                 </div>
                                                 <div class="row">
                                                     <span class="second-stats gray-font" id="solo-duo-winrate"></span>
@@ -104,7 +104,7 @@
                             <div class="card bg-dark card-lol-info">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <span class="ranked-title white-font">Ranqueada Flex 5:5</span>
+                                        <span class="ranked-title white-font">Ranked Flex</span>
                                         <hr class="line-margin">
                                         <div class="row">
                                             <div class="col-md-6 text-center my-auto">
@@ -112,13 +112,10 @@
                                             </div>
                                             <div class="col-md-6 my-auto">
                                                 <div class="row">
-                                                    <span class="rank-text white-font" id="flex-ranked">{{$ranked['tier']}}</span>
+                                                    <span class="rank-text white-font" id="flex-ranked">{{$ranked['tier'].' '.$ranked['rank']}}</span>
                                                 </div>
                                                 <div class="row">
-                                                    <span class="rank-pdl white-font" id="flex-pdl">{{$ranked['rank']}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="flex-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D'}}</span>
+                                                    <span class="second-stats gray-font" id="flex-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D - ' .ceil((($ranked['wins']/($ranked['wins']+$ranked['losses']))*100)).'%'}}</span>
                                                 </div>
                                                 <div class="row">
                                                     <span class="second-stats gray-font" id="flex-winrate"></span>
@@ -183,7 +180,7 @@
                                                     <span>{{$match['kda']}} <small class="span-card">KDA</small></span>
                                                 </div>
                                                 <div class="row">
-                                                    <span>{{$match['totalMinionsKilled']}} <small class="span-card">CS</small></span>
+                                                    <span>{{$match['totalMinionsKilled']}}<small class="span-card" data-tooltip="Minions por minuto" data-tooltip-position="bottom">({{round(($match['totalMinionsKilled']/($match['gameDurationSec']/60)),1)}}) CS</small></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-2 my-auto">
