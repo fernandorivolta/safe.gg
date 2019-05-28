@@ -35,11 +35,11 @@ Route::prefix('/user')->group( function (){
 Route::middleware(['user_validation'])->group(function () {
     Route::get('/feed','ApiController@user_info');
 
-    Route::get('/champions', function (){
-        return view('champions');
-    });
+    Route::get('/champions', 'ChampionsController@index');
 
     Route::get('/pro', 'ProController@index');
     Route::get('/pro/{id}', 'ProController@profile_pro');
 });
+
+
 

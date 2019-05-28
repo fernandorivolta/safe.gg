@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbarfeed">
-  <a class="navbar-brand"><img style="width: 90px;" src="../images/icons/safe_gg-logo-nome-branco-versao-2.png"></a>
+  <a class="navbar-brand"><img style="width: 90px;" src="/images/icons/safe_gg-logo-nome-branco-versao-2.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

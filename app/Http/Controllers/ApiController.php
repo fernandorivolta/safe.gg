@@ -180,20 +180,25 @@ class ApiController extends Controller
         }
     }
 
+    public function get_api_key(){
+        $api_array = ['RGAPI-1e05ac88-0fcd-49c0-8cc4-6f33f8a2d563'];
+        return $api_array[rand(0,count($api_array)-1)];
+    }
+
     public function user_info(){
-        $api_array = ['RGAPI-49e5c30a-5821-44c9-b5f7-40fc81ce2754'];
         $user = Auth::user();
-        $user_id = $user->get_summoner_id($api_array[rand(0,count($api_array)-1)]);
-        $account_id = $user->get_account_id($api_array[rand(0,count($api_array)-1)]);
-        $match_list = $user->get_match_list($account_id, $api_array[rand(0,count($api_array)-1)]);
+        $user_id = $user->get_summoner_id($this->get_api_key());
+        $account_id = $user->get_account_id($this->get_api_key());
+        $match_list = $user->get_match_list($account_id, $this->get_api_key());
         foreach($match_list['matches'] as $match){
-            $match_stats = $user->get_match_stats($match['gameId'], $api_array[rand(0,count($api_array)-1)]);
+            $match_stats = $user->get_match_stats($match['gameId'], $this->get_api_key());
             foreach($match_stats['participantIdentities'] as $participant){
                 if($participant['player']['accountId']==$account_id){
                     foreach($match_stats['participants'] as $player){
                         if($player['participantId']==$participant['participantId']){
                             foreach($match_stats['teams'] as $team){
                                 if($team['teamId']==$player['teamId']){
+                                    $kda = $player['stats']['deaths'] != 0 ? round(($player['stats']['kills']+$player['stats']['assists'])/$player['stats']['deaths'],1) : $player['stats']['kills']+$player['stats']['assists'];
                                     $player_matchs_info [] = [
                                         'championId' => $player['championId'],
                                         'championName' => $this->championid_to_championname($player['championId']),
@@ -202,7 +207,7 @@ class ApiController extends Controller
                                         'spell2' => $this->spellid_to_spellname($player['spell2Id']),
                                         'runa1' => $player['stats']['perk0'],
                                         'runa2' => $player['stats']['perkSubStyle'],
-                                        'kda' => round(($player['stats']['kills']+$player['stats']['assists'])/$player['stats']['deaths'],1),
+                                        'kda' => $kda,
                                         'item0' => $player['stats']['item0'],
                                         'item1' => $player['stats']['item1'],
                                         'item2' => $player['stats']['item2'],
@@ -230,7 +235,7 @@ class ApiController extends Controller
 
         return view('feed',[
             'user' => $user,
-            'ranked_stats' => $user->get_ranked_stats($user_id, $api_array[rand(0,count($api_array)-1)]),
+            'ranked_stats' => $user->get_ranked_stats($user_id, $this->get_api_key()),
             'player_matchs_info' => $player_matchs_info
         ]);
     }

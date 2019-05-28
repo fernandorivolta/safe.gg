@@ -122,6 +122,26 @@
 			</div>
 	</div>
 </section>
+<section style="height: 700px;background-image: url('/images/background/kindredBG.jpg');background-size:100%;background-repeat:no-repeat;">
+	<div class="container d-flex h-100">
+		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
+		<div class="col-md-6">
+				<div class="card-hover">
+					<div class="card">
+						<div class="card-content">
+							<div class="image" style="background-image: url('../images/funcs/proplayers.png');"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h2 class="align-middle white-font">Dê o próximo passo rumo ao topo</h2>
+				<br>
+				<p class="text-justify white-font">Com uma infinidade de guias de granadas para você se tornar um melhor jogador, o Safe GG tem todo o material necessário para você se tornar um melhor jogador.
+					para subir de elo.</p>
+			</div>
+	</div>
+</section>
 </body>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
