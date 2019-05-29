@@ -11,3 +11,167 @@
   background-color: #7700bb !important;
   border-color: #7700bb !important;
 }
+
+hr{
+  margin: 2px;
+}
+
+h5{
+  margin-bottom: .1rem !important;
+}
+
+p{
+  margin-bottom: .2rem !important;
+}
+
+.user-icon{
+	border-radius: 100%;
+	width: 30%;
+  height: 30%;
+	border: solid 1px black;
+}
+
+.user-name{
+	font-size: 20px;
+}
+
+.card-lol-info{
+	margin-top: 0.5em;
+}
+
+.user-rank{
+	width: 20%;
+}
+
+.user-rank-name{
+	margin-left: 0.5em;
+	font-size: 16px;
+}
+
+.card-feed{
+  margin-bottom: 10px;
+  margin-top: unset !important;
+}
+
+.user-nick-lol{
+  margin-left: 4px !important;
+}
+
+.player-img{
+  width: 100%;
+}
+
+.photo-change{
+	width: 25px;
+	margin-left: -20px;
+	margin-top: 45px;
+	position: relative;
+	padding: 0px;
+}
+
+.btn-follow{
+  color: #a300ff !important;
+  border-radius: 100px;
+  border-color: #a300ff !important;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-follow:hover{
+  color: white !important;
+  background-color: #a300ff !important;
+}
+
+.user-card-pos{
+	margin-top: -40px;
+}
+
+.rank-img{
+  width: 70%;
+  margin-bottom: -10px;
+}
+
+.ranked-title{
+  font-size: 15px;
+}
+
+.rank-text{
+  font-size: 15px;
+}
+
+.rank-pdl{
+  font-size: 13px;
+}
+
+.second-stats{
+  font-size: 12px;
+}
+
+body{
+	background-color: #2c0045;
+}
+
+
+.line-margin{
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  border-color: #bbb9b9;
+}
+
+
+
+
+
+
+.card-lose{
+  background-image: linear-gradient(to right, #981c1c, #1d002e);
+  border-right: unset;
+}
+
+.card-win{
+  background-image: linear-gradient(to right, #243f71 , #1d002e);
+  border-right: unset;
+}
+
+.img-champion{
+  width: 30%;
+  height: 30%;
+  border: 1px solid black !important;
+}
+
+.img-spell{
+  margin-bottom: 5px;
+  width: 20%;
+  height: 20%;
+  border: 1px solid black !important;
+}
+
+.img-perk{
+  margin-left: 1px;
+  margin-bottom: 5px;
+  width: 20%;
+  height: 20%;
+}
+
+.span-card{
+    color: #cecece;
+}
+
+.card-bars{
+  color: #cecece;
+  padding-right: 1px;
+  padding-left: 1px;
+}
+
+.circle-card{
+    font-size: 0.1rem !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.item-card{
+    width:25%;
+    height: 25%;
+    margin: 2px 2px;
+    border: 1px solid black !important;
+}

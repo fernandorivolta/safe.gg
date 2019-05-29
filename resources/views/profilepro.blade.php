@@ -23,52 +23,42 @@
 					    	</div>
 					    	<div class="row">
 					    		<div class="col-md-12 text-center">
-					    			<img src="" id="pro-flag" style="width: 10%;"><span id="pro-nome" class="text-muted" style="font-size: 14px;"></span>
+					    			<img src="/images/flag/{{$proplayer->nationality}}.svg" id="pro-flag" style="width: 10%;">
+									<span class="text-muted" style="font-size: 14px;">{{$proplayer->name}}</span>
 					    		</div>
 					    	</div>
 						    <div class="row">
 						    	<div class="col-md-12">
 						    		<div class="gradient-effect" style="z-index: 99999;">
-									    <img src="" id="pro-icon" style="width: 100%; height: 100%;">
+									    <img src="{{$proplayer->photo}}" id="pro-icon" style="width: 100%; height: 100%;">
 									</div>
+					    		</div>
+							</div>
+							<div class="row">
+						    	<div class="col-md-12 text-center">
+									<span class="text-muted" style="font-size: 14px;">{{count($proplayer->get_follows)}} Seguidores</span>
 					    		</div>
 						    </div>
 					    </div>
 					</div>
 				</div>
-				<div class="card">
-					<div class="card-body" style="padding-bottom: 0px;"">
+				<div class="card" style="border: unset !important;">
+					<div class="card-body white-font bg-dark">
 					    <div class="card-title">
-					    	<h5 class="text-center black-font" style="font-size: 18px;">MAESTRIAS</h5>
+					    	<h5 class="text-center" style="font-size: 18px;">MAESTRIAS</h5>
 					    	<div class="row">
 					    		<div class="row mx-auto">
-					    			<div class="col-md-4">
-						    			<div class="thumbnail">
-						    				<img class="rounded-circle" src="" id="img-champion1" style="width: 100%; height: 100%;">
-						    				<div class="caption text-center">
-						    					<span class="champion-points" id="champion-name-1"></span>
-						    					<p class="champion-points" id="champion-point-1"></p>
+									@foreach ($champion_mastery as $champion)
+					    				<div class="col-md-4">
+						    				<div class="thumbnail">
+						    					<img class="rounded-circle" src="/images/squares/{{$champion['champion']}}.png" style="width: 100%; height: 100%;">
+						    					<div class="caption text-center">
+						    						<span class="champion-points">{{$champion['champion']}}</span>
+						    						<p class="champion-points">{{$champion['championPoints']}}</p>
+						    					</div>
 						    				</div>
 						    			</div>
-						    		</div>
-						    		<div class="col-md-4">
-						    			<div class="thumbnail">
-						    				<img class="rounded-circle" src="" id="img-champion2" style="width: 100%; height: 100%;">
-						    				<div class="caption text-center">
-						    					<span class="champion-points " id="champion-name-2"></span>
-						    					<p class="champion-points" id="champion-point-2"></p>
-						    				</div>
-						    			</div>
-						    		</div>
-						    		<div class="col-md-4">
-						    			<div class="thumbnail">
-						    				<img class="rounded-circle" src="" id="img-champion3" style="width: 100%; height: 100%;">
-						    				<div class="caption text-center">
-						    					<span class="champion-points" id="champion-name-3"></span>
-						    					<p class="champion-points" id="champion-point-3"></p>
-						    				</div>
-						    			</div>
-						    		</div>
+									@endforeach
 					    		</div>
 					    	</div>
 					    </div>
@@ -76,7 +66,7 @@
 				</div>
 			</div>
 			<div class="col-md-9" style="padding-left: 0px;">
-				<div class="card feed-body" style="height: 100%;">
+				<div class="card feed-body bg-dark" style="height: 100%;">
 					@foreach ($proplayer_matchs_info as $match)
             	@if($match['win'])
             	    <div class="card card-feed shadow-sm card-win white-font">

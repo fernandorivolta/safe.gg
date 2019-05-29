@@ -9,10 +9,9 @@ use App\ProPlayer;
 
 class ApiController extends Controller
 {
-
-    public function __construct(ApiController $api, User $user)
-    {
-        $this->User = $user;
+    public function get_api_key(){
+        $api_array = ['RGAPI-3ae3caa5-8588-4683-99fe-a972965d88cb'];
+        return $api_array[rand(0,count($api_array)-1)];
     }
 
     public function queueid_to_queuename($id){
@@ -188,10 +187,7 @@ class ApiController extends Controller
         }
     }
 
-    public function get_api_key(){
-        $api_array = ['RGAPI-ce6c79e0-59e8-4d36-86f7-825905c75511'];
-        return $api_array[rand(0,count($api_array)-1)];
-    }
+    
 
     public function user_info(){
         $user = Auth::user();
@@ -249,11 +245,19 @@ class ApiController extends Controller
     }
 
     public function profile_pro($id){
-        $match_list = $this->User->get_match_list($id, $this->get_api_key());
+        $user = new User();
+        $proplayer = ProPlayer::find($id);
+        $accountId = $proplayer->get_account_id_by_puuid($this->get_api_key());
+        $summonerId = $proplayer->get_summoner_id_by_puuid($this->get_api_key());
+        $match_list = $user->get_match_list($accountId, $this->get_api_key());
+        $aux_champion_mastery = $proplayer->get_champion_masteries($summonerId, $this->get_api_key());
+        foreach($aux_champion_mastery as $champion){
+            $champion_mastery [] = ['champion' => $this->championid_to_championname($champion['champion']), 'championPoints' =>  $champion['championPoints']];
+        }
         foreach($match_list['matches'] as $match){
-            $match_stats = $this->User->get_match_stats($match['gameId'], $this->get_api_key());
+            $match_stats = $user->get_match_stats($match['gameId'], $this->get_api_key());
             foreach($match_stats['participantIdentities'] as $participant){
-                if($participant['player']['currentAccountId']==$id){
+                if($participant['player']['currentAccountId']==$accountId){
                     foreach($match_stats['participants'] as $player){
                         if($player['participantId']==$participant['participantId']){
                             foreach($match_stats['teams'] as $team){
@@ -261,10 +265,10 @@ class ApiController extends Controller
                                     $kda = $player['stats']['deaths'] != 0 ? round(($player['stats']['kills']+$player['stats']['assists'])/$player['stats']['deaths'],1) : $player['stats']['kills']+$player['stats']['assists'];
                                     $proplayer_matchs_info [] = [
                                         'championId' => $player['championId'],
-                                        'championName' => $this->ApiController->championid_to_championname($player['championId']),
+                                        'championName' => $this->championid_to_championname($player['championId']),
                                         'win' => $player['stats']['win'],
-                                        'spell1' => $this->ApiController->spellid_to_spellname($player['spell1Id']),
-                                        'spell2' => $this->ApiController->spellid_to_spellname($player['spell2Id']),
+                                        'spell1' => $this->spellid_to_spellname($player['spell1Id']),
+                                        'spell2' => $this->spellid_to_spellname($player['spell2Id']),
                                         'runa1' => $player['stats']['perk0'],
                                         'runa2' => $player['stats']['perkSubStyle'],
                                         'kda' => $kda,
@@ -283,7 +287,7 @@ class ApiController extends Controller
                                         'largestMultiKill' => $player['stats']['largestMultiKill'],
                                         'gameDuration' => gmdate('i:s',$match_stats['gameDuration']),
                                         'gameDurationSec' => $match_stats['gameDuration'],
-                                        'queue' => $this->ApiController->queueid_to_queuename($match_stats['queueId'])
+                                        'queue' => $this->queueid_to_queuename($match_stats['queueId'])
                                     ];
                                 }
                             }
@@ -294,7 +298,9 @@ class ApiController extends Controller
         }
 
         return view('profilepro',[
-            'proplayer_matchs_info' => $proplayer_matchs_info
+            'proplayer_matchs_info' => $proplayer_matchs_info,
+            'proplayer' => $proplayer,
+            'champion_mastery' => $champion_mastery
         ]);
     }
 }

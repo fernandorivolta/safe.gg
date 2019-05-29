@@ -35,13 +35,14 @@ p{
 }
 
 .card-feed{
-  margin: 5px;
-  border-style: 1px solid grey;
+  margin-bottom: 4px;
+  margin-top: unset !important;
 }
 
 .user-nick-lol{
   margin-left: 4px !important;
 }
+
 .player-img{
   width: 100%;
 }

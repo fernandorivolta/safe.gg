@@ -30,6 +30,7 @@ Route::prefix('/user')->group( function (){
     Route::get('/logout','UserController@logout');
     Route::post('/icon','UserController@set_icon');
     Route::get('/follow/{id}','UserController@set_follow');
+    Route::post('/search','UserController@show');
 });
 
 Route::middleware(['user_validation'])->group(function () {

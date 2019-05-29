@@ -27,9 +27,12 @@ class UserController extends Controller
         return view('login');
     }
 
-    public function show($id)
+    public function show(Request $request)
     {
-        $user = User::findOrFail($id);
+        $list_users = User::where('username', 'like', '%'.$request->input('search-user').'%')->get();
+        return view('user', [
+            'users' => $list_users
+        ]);
     }
 
     public function update(Request $request, $id)

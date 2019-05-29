@@ -12,27 +12,6 @@ function validateFormSignUp(form) {
   form.submit();
 }
 
-$(document).ready(function(){
-	$('#btn-back-home').click(function(){
-		window.location.href = '/safe.gg/view/loginIndex.php';
-	});
-});
-
-function validaNomeUsuario(usuario){
-  $.ajax({
-    dataType: 'html',
-    url: 'validaUsuario.php?user=' + usuario,
-    success: function(data) {
-      if(data=='true'){
-        $('#feedback').show(100);
-        erro=1;
-      }else{
-        erro=0;
-        $('#feedback').hide(100);      
-      }
-    }
-  });
-}
 
 $(document).ready(function(){
   $("#user").focusout(function() {

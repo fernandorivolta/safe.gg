@@ -16,11 +16,12 @@
         <a class="nav-link" href="/champions">CHAMPIONS</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Nome" aria-label="Search" id="search-param-user">
-      <button class="btn btn-outline-light my-2 my-sm-0" id="btn-search-user" type="button"><i class="fa fa-search"></i></button>
+    <form class="form-inline my-2 my-lg-0" action="/user/search" method="post">
+      {{ csrf_field() }}
+      <input class="form-control mr-sm-2" type="search" placeholder="Procurar usuario" aria-label="Search" name="search-user">
+      <button class="btn btn-outline-light my-2 my-sm-0" id="btn-search-user" type="submit"><i class="fa fa-search"></i></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 10px;">
-    --><ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="/user/logout">SAIR <i class="fas fa-sign-out-alt"></i></a>
           </li>
