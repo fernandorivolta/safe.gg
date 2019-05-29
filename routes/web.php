@@ -39,7 +39,7 @@ Route::middleware(['user_validation'])->group(function () {
 
     Route::prefix('/pro')->group( function (){
         Route::get('/', 'ProController@index');
-        Route::get('/{id}', 'ProController@profile_pro');
+        Route::get('/{id}', 'ApiController@profile_pro');
         Route::get('/follow/{id}', 'FollowController@follow_pro');
         Route::get('/unfollow/{id}', 'FollowController@unfollow_pro');
     });
