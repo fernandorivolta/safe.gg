@@ -181,7 +181,7 @@ class ApiController extends Controller
     }
 
     public function get_api_key(){
-        $api_array = ['RGAPI-1e05ac88-0fcd-49c0-8cc4-6f33f8a2d563'];
+        $api_array = ['RGAPI-ce6c79e0-59e8-4d36-86f7-825905c75511'];
         return $api_array[rand(0,count($api_array)-1)];
     }
 

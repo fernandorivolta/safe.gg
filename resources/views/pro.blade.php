@@ -69,8 +69,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 my-auto">
-                                    <a href="/user/follow/{{$proplayer->id}}" class="btn btn-outline-primary btn-follow">Seguir</a>
-                                    <a href="/pro/{{$proplayer->id}}" class="btn btn-outline-primary btn-profile">Perfil</a>
+                                    @if (in_array($proplayer->id, $followed_proplayers))
+                                        <a href="/pro/unfollow/{{$proplayer->id}}" class="btn btn-outline-primary btn-follow">Unfollow</a>
+                                    @else
+                                        <a href="/pro/follow/{{$proplayer->id}}" class="btn btn-outline-primary btn-follow">Follow</a>
+                                    @endif
+                                    <a href="/pro/{{$proplayer->account_id}}" class="btn btn-outline-primary btn-profile">Perfil</a>
                                 </div>
                             </div>
                         </div>
