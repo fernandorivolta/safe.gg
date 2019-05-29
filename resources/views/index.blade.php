@@ -137,8 +137,7 @@
 			<div class="col-md-6">
 				<h2 class="align-middle white-font">Dê o próximo passo rumo ao topo</h2>
 				<br>
-				<p class="text-justify white-font">Com uma infinidade de guias de granadas para você se tornar um melhor jogador, o Safe GG tem todo o material necessário para você se tornar um melhor jogador.
-					para subir de elo.</p>
+				<p class="text-justify white-font">Com uma infinidade de guias de granadas para você se tornar um melhor jogador, o Safe GG tem todo o material necessário para você se tornar um melhor jogador.</p>
 			</div>
 	</div>
 </section>
