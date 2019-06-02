@@ -5,13 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $list_followed_user = [];
+        $user = Auth::user();
+        $list_users = User::where('username', '!=', $user->username)->where('username', 'like', '%'.$request->input('user').'%')->orderBy('username', 'asc')->limit(5)->get();
+        $aux_followed = DB::table('userfollowuser')->where('user_id', '=', $user->id)->pluck('user_id_followed');
+        foreach ($aux_followed as $follow){
+            $list_followed_user [] = $follow;
+        }
+        return view('user', [
+            'users' => $list_users,
+            'followed_users' => $list_followed_user
+        ]);
     }
 
     public function create(Request $request){
@@ -27,12 +38,9 @@ class UserController extends Controller
         return view('login');
     }
 
-    public function show(Request $request)
+    public function show()
     {
-        $list_users = User::where('username', 'like', '%'.$request->input('search-user').'%')->get();
-        return view('user', [
-            'users' => $list_users
-        ]);
+        
     }
 
     public function update(Request $request, $id)

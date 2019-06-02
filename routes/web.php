@@ -29,8 +29,10 @@ Route::prefix('/user')->group( function (){
     Route::post('/login', 'UserController@login');
     Route::get('/logout','UserController@logout');
     Route::post('/icon','UserController@set_icon');
-    Route::get('/follow/{id}','UserController@set_follow');
-    Route::post('/search','UserController@show');
+    Route::get('/search','UserController@index');
+    Route::get('/follow/{id}', 'FollowController@follow_user');
+    Route::get('/unfollow/{id}', 'FollowController@unfollow_user');
+    Route::get('/{id}', 'ApiController@users_info');
 });
 
 Route::middleware(['user_validation'])->group(function () {

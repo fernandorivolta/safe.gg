@@ -16,9 +16,8 @@
         <a class="nav-link" href="/champions">CHAMPIONS</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="/user/search" method="post">
-      {{ csrf_field() }}
-      <input class="form-control mr-sm-2" type="search" placeholder="Procurar usuario" aria-label="Search" name="search-user">
+    <form class="form-inline my-2 my-lg-0" action="/user/search" method="get">
+      <input class="form-control mr-sm-2" type="search" placeholder="Procurar usuario" aria-label="Search" name="user">
       <button class="btn btn-outline-light my-2 my-sm-0" id="btn-search-user" type="submit"><i class="fa fa-search"></i></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 10px;">
       <ul class="navbar-nav mr-auto">

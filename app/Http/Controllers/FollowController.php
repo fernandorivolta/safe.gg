@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\UserFollowPro;
+use App\UserFollowUser;
 use App\ProPlayer;
+use App\User;
 use Auth;
 
 class FollowController extends Controller
@@ -39,6 +41,25 @@ class FollowController extends Controller
         return redirect('/pro');
     }
 
+    public function unfollow_user($id){
+        $user = Auth::user();
+        $follow = UserFollowUser::where([['user_id', $user->id],['user_id_followed', $id]]);
+        if($follow){
+            $follow->delete();
+        }
+        return redirect('/user/search');
+    }
+    
+    public function follow_user($id){
+        $user = Auth::user();
+        if(User::find($id)){
+            $follow = new UserFollowUser();
+            $follow->user_id = $user->id;
+            $follow->user_id_followed = $id;
+            $follow->save();
+        }
+        return redirect('/user/search');
+    }
     /**
      * Show the form for creating a new resource.
      *

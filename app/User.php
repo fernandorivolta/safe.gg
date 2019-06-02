@@ -62,6 +62,7 @@ class User extends Authenticatable
     }
 
     public function get_follows(){
-      return $this->hasMany(UserFollowPro::class, 'proplayer_id', 'id');
+      return $this->hasMany(UserFollowUser::class, 'user_id_followed', 'id');
     }
+    
 }

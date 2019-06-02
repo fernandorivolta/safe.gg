@@ -10,7 +10,7 @@ use App\ProPlayer;
 class ApiController extends Controller
 {
     public function get_api_key(){
-        $api_array = ['RGAPI-3ae3caa5-8588-4683-99fe-a972965d88cb'];
+        $api_array = ['RGAPI-70cb55c4-4408-4d1c-8cbf-5c60d19deedb'];
         return $api_array[rand(0,count($api_array)-1)];
     }
 
@@ -187,8 +187,6 @@ class ApiController extends Controller
         }
     }
 
-    
-
     public function user_info(){
         $user = Auth::user();
         $user_id = $user->get_summoner_id($this->get_api_key());
@@ -301,6 +299,60 @@ class ApiController extends Controller
             'proplayer_matchs_info' => $proplayer_matchs_info,
             'proplayer' => $proplayer,
             'champion_mastery' => $champion_mastery
+        ]);
+    }
+
+    public function users_info($id){
+        $user = User::find($id);
+        $accountId = $user->get_account_id($this->get_api_key());
+        $summonerId = $user->get_summoner_id($this->get_api_key());
+        $match_list = $user->get_match_list($accountId, $this->get_api_key());
+        foreach($match_list['matches'] as $match){
+            $match_stats = $user->get_match_stats($match['gameId'], $this->get_api_key());
+            foreach($match_stats['participantIdentities'] as $participant){
+                if($participant['player']['currentAccountId']==$accountId){
+                    foreach($match_stats['participants'] as $player){
+                        if($player['participantId']==$participant['participantId']){
+                            foreach($match_stats['teams'] as $team){
+                                if($team['teamId']==$player['teamId']){
+                                    $kda = $player['stats']['deaths'] != 0 ? round(($player['stats']['kills']+$player['stats']['assists'])/$player['stats']['deaths'],1) : $player['stats']['kills']+$player['stats']['assists'];
+                                    $user_match_info [] = [
+                                        'championId' => $player['championId'],
+                                        'championName' => $this->championid_to_championname($player['championId']),
+                                        'win' => $player['stats']['win'],
+                                        'spell1' => $this->spellid_to_spellname($player['spell1Id']),
+                                        'spell2' => $this->spellid_to_spellname($player['spell2Id']),
+                                        'runa1' => $player['stats']['perk0'],
+                                        'runa2' => $player['stats']['perkSubStyle'],
+                                        'kda' => $kda,
+                                        'item0' => $player['stats']['item0'],
+                                        'item1' => $player['stats']['item1'],
+                                        'item2' => $player['stats']['item2'],
+                                        'item3' => $player['stats']['item3'],
+                                        'item4' => $player['stats']['item4'],
+                                        'item5' => $player['stats']['item5'],
+                                        'item6' => $player['stats']['item6'],
+                                        'kills' => $player['stats']['kills'],
+                                        'deaths' => $player['stats']['deaths'],
+                                        'assists' => $player['stats']['assists'],
+                                        'totalMinionsKilled' => $player['stats']['totalMinionsKilled'] + $player['stats']['neutralMinionsKilled'],
+                                        'champLevel' => $player['stats']['champLevel'],
+                                        'largestMultiKill' => $player['stats']['largestMultiKill'],
+                                        'gameDuration' => gmdate('i:s',$match_stats['gameDuration']),
+                                        'gameDurationSec' => $match_stats['gameDuration'],
+                                        'queue' => $this->queueid_to_queuename($match_stats['queueId'])
+                                    ];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return view('profileuser',[
+            'user_match_info' => $user_match_info,
+            'user' => $user
         ]);
     }
 }
