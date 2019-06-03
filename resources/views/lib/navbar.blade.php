@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbarfeed">
-  <a class="navbar-brand"><img style="width: 90px;" src="/images/icons/safe_gg-logo-nome-branco-versao-2.png"></a>
+  <a class="navbar-brand nav-link" href="/feed"><img style="width: 90px;" src="/images/icons/safe_gg-logo-nome-branco-versao-2.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <!--<li class="nav-item">
         <a class="nav-link" href="/feed">HOME <span class="sr-only">(current)</span></a>
-      </li>
+      </li>-->
       <li class="nav-item">
-        <a class="nav-link" href="/pro">PROPLAYERS</a>
+        <a class="nav-link" href="/pro">PROPLAYERS<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/champions">CHAMPIONS</a>
