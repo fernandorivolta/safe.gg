@@ -40,7 +40,16 @@
 							</div>
 							<div class="row">
 						    	<div class="col-md-12 text-center">
-									<span class="text-muted white-font" style="font-size: 14px;">{{count($user->get_follows)}} Seguidores</span>
+									<span class="text-muted white-font" style="font-size: 14px;">
+									{{count($user->get_follows)}} 
+									@if (count($user->get_follows) > 1) 
+										Seguidores 
+									@elseif (count($user->get_follows) == 0)
+										Seguidores
+									@else
+										Seguidor 
+									@endif
+									</span>
 					    		</div>
 						    </div>
 					    </div>
