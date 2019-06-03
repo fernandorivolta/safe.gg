@@ -10,7 +10,7 @@ use App\ProPlayer;
 class ApiController extends Controller
 {
     public function get_api_key(){
-        $api_array = ['RGAPI-70cb55c4-4408-4d1c-8cbf-5c60d19deedb'];
+        $api_array = ['RGAPI-b8cf8823-7f27-4ada-a599-001e9417941a'];
         return $api_array[rand(0,count($api_array)-1)];
     }
 
@@ -167,6 +167,8 @@ class ApiController extends Controller
             case 497: return "Rakan"; break;
             case 498: return "Xayah"; break;
             case 164: return "Camille"; break;
+            case 350: return "Yuumi"; break;
+            case 517: return "Sylas"; break;
         }
     }
 
