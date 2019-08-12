@@ -6,10 +6,13 @@ nav{
 .navbar-remake a{
 	color:#b5b5b5 !important;
 	font-size: 14px;
+	transition: 0.3s;
 }
 
 .navbar-remake a:hover{
 	color:white !important;
+	font-size: 15px;
+	transition: 0.3s;
 }
 
 body{

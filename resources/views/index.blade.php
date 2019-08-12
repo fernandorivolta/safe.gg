@@ -26,39 +26,44 @@
 	  	</div>
   	</div>
 </nav>
-<section id="cadastre" style="height: 700px;background-color: #37003f; background-image: url('../images/background/kaisaBG2.png');background-size: cover; background-repeat: no-repeat; background-position: center; opacity: 1; ">
-	<div class="container d-flex h-100">
-		<div class="row justify-content-center align-self-center col-md-12">
-			<div class="col-md-6">
-				<h1 class="title white-font">Junte-se a milhares de jogadores</h1>
-				<h6 class="white-font">Faça novas amizades, compartilhe experiências<br> e encontre o seu duo ideal!</h6>
+<div class="kaisa-bg">
+	<div class="container">
+		<div class="row section-row">
+			<div class="col-md-6 my-auto">
+				<div class="row">
+					<h1 class="title white-font">Junte-se a milhares de jogadores</h1>
+				</div>
+				<div class="row">
+					<h6 class="white-font">Faça novas amizades, compartilhe experiências<br> e encontre o seu duo ideal!</h6>
+				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 my-auto">
 				<div class="align-middle bg-dark rounded form-div" style="opacity: 0.8">
 					<form id="signup-form" class="form" action="/user/account" method="post" onsubmit="return validateFormSignUp();">
-                        {{ csrf_field() }}
-                        <h4 class="white-font text-center">Cadastre-se</h4>
+						{{ csrf_field() }}
+						<h4 class="white-font text-center">Cadastre-se</h4>
 						<hr>
 						<div class="form-group">
-						    <input type="text" class="white-font form-control bg-dark" id="user" name="username" placeholder="User" aria-describedby="feedback">
-						  	<small id="feedback" class="form-text red-font" style="display:none;">
-							  <p class="red-font"><i class="fas fa-exclamation-circle"></i> O usuário já está sendo usado.</p>
+							<input type="text" class="white-font form-control bg-dark" id="user" name="username" placeholder="User" aria-describedby="feedback">
+							<small id="feedback" class="form-text red-font" style="display:none;">
+							<p class="red-font"><i class="fas fa-exclamation-circle"></i> O usuário já está sendo usado.</p>
 							</small>
-						  </div>
-						  <div class="form-group">
-						    <input type="email" class="white-font form-control bg-dark" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
-						  </div>
-						  <div class="form-group">
-						    <input type="text" class="white-font form-control bg-dark" id="nome" name="name" placeholder="Nome">
-						  </div>
-						  <button id="btn-create" type="submit" class="btn btn-block btn-outline-light white-font"><i class="fas fa-user-plus"></i> Criar Conta</button>
+						</div>
+						<div class="form-group">
+							<input type="email" class="white-font form-control bg-dark" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
+						</div>
+						<div class="form-group">
+							<input type="text" class="white-font form-control bg-dark" id="nome" name="name" placeholder="Nome">
+						</div>
+						<button id="btn-create" type="submit" class="btn btn-block btn-outline-light white-font"><i class="fas fa-user-plus"></i> Criar Conta</button>
 						<br>
 					</form>
 				</div>
 			</div>
+		</div>
 	</div>
+</div>
 
-</section>
 <section style="height: 700px;background-color:	#37003f; overflow: hidden;">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
