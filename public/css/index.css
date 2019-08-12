@@ -28,19 +28,25 @@ body{
 }
 
 
-@media screen and (max-width: 1024px) {
-  .form-div{
-	  margin-left: unset !important;
-  }
-
-  .title{
-	  font-size: 2rem !important;
-  }
-
-  h6{
-	  font-size: 0.85rem !important;
+@media screen and (max-width: 500px) {
+  #signup-form{
+      display: none;
   }
 }
+
+@media screen and (max-width: 1024px) {
+    .form-div{
+        margin-left: unset !important;
+    }
+  
+    .title{
+        font-size: 2rem !important;
+    }
+  
+    h6{
+        font-size: 0.85rem !important;
+    }
+  }
 
 .card .image{
 	height: 100%;
