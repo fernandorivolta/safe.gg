@@ -10,7 +10,7 @@ use App\ProPlayer;
 class ApiController extends Controller
 {
     public function get_api_key(){
-        $api_array = ['RGAPI-899de1c4-2504-4573-8d4f-6bfbd7a7f4af'];
+        $api_array = ['RGAPI-d7a9861b-0eaf-496d-b156-78e895a5a653'];
         return $api_array[rand(0,count($api_array)-1)];
     }
 
@@ -189,7 +189,8 @@ class ApiController extends Controller
         }
     }
 
-    public function user_info(){
+
+    public function user_match_history(){
         $user = Auth::user();
         $user_id = $user->get_summoner_id($this->get_api_key());
         $account_id = $user->get_account_id($this->get_api_key());
@@ -234,13 +235,23 @@ class ApiController extends Controller
                         }
                     }
                 }
-            }
+            } 
         }
+
+        return view('myhistory',[
+            'user' => $user,
+            'player_matchs_info' => $player_matchs_info
+        ]);
+    }
+
+    public function user_info(){
+        $user = Auth::user();
+        $user_id = $user->get_summoner_id($this->get_api_key());
+        $account_id = $user->get_account_id($this->get_api_key());
 
         return view('feed',[
             'user' => $user,
-            //'ranked_stats' => $user->get_ranked_stats($user_id, $this->get_api_key()),
-            'player_matchs_info' => $player_matchs_info
+            'ranked_stats' => $user->get_ranked_stats($user_id, $this->get_api_key())
         ]);
     }
 

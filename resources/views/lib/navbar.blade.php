@@ -10,6 +10,9 @@
         <a class="nav-link" href="/feed">HOME <span class="sr-only">(current)</span></a>
       </li>-->
       <li class="nav-item">
+        <a class="nav-link" href="/myhistory">MATCH HISTORY</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/pro">PROPLAYERS</a>
       </li>
       <li class="nav-item">

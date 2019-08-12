@@ -37,6 +37,7 @@ Route::prefix('/user')->group( function (){
 
 Route::middleware(['user_validation'])->group(function () {
     Route::get('/feed','ApiController@user_info');
+    Route::get('/myhistory','ApiController@user_match_history');
 
     Route::get('/champions', 'ChampionsController@index');
 
