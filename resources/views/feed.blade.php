@@ -70,67 +70,6 @@
 						    </div>
 						  </div>
                     </div>
-                    @foreach ($ranked_stats as $ranked)
-                        @if ($ranked['queueType']=='RANKED_SOLO_5x5')
-                            <div class="card bg-dark card-lol-info">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <span class="ranked-title white-font">Ranked Solo</span>
-                                        <hr class="line-margin">
-                                        <div class="row">
-                                            <div class="col-md-6 text-center my-auto">
-                                            <img id="solo-duo-ranked-img" src="images/elobadge/{{$ranked['tier']}}.png" class="rank-img">
-                                            </div>
-                                            <div class="col-md-6 my-auto">
-                                                <div class="row">
-                                                    <span class="rank-text white-font" id="solo-duo-ranked">{{$ranked['tier'].' '. $ranked['rank']}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="solo-duo-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D - ' .ceil((($ranked['wins']/($ranked['wins']+$ranked['losses']))*100)).'%'}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="solo-duo-winrate"></span>
-                                                </div>
-                                                <div class="row">
-                                                <span class="second-stats gray-font" id="solo-duo-league-name">{{$ranked['leagueName']}}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <p class="card-text user-bio"></p>
-                                </div>
-                            </div>
-                        @elseif ($ranked['queueType']=='RANKED_FLEX_SR')
-                            <div class="card bg-dark card-lol-info">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <span class="ranked-title white-font">Ranked Flex</span>
-                                        <hr class="line-margin">
-                                        <div class="row">
-                                            <div class="col-md-6 text-center my-auto">
-                                                <img id="flex-ranked-img" src="images/elobadge/{{$ranked['tier']}}.png" class="rank-img">
-                                            </div>
-                                            <div class="col-md-6 my-auto">
-                                                <div class="row">
-                                                    <span class="rank-text white-font" id="flex-ranked">{{$ranked['tier'].' '.$ranked['rank']}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="flex-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D - ' .ceil((($ranked['wins']/($ranked['wins']+$ranked['losses']))*100)).'%'}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="flex-winrate"></span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="flex-league-name">{{$ranked['leagueName']}}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="card-text user-bio"></p>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
 				</div>
 				<div class="col-md-9" style="padding-left: 0px;">
 					<div class="card  bg-dark feed-body" style="height: 100%;">
