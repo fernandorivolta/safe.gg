@@ -190,8 +190,8 @@ class ApiController extends Controller
     }
 
 
-    public function user_match_history(){
-        $user = Auth::user();
+    public function user_match_history($id){
+        $user = User::findOrFail($id);
         $user_id = $user->get_summoner_id($this->get_api_key());
         $account_id = $user->get_account_id($this->get_api_key());
         $match_list = $user->get_match_list($account_id, $this->get_api_key());
@@ -238,8 +238,7 @@ class ApiController extends Controller
             } 
         }
 
-        return view('myhistory',[
-            'user' => $user,
+        return (['user' => $user,
             'player_matchs_info' => $player_matchs_info
         ]);
     }
