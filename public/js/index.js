@@ -1,3 +1,42 @@
+$(document).ready(function () {
+    
+    //navbar - scroll alterar a cor de fundo
+    $(window).scroll(function() {
+        if($(this).scrollTop() > 600) { 
+            $('.navbar').addClass('solid');
+        } else {
+            $('.navbar').removeClass('solid');
+        }
+    });
+
+    $(".card-hover").hover3d({
+        selector: ".card",
+        shine: false,
+        sensitivity: 20,
+        perspective: 1000
+    });
+
+    $('#btn-create-account').click(function(){
+		window.location.href = '/account';
+    });
+    
+    $('#back-home').click(function(){
+        window.location.href = '/';
+    });
+});
+
+function validateForm(form) {
+    var user = document.forms["login-form"]["username"].value;
+    var pass = document.forms["login-form"]["password"].value;
+    if (user == "" || pass == "") {
+      alertify.error('Preencha os campos!');
+      return false;
+    }else{
+      return true;
+    }
+    form.submit();
+}
+
 ! function (e) {
     e.fn.hover3d = function (t) {
         var r = e.extend({
@@ -71,12 +110,3 @@
         })
     }
 }(jQuery);
-
-$(document).ready(function () {
-    $(".card-hover").hover3d({
-        selector: ".card",
-        shine: false,
-        sensitivity: 20,
-        perspective: 1000
-    });
-});
