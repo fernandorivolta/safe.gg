@@ -1,163 +1,105 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     @include('lib.head')
-  	<link rel='stylesheet' type='text/css' href='/css/main.css'>
-  	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
-  	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
-  	<!-- <script>$(document).ready(function(){
+    <link rel='stylesheet' type='text/css' href='/css/main.css'>
+    <link rel='stylesheet' type='text/css' href='/css/feed.css'>
+    <link rel='stylesheet' type='text/css' href='/css/navbar.css'>
+    <script src='/js/data-api.js'></script>
+    <!-- <script>$(document).ready(function(){
             $('#loading_wrap').remove();
         });
     </script> -->
 </head>
-<body>
-	@include('lib.navbar')
 
-	<!-- <div class="d-flex justify-content-center my-auto" id="loading_wrap" style="z-index: 99999999; position: fixed; overflow: hidden; background-color: black; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.998;">
+<body>
+    @include('lib.navbar')
+
+    <!-- <div class="d-flex justify-content-center my-auto" id="loading_wrap" style="z-index: 99999999; position: fixed; overflow: hidden; background-color: black; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.998;">
 	  <div class="loader my-auto" role="status">
 	    <span class="sr-only">Loading...</span>
 	  </div>
 	</div> -->
 
-	<!-- Icone Crop  -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Escolha seu Icone</h5>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
-          <form method="post" action="/user/icon">
-            {{ csrf_field() }}
-		      <div class="modal-body">
-		        <!--Crop-->
-				<div class="image-editor">
-				   	<input type="file" class="cropit-image-input">
-				   	<div class="cropit-preview"></div>
-				   	<div class="row">
-				   		<input type="range" class="cropit-image-zoom-input slider mx-auto">
-					</div>
-				   	<input type="hidden" name="fileToUpload" id="fileToUpload" class="hidden-image-data" required>
-				 </div>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-		        <button type="submit" id="icon-button" class="btn btn-primary export">Salvar</button>
-		      </div>
-	      </form>
-	    </div>
-	  </div>
-	</div>
-	<!---->
-	<div class="container">
-		<div class="row">
-				<div class="col-md-3" style="padding-right: 8px;">
-					<div class="card bg-dark">
-						  <img class="card-img-top img-fluid" id="user-capa" src="http://www.lol-wallpapers.com/wp-content/uploads/2018/03/Classic-KaiSa-Splash-Art-HD-4k-Wallpaper-Background-Official-Art-Artwork-League-of-Legends-lol.jpg" alt="user image">
-						  <div class="card-body">
-						    <div class="card-title">
-						    	<div class="user-card-pos">
-							    	<div class="row">
-							    		<img class="user-icon img-fluid" id="user-icon" src="{{ asset('storage/'.$user->icon) }}" alt="user image">
-								    	<button type="button" class="btn photo-change" data-toggle="modal" data-target="#exampleModal">
-											  <i class="fas fa-camera gray-font" style="height: 200%;"></i>
-										</button>
-                                    <span class="user-name my-auto white-font" id="user-name">{{$user->username}}</span>
-							    	</div>
-						    	</div>
-						    </div>
-						  </div>
+    <!-- Icone Crop  -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Escolha seu Icone</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="/user/icon">
+                    {{ csrf_field() }}
+                    <div class="modal-body">
+                        <!--Crop-->
+                        <div class="image-editor">
+                            <input type="file" class="cropit-image-input">
+                            <div class="cropit-preview"></div>
+                            <div class="row">
+                                <input type="range" class="cropit-image-zoom-input slider mx-auto">
+                            </div>
+                            <input type="hidden" name="fileToUpload" id="fileToUpload" class="hidden-image-data"
+                                required>
+                        </div>
                     </div>
-                    @foreach ($ranked_stats as $ranked)
-                        @if ($ranked['queueType']=='RANKED_TFT')
-                            <div class="card bg-dark card-lol-info">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <span class="ranked-title white-font">Ranked TFT</span>
-                                        <hr class="line-margin">
-                                        <div class="row">
-                                            <div class="col-md-6 text-center my-auto">
-                                                <img id="flex-ranked-img" src="images/elobadge/{{$ranked['tier']}}.png" class="rank-img">
-                                            </div>
-                                            <div class="col-md-6 my-auto">
-                                                <div class="row">
-                                                    <span class="rank-text white-font" id="flex-ranked">{{$ranked['tier'].' '.$ranked['rank']}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="flex-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D - ' .ceil((($ranked['wins']/($ranked['wins']+$ranked['losses']))*100)).'%'}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="flex-winrate"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="card-text user-bio"></p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" id="icon-button" class="btn btn-primary export">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" style="padding-right: 8px;">
+                <div class="card bg-dark">
+                    <img class="card-img-top img-fluid" id="user-capa"
+                        src="http://www.lol-wallpapers.com/wp-content/uploads/2018/03/Classic-KaiSa-Splash-Art-HD-4k-Wallpaper-Background-Official-Art-Artwork-League-of-Legends-lol.jpg"
+                        alt="user image">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <div class="user-card-pos">
+                                <div class="row">
+                                    <img class="user-icon img-fluid" id="user-icon"
+                                        src="{{ asset('storage/'.$user->icon) }}" alt="user image">
+                                    <button type="button" class="btn photo-change" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        <i class="fas fa-camera gray-font" style="height: 200%;"></i>
+                                    </button>
+                                    <span class="user-name my-auto white-font" id="user-name">{{$user->username}}</span>
                                 </div>
                             </div>
-                        @elseif ($ranked['queueType']=='RANKED_FLEX_SR')
-                            <div class="card bg-dark card-lol-info">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <span class="ranked-title white-font">Ranked Flex</span>
-                                        <hr class="line-margin">
-                                        <div class="row">
-                                            <div class="col-md-6 text-center my-auto">
-                                                <img id="flex-ranked-img" src="images/elobadge/{{$ranked['tier']}}.png" class="rank-img">
-                                            </div>
-                                            <div class="col-md-6 my-auto">
-                                                <div class="row">
-                                                    <span class="rank-text white-font" id="flex-ranked">{{$ranked['tier'].' '.$ranked['rank']}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="flex-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D - ' .ceil((($ranked['wins']/($ranked['wins']+$ranked['losses']))*100)).'%'}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="flex-winrate"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="card-text user-bio"></p>
-                                </div>
-                            </div>
-                        @elseif ($ranked['queueType']=='RANKED_SOLO_5x5')
-                            <div class="card bg-dark card-lol-info">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <span class="ranked-title white-font">Ranked Solo</span>
-                                        <hr class="line-margin">
-                                        <div class="row">
-                                            <div class="col-md-6 text-center my-auto">
-                                            <img id="solo-duo-ranked-img" src="images/elobadge/{{$ranked['tier']}}.png" class="rank-img">
-                                            </div>
-                                            <div class="col-md-6 my-auto">
-                                                <div class="row">
-                                                    <span class="rank-text white-font" id="solo-duo-ranked">{{$ranked['tier'].' '. $ranked['rank']}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="solo-duo-win-defeat">{{$ranked['wins'].'V'.' '.$ranked['losses'].'D - ' .ceil((($ranked['wins']/($ranked['wins']+$ranked['losses']))*100)).'%'}}</span>
-                                                </div>
-                                                <div class="row">
-                                                    <span class="second-stats gray-font" id="solo-duo-winrate"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <p class="card-text user-bio"></p>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
-				</div>
-				<div class="col-md-9" style="padding-left: 0px;">
-					<div class="card  bg-dark feed-body" style="height: 100%;">
-                        
-					</div>
-				</div>
-		</div>
-	</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rank">
+
+                </div>
+            </div>
+            <div class="col-md-9" style="padding-left: 0px;">
+                <div class="card bg-dark feed-body" style="height: 100%;">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+
+    localStorage.setItem('user', {!!$user!!});
+    get_rank_data_feed({{ $user-> id}});
+
+    $('body').waitForImages(function () {
+        get_match_data({{ $user-> id}});
+    });
+
+</script>
+
 </html>

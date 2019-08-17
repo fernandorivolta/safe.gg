@@ -98,4 +98,9 @@ class UserController extends Controller
         Auth::logout();
         return view('index');
     }
+
+    public function user_info(){
+        $user = Auth::user();
+        return $user;
+    }
 }

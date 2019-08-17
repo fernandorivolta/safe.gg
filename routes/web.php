@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,8 +38,21 @@ Route::prefix('/user')->group( function (){
 });
 
 Route::middleware(['user_validation'])->group(function () {
-    Route::get('/feed','ApiController@user_info');
-    Route::get('/myhistory', 'ApiController@user_info_match');
+    
+    Route::get('/feed', function(){
+        $user_controller = new UserController;
+        return view('feed', [
+            'user' => $user_controller->user_info()
+        ]);
+    });
+
+    Route::get('/myhistory', function(){
+        $user_controller = new UserController;
+        return view('myhistory', [
+            'user' => $user_controller->user_info()
+        ]);
+    });
+
     Route::get('/champions', 'ChampionsController@index');
 
     Route::prefix('/pro')->group( function (){
