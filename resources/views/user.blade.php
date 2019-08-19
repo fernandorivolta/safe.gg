@@ -4,6 +4,8 @@
     @include('lib.head')
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
   	<link rel='stylesheet' type='text/css' href='/css/searchPro.css'>
+  	<link rel='stylesheet' type='text/css' href='/css/loader.css'>
+    <script src="/js/data-api.js"></script>
 </head>
 <body>
 	@include('lib.navbar');
@@ -44,10 +46,10 @@
                                         </div>
                                         <div class="col-md-3 my-auto">
                                             @if (in_array($user->id, $followed_users))
-                                            <a href="/user/unfollow/{{$user->id}}"
+                                            <a onclick="unfollow_user({{$user->id}}, $(this))" 
                                                 class="btn btn-outline-primary btn-follow">Unfollow</a>
                                             @else
-                                            <a href="/user/follow/{{$user->id}}"
+                                            <a onclick="follow_user({{$user->id}}, $(this))"
                                                 class="btn btn-outline-primary btn-follow">Follow</a>
                                             @endif
                                             <a href="/user/{{$user->id}}" class="btn btn-outline-primary btn-profile">Perfil</a>

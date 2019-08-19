@@ -93,7 +93,7 @@
 </body>
 <script>
 
-    localStorage.setItem('user', {!!$user!!});
+    localStorage.setItem('user', JSON.stringify({!!$user!!}));
     get_rank_data_feed({{ $user-> id}});
 
     $('body').waitForImages(function () {

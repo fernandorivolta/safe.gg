@@ -41,24 +41,27 @@ class FollowController extends Controller
         return redirect('/pro');
     }
 
-    public function unfollow_user($id){
-        $user = Auth::user();
-        $follow = UserFollowUser::where([['user_id', $user->id],['user_id_followed', $id]]);
-        if($follow){
-            $follow->delete();
+    public function unfollow_user($id_user, $id_followed){
+        $follow = UserFollowUser::where([['user_id', $id_user],['user_id_followed', $id_followed]]);
+        if(!$follow){
+            return response()->json([
+                'message' => 'Fail'
+            ], 400);
         }
-        return redirect('/user/search');
+        $follow->delete();
+        return response()->json([
+            'message' => 'Success'
+        ], 200);
     }
     
-    public function follow_user($id){
-        $user = Auth::user();
-        if(User::find($id)){
-            $follow = new UserFollowUser();
-            $follow->user_id = $user->id;
-            $follow->user_id_followed = $id;
-            $follow->save();
-        }
-        return redirect('/user/search');
+    public function follow_user($id_user, $id_followed){
+        $follow = new UserFollowUser();
+        $follow->user_id = $id_user;
+        $follow->user_id_followed = $id_followed;
+        $follow->save();
+        return response()->json([
+            'message' => 'Success'
+        ], 200);
     }
     /**
      * Show the form for creating a new resource.
