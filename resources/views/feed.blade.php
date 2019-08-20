@@ -61,7 +61,7 @@
             <div class="col-md-3" style="padding-right: 8px;">
                 <div class="card bg-dark">
                     <img class="card-img-top img-fluid" id="user-capa"
-                        src="http://www.lol-wallpapers.com/wp-content/uploads/2018/03/Classic-KaiSa-Splash-Art-HD-4k-Wallpaper-Background-Official-Art-Artwork-League-of-Legends-lol.jpg"
+                        src="/images/background/kaisa.jpg"
                         alt="user image">
                     <div class="card-body">
                         <div class="card-title">
@@ -92,11 +92,13 @@
     </div>
 </body>
 <script>
-
-    localStorage.setItem('user', JSON.stringify({!!$user!!}));
+    if(localStorage.getItem("user")){
+        localStorage.removeItem("user");
+    }
+    localStorage.setItem("user", JSON.stringify({!!$user!!}));
     get_rank_data_feed({{ $user-> id}});
 
-    $('body').waitForImages(function () {
+    $("body").waitForImages(function () {
         get_match_data({{ $user-> id}});
     });
 

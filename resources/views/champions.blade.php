@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-8">
                             <table class="table text-center" id="championTable">
                                 @foreach ($list_champions as $champion)
                                 <tr class='championsList' style='display: inline-block; list-style-type: none;'>
@@ -39,6 +39,8 @@
                                 </tr>
                                 @endforeach
                             </table>
+                        </div>
+                        <div class="col-md-4">
                         </div>
                     </div>
                 </div>
