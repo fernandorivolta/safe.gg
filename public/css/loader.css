@@ -48,8 +48,8 @@
     content: " ";
     display: block;
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: #fff;
     margin: -3px 0 0 -3px;

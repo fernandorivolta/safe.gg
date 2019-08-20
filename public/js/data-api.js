@@ -92,16 +92,19 @@ function get_rank_data_feed(id) {
 
 function follow_user(id_followed, button) {
     var user = JSON.parse(localStorage.getItem('user'));
-    button.html('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
-    
+    //button.html('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
+    button.addClass('running');
     $.ajax({
         type: 'GET',
         url: `/api/user/${user.id}/follow/${id_followed}`,
         dataType: 'json',
         success: function (data) {
             if (data.message == "Success"){
-                button.html('Unfollow');
-                button.attr('onclick',`unfollow_user(${id_followed}, ${button})`);
+                setTimeout(function(){
+                    button.removeClass('running');
+                    button.html('Unfollow <div class="ld ld-ring ld-spin-fast"></div>');
+                }, 500);
+                button.attr('onclick',`unfollow_user(${id_followed}, $(this))`);
             } 
         },
         error: function () {
@@ -112,16 +115,19 @@ function follow_user(id_followed, button) {
 
 function unfollow_user(id_followed, button) {
     var user = JSON.parse(localStorage.getItem('user'));
-    button.html('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
-    
+    //button.html('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
+    button.addClass('running');
     $.ajax({
         type: 'GET',
         url: `/api/user/${user.id}/unfollow/${id_followed}`,
         dataType: 'json',
         success: function (data) {
             if (data.message == "Success"){
-                button.html('Follow');
-                button.attr('onclick',`follow_user(${id_followed}, ${button})`);
+                setTimeout(function(){
+                    button.removeClass('running');
+                    button.html('Follow <div class="ld ld-ring ld-spin-fast"></div>');
+                }, 500);
+                button.attr('onclick',`follow_user(${id_followed}, $(this))`);
             } 
         },
         error: function () {
