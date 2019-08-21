@@ -40,7 +40,7 @@ try:
                             elif element.name == "div" and 'ksRZpX' in element.find('address')['class'] and 'ksRZpY' in element.find('time')['class']:
                                 jornalista = element.find('address').get_text()
                                 data = element.find('time').get_text()
-                    insert = "insert into 'news' values ('https://vs.com.br" + linknoticia + "', '"  + imagemnoticia + "', '"  + tag + "', '"  + manchete + "', '"  + info + "', '"  + jornalista + "', '"  + data + "');"
+                    insert = "insert into news (link, img, tag, title, body, author, date) values ('https://vs.com.br" + linknoticia + "', '"  + imagemnoticia + "', '"  + tag + "', '"  + manchete + "', '"  + info + "', '"  + jornalista + "', '"  + data + "');"
                     newswrite.write(insert + "\n")               
 except:
     input(" ")

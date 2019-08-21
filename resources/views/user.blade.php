@@ -3,9 +3,9 @@
 <head>
     @include('lib.head')
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
-  	<link rel='stylesheet' type='text/css' href='/css/searchPro.css'>
   	<link rel='stylesheet' type='text/css' href='/css/loading.css'>
   	<link rel='stylesheet' type='text/css' href='/css/loading-btn.css'>
+  	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
     <script src="/js/data-api.js"></script>
 </head>
 <body>
@@ -48,12 +48,12 @@
                                         <div class="col-md-3 my-auto">
                                             @if (in_array($user->id, $followed_users))
                                             <a onclick="unfollow_user({{$user->id}}, $(this))" 
-                                                class="btn btn-outline-primary btn-follow ld-ext-right">Unfollow<div class="ld ld-ring ld-spin-fast"></div></a>
+                                                class="btn btn-outline-primary btn-follow ld-ext-right">Seguindo<div class="ld ld-ring ld-spin-fast"></div></a>
                                             @else
                                             <a onclick="follow_user({{$user->id}}, $(this))"
-                                                class="btn btn-outline-primary btn-follow ld-ext-right">Follow<div class="ld ld-ring ld-spin-fast"></div></a>
+                                                class="btn btn-outline-primary btn-following ld-ext-right">Seguir<div class="ld ld-ring ld-spin-fast"></div></a>
                                             @endif
-                                            <a href="/user/{{$user->id}}" class="btn btn-outline-primary btn-profile">Perfil</a>
+                                            <!--<a href="/user/{{$user->id}}" class="btn btn-outline-primary btn-profile">Perfil</a>-->
                                         </div>
                                     </div>
                                 </div>

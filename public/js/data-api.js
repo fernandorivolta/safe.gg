@@ -56,6 +56,7 @@ function get_rank_data_feed(id) {
         dataType: 'json',
         success: function (data) {
             console.log(data);
+            $('.rank').html("");
             $.each(data, function (i, ranked) {
                 $('.rank').append(`<div class="card bg-dark card-lol-info">
                 <div class="card-body">
@@ -102,7 +103,9 @@ function follow_user(id_followed, button) {
             if (data.message == "Success"){
                 setTimeout(function(){
                     button.removeClass('running');
-                    button.html('Unfollow <div class="ld ld-ring ld-spin-fast"></div>');
+                    button.html('Seguindo <div class="ld ld-ring ld-spin-fast"></div>');
+                    button.removeClass('btn-following');
+                    button.addClass('btn-follow');
                 }, 500);
                 button.attr('onclick',`unfollow_user(${id_followed}, $(this))`);
             } 
@@ -125,7 +128,9 @@ function unfollow_user(id_followed, button) {
             if (data.message == "Success"){
                 setTimeout(function(){
                     button.removeClass('running');
-                    button.html('Follow <div class="ld ld-ring ld-spin-fast"></div>');
+                    button.html('Seguir <div class="ld ld-ring ld-spin-fast"></div>');
+                    button.removeClass('btn-follow');
+                    button.addClass('btn-following');
                 }, 500);
                 button.attr('onclick',`follow_user(${id_followed}, $(this))`);
             } 

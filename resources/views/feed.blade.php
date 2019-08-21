@@ -6,7 +6,7 @@
     <link rel='stylesheet' type='text/css' href='/css/main.css'>
     <link rel='stylesheet' type='text/css' href='/css/feed.css'>
     <link rel='stylesheet' type='text/css' href='/css/navbar.css'>
-    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
+    <link rel="stylesheet" href="/css/skeleton-loader.css">
     <script src='/js/data-api.js'></script>
     <!-- <script>$(document).ready(function(){
             $('#loading_wrap').remove();
@@ -81,28 +81,39 @@
                     </div>
                 </div>
                 <div class="rank">
-                <div class="ph-item">
-  <div class="ph-col-12">
-    <div class="ph-picture"></div>
-    <div class="ph-row">
-      <div class="ph-col-4"></div>
-      <div class="ph-col-8 empty"></div>
-      <div class="ph-col-12"></div>
-    </div>
-  </div>
-  <div class="ph-col-2">
-    <div class="ph-avatar"></div>
-  </div>
-  <div>
-    <div class="ph-row">
-      <div class="ph-col-12"></div>
-      <div class="ph-col-2"></div>
-      <div class="ph-col-10 empty"></div>
-      <div class="ph-col-8 big"></div>
-      <div class="ph-col-4 big empty"></div>
-    </div>
-  </div>
-</div>
+                    <br>
+                    <div class="ph-item bg-dark">
+                      <div class="ph-col-12">
+                        <div class="ph-row">
+                          <div class="ph-col-12 big"></div>
+                        </div>
+                      </div>
+                      <div class="ph-col-2">
+                        <div class="ph-avatar"></div>
+                      </div>
+                      <div>
+                        <div class="ph-row">
+                          <div class="ph-col-12"></div>
+                          <div class="ph-col-12"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ph-item bg-dark">
+                      <div class="ph-col-12">
+                        <div class="ph-row">
+                          <div class="ph-col-12 big"></div>
+                        </div>
+                      </div>
+                      <div class="ph-col-2">
+                        <div class="ph-avatar"></div>
+                      </div>
+                      <div>
+                        <div class="ph-row">
+                          <div class="ph-col-12"></div>
+                          <div class="ph-col-12"></div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-9" style="padding-left: 0px;">
