@@ -53,6 +53,7 @@ Route::middleware(['user_validation'])->group(function () {
         ]);
     });
 
+    Route::get('/procurar', 'GameController@index');
     Route::get('/champions', 'ChampionsController@index');
 
     Route::prefix('/pro')->group( function (){

@@ -100,15 +100,15 @@ function follow_user(id_followed, button) {
         url: `/api/user/${user.id}/follow/${id_followed}`,
         dataType: 'json',
         success: function (data) {
-            if (data.message == "Success"){
-                setTimeout(function(){
+            if (data.message == "Success") {
+                setTimeout(function () {
                     button.removeClass('running');
                     button.html('Seguindo <div class="ld ld-ring ld-spin-fast"></div>');
                     button.removeClass('btn-following');
                     button.addClass('btn-follow');
                 }, 500);
-                button.attr('onclick',`unfollow_user(${id_followed}, $(this))`);
-            } 
+                button.attr('onclick', `unfollow_user(${id_followed}, $(this))`);
+            }
         },
         error: function () {
 
@@ -125,15 +125,15 @@ function unfollow_user(id_followed, button) {
         url: `/api/user/${user.id}/unfollow/${id_followed}`,
         dataType: 'json',
         success: function (data) {
-            if (data.message == "Success"){
-                setTimeout(function(){
+            if (data.message == "Success") {
+                setTimeout(function () {
                     button.removeClass('running');
                     button.html('Seguir <div class="ld ld-ring ld-spin-fast"></div>');
                     button.removeClass('btn-follow');
                     button.addClass('btn-following');
                 }, 500);
-                button.attr('onclick',`follow_user(${id_followed}, $(this))`);
-            } 
+                button.attr('onclick', `follow_user(${id_followed}, $(this))`);
+            }
         },
         error: function () {
 
@@ -141,3 +141,25 @@ function unfollow_user(id_followed, button) {
     });
 }
 
+function get_feed_data(id) {
+    $.ajax({
+        type: 'GET',
+        url: `/api/user/${id}/feed`,
+        dataType: 'json',
+        success: function (data) {
+            $.each(data.news, function (i, game_news) {
+                $.each(game_news, function (i, news) {
+                    $('.feed-body').append(`
+                    <div class="row"><div class="col-md-12"><div class="card" style="background: url(${news.img}) no-repeat center;">
+                    <div class="card-body">
+                      This is some text within a card body.
+                    </div>
+                  </div></div></div>`);
+                });
+            });
+        },
+        error: function () {
+            // $('#loader').remove();
+        }
+    });
+}

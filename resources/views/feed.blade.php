@@ -130,7 +130,7 @@
     }
     localStorage.setItem("user", JSON.stringify({!!$user!!}));
     get_rank_data_feed({{ $user-> id}});
-
+    get_feed_data({{ $user-> id}});
     $("body").waitForImages(function () {
         get_match_data({{ $user-> id}});
     });
