@@ -28,6 +28,7 @@ try:
                     if picture is not None:
                         img = picture.find('img')
                         imagemnoticia = img.get('data-src')
+                        imagemnoticia = imagemnoticia.replace("height=180&quality=65&", "height=500&quality=100&").replace("width=320", "width=720")
                     article = a.find('article')
                     if article is not None:
                         for element in article.find_all():
