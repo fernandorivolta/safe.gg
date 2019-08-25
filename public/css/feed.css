@@ -174,4 +174,16 @@ body{
     margin: 2px 2px;
     border: 1px solid black !important;
 }
-]
+
+.no-padding{
+  padding: 0px 0px; 
+}
+
+.news-card{
+  border: none;
+  margin-bottom:10px;
+}
+
+.feed-body{
+  padding: 5px;
+}

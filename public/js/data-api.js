@@ -149,12 +149,26 @@ function get_feed_data(id) {
         success: function (data) {
             $.each(data.news, function (i, game_news) {
                 $.each(game_news, function (i, news) {
+                    console.log(news);
                     $('.feed-body').append(`
-                    <div class="row"><div class="col-md-12"><div class="card" style="background: url(${news.img}) no-repeat center;">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-                  </div></div></div>`);
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card news-card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="row"><img src="${news.img}" class="img-fluid" alt=""></div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="row"><h4 class="tect-center">${news.title}</h4></div>
+                                            <div class="row"><span class="text-center">${news.body}</span></div>
+                                            <div class="row"><a class="mx-auto" href="${news.link}">Leia Mais</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`);
                 });
             });
         },

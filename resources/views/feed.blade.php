@@ -118,7 +118,7 @@
             </div>
             <div class="col-md-9" style="padding-left: 0px;">
                 <div class="card bg-dark feed-body" style="height: 100%;">
-
+                    
                 </div>
             </div>
         </div>
