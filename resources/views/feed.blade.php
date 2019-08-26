@@ -120,8 +120,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card bg-dark feed-post" style="height: 100px;">
-                            <textarea rows="3" cols="50" id="textarea" class="bg-dark white-font" style="border: none" maxlength="240" autofocus></textarea>
-                            <div class="white-font text-right" id="textarea_feedback"></div>
+                            <textarea rows="3" cols="50" id="textarea" class="bg-dark white-font" placeholder="O que voce esta pensando?" style="border: none" maxlength="240" autofocus></textarea>
+                            <div class="text-right text-muted" id="textarea_feedback"></div>
                         </div>
                     </div>   
                 </div>  

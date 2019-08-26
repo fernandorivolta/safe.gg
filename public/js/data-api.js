@@ -157,12 +157,12 @@ function get_feed_data(id) {
                               <div class="card-header ">
                                 ${news.tag}
                               </div>
-                              <div class="card-body text-center alo">
+                              <div class="card-body text-center news-card-text">
                                 <h5 class="card-title">${news.title}</h5>
                                 <p class="card-text">${news.body}</p>
                                 <a href="${news.link}" class="btn btn-primary">Leia Mais</a>
                               </div>
-                              <div class="card-footer text-muted text-right alo">
+                              <div class="card-footer text-muted text-right news-card-text">
                                 ${news.author} - ${news.date}
                               </div>
                             </div>
