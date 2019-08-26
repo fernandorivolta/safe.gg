@@ -120,7 +120,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card bg-dark feed-post" style="height: 100px;">
-                            <input id="textarea" type="textarea" maxlength="240" autofocus>
+                            <textarea rows="3" cols="50" id="textarea" class="bg-dark white-font" style="border: none" maxlength="240" autofocus></textarea>
                             <div class="white-font text-right" id="textarea_feedback"></div>
                         </div>
                     </div>   
