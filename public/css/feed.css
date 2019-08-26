@@ -182,8 +182,31 @@ body{
 .news-card{
   border: none;
   margin-bottom:10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
+.news-card::before {
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.alo{
+  z-index:9999;
+}
 .feed-body{
   padding: 5px;
+}
+
+.text-muted{
+  color: #bac2ca !important;
+  font-size: 12px;
 }

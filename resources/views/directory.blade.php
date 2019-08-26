@@ -21,15 +21,24 @@
                                 <div class="row"> 
                             @endif
                             <div class="col-md-3">
-                                <div class="thumbnail">
-                                <a href="/w3images/lights.jpg">
-                                    <img src={{$game->img}} class="card-img-top">
-                                    <div class="caption">
-                                    <p class="card-text">{{$game->game}}</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="thumbnail">
+                                            <img src={{$game->img}} class="card-img-top">
+                                            <div class="caption">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-6">
+                                                        <span class="card-text font-white">{{$game->tag}}</span>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <a href="#" class="btn btn-primary">Seguir</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </a>
                                 </div>
-                            </div>
+</div>
                         @endforeach
                     </div>
                 </div>

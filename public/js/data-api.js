@@ -152,20 +152,19 @@ function get_feed_data(id) {
                     console.log(news);
                     $('.feed-body').append(`
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="card news-card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="row"><img src="${news.img}" class="img-fluid" alt=""></div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="row"><h4 class="tect-center">${news.title}</h4></div>
-                                            <div class="row"><span class="text-center">${news.body}</span></div>
-                                            <div class="row"><a class="mx-auto" href="${news.link}">Leia Mais</a></div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-md-12 white-font">
+                            <div class="card news-card" style="background-image:url('${news.img}')">
+                              <div class="card-header ">
+                                ${news.tag}
+                              </div>
+                              <div class="card-body text-center alo">
+                                <h5 class="card-title">${news.title}</h5>
+                                <p class="card-text">${news.body}</p>
+                                <a href="${news.link}" class="btn btn-primary">Leia Mais</a>
+                              </div>
+                              <div class="card-footer text-muted text-right alo">
+                                ${news.author} - ${news.date}
+                              </div>
                             </div>
                         </div>
                     </div>`);

@@ -20,12 +20,12 @@ class FeedController extends Controller
         $games = Game::findOrFail($list_id);
 
         foreach($games as $game){
-            $news [] = News::where('tag', $game->tag)->whereOr('tag', $game->game)->get();
+            $news [] = News::where('tag', $game->tag)->whereOr('tag', $game->game)->orderby('date', 'desc')->get();
         }
         
         return response()->json([
             'news' => $news
-        ]);
+        ], 200, ['Content-type'=> 'application/json; charset=utf-8'], JSON_UNESCAPED_UNICODE);
 
     }
 }

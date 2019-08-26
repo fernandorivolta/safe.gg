@@ -117,23 +117,38 @@
                 </div>
             </div>
             <div class="col-md-9" style="padding-left: 0px;">
-                <div class="card bg-dark feed-body" style="height: 100%;">
-                    
-                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card bg-dark feed-post" style="height: 100px;">
+                            <input id="textarea" type="textarea" maxlength="240" autofocus>
+                            <div class="white-font text-right" id="textarea_feedback"></div>
+                        </div>
+                    </div>   
+                </div>  
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card bg-dark feed-body" style="height: 100%;"></div>
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
 </body>
-<script>
-    if(localStorage.getItem("user")){
-        localStorage.removeItem("user");
-    }
+<script>    
+    $(document).ready(function() {
+        $('#textarea').keyup(function() {  
+            $('#textarea_feedback').html($('#textarea').val().length + ' / 240');
+        });
+    });
+    get_feed_data({{ $user-> id}});
     localStorage.setItem("user", JSON.stringify({!!$user!!}));
     get_rank_data_feed({{ $user-> id}});
-    get_feed_data({{ $user-> id}});
     $("body").waitForImages(function () {
         get_match_data({{ $user-> id}});
     });
+
+    
+
 
 </script>
 

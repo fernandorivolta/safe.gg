@@ -6,6 +6,7 @@
 			  ███████║██║##██║██║#####███████╗██╗╚██████╔╝╚██████╔╝
 			  ╚══════╝╚═╝##╚═╝╚═╝#####╚══════╝╚═╝#╚═════╝##╚═════╝#
 -->
+<meta charset='utf-8'>
 <link rel='icon' type='imagem/png' href='/images/icons/owl.png' />
 <title>SAFE.GG</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

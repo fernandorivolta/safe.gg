@@ -45,19 +45,19 @@ CREATE TABLE IF NOT EXISTS `games` (
 --
 
 INSERT INTO `games` (`id`, `game`, `img`, `tag`, `category`, `created_at`, `updated_at`) VALUES
-(1, 'League of Legends', 'https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-285x380.jpg', 'League of Legends', 'MOBA', NULL, NULL),
-(2, 'Counter-Strike:Global Offensive', 'https://static-cdn.jtvnw.net/ttv-boxart/./Counter-Strike:%20Global%20Offensive-285x380.jpg', 'CS:GO', 'FPS', NULL, NULL),
-(3, 'Fortnite', 'https://static-cdn.jtvnw.net/ttv-boxart/Fortnite-285x380.jpg', 'Fortnite', 'Battle Royale', NULL, NULL),
-(4, 'Overwatch', 'https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-285x380.jpg', 'Overwatch', 'FPS', NULL, NULL),
-(5, 'Minecraft', 'https://static-cdn.jtvnw.net/ttv-boxart/Minecraft-285x380.jpg', 'Minecraft', 'Aventura', NULL, NULL),
-(6, 'Grand Theft Auto V', 'https://static-cdn.jtvnw.net/ttv-boxart/Grand%20Theft%20Auto%20V-285x380.jpg', 'GTA V', 'Ação', NULL, NULL),
-(7, 'PLAYERUNKNOWN\'S BATTLEGROUNDS', 'https://static-cdn.jtvnw.net/ttv-boxart/PLAYERUNKNOWN%27S%20BATTLEGROUNDS-285x380.jpg', 'PUBG', 'Battle Royale', NULL, NULL),
-(8, 'Tekken 7', 'https://static-cdn.jtvnw.net/ttv-boxart/Tekken%207-285x380.jpg', 'Tekken 7', 'Luta', NULL, NULL),
-(9, 'Apex Legends', 'https://static-cdn.jtvnw.net/ttv-boxart/Apex%20Legends-285x380.jpg', 'Apex Legends', 'Battle Royale', NULL, NULL),
-(10, 'Dota 2', 'https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-285x380.jpg', 'Dota 2', 'MOBA', NULL, NULL),
-(11, 'World of Warcraft', 'https://static-cdn.jtvnw.net/ttv-boxart/World%20of%20Warcraft-285x380.jpg', 'WOW', 'MMORPG', NULL, NULL),
-(12, 'Tom Clancy\'s Rainbow Six: Siege', 'https://static-cdn.jtvnw.net/ttv-boxart/./Tom%20Clancy%27s%20Rainbow%20Six:%20Siege-285x380.jpg', 'R6', 'FPS', NULL, NULL),
-(13, 'FIFA 19', 'https://static-cdn.jtvnw.net/ttv-boxart/FIFA%2019-285x380.jpg', 'FIFA 19', 'Futebol', NULL, NULL);
+(1, 'League of Legends', '/images/games/LOL.jpg', 'League of Legends', 'MOBA', NULL, NULL),
+(2, 'Counter-Strike:Global Offensive', '/images/games/CSGO.jpg', 'CS:GO', 'FPS', NULL, NULL),
+(3, 'Fortnite', '/images/games/FORTNITE.jpg', 'Fortnite', 'Battle Royale', NULL, NULL),
+(4, 'Overwatch', '/images/games/OVERWATCH.jpg', 'Overwatch', 'FPS', NULL, NULL),
+(5, 'Minecraft', '/images/games/Minecraft.jpg', 'Minecraft', 'Aventura', NULL, NULL),
+(6, 'Grand Theft Auto V', '/images/games/GTAV.jpg', 'GTA V', 'Ação', NULL, NULL),
+(7, 'PLAYERUNKNOWN\'S BATTLEGROUNDS', '/images/games/PUBG.jpg', 'PUBG', 'Battle Royale', NULL, NULL),
+(8, 'Tekken 7', '/images/games/Tekken7.jpg', 'Tekken 7', 'Luta', NULL, NULL),
+(9, 'Apex Legends', '/images/games/ApexLegends.jpg', 'Apex Legends', 'Battle Royale', NULL, NULL),
+(10, 'Dota 2', '/images/games/Dota2.jpg', 'Dota 2', 'MOBA', NULL, NULL),
+(11, 'World of Warcraft', '/images/games/WOW.jpg', 'WOW', 'MMORPG', NULL, NULL),
+(12, 'Tom Clancy\'s Rainbow Six: Siege', '/images/games/R6.jpg', 'R6', 'FPS', NULL, NULL),
+(13, 'FIFA 19', '/images/games/FIFA19.jpg', 'FIFA 19', 'Futebol', NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -35,4 +35,10 @@
     </div>
   </div>
 </body>
+<script>
+if(localStorage.getItem("user")){
+  localStorage.removeItem("user");
+  localStorage.removeItem("match-history");
+}
+</script>
 </html>
