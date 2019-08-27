@@ -1,7 +1,12 @@
 $(document).ready(function() {
-    $('#textarea').keyup(function() {  
+    /* $('#textarea').keyup(function() {  
         $('#textarea_feedback').html($('#textarea').val().length + ' / 240');
+    }); */
+    var circle = new ldBar('#count');
+    $('#textarea').keyup(function() {  
+        circle.set($('#textarea').val().length);
     });
+
 
     $('#btn-publicar').on('click', function () {
         var text = $('#textarea').val();

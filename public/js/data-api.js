@@ -167,6 +167,22 @@ function get_feed_data(id) {
                         </div>
                     </div>`);
                 });
+                $.each(data.posts.data, function (i, post) {
+                    $('.feed-body').append(`
+                    <div class="row">
+                        <div class="col-md-12 white-font">
+                              <div class="card-header news-card-text">
+                                ${post.name} - @${post.username}
+                              </div>
+                              <div class="card-body text-center news-card-text">
+                                <p class="card-text">${post.post}</p>
+                              </div>
+                              <div class="card-footer text-muted text-right news-card-text">
+                                ${post.created_at}
+                              </div>
+                        </div>
+                    </div>`);
+                });
         },
         error: function () {
             // $('#loader').remove();

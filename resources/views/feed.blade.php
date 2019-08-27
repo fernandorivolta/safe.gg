@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/skeleton-loader.css">
     <script src='/js/data-api.js'></script>
     <script src='/js/feed.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/loading-bar.css"/>
+    <script type="text/javascript" src="/js/loading-bar.js"></script>
     <!-- <script>$(document).ready(function(){
             $('#loading_wrap').remove();
         });
@@ -124,7 +126,8 @@
                             <textarea rows="3" cols="50" id="textarea" class="bg-dark white-font feed-post-textarea" placeholder="O que voce esta pensando?" maxlength="240" autofocus></textarea>
                             <div class="row">
                                 <div class="col-md-10 my-auto">
-                                    <div class="text-right text-muted textarea-count" id="textarea_feedback">0 / 240</div>
+                                    <!-- <div class="text-right text-muted textarea-count" id="textarea_feedback">0 / 240</div> -->
+                                    <div id="count"  data-stroke-width="7" data-stroke="purple" data-value="0" data-preset="circle" class="ldBar label-center" data-max="240"></div>
                                 </div>
                                 <div class="col-md-2 my-auto">
                                     <button id="btn-publicar" class="btn btn-primary btn-publicar">Publicar</button>
