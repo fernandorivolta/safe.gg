@@ -202,6 +202,30 @@ body{
 .news-card-text{
   z-index:9999;
 }
+
+.feed-post{
+  height: 180px;
+  margin-bottom: 5px;
+}
+
+.feed-post-textarea{
+  margin: 30px 30px 7px 30px;
+  border: 1px solid #3d274b;
+  border-radius: 10px;
+  padding: 10px 10px;
+  resize: none;
+}
+
+.feed-post-textarea:focus{
+  outline: none;
+}
+
+textarea::-moz-input-placeholder {
+  font-weight: normal;
+  text-decoration: underline;
+  text-decoration-color: rgb(136, 139, 146);  
+}
+
 .feed-body{
   padding: 5px;
 }
@@ -209,4 +233,8 @@ body{
 .text-muted{
   color: #bac2ca !important;
   font-size: 12px;
+}
+
+.btn-publicar{
+  margin: unset;
 }

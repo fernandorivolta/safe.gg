@@ -55,7 +55,6 @@ function get_rank_data_feed(id) {
         url: `/api/user/${id}/rank`,
         dataType: 'json',
         success: function (data) {
-            console.log(data);
             $('.rank').html("");
             $.each(data, function (i, ranked) {
                 $('.rank').append(`<div class="card bg-dark card-lol-info">
@@ -147,14 +146,13 @@ function get_feed_data(id) {
         url: `/api/user/${id}/feed`,
         dataType: 'json',
         success: function (data) {
-            $.each(data.news, function (i, game_news) {
-                $.each(game_news, function (i, news) {
-                    console.log(news);
+            console.log(data);
+                $.each(data.news.data, function (i, news) {
                     $('.feed-body').append(`
                     <div class="row">
                         <div class="col-md-12 white-font">
                             <div class="card news-card" style="background-image:url('${news.img}')">
-                              <div class="card-header ">
+                              <div class="card-header news-card-text">
                                 ${news.tag}
                               </div>
                               <div class="card-body text-center news-card-text">
@@ -169,7 +167,6 @@ function get_feed_data(id) {
                         </div>
                     </div>`);
                 });
-            });
         },
         error: function () {
             // $('#loader').remove();

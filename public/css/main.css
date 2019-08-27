@@ -205,3 +205,18 @@ body{
 	display: block;
 	z-index: 50;
 }
+
+.dropdown-menu{
+	background-color: #230138;
+}
+
+.dropdown-item{
+	color:rgba(255,255,255,.5);
+}
+
+.dropdown-item:hover{
+	color: #fff;
+	background-color: #3d274b;;
+	transition: background-color 0.5s;
+	transition: color 0.5s;
+}
