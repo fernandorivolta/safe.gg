@@ -150,10 +150,12 @@
 <script>    
     get_feed_data({{ $user-> id}});
     localStorage.setItem("user", JSON.stringify({!!$user!!}));
+    //$("body").waitForImages(function () {
     get_rank_data_feed({{ $user-> id}});
-    $("body").waitForImages(function () {
+    window.onload = function() {
         get_match_data({{ $user-> id}});
-    });
+    };
+    //)};
 
     
 

@@ -19,7 +19,7 @@ class FeedController extends Controller
         ->leftJoin('posts', 'userfollowuser.user_id_followed', '=', 'posts.user_id')
         ->leftJoin('users', 'users.id', '=', 'userfollowuser.user_id_followed')
         ->where('userfollowuser.user_id', '=', $id)
-        ->select('users.username', 'users.icon', 'users.name', 'posts.post', 'posts.created_at')
+        ->select('users.username', 'users.icon', 'users.name', 'posts.post', 'posts.created_at', 'users.id')
         ->orderBy('posts.created_at', 'desc')
         ->simplePaginate(3);
         

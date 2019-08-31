@@ -162,14 +162,21 @@ function get_feed_data(id) {
             //percorre o array verificando se é post de usuario, noticia ou partida
             $.each(feedarray, function(i, item){
                 if(item.post){
+                    console.log(item);
                     $('.feed-body').append(`
                     <div class="row">
                         <div class="col-md-12 white-font">
                               <div class="card-header news-card-text">
-                                ${item.name} - @${item.username}
+                                ${item.name} - <a href="user/${item.id}">@${item.username}</a>
                               </div>
                               <div class="card-body text-center news-card-text">
-                                <p class="card-text">${item.post}</p>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img style="width:65%" class="img-fluid" src="/storage/${item.icon}" alt="user image">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p class="card-text">${item.post}</p>
+                                    </div>
                               </div>
                               <div class="card-footer text-muted text-right news-card-text">
                                 ${item.created_at}
@@ -196,6 +203,27 @@ function get_feed_data(id) {
                         </div>
                     </div>`);
                 }else if(item.summonerName){
+                    $('.feed-body').append(`
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="loader-${item.id}">
+                                    <div class="ph-item bg-dark" style="width: 60%"> 
+                                        <div class="ph-col-12">
+                                            <div class="ph-row">
+                                              <div class="ph-col-4"></div>
+                                            </div>
+                                            <div class="ph-row">
+                                              <div class="ph-col-4 big"></div>
+                                            </div>
+                                        </div>
+                                        <div class="ph-col-2">
+                                            <div class="ph-avatar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="${item.id}"></div>
+                            </div>
+                        </div>`);  
                     get_one_match(item.id, item.summonerName, item.username);
                 }
             });
@@ -212,7 +240,8 @@ function get_one_match(id_followed, summonerName, username){
         url: `/api/user/${id_followed}/one_match`,
         dataType: 'json',
         success: function (data) {
-            $('.feed-body').append(`<div class="card card-feed shadow-sm ${data[0].win ? 'card-win' : 'card-lose'} white-font"><div class="card-body" style="padding: 0.5rem !important"> <div class="col-md-12"> <div class="row"><small class="span-card my-auto">Ultima partida de: ${summonerName} @${username}</small></div> <div class="row"><span>${data[0].queue}</span><div class="my-auto circle-card"> <i class="fas fa-circle fa-xs"></i> </div><small class="span-card my-auto"> ${data[0].gameDuration} </small></div> <hr style="width:100%; margin-bottom: 10px;"> <div class="row"> <div class="col-md-3 my-auto"> <div class="row"> <img class="img-champion img-fluid rounded-circle mx-auto" src="/images/squares/${data[0].championName}.png"> </div> <div class="row"><p class="text-center mx-auto">Level ${data[0].champLevel}</p></div> </div> <div class="col-md-2 my-auto"> <div class="row"><img class="img-spell img-fluid" src="/images/spell/Summoner${data[0].spell1}.png"> <img class="img-perk img-fluid" src="https://opgg-static.akamaized.net/images/lol/perk/${data[0].runa1}.png"></div> <div class="row"> <img class="img-spell img-fluid" src="/images/spell/Summoner${data[0].spell2}.png"> <img class="img-perk img-fluid" src="https://opgg-static.akamaized.net/images/lol/perkStyle/${data[0].runa2}.png"> </div></div> <div class="col-md-2 my-auto"> <div class="row"> <span>${data[0].kills}<small class="card-bars">/</small><span style="color: #a7a7a7;">${data[0].deaths}</span><small class="card-bars">/</small>${data[0].assists}</span> </div><div class="row"> <span>${data[0].kda} <small class="span-card">KDA</small></span> </div><div class="row"> <span>${data[0].totalMinionsKilled}<small class="span-card" data-tooltip="Minions por minuto" data-tooltip-position="bottom">(${(data[0].totalMinionsKilled / (data[0].gameDurationSec / 60)).toFixed(1)}) CS</small></span> </div> </div><div class="col-md-2 my-auto"> <div class="row"> ${data[0].item0 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item0}.png"></img>` : ``} ${data[0].item1 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item1}.png"></img>` : ``} ${data[0].item2 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item2}.png"></img>` : ``} </div> <div class="row"> ${data[0].item3 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item3}.png"></img>` : ``} ${data[0].item4 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item4}.png"></img>` : ``} ${data[0].item5 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item5}.png"></img>` : ``} </div> </div></div> </div> </div> </div>`);
+            $(`#loader-${id_followed}`).remove();
+            $(`#${id_followed}`).html(`<div class="card card-feed shadow-sm ${data[0].win ? 'card-win' : 'card-lose'} white-font"><div class="card-body" style="padding: 0.5rem !important"> <div class="col-md-12"> <div class="row"><small class="span-card my-auto">Ultima partida de ${summonerName} - <a href="user/${id_followed}">@${username}</a></small></div> <div class="row"><span>${data[0].queue}</span><div class="my-auto circle-card"> <i class="fas fa-circle fa-xs"></i> </div><small class="span-card my-auto"> ${data[0].gameDuration} </small></div> <hr style="width:100%; margin-bottom: 10px;"> <div class="row"> <div class="col-md-3 my-auto"> <div class="row"> <img class="img-champion img-fluid rounded-circle mx-auto" src="/images/squares/${data[0].championName}.png"> </div> <div class="row"><p class="text-center mx-auto">Level ${data[0].champLevel}</p></div> </div> <div class="col-md-2 my-auto"> <div class="row"><img class="img-spell img-fluid" src="/images/spell/Summoner${data[0].spell1}.png"> <img class="img-perk img-fluid" src="https://opgg-static.akamaized.net/images/lol/perk/${data[0].runa1}.png"></div> <div class="row"> <img class="img-spell img-fluid" src="/images/spell/Summoner${data[0].spell2}.png"> <img class="img-perk img-fluid" src="https://opgg-static.akamaized.net/images/lol/perkStyle/${data[0].runa2}.png"> </div></div> <div class="col-md-2 my-auto"> <div class="row"> <span>${data[0].kills}<small class="card-bars">/</small><span style="color: #a7a7a7;">${data[0].deaths}</span><small class="card-bars">/</small>${data[0].assists}</span> </div><div class="row"> <span>${data[0].kda} <small class="span-card">KDA</small></span> </div><div class="row"> <span>${data[0].totalMinionsKilled}<small class="span-card" data-tooltip="Minions por minuto" data-tooltip-position="bottom">(${(data[0].totalMinionsKilled / (data[0].gameDurationSec / 60)).toFixed(1)}) CS</small></span> </div> </div><div class="col-md-2 my-auto"> <div class="row"> ${data[0].item0 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item0}.png"></img>` : ``} ${data[0].item1 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item1}.png"></img>` : ``} ${data[0].item2 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item2}.png"></img>` : ``} </div> <div class="row"> ${data[0].item3 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item3}.png"></img>` : ``} ${data[0].item4 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item4}.png"></img>` : ``} ${data[0].item5 ? `<img class="img-fluid item-card" src="/images/items/${data[0].item5}.png"></img>` : ``} </div> </div></div> </div> </div> </div>`);
         },
         error: function () {}
     });
