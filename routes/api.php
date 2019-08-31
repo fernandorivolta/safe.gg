@@ -20,5 +20,6 @@ Route::get('/user/{id_user}/follow/{idfollowed}','FollowController@follow_user')
 Route::get('/user/{id_user}/unfollow/{idfollowed}','FollowController@unfollow_user');
 
 Route::get('/user/{id_user}/feed', 'FeedController@user_feed');
+Route::get('/user/{id_followed}/one_match', 'ApiController@one_match');
 
 Route::post('/user/post', 'PostController@create');

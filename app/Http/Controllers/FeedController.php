@@ -30,9 +30,16 @@ class FeedController extends Controller
         ->orderBy('news.date', 'desc')
         ->simplePaginate(2);
         
+        $followed_users = DB::table('users')
+        ->leftJoin('userfollowuser', 'users.id', '=', 'userfollowuser.user_id_followed')
+        ->where('userfollowuser.user_id', '=', $id)
+        ->select('users.summonerName', 'users.id', 'users.username')
+        ->simplePaginate(2);
+
         return response()->json([
             'news' => $news,
-            'posts' => $posts
+            'posts' => $posts,
+            'followed_users' => $followed_users
         ], 200, ['Content-type'=> 'application/json; charset=utf-8'], JSON_UNESCAPED_UNICODE);
 
     }
