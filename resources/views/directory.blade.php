@@ -5,7 +5,7 @@
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
   	<link rel='stylesheet' type='text/css' href='/css/loading.css'>
   	<link rel='stylesheet' type='text/css' href='/css/loading-btn.css'>
-  	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
+  	<link rel='stylesheet' type='text/css' href='/css/directory.css'>
     <script src="/js/data-api.js"></script>
 </head>
 <body>
@@ -26,11 +26,11 @@
                                         <div class="thumbnail">
                                             <img src={{$game->img}} class="card-img-top">
                                             <div class="caption">
-                                                <div class="col-md-12">
-                                                    <div class="col-md-6">
-                                                        <span class="card-text font-white">{{$game->tag}}</span>
+                                                <div class="row" style="margin: 5px;">
+                                                    <div class="col-md-6 my-auto text-center">
+                                                        <span class="card-text white-font text-center">{{$game->tag}}</span>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 my-auto">
                                                         <a href="#" class="btn btn-primary">Seguir</a>
                                                     </div>
                                                 </div>

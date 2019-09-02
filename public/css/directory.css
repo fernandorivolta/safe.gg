@@ -1,0 +1,13 @@
+body{
+    background-color: #2c0045;
+}
+
+.thumbnail{
+    border: 1px solid #ffffff33;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.caption{
+    font-size: 14px;
+}
