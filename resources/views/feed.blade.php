@@ -152,9 +152,10 @@
     localStorage.setItem("user", JSON.stringify({!!$user!!}));
     //$("body").waitForImages(function () {
     get_rank_data_feed({{ $user-> id}});
+    /* 
     window.onload = function() {
         get_match_data({{ $user-> id}});
-    };
+    }; */
     //)};
 
     

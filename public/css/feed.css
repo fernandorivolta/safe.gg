@@ -238,3 +238,8 @@ textarea::-moz-input-placeholder {
 .btn-publicar{
   margin: unset;
 }
+
+.btn-publicar:focus{
+  margin: unset;
+  box-shadow: none !important;
+}
