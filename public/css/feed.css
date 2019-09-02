@@ -200,7 +200,7 @@ body{
 }
 
 .news-card-text{
-  z-index:9999;
+  z-index:999;
 }
 
 .feed-post{

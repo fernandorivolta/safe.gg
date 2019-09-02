@@ -36,11 +36,14 @@ class FeedController extends Controller
         ->select('users.summonerName', 'users.id', 'users.username')
         ->simplePaginate(2);
 
+
+        
+
         return response()->json([
             'news' => $news,
             'posts' => $posts,
             'followed_users' => $followed_users
-        ], 200, ['Content-type'=> 'application/json; charset=utf-8'], JSON_UNESCAPED_UNICODE);
+        ], 200);
 
     }
 }

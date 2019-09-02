@@ -30,7 +30,7 @@
 input, .export {
   /* Use relative position to prevent from being covered by image background */
   position: relative;
-  z-index: 10;
+  z-index: 99999;
   display: block;
 }
 
