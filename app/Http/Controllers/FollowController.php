@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\UserFollowPro;
 use App\UserFollowUser;
+use App\UserFollowGame;
 use App\ProPlayer;
 use App\User;
 use Auth;
@@ -63,69 +64,27 @@ class FollowController extends Controller
             'message' => 'Success'
         ], 200);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    
+    public function follow_game($id_user, $id_game){
+        $follow = new UserFollowGame();
+        $follow->user_id = $id_user;
+        $follow->game_id = $id_game;
+        $follow->save();
+        return response()->json([
+            'message' => 'Success'
+        ], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function unfollow_game($id_user, $id_game){
+        $follow = UserFollowGame::where([['user_id', $id_user],['game_id', $id_game]]);
+        if(!$follow){
+            return response()->json([
+                'message' => 'Fail'
+            ], 400);
+        }
+        $follow->delete();
+        return response()->json([
+            'message' => 'Success'
+        ], 200);
     }
 }

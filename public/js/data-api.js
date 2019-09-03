@@ -91,9 +91,57 @@ function get_rank_data_feed(id) {
     });
 }
 
+function follow_game(id_game, button) {
+    var user = JSON.parse(localStorage.getItem('user'));
+    button.addClass('running');
+    $.ajax({
+        type: 'GET',
+        url: `/api/game/${user.id}/follow/${id_game}`,
+        dataType: 'json',
+        success: function (data) {
+            if (data.message == "Success") {
+                setTimeout(function () {
+                    button.removeClass('running');
+                    button.html('Seguindo <div class="ld ld-ring ld-spin-fast"></div>');
+                    button.removeClass('btn-following');
+                    button.addClass('btn-follow');
+                }, 500);
+                button.attr('onclick', `unfollow_game(${id_game}, $(this))`);
+            }
+        },
+        error: function () {
+
+        }
+    });
+}
+
+function unfollow_game(id_game, button) {
+    var user = JSON.parse(localStorage.getItem('user'));
+    button.addClass('running');
+    $.ajax({
+        type: 'GET',
+        url: `/api/game/${user.id}/unfollow/${id_game}`,
+        dataType: 'json',
+        success: function (data) {
+            if (data.message == "Success") {
+                setTimeout(function () {
+                    button.removeClass('running');
+                    button.html('Seguir <div class="ld ld-ring ld-spin-fast"></div>');
+                    button.removeClass('btn-follow');
+                    button.addClass('btn-following');
+                }, 500);
+                button.attr('onclick', `follow_game(${id_game}, $(this))`);
+            }
+        },
+        error: function () {
+
+        }
+    });
+}
+
+
 function follow_user(id_followed, button) {
     var user = JSON.parse(localStorage.getItem('user'));
-    //button.html('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
     button.addClass('running');
     $.ajax({
         type: 'GET',
@@ -118,7 +166,6 @@ function follow_user(id_followed, button) {
 
 function unfollow_user(id_followed, button) {
     var user = JSON.parse(localStorage.getItem('user'));
-    //button.html('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
     button.addClass('running');
     $.ajax({
         type: 'GET',
@@ -170,18 +217,28 @@ function get_feed_data(id) {
                               <div class="card-header news-card-text">
                                 ${item.name} - <a href="user/${item.id}">@${item.username}</a>
                               </div>
-                              <div class="card-body text-center news-card-text">
+                              <div class="card-body news-card-text text-center">
                                 <div class="row">
-                                    <div class="col-md-2">
+                                    <div class="col-md-3 text-center">
                                         <img style="width:65%" class="img-fluid" src="/storage/${item.icon}" alt="user image">
                                     </div>
-                                    <div class="col-md-10">
-                                        <p class="card-text">${item.post}</p>
+                                    <div class="col-md-9 text-left my-auto">
+                                        <p class="text-left card-text">${item.post}</p>
                                     </div>
                               </div>
-                              <div class="card-footer text-muted text-right news-card-text">
+                            <div class="card-footer text-muted text-center news-card-text">
+                                <div class="row">
+                                <div class="col-md-7 text-right">
+                                <a><i onclick="${$.inArray(item.post_id, data.liked_posts) ? 'unlike_post(${item.post_id}, $(this))" class="fas fa-heart "' : 'like_post(${item.post_id}, $(this))" class="far fa-heart "'}></i></a><span class="qtd-like">15</span>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                <i class="far fa-comment"></i> <span class="qtd-comment">26</span>
+                                </div>
+                                <div class="col-md-3 text-right">
                                 ${item.created_at}
-                              </div>
+                                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>`);
                 }else if(item.author){
@@ -228,7 +285,7 @@ function get_feed_data(id) {
                     get_one_match(item.id, item.summonerName, item.username);
                 }
             });
-            get_match_data($id);
+            get_match_data(id);
         },
         error: function () {
             // $('#loader').remove();

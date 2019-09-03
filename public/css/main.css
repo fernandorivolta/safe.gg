@@ -220,3 +220,29 @@ body{
 	transition: background-color 0.5s;
 	transition: color 0.5s;
 }
+
+.btn-follow{
+	color: #a300ff !important;
+	border-radius: 100px;
+	border-color: #a300ff !important;
+	width: 100%;
+  }
+  
+  .btn-follow:hover{
+	color: white !important;
+	background-color: #a300ff !important;
+  }
+  
+  .btn-following{
+	color: white !important;
+	border-radius: 100px;
+	border-color: #4a0074 !important;
+	background-color: #4a0074;
+	width: 100%;
+  }
+  
+  .btn-following:hover{
+	color: white !important;
+	background-color: #7700bb !important;
+	border-color: #7700bb !important;
+  }

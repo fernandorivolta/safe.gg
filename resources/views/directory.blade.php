@@ -12,15 +12,15 @@
 	@include('lib.navbar');
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12" style="margin-left: 30px; margin-right:30px;">
                 <div class="card bg-dark feed-body" style="height: 100%;">
                     <div class="row">
                         @foreach ($games as $i=>$game)
-                            @if ($i % 4 == 0)
+                            @if ($i % 3 == 0)
                                 </div>
                                 <div class="row"> 
                             @endif
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="thumbnail">
@@ -31,7 +31,13 @@
                                                         <span class="card-text white-font text-center">{{$game->tag}}</span>
                                                     </div>
                                                     <div class="col-md-6 my-auto">
-                                                        <a href="#" class="btn btn-primary">Seguir</a>
+                                                        @if (in_array($game->id, $followed_games))
+                                                            <a onclick="unfollow_game({{$game->id}}, $(this))" 
+                                                            class="btn btn-outline-primary btn-follow ld-ext-right">Seguindo<div class="ld ld-ring ld-spin-fast"></div></a>
+                                                        @else
+                                                            <a onclick="follow_game({{$game->id}}, $(this))"
+                                                            class="btn btn-outline-primary btn-following ld-ext-right">Seguir<div class="ld ld-ring ld-spin-fast"></div></a>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>

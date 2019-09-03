@@ -4,9 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
+use App\Like;
 
 class PostController extends Controller
 {
+
+    public function like_post($post_id, $user_id){
+        $like = new Like;
+        $like->user_id = $user_id;
+        $like->post_id = $post_id;
+        $like->save();
+
+        return response()->json([
+            "message" => "Success"
+        ], 200);
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *

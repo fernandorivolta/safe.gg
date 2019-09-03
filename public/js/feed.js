@@ -32,12 +32,12 @@ $(document).ready(function() {
                           <div class="card-header news-card-text">
                             ${user.name} - <a href="user/${user.id}">@${user.username}</a>
                           </div>
-                          <div class="card-body text-center news-card-text">
+                          <div class="card-body news-card-text">
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-3 text-center">
                                     <img style="width:65%" class="img-fluid" src="/storage/${user.icon}" alt="user image">
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-9 text-left my-auto">
                                     <p class="card-text">${post}</p>
                                 </div>
                             </div>
@@ -55,3 +55,21 @@ $(document).ready(function() {
         });
     });
 });
+
+
+function like_post(post_id, button){
+    var user = JSON.parse(localStorage.getItem('user'));
+    $.ajax({
+        type: 'GET',
+        url: `/api/post/${post_id}/like/${user.id}`,
+        contentType: 'application/json',
+        success: function (data) {
+            if (data.message == "Success") {
+                button.removeClass('far');
+                button.addClass('fas');
+            }
+        },
+        error: function () {
+        }
+    });
+}
