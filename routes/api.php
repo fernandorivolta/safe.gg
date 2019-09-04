@@ -29,3 +29,4 @@ Route::post('/user/post', 'PostController@create');
 
 Route::get('/post/{post_id}/like/{user_id}', 'PostController@like_post');
 Route::get('/post/{post_id}/unlike/{user_id}', 'PostController@unlike_post');
+Route::get('/post/{post_id}/comments/', 'PostController@get_comments');

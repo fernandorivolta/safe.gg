@@ -226,3 +226,11 @@ textarea::-moz-input-placeholder {
 .fa-heart{
   transition: font-size 0.3s;
 }
+
+.form-control{
+  resize: none;
+}
+
+.clickable{
+  cursor: pointer;
+}

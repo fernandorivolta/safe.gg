@@ -228,10 +228,10 @@ function get_feed_data(id) {
                             <div class="card-footer text-muted text-center news-card-text">
                                 <div class="row">
                                 <div class="col-md-7 text-right">
-                                <a><i onclick="${$.inArray(item.post_id, data.liked_posts) ? `like_post(${item.post_id}, $(this))" class="far fa-heart "` : `unlike_post(${item.post_id}, $(this))" class="fas fa-heart" style="color: #d64343"`}></i></a><span id="post-${item.post_id}" class="qtd-like"> ${item.num_likes}</span>
+                                <a><i onclick="${$.inArray(item.post_id, data.liked_posts) == -1 ? `like_post(${item.post_id}, $(this))" class="far fa-heart "` : `unlike_post(${item.post_id}, $(this))" class="fas fa-heart" style="color: #d64343"`}></i></a><span id="post-${item.post_id}" class="qtd-like"> ${item.num_likes}</span>
                                 </div>
                                 <div class="col-md-2 text-center">
-                                <i class="far fa-comment"></i> <span class="qtd-comment"> 0</span>
+                                    <a onclick="get_comments(${item.post_id})" data-toggle="modal" data-target="#modal-${item.post_id}"><i class="far fa-comment"></i> <span class="qtd-comment"> 0</span></a>
                                 </div>
                                 <div class="col-md-3 text-right">
                                 ${item.created_at}
@@ -239,6 +239,32 @@ function get_feed_data(id) {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="modal fade" id="modal-${item.post_id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Post de ${item.name} - <a href="user/${item.id}">@${item.username}</a></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p class="text-center">${item.post}</p>
+                          </div>
+                          <div class="modal-footer">
+                            <div class="input-group">
+                              <textarea class="form-control" aria-label="With textarea" placeholder="Escreva sua reposta..."></textarea>
+                              <div class="input-group-append">
+                                <span class="input-group-text btn btn-primary clickable">Comentar</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer modal-comments">
+                        </div>
+                        </div>
+                      </div>
                     </div>`);
                 }else if(item.author){
                     $('.feed-body').append(`
@@ -306,3 +332,19 @@ function get_one_match(id_followed, summonerName, username){
         }
     });
 };
+
+
+function get_comments(post_id){
+    $.ajax({
+        type: 'GET',
+        url: `/api/post/${post_id}/comments`,
+        dataType: 'json',
+        success: function (data) {
+            $.each(data, function(i, item){
+                $(`.modal-comments`).append(`${item.comment}`);
+            });
+        },
+        error: function () {
+        }
+    });
+}
