@@ -65,8 +65,37 @@ function like_post(post_id, button){
         contentType: 'application/json',
         success: function (data) {
             if (data.message == "Success") {
+                num_like=parseInt($(`#post-${post_id}`).html());
+                num_like+=1;
+                $(`#post-${post_id}`).html(` ${num_like}`);
                 button.removeClass('far');
                 button.addClass('fas');
+                button.attr('style', 'color: #d64343');
+                button.attr('onclick', `unlike_post(${post_id}, $(this))`);
+            }
+        },
+        error: function () {
+        }
+    });
+}
+
+function unlike_post(post_id, button){
+    var user = JSON.parse(localStorage.getItem('user'));
+    $.ajax({
+        type: 'GET',
+        url: `/api/post/${post_id}/unlike/${user.id}`,
+        contentType: 'application/json',
+        success: function (data) {
+            if (data.message == "Success") {
+                num_like=parseInt($(`#post-${post_id}`).html());
+                console.log(num_like);
+                num_like-=1;
+                console.log(num_like);
+                $(`#post-${post_id}`).html(` ${num_like}`);
+                button.removeClass('fas');
+                button.addClass('far');
+                button.attr('style', 'color: #bac2ca');
+                button.attr('onclick', `like_post(${post_id}, $(this))`);
             }
         },
         error: function () {

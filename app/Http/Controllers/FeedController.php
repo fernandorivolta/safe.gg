@@ -19,8 +19,10 @@ class FeedController extends Controller
         $posts = DB::table('userfollowuser')
         ->leftJoin('posts', 'userfollowuser.user_id_followed', '=', 'posts.user_id')
         ->leftJoin('users', 'users.id', '=', 'userfollowuser.user_id_followed')
+        ->leftJoin('likes', 'likes.post_id', '=', 'posts.id')
         ->where('userfollowuser.user_id', '=', $id)
-        ->select('users.username', 'users.icon', 'users.name', 'posts.post', 'posts.id as post_id', 'posts.created_at', 'users.id')
+        ->select(DB::raw('COUNT(likes.id) as num_likes'), 'users.username', 'users.icon', 'users.name', 'posts.post', 'posts.id as post_id', 'posts.created_at', 'users.id')
+        ->groupBy('users.username', 'users.icon', 'users.name', 'posts.post', 'posts.id', 'posts.created_at', 'users.id')
         ->orderBy('posts.created_at', 'desc')
         ->simplePaginate(3);
         
@@ -38,9 +40,9 @@ class FeedController extends Controller
         ->simplePaginate(2);
 
         $list_id = [];
-        $liked_posts = Like::where('user_id', '=', $id)->get('id');
+        $liked_posts = Like::where('user_id', '=', $id)->get('post_id');
         foreach($liked_posts as $like){
-            $list_id [] = $like->id;
+            $list_id [] = $like->post_id;
         }
         
 

@@ -21,6 +21,18 @@ class PostController extends Controller
         ], 200);
     }
 
+    public function unlike_post($post_id, $user_id){
+        $like = Like::where([['user_id', $user_id],['post_id', $post_id]]);
+        if(!$like){
+            return response()->json([
+                'message' => 'Fail'
+            ], 400);
+        }
+        $like->delete();
+        return response()->json([
+            'message' => 'Success'
+        ], 200);
+    }
 
 
     /**

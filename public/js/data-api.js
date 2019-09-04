@@ -210,7 +210,6 @@ function get_feed_data(id) {
             //percorre o array verificando se é post de usuario, noticia ou partida
             $.each(feedarray, function(i, item){
                 if(item.post){
-                    console.log(item);
                     $('.feed-body').append(`
                     <div class="row">
                         <div class="col-md-12 white-font">
@@ -229,10 +228,10 @@ function get_feed_data(id) {
                             <div class="card-footer text-muted text-center news-card-text">
                                 <div class="row">
                                 <div class="col-md-7 text-right">
-                                <a><i onclick="${$.inArray(item.post_id, data.liked_posts) ? 'unlike_post(${item.post_id}, $(this))" class="fas fa-heart "' : 'like_post(${item.post_id}, $(this))" class="far fa-heart "'}></i></a><span class="qtd-like">15</span>
+                                <a><i onclick="${$.inArray(item.post_id, data.liked_posts) ? `like_post(${item.post_id}, $(this))" class="far fa-heart "` : `unlike_post(${item.post_id}, $(this))" class="fas fa-heart" style="color: #d64343"`}></i></a><span id="post-${item.post_id}" class="qtd-like"> ${item.num_likes}</span>
                                 </div>
                                 <div class="col-md-2 text-center">
-                                <i class="far fa-comment"></i> <span class="qtd-comment">26</span>
+                                <i class="far fa-comment"></i> <span class="qtd-comment"> 0</span>
                                 </div>
                                 <div class="col-md-3 text-right">
                                 ${item.created_at}

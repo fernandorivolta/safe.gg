@@ -217,3 +217,12 @@ textarea::-moz-input-placeholder {
   margin: unset;
   box-shadow: none !important;
 }
+
+.fa-heart:hover{
+  font-size: 14px;
+  transition: font-size 0.3s;
+}
+
+.fa-heart{
+  transition: font-size 0.3s;
+}

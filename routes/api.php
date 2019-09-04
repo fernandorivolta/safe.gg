@@ -28,3 +28,4 @@ Route::get('/user/{id_followed}/one_match', 'ApiController@one_match');
 Route::post('/user/post', 'PostController@create');
 
 Route::get('/post/{post_id}/like/{user_id}', 'PostController@like_post');
+Route::get('/post/{post_id}/unlike/{user_id}', 'PostController@unlike_post');
