@@ -7,6 +7,11 @@ $(document).ready(function() {
         circle.set($('#textarea').val().length);
     });
 
+    //zerar os comentarios do modal qnd fechar pra evitar comentarios duplicados
+    $(document).on('hidden.bs.modal', function () {
+        $('.modal-comments').html('');
+    });
+
 
     $('#btn-publicar').on('click', function () {
         var text = $('#textarea').val();

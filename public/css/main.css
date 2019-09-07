@@ -246,3 +246,13 @@ body{
 	background-color: #7700bb !important;
 	border-color: #7700bb !important;
   }
+
+
+/* Corrige o efeito estranho do background quando abre um modal */
+.modal-open {
+    overflow-y: scroll;
+}
+
+.modal-open[style] {
+	padding-right: 0px !important;
+}

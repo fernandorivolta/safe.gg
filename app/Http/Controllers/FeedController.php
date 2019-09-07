@@ -14,6 +14,25 @@ use Illuminate\Support\Facades\DB;
 
 class FeedController extends Controller
 {
+    public function get_modal_info($post_id){
+        $post_info = DB::table('posts')
+        ->leftJoin('users', 'users.id', '=', 'posts.user_id') 
+        ->select('users.username', 'users.icon', 'users.name', 'posts.post', 'posts.id as post_id', 'posts.created_at', 'users.id')
+        ->where('posts.id', '=', $post_id)->get();
+
+        
+        $comments = DB::table('comments')
+        ->leftJoin('users', 'users.id', '=', 'comments.user_id')
+        ->where('post_id', '=', $post_id)
+        ->select('comments.comment', 'comments.post_id', 'users.name', 'users.username', 'users.icon', 'users.id')
+        ->get();
+
+        return response()->json([
+            'post_info' => $post_info,
+            'comments' => $comments
+        ],200);
+    }
+
     public function user_feed($id){
 
         $posts = DB::table('userfollowuser')

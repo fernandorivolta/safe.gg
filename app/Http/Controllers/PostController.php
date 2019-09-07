@@ -7,14 +7,11 @@ use App\Post;
 use Auth;
 use App\Like;
 use App\Comment;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
 
-    public function get_comments($post_id){
-        $comments = Comment::where('post_id', $post_id)->get();
-        return response()->json($comments);
-    }
 
     public function like_post($post_id, $user_id){
         $like = new Like;
