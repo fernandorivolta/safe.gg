@@ -141,43 +141,50 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card bg-dark feed-body" style="height: 100%;">
-                            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 id="modal-title" class="modal-title" id="exampleModalLabel"></h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <img id="modal-img" class="img-fluid rounded">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p id="modal-post" class="text-left"></p>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <div class="input-group">
-                                      <textarea class="form-control textarea-comment" aria-label="With textarea" placeholder="Escreva sua reposta..."></textarea>
-                                      <div class="input-group-append">
-                                        <span class="input-group-text btn btn-primary clickable">Comentar</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div id="modal-comments" class="modal-comments">
-                                </div>
-                                </div>
-                              </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div> 
             </div>
         </div>
+    </div>
+
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="modal-title" class="modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-3">
+                  <img id="modal-img" class="img-fluid rounded">
+              </div>
+              <div class="col-md-9">
+                  <p id="modal-post" class="text-left"></p>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="padding: unset">
+                  <div id="modal-comments" class="modal-comments">
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <div class="input-group">
+              <textarea class="form-control textarea-comment" aria-label="With textarea" placeholder="Escreva sua reposta..."></textarea>
+              <div class="input-group-append">
+                <span class="input-group-text btn btn-primary clickable">Comentar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 </body>
 <script>    

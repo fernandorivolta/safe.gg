@@ -321,8 +321,8 @@ function open_modal(post_id){
             $('#modal-img').attr('src', `/storage/${data.post_info[0].icon}`);
             $.each(data.comments, function(i, item){
                 $(`#modal-comments`).append(`
-                        <div class="card">
-                            <div class="card-header">
+                        <div class="card" style="border: none">
+                            <div class="card-header" style="border: none">
                               <a href="user/${item.id}">@${item.username}</a>
                             </div>
                             <div class="card-body text-center">
