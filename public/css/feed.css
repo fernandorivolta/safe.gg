@@ -234,3 +234,31 @@ textarea::-moz-input-placeholder {
 .clickable{
   cursor: pointer;
 }
+
+
+.user-nick{
+  color: black !important;
+}
+
+.user-nick:hover{
+  text-decoration: underline !important;
+  color: black !important;
+}
+
+.card-comment{
+  border-bottom: 1px solid #dee2e6;
+  padding-left: 16px;
+}
+
+.post{
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.modal-body{
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow-x: hidden;
+}

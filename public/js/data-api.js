@@ -194,6 +194,12 @@ function get_feed_data(id) {
         url: `/api/user/${id}/feed`,
         dataType: 'json',
         success: function (data) {
+            var monthNames = [
+                "Janeiro", "Fevereiro", "Março",
+                "Abril", "Maio", "Junho", "Julho",
+                "Agosto", "Setembro", "Outubro",
+                "Novembro", "Dezembro"
+              ];
             //acrescenta tudo pra um array auxiliar
             var feedarray = []
             $.each(data.news.data, function (i, news) {
@@ -210,6 +216,11 @@ function get_feed_data(id) {
             //percorre o array verificando se é post de usuario, noticia ou partida
             $.each(feedarray, function(i, item){
                 if(item.post){
+                    var diamesano = item.created_at.split(' ')[0];
+                    console.log(diamesano);
+                    var mes = diamesano.split('-')[1];
+                    var dia = diamesano.split('-')[2];
+                    var ano = diamesano.split('-')[0];
                     $('.feed-body').append(`
                     <div class="row">
                         <div class="col-md-12 white-font">
@@ -234,7 +245,7 @@ function get_feed_data(id) {
                                     <a onclick="open_modal(${item.post_id})"><i class="far fa-comment"></i> <span class="qtd-comment"> 0</span></a>
                                 </div>
                                 <div class="col-md-3 text-right">
-                                ${item.created_at}
+                                ${dia} ${monthNames[parseInt(mes)-1]} ${ano}
                                 </div>
                                 </div>
                             </div>
@@ -308,8 +319,53 @@ function get_one_match(id_followed, summonerName, username){
     });
 };
 
+function comment(id_post){
+    var text = $('#comentario').val();
+    var user = JSON.parse(localStorage.getItem('user'));
+    var json = {
+        user_id : user.id,
+        post_id : id_post,
+        comment : text
+    }        
+    $.ajax({
+        type: 'POST',
+        url: `/api/post/comment`,
+        contentType: 'application/json',
+        data: JSON.stringify(json),
+        dataType: 'json',
+        success: function (data) {
+            if (data.message == "Success") {
+                $('#modal-comments').prepend(`<div class="card" style="border: none">
+                <div class="card-header" style="border: none">
+                  <a href="user/${user.id}">@${user.username}</a>
+                </div>
+                <div class="card-body text-center">
+                  <div class="row">
+                      <div class="col-md-3 text-center">
+                          <img style="width:65%" class="img-fluid rounded" src="/storage/${user.icon}" alt="user image">
+                      </div>
+                      <div class="col-md-9 text-left my-auto">
+                          <p class="text-left card-text black-font">${text}</p>
+                      </div>
+                  </div>
+                </div>
+            </div>`);
+            $("#postednow").fadeIn('slow');
+            $('#comentario').val('');
+            }
+        },
+        error: function () {
+        }
+    });
+}
 
 function open_modal(post_id){
+    var monthNames = [
+        "Jan", "Fev", "Mar",
+        "Abr", "Maio", "Jun", "Jul",
+        "Ago", "Set", "Out",
+        "Nov", "Dez"
+      ];
     $('#modal').modal('show'); 
     $.ajax({
         type: 'GET',
@@ -319,11 +375,15 @@ function open_modal(post_id){
             $(`#modal-title`).html(`Post de ${data.post_info[0].username} - <a href="user/${data.post_info[0].id}">@${data.post_info[0].username}</a>`);
             $('#modal-post').html(data.post_info[0].post);
             $('#modal-img').attr('src', `/storage/${data.post_info[0].icon}`);
+            $('#btn-comentar').attr('onClick', `comment(${post_id})`);
             $.each(data.comments, function(i, item){
+                var diamesano = item.created_at.split(' ')[0];
+                var mes = diamesano.split('-')[2];
+                var dia = diamesano.split('-')[1];
                 $(`#modal-comments`).append(`
-                        <div class="card" style="border: none">
-                            <div class="card-header" style="border: none">
-                              <a href="user/${item.id}">@${item.username}</a>
+                        <div class="card card-comment" style="border: none">
+                            <div class="card-header" style="border: none" style="background-color: #dee2e6">
+                              <a class="user-nick" href="user/${item.id}">${item.name}</a> <span class="text-muted">@${item.username} - ${dia} ${monthNames[parseInt(mes)-1]}</span>
                             </div>
                             <div class="card-body text-center">
                               <div class="row">

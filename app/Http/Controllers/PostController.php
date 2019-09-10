@@ -48,6 +48,23 @@ class PostController extends Controller
         //
     }
 
+    public function comment(Request $request){
+        $request->validate([
+            'user_id' => 'required|numeric',
+            'post_id' => 'required|numeric',
+            'comment' => 'required|string'
+        ]);
+        $comment = new Comment;
+        $comment->comment = $request->input('comment');
+        $comment->user_id = $request->input('user_id');
+        $comment->post_id = $request->input('post_id');
+        $comment->save();
+        
+        return response()->json([
+            'message' => "Success"
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

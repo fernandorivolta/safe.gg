@@ -160,12 +160,14 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="row">
+            <div class="post">
+                <div class="row">
               <div class="col-md-3">
                   <img id="modal-img" class="img-fluid rounded">
               </div>
               <div class="col-md-9">
                   <p id="modal-post" class="text-left"></p>
+              </div>
               </div>
             </div>
             <div class="row">
@@ -177,9 +179,9 @@
           </div>
           <div class="modal-footer">
             <div class="input-group">
-              <textarea class="form-control textarea-comment" aria-label="With textarea" placeholder="Escreva sua reposta..."></textarea>
+              <textarea max-lenght="200" id="comentario" class="form-control textarea-comment" aria-label="With textarea" placeholder="Escreva sua reposta..."></textarea>
               <div class="input-group-append">
-                <span class="input-group-text btn btn-primary clickable">Comentar</span>
+                <span id="btn-comentar" class="input-group-text btn btn-primary clickable">Comentar</span>
               </div>
             </div>
           </div>

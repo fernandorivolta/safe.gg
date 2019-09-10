@@ -24,7 +24,8 @@ class FeedController extends Controller
         $comments = DB::table('comments')
         ->leftJoin('users', 'users.id', '=', 'comments.user_id')
         ->where('post_id', '=', $post_id)
-        ->select('comments.comment', 'comments.post_id', 'users.name', 'users.username', 'users.icon', 'users.id')
+        ->select('comments.comment', 'comments.post_id', 'comments.created_at', 'users.name', 'users.username', 'users.icon', 'users.id')
+        ->orderBy('comments.created_at', 'desc')
         ->get();
 
         return response()->json([

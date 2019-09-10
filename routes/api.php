@@ -30,3 +30,4 @@ Route::post('/user/post', 'PostController@create');
 Route::get('/post/{post_id}/like/{user_id}', 'PostController@like_post');
 Route::get('/post/{post_id}/unlike/{user_id}', 'PostController@unlike_post');
 Route::get('/post/{post_id}/modal/', 'FeedController@get_modal_info');
+Route::post('/post/comment', 'PostController@comment');
