@@ -25,6 +25,11 @@ Route::get('/account', function (){
     return view('account');
 });
 
+Route::get('/players', function () {
+    return view('findplayer');
+});
+
+
 Route::prefix('/user')->group( function (){
     Route::post('/account','UserController@pre_register');
     Route::post('/create','UserController@create');

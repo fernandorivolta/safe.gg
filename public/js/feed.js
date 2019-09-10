@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
     /* $('#textarea').keyup(function() {  
         $('#textarea_feedback').html($('#textarea').val().length + ' / 240');
     }); */
     var circle = new ldBar('#count');
-    $('#textarea').keyup(function() {  
+    $('#textarea').keyup(function () {
         circle.set($('#textarea').val().length);
     });
 
@@ -17,9 +17,9 @@ $(document).ready(function() {
         var text = $('#textarea').val();
         var user = JSON.parse(localStorage.getItem('user'));
         var json = {
-            user_id : user.id,
-            post : text
-        }        
+            user_id: user.id,
+            post: text
+        }
         $.ajax({
             type: 'POST',
             url: `/api/user/post`,
@@ -61,8 +61,10 @@ $(document).ready(function() {
     });
 });
 
+function comment_post() {
 
-function like_post(post_id, button){
+}
+function like_post(post_id, button) {
     var user = JSON.parse(localStorage.getItem('user'));
     $.ajax({
         type: 'GET',
@@ -70,8 +72,8 @@ function like_post(post_id, button){
         contentType: 'application/json',
         success: function (data) {
             if (data.message == "Success") {
-                num_like=parseInt($(`#post-${post_id}`).html());
-                num_like+=1;
+                num_like = parseInt($(`#post-${post_id}`).html());
+                num_like += 1;
                 $(`#post-${post_id}`).html(` ${num_like}`);
                 button.removeClass('far');
                 button.addClass('fas');
@@ -84,7 +86,7 @@ function like_post(post_id, button){
     });
 }
 
-function unlike_post(post_id, button){
+function unlike_post(post_id, button) {
     var user = JSON.parse(localStorage.getItem('user'));
     $.ajax({
         type: 'GET',
@@ -92,9 +94,9 @@ function unlike_post(post_id, button){
         contentType: 'application/json',
         success: function (data) {
             if (data.message == "Success") {
-                num_like=parseInt($(`#post-${post_id}`).html());
+                num_like = parseInt($(`#post-${post_id}`).html());
                 console.log(num_like);
-                num_like-=1;
+                num_like -= 1;
                 console.log(num_like);
                 $(`#post-${post_id}`).html(` ${num_like}`);
                 button.removeClass('fas');
