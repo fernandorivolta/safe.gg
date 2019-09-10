@@ -140,8 +140,7 @@
                 </div>  
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card bg-dark feed-body" style="height: 100%;">
-                            
+                        <div class="card bg-dark feed-body scroll" style="height: 100%;">
                         </div>
                     </div>
                 </div> 

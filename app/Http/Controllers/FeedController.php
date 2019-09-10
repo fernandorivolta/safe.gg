@@ -40,8 +40,9 @@ class FeedController extends Controller
         ->leftJoin('posts', 'userfollowuser.user_id_followed', '=', 'posts.user_id')
         ->leftJoin('users', 'users.id', '=', 'userfollowuser.user_id_followed')
         ->leftJoin('likes', 'likes.post_id', '=', 'posts.id')
+        ->leftJoin('comments', 'comments.post_id', '=', 'posts.id')
         ->where('userfollowuser.user_id', '=', $id)
-        ->select(DB::raw('COUNT(likes.id) as num_likes'), 'users.username', 'users.icon', 'users.name', 'posts.post', 'posts.id as post_id', 'posts.created_at', 'users.id')
+        ->select(DB::raw('COUNT(likes.id) as num_likes'), DB::raw('COUNT(comments.id) as num_comments'), 'users.username', 'users.icon', 'users.name', 'posts.post', 'posts.id as post_id', 'posts.created_at', 'users.id')
         ->groupBy('users.username', 'users.icon', 'users.name', 'posts.post', 'posts.id', 'posts.created_at', 'users.id')
         ->orderBy('posts.created_at', 'desc')
         ->simplePaginate(3);

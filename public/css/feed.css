@@ -262,3 +262,28 @@ textarea::-moz-input-placeholder {
   padding-right: 0px;
   overflow-x: hidden;
 }
+
+.scroll {
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ae21ff; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4a0074; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#4a0074; 
+}

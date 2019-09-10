@@ -1,3 +1,37 @@
+#csgo-find{
+	display: none;
+}
+
+#lol-find{
+	display: none;
+}
+
+.voltar{
+	font-size: 25px;
+	margin-left: 20px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.voltar:hover{
+	font-size: 28px;
+	transition: font-size 0.2s;
+}
+
+.radio-image label > input{ 
+    visibility: hidden; 
+}
+.radio-image label > input + img{ 
+    cursor:pointer;
+    border:4px solid #EEE;
+    border-radius:15px;
+    padding:10px;
+}
+.radio-image label > input:checked + img{ 
+    border:4px solid #3F51B5;
+}
+
+
 @font-face {
 	font-weight: normal;
 	font-style: normal;

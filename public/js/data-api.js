@@ -58,31 +58,33 @@ function get_rank_data_feed(id) {
         success: function (data) {
             $('.rank').html("");
             $.each(data, function (i, ranked) {
-                $('.rank').append(`<div class="card bg-dark card-lol-info">
-                <div class="card-body">
-                    <div class="card-title">
-                        <span class="ranked-title white-font">${ranked.queueType.replace('_', ' ')}</span>
-                        <hr class="line-margin">
-                        <div class="row">
-                            <div class="col-md-6 text-center my-auto">
-                                <img id="flex-ranked-img" src="images/elobadge/${ranked.tier}.png" class="rank-img">
-                            </div>
-                            <div class="col-md-6 my-auto">
-                                <div class="row">
-                                    <span class="rank-text white-font" id="flex-ranked">${ranked.tier} ${ranked.rank}</span>
+                if (ranked.queueType != 'RANKED_FLEX_SR'){
+                    $('.rank').append(`<div class="card bg-dark card-lol-info">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <span class="ranked-title white-font">${ranked.queueType.replace('_', ' ').replace('_', ' ')}</span>
+                            <hr class="line-margin">
+                            <div class="row">
+                                <div class="col-md-6 text-center my-auto">
+                                    <img id="flex-ranked-img" src="images/elobadge/${ranked.tier}.png" class="rank-img">
                                 </div>
-                                <div class="row">
-                                    <span class="second-stats gray-font" id="flex-win-defeat">${ranked.wins}V ${ranked.losses}D - ${Math.ceil(((ranked.wins / (ranked.wins + ranked.losses)) * 100))} % </span>
-                                </div>
-                                <div class="row">
-                                    <span class="second-stats gray-font" id="flex-winrate"></span>
+                                <div class="col-md-6 my-auto">
+                                    <div class="row">
+                                        <span class="rank-text white-font" id="flex-ranked">${ranked.tier} ${ranked.rank}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="second-stats gray-font" id="flex-win-defeat">${ranked.wins}V ${ranked.losses}D - ${Math.ceil(((ranked.wins / (ranked.wins + ranked.losses)) * 100))} % </span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="second-stats gray-font" id="flex-winrate"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <p class="card-text user-bio"></p>
                     </div>
-                    <p class="card-text user-bio"></p>
-                </div>
-            </div>`);
+                    </div>`);
+                }
             });
         },
         error: function () {
@@ -230,7 +232,7 @@ function get_feed_data(id) {
                               <div class="card-body news-card-text text-center">
                                 <div class="row">
                                     <div class="col-md-3 text-center">
-                                        <img style="width:65%" class="img-fluid rounded" src="/storage/${item.icon}" alt="user image">
+                                        <img style="width:30%" class="img-fluid rounded" src="/storage/${item.icon}" alt="user image">
                                     </div>
                                     <div class="col-md-9 text-left my-auto">
                                         <p class="text-left card-text">${item.post}</p>
@@ -242,7 +244,7 @@ function get_feed_data(id) {
                                 <a><i onclick="${$.inArray(item.post_id, data.liked_posts) == -1 ? `like_post(${item.post_id}, $(this))" class="far fa-heart "` : `unlike_post(${item.post_id}, $(this))" class="fas fa-heart" style="color: #d64343"`}></i></a><span id="post-${item.post_id}" class="qtd-like"> ${item.num_likes}</span>
                                 </div>
                                 <div class="col-md-2 text-center">
-                                    <a onclick="open_modal(${item.post_id})"><i class="far fa-comment"></i> <span class="qtd-comment"> 0</span></a>
+                                    <a onclick="open_modal(${item.post_id})"><i class="far fa-comment"></i> <span class="qtd-comment"> ${item.num_comments}</span></a>
                                 </div>
                                 <div class="col-md-3 text-right">
                                 ${dia} ${monthNames[parseInt(mes)-1]} ${ano}

@@ -9,3 +9,7 @@ a:hover{
 a{
 	cursor: pointer;
 }
+
+.navbar{
+	margin-bottom: 10px !important;
+}
