@@ -41,18 +41,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12 text-center white-font">
+                                <div class="col-md-12 text-center white-font title">
                                     FAÇA SEU CADASTRO
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 white-font">
-                                    <form>
+                                    <form class="form-container">
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group">
-                                                  <label for="exampleFormControlSelect1">Função</label>
-                                                  <select class="form-control" id="exampleFormControlSelect1">
+                                                  <label for="funcao">Função</label>
+                                                  <select class="form-control" id="funcao">
                                                     <option>Entry Fragger</option>
                                                     <option>Awp</option>
                                                     <option>Support</option>
@@ -63,8 +63,8 @@
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                  <label for="exampleFormControlSelect1">Patente</label>
-                                                  <select class="form-control" id="exampleFormControlSelect1">
+                                                  <label for="patente">Patente</label>
+                                                  <select class="form-control" id="patente">
                                                     <option>Prata</option>
                                                     <option>Ouro</option>
                                                     <option>Ak</option>
@@ -76,15 +76,20 @@
                                                 </div>
                                             </div>
                                         </div>    
-                                        <div class="form-row">
+                                        <div id="col-feedback" class="form-row" style="margin-bottom:14px;">
                                             <div class="col">
-                                                <label for="steam-url">Steam URL</label>
-                                                <input type="text" class="form-control" id="steam-url" placeholder="https://steamcommunity.com/profiles/76561198113326302" required>
+                                                <label for="steam-url">Steam URL 
+                                                    <small id="feedback" class="red-font" style="display:none;">
+                                                        <span class="red-font"><i class="fas fa-exclamation-circle"></i> Preencha este campo.</span>
+                                                    </small>
+                                                </label>
+                                                <input type="text" class="form-control" id="steam-url" placeholder="https://steamcommunity.com/profiles/76561198113326302">
+                                                
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                  <label for="exampleFormControlSelect1">Disponibilidade</label>
-                                                  <select class="form-control" id="exampleFormControlSelect1">
+                                                  <label for="disponibilidade">Disponibilidade</label>
+                                                  <select class="form-control" id="disponibilidade">
                                                     <option>Manhã</option>
                                                     <option>Tarde</option>
                                                     <option>Noite</option>
@@ -95,7 +100,7 @@
                                         </div>    
                                         <div class="form-row">
                                             <div class="col text-center">
-                                                <button type="submit" class="btn btn-primary">Cadastre</button>
+                                                <a onClick="cadastre_csgo()" class="btn btn-primary">Cadastre</a>
                                             </div>   
                                         </div>    
                                     </form>
