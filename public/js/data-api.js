@@ -322,6 +322,13 @@ function get_one_match(id_followed, summonerName, username){
 };
 
 function comment(id_post){
+    now = new Date;
+    var monthNames = [
+        "Jan", "Fev", "Mar",
+        "Abr", "Maio", "Jun", "Jul",
+        "Ago", "Set", "Out",
+        "Nov", "Dez"
+      ];
     var text = $('#comentario').val();
     var user = JSON.parse(localStorage.getItem('user'));
     var json = {
@@ -337,9 +344,10 @@ function comment(id_post){
         dataType: 'json',
         success: function (data) {
             if (data.message == "Success") {
-                $('#modal-comments').prepend(`<div class="card" style="border: none">
-                <div class="card-header" style="border: none">
-                  <a href="user/${user.id}">@${user.username}</a>
+                $('#modal-comments').prepend(`
+                <div id="postednow" class="card card-comment" style="border: none; display: none">
+                <div class="card-header" style="border: none" style="background-color: #dee2e6">
+                  <a class="user-nick" href="user/${user.id}">${user.name}</a> <span class="text-muted">@${user.username} - ${now.getDate()} ${monthNames[now.getMonth()]}</span>
                 </div>
                 <div class="card-body text-center">
                   <div class="row">
@@ -380,8 +388,8 @@ function open_modal(post_id){
             $('#btn-comentar').attr('onClick', `comment(${post_id})`);
             $.each(data.comments, function(i, item){
                 var diamesano = item.created_at.split(' ')[0];
-                var mes = diamesano.split('-')[2];
-                var dia = diamesano.split('-')[1];
+                var mes = diamesano.split('-')[1];
+                var dia = diamesano.split('-')[2];
                 $(`#modal-comments`).append(`
                         <div class="card card-comment" style="border: none">
                             <div class="card-header" style="border: none" style="background-color: #dee2e6">

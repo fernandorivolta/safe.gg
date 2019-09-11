@@ -178,12 +178,12 @@ body{
 }
 
 .feed-post{
-  height: 180px;
+  height: 155px;
   margin-bottom: 5px;
 }
 
 .feed-post-textarea{
-  margin: 30px 30px 7px 30px;
+  margin: 10px 30px 7px 30px;
   border: 1px solid #3d274b;
   border-radius: 10px;
   padding: 10px 10px;
@@ -264,7 +264,7 @@ textarea::-moz-input-placeholder {
 }
 
 .scroll {
-  max-height: 450px;
+  max-height: 490px;
   overflow-y: auto;
   overflow-x: hidden;
   
