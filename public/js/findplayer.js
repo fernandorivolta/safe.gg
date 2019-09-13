@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    var user = JSON.parse(localStorage.getItem('user'));
+    $('#summonername').val(user.summonerName);
     $('#csgo-image').on('click', function(){
         $('#csgo-find').show('slow');
         $('#menu').hide('slow');
@@ -21,10 +23,31 @@ function cadastre_csgo(){
     });
     var disp = $('#disponibilidade').val();
     var steam_url = $('#steam-url').val();
-    var patente = $('#patente').val();
-    var funcao = $('#funcao').val();
-    if(steam_url.lenght >= 1){
-
+    var patenteval = $('#patente').val();
+    var funcaoval = $('#funcao').val();
+    var user = JSON.parse(localStorage.getItem('user'));
+    var json = {
+        user_id: user.id,
+        patente: patenteval,
+        disponibilidade: disp,
+        steamurl: steam_url,
+        funcao: funcaoval
+    }
+    if(steam_url.length > 0){
+        $.ajax({
+            type: 'POST',
+            url: `/api/find/register/cs`,
+            contentType: 'application/json',
+            data: JSON.stringify(json),
+            dataType: 'json',
+            success: function (data) {
+                if (data.message == "Success") {
+                    alert("Criado com sucesso");
+                }
+            },
+            error: function () {
+            }
+        });
     }else{
         $('#feedback').fadeIn();
     }

@@ -114,11 +114,68 @@
                                         <i class="fas fa-angle-double-left voltar"></i>
                                     </div>
                                 </div>
-                                <div class="col align-self-center">
-                                    LOL
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center white-font title">
+                                    FAÇA SEU CADASTRO
                                 </div>
-                                <div class="col align-self-end">
-                                    aa
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 white-font">
+                                    <form class="form-container">
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                  <label for="funcao">Posição</label>
+                                                  <select class="form-control" id="funcao">
+                                                    <option>Top</option>
+                                                    <option>Jng</option>
+                                                    <option>Mid</option>
+                                                    <option>Adc</option>
+                                                    <option>Sup</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                  <label for="patente">Elo</label>
+                                                  <select class="form-control" id="patente">
+                                                    <option>Ferro</option>
+                                                    <option>Bronze</option>
+                                                    <option>Prata</option>
+                                                    <option>Ouro</option>
+                                                    <option>Platina</option>
+                                                    <option>Diamante</option>
+                                                    <option>Mestre</option>
+                                                    <option>Grão-Mestre</option>
+                                                    <option>Challenger</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div id="col-feedback" class="form-row" style="margin-bottom:14px;">
+                                            <div class="col">
+                                                <label for="summonername">Summoner Name</label>
+                                                <input type="text" class="form-control" id="summonername" readonly>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                  <label for="disponibilidade">Disponibilidade</label>
+                                                  <select class="form-control" id="disponibilidade">
+                                                    <option>Manhã</option>
+                                                    <option>Tarde</option>
+                                                    <option>Noite</option>
+                                                    <option>Madrugada</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="form-row">
+                                            <div class="col text-center">
+                                                <a onClick="cadastre_lol()" class="btn btn-primary">Cadastre</a>
+                                            </div>   
+                                        </div>    
+                                    </form>
                                 </div>
                             </div>
                         </div>
