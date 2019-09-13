@@ -16,6 +16,23 @@ $(document).ready(function(){
     });
 });
 
+function verify_user_sign_up(){
+    var user = JSON.parse(localStorage.getItem('user'));
+    $.ajax({
+        type: 'GET',
+        url: `/api/find/register/cs`,
+        contentType: 'application/json',
+        data: JSON.stringify(json),
+        dataType: 'json',
+        success: function (data) {
+            if (data.message == "Success") {
+                alert("Criado com sucesso");
+            }
+        },
+        error: function () {
+        }
+    });
+}
 
 function cadastre_csgo(){
     $('#steam-url').focus(function(){

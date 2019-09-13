@@ -8,6 +8,88 @@ use App\CsgoFind;
 
 class FindController extends Controller
 {
+    public function elo_controller($elo, $game){
+        switch($game){
+            case "CSGO":
+                switch($elo){
+                    case "Prata":
+                        $supported_elos = ['Prata', 'Ouro']; 
+                    break;
+                    case "Ouro":
+                        $supported_elos = ['Prata', 'Ouro', 'Ak']; 
+                    break;
+                    case "Ak":
+                        $supported_elos = ['Ak', 'Ouro', 'Xerife']; 
+                    break;
+                    case "Xerife":
+                        $supported_elos = ['Ak', 'Xerife', 'Aguia']; 
+                    break;
+                    case "Aguia":
+                        $supported_elos = ['Aguia', 'Xerife', 'Supremo']; 
+                    break;
+                    case "Supremo":
+                        $supported_elos = ['Supremo', 'Aguia', 'Xerife', 'Global']; 
+                    break;
+                    case "Global":
+                        $supported_elos = ['Global', 'Supremo', 'Aguia']; 
+                    break;
+                }
+            break;
+            case "LOL":
+            switch($elo){
+                case "Ferro":
+                    $supported_elos = ['Ferro', 'Bronze']; 
+                break;
+                case "Bronze":
+                    $supported_elos = ['Bronze', 'Prata', 'Ferro']; 
+                break;
+                case "Prata":
+                    $supported_elos = ['Bronze', 'Prata', 'Ouro']; 
+                break;
+                case "Ouro":
+                    $supported_elos = ['Ouro', 'Prata', 'Platina']; 
+                break;
+                case "Platina":
+                    $supported_elos = ['Ouro', 'Platina', 'Diamante']; 
+                break;
+                case "Diamante":
+                    $supported_elos = ['Diamante', 'Platina', 'Mestre']; 
+                break;
+                case "Mestre":
+                    $supported_elos = ['Mestre', 'Diamante', 'Grão-Mestre']; 
+                break;
+                case "Grão-Mestre":
+                    $supported_elos = ['Mestre', 'Grão-Mestre', 'Challenger']; 
+                break;
+                case "Challenger":
+                    $supported_elos = ['Challenger', 'Grão-Mestre', 'Mestre']; 
+                break;
+            }
+            break;
+        }
+
+        return $supported_elos;
+    }
+
+    public function sign_up_verifier($id, $game){
+        switch($game){
+            case "CSGO":
+                $user = CsgoFind::findOrFail($id);
+                $supported_elos = $this->elo_controller($user->patente, $game);
+                $user_list = CsgoFind::where([['patente', $supported_elos],['user_id', '<>', $id]])->get();
+            break;
+            case "LOL":
+                $user = LolFind::findOrFail($id);
+                $supported_elos = $this->elo_controller($user->patente, $game);
+                $user_list = LolFind::where([['elo', $supported_elos],['user_id', '<>', $id]])->get();
+            break;
+        }
+
+        return response()->json([
+            'user_list' => $user_list
+        ]);
+    }
+
     public function registerlol(Request $request){
         $request->validate([
             'user_id' => 'required|numeric',
