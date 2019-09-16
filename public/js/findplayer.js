@@ -2,7 +2,7 @@ $(document).ready(function(){
     var user = JSON.parse(localStorage.getItem('user'));
     $('#summonername').val(user.summonerName);
     $('#csgo-image').on('click', function(){
-        $('#csgo-find').show('slow');
+        verify_user_sign_up('CSGO');
         $('#menu').hide('slow');
     });
     $('#lol-image').on('click', function(){
@@ -16,20 +16,22 @@ $(document).ready(function(){
     });
 });
 
-function verify_user_sign_up(){
+function verify_user_sign_up(game){
     var user = JSON.parse(localStorage.getItem('user'));
     $.ajax({
         type: 'GET',
-        url: `/api/find/register/cs`,
+        url: `/api/find/${user.id}/${game}`,
         contentType: 'application/json',
-        data: JSON.stringify(json),
         dataType: 'json',
         success: function (data) {
-            if (data.message == "Success") {
-                alert("Criado com sucesso");
-            }
+            $('#csgo-info').html(' ');
+            $.each(data.user_list, function(i, item){
+                $('#csgo-info').append(``);
+                //retornar as informacoes da tabela users para montar o card
+            });
         },
         error: function () {
+            $('#csgo-find').show('slow');
         }
     });
 }

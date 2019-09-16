@@ -32,6 +32,8 @@
                                 </figcaption>			
                             </figure>
                         </div>
+                        <div id="csgo-info" class="col-md-12 white-font">
+                        </div>
                         <div id="csgo-find" class="col-md-12">
                             <div class="row">
                                 <div class="col align-self-start">
@@ -106,6 +108,8 @@
                                     </form>
                                 </div>
                             </div>
+                        </div>
+                        <div id="lol-info" class="col-md-12 white-font">
                         </div>
                         <div id="lol-find" class="col-md-12 white-font">
                             <div class="row">

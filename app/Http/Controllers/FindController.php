@@ -72,20 +72,23 @@ class FindController extends Controller
     }
 
     public function sign_up_verifier($id, $game){
+        $user_list = [];
+        $user = "";
         switch($game){
             case "CSGO":
-                $user = CsgoFind::findOrFail($id);
+                $user = CsgoFind::where('user_id', '=', $id)->first();
                 $supported_elos = $this->elo_controller($user->patente, $game);
-                $user_list = CsgoFind::where([['patente', $supported_elos],['user_id', '<>', $id]])->get();
+                $user_list = CsgoFind::where('user_id', '<>', $id)->whereIn('patente', $supported_elos)->get();
             break;
             case "LOL":
-                $user = LolFind::findOrFail($id);
-                $supported_elos = $this->elo_controller($user->patente, $game);
-                $user_list = LolFind::where([['elo', $supported_elos],['user_id', '<>', $id]])->get();
+                $user = LolFind::where('user_id', '=', $id)->first();
+                $supported_elos = $this->elo_controller($user->elo, $game);
+                $user_list = LolFind::where('user_id', '<>', $id)->whereIn('elo', $supported_elos)->get();
             break;
         }
 
         return response()->json([
+            'user' => $user,
             'user_list' => $user_list
         ]);
     }
