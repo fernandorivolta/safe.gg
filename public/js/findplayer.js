@@ -24,11 +24,43 @@ function verify_user_sign_up(game){
         contentType: 'application/json',
         dataType: 'json',
         success: function (data) {
-            $('#csgo-info').html(' ');
-            $.each(data.user_list, function(i, item){
-                $('#csgo-info').append(``);
+            if(game=="CSGO"){
+                $('#csgo-info').html(' ');
+                $.each(data.user_list, function(i, item){
+                    console.log(item);
+                    $('#csgo-info').append(`
+                    <div class="row">
+                    <div class="col-md-12 white-font">
+                          <div class="card-header news-card-text">
+                            ${item.name} - <a href="user/${item.id}">@${item.username}</a>
+                          </div>
+                          <div class="card-body news-card-text">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <img style="width:35%" class="img-fluid" src="/storage/${item.icon}" alt="user image">
+                                </div>
+                                <div class="col-md-9 text-left my-auto">
+                                    <div class="col-md-12 text-center">
+                                        <div class="row">
+                                            <div class="col-md-6 text-center">
+                                                <p class="card-text">${item.patente}</p>
+                                                <a class="card-text white-font" target="_nblank" href="${item.steamurl}">Steam URL</a>
+                                            </div>
+                                            <div class="col-md-6 text-center">
+                                                <p class="card-text">${item.funcao}</p>
+                                                <p class="card-text">${item.disponibilidade}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                    `);
                 //retornar as informacoes da tabela users para montar o card
-            });
+                });
+            }
         },
         error: function () {
             $('#csgo-find').show('slow');
@@ -61,7 +93,8 @@ function cadastre_csgo(){
             dataType: 'json',
             success: function (data) {
                 if (data.message == "Success") {
-                    alert("Criado com sucesso");
+                    $('#csgo-find').hide('slow');
+                    verify_user_sign_up('CSGO');
                 }
             },
             error: function () {

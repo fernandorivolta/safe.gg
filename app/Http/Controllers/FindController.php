@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\LolFind;
 use App\CsgoFind;
+use Illuminate\Support\Facades\DB;
 
 class FindController extends Controller
 {
@@ -78,7 +79,10 @@ class FindController extends Controller
             case "CSGO":
                 $user = CsgoFind::where('user_id', '=', $id)->first();
                 $supported_elos = $this->elo_controller($user->patente, $game);
-                $user_list = CsgoFind::where('user_id', '<>', $id)->whereIn('patente', $supported_elos)->get();
+                $user_list = DB::table('csgofind')
+                ->leftJoin('users', 'users.id', '=', 'csgofind.user_id')
+                ->where('csgofind.user_id', '<>', $id)->whereIn('csgofind.patente', $supported_elos)
+                ->select('users.name', 'users.username', 'users.icon', 'users.id', 'csgofind.funcao', 'csgofind.patente','csgofind.disponibilidade', 'csgofind.steamurl')->get();
             break;
             case "LOL":
                 $user = LolFind::where('user_id', '=', $id)->first();
