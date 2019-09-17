@@ -33,4 +33,5 @@ Route::get('/post/{post_id}/modal/', 'FeedController@get_modal_info');
 Route::post('/post/comment', 'PostController@comment');
 
 Route::post('/find/register/cs', 'FindController@registercs');
+Route::post('/find/register/lol', 'FindController@registerlol');
 Route::get('/find/{id}/{game}', 'FindController@sign_up_verifier');

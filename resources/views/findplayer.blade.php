@@ -32,7 +32,25 @@
                                 </figcaption>			
                             </figure>
                         </div>
-                        <div id="csgo-info" class="col-md-12 white-font">
+                        <div id="lol-info" class="col-md-12 white-font" style="display:none;">
+                            <div class="row">
+                                <div class="col align-self-start">
+                                    <div class="text-left white-font">
+                                        <i id="lol-voltar" class="fas fa-angle-double-left voltar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="players-lol"></div>
+                        </div>
+                        <div id="csgo-info" class="col-md-12 white-font" style="display:none;">
+                            <div class="row">
+                                <div class="col align-self-start">
+                                    <div class="text-left white-font">
+                                        <i id="csgo-voltar" class="fas fa-angle-double-left voltar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="players-cs"></div>
                         </div>
                         <div id="csgo-find" class="col-md-12">
                             <div class="row">
@@ -92,7 +110,7 @@
                                                 <div class="form-group">
                                                   <label for="disponibilidade">Disponibilidade</label>
                                                   <select class="form-control" id="disponibilidade">
-                                                    <option>Manhã</option>
+                                                    <option>Manha</option>
                                                     <option>Tarde</option>
                                                     <option>Noite</option>
                                                     <option>Madrugada</option>
@@ -108,8 +126,6 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>
-                        <div id="lol-info" class="col-md-12 white-font">
                         </div>
                         <div id="lol-find" class="col-md-12 white-font">
                             <div class="row">
@@ -131,7 +147,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                   <label for="funcao">Posição</label>
-                                                  <select class="form-control" id="funcao">
+                                                  <select class="form-control" id="posicao">
                                                     <option>Top</option>
                                                     <option>Jng</option>
                                                     <option>Mid</option>
@@ -166,7 +182,7 @@
                                                 <div class="form-group">
                                                   <label for="disponibilidade">Disponibilidade</label>
                                                   <select class="form-control" id="disponibilidade">
-                                                    <option>Manhã</option>
+                                                    <option>Manha</option>
                                                     <option>Tarde</option>
                                                     <option>Noite</option>
                                                     <option>Madrugada</option>

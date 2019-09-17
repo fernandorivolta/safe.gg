@@ -87,7 +87,10 @@ class FindController extends Controller
             case "LOL":
                 $user = LolFind::where('user_id', '=', $id)->first();
                 $supported_elos = $this->elo_controller($user->elo, $game);
-                $user_list = LolFind::where('user_id', '<>', $id)->whereIn('elo', $supported_elos)->get();
+                $user_list = DB::table('lolfind')
+                ->leftJoin('users', 'users.id', '=', 'lolfind.user_id')
+                ->where('lolfind.user_id', '<>', $id)->whereIn('lolfind.elo', $supported_elos)
+                ->select('users.name', 'users.username', 'users.icon', 'users.id', 'lolfind.posicao', 'lolfind.elo','lolfind.disponibilidade', 'lolfind.sumonnername')->get();
             break;
         }
 
@@ -107,11 +110,11 @@ class FindController extends Controller
         ]);
 
         $lolfind = new LolFind;
-        $lolfind->user_id = $user_id;
-        $lolfind->elo = $elo;
-        $lolfind->posicao = $posicao;
-        $lolfind->disponibilidade = $disponibilidade;
-        $lolfind->sumonnername = $sumonnername;
+        $lolfind->user_id = $request->input('user_id');
+        $lolfind->elo = $request->input('elo');
+        $lolfind->posicao = $request->input('posicao');
+        $lolfind->disponibilidade = $request->input('disponibilidade');
+        $lolfind->sumonnername = $request->input('sumonnername');
         $lolfind->save();
 
         return response()->json([
