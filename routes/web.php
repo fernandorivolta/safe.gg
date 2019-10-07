@@ -30,6 +30,11 @@ Route::get('/players', function () {
 });
 
 
+Route::get('/grenades', function () {
+    return view('grenades');
+});
+
+
 Route::prefix('/user')->group( function (){
     Route::post('/account','UserController@pre_register');
     Route::post('/create','UserController@create');
