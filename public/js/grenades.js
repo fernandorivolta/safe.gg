@@ -1,421 +1,51 @@
 function genModal(title, url) {
     event.preventDefault();
-    $('#modal-title').html(title);
+    //$('#modal-title').html(title);
     $("#video").attr('src', url);
     $('#modal-granada').modal('show');
 }
-
 $(document).ready(function () {
-    $('#mapCol').html(`
-        <img class="img-responsive overlay" src="/images/csgomaps/mirage.png" alt="">
-            <svg class="svgClass" viewBox="0 0 150 120" height="100%" width="100%"
-                preserveAspectRatio="none">
-                <a href=""
-                    onclick="genModal('Window Smoke from T Spawn','https://giant.gfycat.com/LimitedDecisiveBluebottlejellyfish.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="134" x2="62" y1="66" y2="55"></line>
-
-                        <circle cx="134" cy="66" r="1"></circle>
-
-                        <circle cx="62" cy="55" r="1.5"></circle>
-                        <circle cx="60" cy="55" r="1.5"></circle>
-                        <circle cx="61" cy="54" r="1.5"></circle>
-                        <circle cx="61" cy="56" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Smoke rapida da base TR para o janelão','https://giant.gfycat.com/LittleCloseFlea.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="136" x2="61" y1="40" y2="55"></line>
-
-                        <circle cx="136" cy="40" r="1"></circle>
-
-                        <circle cx="62" cy="55" r="1.5"></circle>
-                        <circle cx="60" cy="55" r="1.5"></circle>
-                        <circle cx="61" cy="54" r="1.5"></circle>
-                        <circle cx="61" cy="56" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Smoke cabecinha da base TR','https://giant.gfycat.com/VillainousViciousDeviltasmanian.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="129" x2="80" y1="68" y2="77"></line>
-
-                        <circle cx="129" cy="68" r="1"></circle>
-
-                        <circle cx="81" cy="77" r="1.5"></circle>
-                        <circle cx="79" cy="77" r="1.5"></circle>
-                        <circle cx="80" cy="76" r="1.5"></circle>
-                        <circle cx="80" cy="78" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Smoke jungle da base TR','https://giant.gfycat.com/FlickeringRemarkableEstuarinecrocodile.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="118" x2="76" y1="74" y2="77"></line>
-
-                        <circle cx="118" cy="74" r="1"></circle>
-
-                        <circle cx="75" cy="77" r="1.5"></circle>
-                        <circle cx="73" cy="77" r="1.5"></circle>
-                        <circle cx="74" cy="76" r="1.5"></circle>
-                        <circle cx="74" cy="78" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Smoke CT da base TR','https://giant.gfycat.com/EnragedZanyBlackfootedferret.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="121" x2="71" y1="65" y2="95"></line>
-
-                        <circle cx="121" cy="65" r="1"></circle>
-
-                        <circle cx="70" cy="96" r="1.5"></circle>
-                        <circle cx="68" cy="96" r="1.5"></circle>
-                        <circle cx="69" cy="95" r="1.5"></circle>
-                        <circle cx="69" cy="97" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Smoke passagem','https://giant.gfycat.com/FlamboyantIllfatedKitten.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="136" x2="90" y1="38" y2="50"></line>
-
-                        <circle cx="136" cy="38" r="1"></circle>
-
-                        <circle cx="89" cy="51" r="1.5"></circle>
-                        <circle cx="87" cy="51" r="1.5"></circle>
-                        <circle cx="88" cy="50" r="1.5"></circle>
-                        <circle cx="88" cy="52" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('GetRight Smoke from B apts','https://giant.gfycat.com/ShyClumsyJackrabbit.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="80" x2="50" y1="24" y2="30"></line>
-
-                        <circle cx="80" cy="24" r="1"></circle>
-
-                        <circle cx="51" cy="30" r="1.5"></circle>
-                        <circle cx="49" cy="30" r="1.5"></circle>
-                        <circle cx="50" cy="29" r="1.5"></circle>
-                        <circle cx="50" cy="31" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Cat Arch Smoke from B apts','https://giant.gfycat.com/FatHonestAsiandamselfly.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="71" x2="50" y1="26" y2="36"></line>
-
-                        <circle cx="71" cy="26" r="1"></circle>
-
-                        <circle cx="51" cy="36" r="1.5"></circle>
-                        <circle cx="49" cy="36" r="1.5"></circle>
-                        <circle cx="50" cy="35" r="1.5"></circle>
-                        <circle cx="50" cy="37" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Market Window Smoke from B apts','https://giant.gfycat.com/FabulousHonestAgouti.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="89" x2="38" y1="20" y2="47"></line>
-
-                        <circle cx="89" cy="20" r="1"></circle>
-
-                        <circle cx="39" cy="47" r="1.5"></circle>
-                        <circle cx="37" cy="47" r="1.5"></circle>
-                        <circle cx="38" cy="46" r="1.5"></circle>
-                        <circle cx="38" cy="48" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Cat Smoke from B apts','https://giant.gfycat.com/MetallicParallelHuman.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="89" x2="58" y1="20" y2="36"></line>
-
-                        <circle cx="89" cy="20" r="1"></circle>
-
-                        <circle cx="60" cy="36" r="1.5"></circle>
-                        <circle cx="58" cy="36" r="1.5"></circle>
-                        <circle cx="59" cy="35" r="1.5"></circle>
-                        <circle cx="59" cy="37" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Window Smoke from Top Mid','https://giant.gfycat.com/GeneralBlindEchidna.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="106" x2="62" y1="56" y2="55"></line>
-
-                        <circle cx="106" cy="56" r="1"></circle>
-
-                        <circle cx="62" cy="55" r="1.5"></circle>
-                        <circle cx="60" cy="55" r="1.5"></circle>
-                        <circle cx="61" cy="54" r="1.5"></circle>
-                        <circle cx="61" cy="56" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Top Cat Smoke from T Spawn','https://giant.gfycat.com/RemorsefulFlawlessCats.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="136" x2="71" y1="40" y2="45"></line>
-
-                        <circle cx="136" cy="40" r="1"></circle>
-
-                        <circle cx="72" cy="45" r="1.5"></circle>
-                        <circle cx="70" cy="45" r="1.5"></circle>
-                        <circle cx="71" cy="44" r="1.5"></circle>
-                        <circle cx="71" cy="46" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Market Door Smoke from T spawn','https://giant.gfycat.com/ExaltedImaginaryGiantschnauzer.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="134" x2="26" y1="29" y2="46"></line>
-
-                        <circle cx="134" cy="29" r="1"></circle>
-
-                        <circle cx="27" cy="46" r="1.5"></circle>
-                        <circle cx="25" cy="46" r="1.5"></circle>
-                        <circle cx="26" cy="45" r="1.5"></circle>
-                        <circle cx="26" cy="47" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('B Apts Balcony Smoke from T spawn','https://giant.gfycat.com/OrdinaryPowerfulGannet.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="136" x2="36" y1="45" y2="23"></line>
-
-                        <circle cx="136" cy="45" r="1"></circle>
-
-                        <circle cx="37" cy="23" r="1.5"></circle>
-                        <circle cx="35" cy="23" r="1.5"></circle>
-                        <circle cx="36" cy="22" r="1.5"></circle>
-                        <circle cx="36" cy="24" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('GetRight Smoke from T spawn of B apts','https://giant.gfycat.com/SpanishJampackedInexpectatumpleco.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="109" x2="50" y1="27" y2="30"></line>
-
-                        <circle cx="109" cy="27" r="1"></circle>
-
-                        <circle cx="51" cy="30" r="1.5"></circle>
-                        <circle cx="49" cy="30" r="1.5"></circle>
-                        <circle cx="50" cy="29" r="1.5"></circle>
-                        <circle cx="50" cy="31" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Cat Arch Smoke from T spawn of B apts','https://giant.gfycat.com/JitteryEvergreenHerring.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="109" x2="50" y1="25" y2="36"></line>
-
-                        <circle cx="109" cy="25" r="1"></circle>
-
-                        <circle cx="51" cy="36" r="1.5"></circle>
-                        <circle cx="49" cy="36" r="1.5"></circle>
-                        <circle cx="50" cy="35" r="1.5"></circle>
-                        <circle cx="50" cy="37" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Deep Jungle Smoke from outside B apts','https://giant.gfycat.com/SoupyInformalHeterodontosaurus.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="107" x2="68" y1="32" y2="75"></line>
-
-                        <circle cx="107" cy="32" r="1"></circle>
-
-                        <circle cx="69" cy="75" r="1.5"></circle>
-                        <circle cx="67" cy="75" r="1.5"></circle>
-                        <circle cx="68" cy="74" r="1.5"></circle>
-                        <circle cx="68" cy="76" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Top Connector Smoke from outside B apts','https://giant.gfycat.com/BlaringDeliciousHydra.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="108" x2="75" y1="31" y2="72"></line>
-
-                        <circle cx="108" cy="31" r="1"></circle>
-
-                        <circle cx="76" cy="72" r="1.5"></circle>
-                        <circle cx="74" cy="72" r="1.5"></circle>
-                        <circle cx="75" cy="71" r="1.5"></circle>
-                        <circle cx="75" cy="73" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Jungle Smoke from Underpass','https://giant.gfycat.com/InnocentBriefInchworm.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="67" x2="74" y1="50" y2="77"></line>
-
-                        <circle cx="67" cy="50" r="1"></circle>
-
-                        <circle cx="75" cy="77" r="1.5"></circle>
-                        <circle cx="73" cy="77" r="1.5"></circle>
-                        <circle cx="74" cy="76" r="1.5"></circle>
-                        <circle cx="74" cy="78" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Connector Smoke from T spawn','https://giant.gfycat.com/TatteredAthleticIbisbill.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="127" x2="75" y1="25" y2="63"></line>
-
-                        <circle cx="127" cy="25" r="1"></circle>
-
-                        <circle cx="76" cy="63" r="1.5"></circle>
-                        <circle cx="74" cy="63" r="1.5"></circle>
-                        <circle cx="75" cy="62" r="1.5"></circle>
-                        <circle cx="75" cy="64" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Triple Smoke from T Spawn','https://giant.gfycat.com/DarlingWelllitAmurminnow.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="135" x2="73" y1="63" y2="90"></line>
-
-                        <circle cx="135" cy="63" r="1"></circle>
-
-                        <circle cx="74" cy="90" r="1.5"></circle>
-                        <circle cx="72" cy="90" r="1.5"></circle>
-                        <circle cx="73" cy="89" r="1.5"></circle>
-                        <circle cx="73" cy="91" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Mid A Site Smoke from T Spawn','https://giant.gfycat.com/NeatPointlessAsiaticmouflon.mp4')">
-                    <g class="smokes t tsmoke">
-                        <line x1="120" x2="82" y1="71" y2="90"></line>
-
-                        <circle cx="120" cy="71" r="1"></circle>
-
-                        <circle cx="83" cy="90" r="1.5"></circle>
-                        <circle cx="81" cy="90" r="1.5"></circle>
-                        <circle cx="82" cy="89" r="1.5"></circle>
-                        <circle cx="82" cy="91" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('A Ramp Smoke from CT Spawn','https://giant.gfycat.com/FancyBetterGoshawk.mp4')">
-                    <g class="smokes ct ctsmoke">
-                        <line x1="35" x2="102" y1="87" y2="76"></line>
-
-                        <circle cx="35" cy="87" r="1"></circle>
-
-                        <circle cx="103" cy="76" r="1.5"></circle>
-                        <circle cx="101" cy="76" r="1.5"></circle>
-                        <circle cx="102" cy="75" r="1.5"></circle>
-                        <circle cx="102" cy="77" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('Deep B apts Smoke from CT Spawn','https://giant.gfycat.com/ShallowPleasantIcterinewarbler.mp4')">
-                    <g class="smokes ct ctsmoke">
-                        <line x1="45" x2="70" y1="70" y2="27"></line>
-
-                        <circle cx="45" cy="70" r="1"></circle>
-
-                        <circle cx="71" cy="27" r="1.5"></circle>
-                        <circle cx="69" cy="27" r="1.5"></circle>
-                        <circle cx="70" cy="26" r="1.5"></circle>
-                        <circle cx="70" cy="28" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('B apts Smoke from outside Market','https://giant.gfycat.com/AshamedShyGypsymoth.mp4')">
-                    <g class="smokes ct ctsmoke">
-                        <line x1="25" x2="51" y1="42" y2="23"></line>
-
-                        <circle cx="25" cy="42" r="1"></circle>
-
-                        <circle cx="52" cy="23" r="1.5"></circle>
-                        <circle cx="50" cy="23" r="1.5"></circle>
-                        <circle cx="51" cy="22" r="1.5"></circle>
-                        <circle cx="51" cy="24" r="1.5"></circle>
-                    </g>
-                </a>
-                <a href=""
-                    onclick="genModal('B Apts pop flash','https://giant.gfycat.com/PolishedOrnateBluemorphobutterfly.mp4')">
-                    <g class="flashes t tflash">
-                        <line x1="65" x2="53" y1="28" y2="21"></line>
-
-                        <circle cx="65" cy="28" r="1"></circle>
-
-                        <line x1="53" x2="46" y1="21" y2="26"></line>
-
-                        <circle cx="53" cy="21" r=".001"></circle>
-                        <image xlink: href="/images/csgomaps/flash.png" x="42" y="23" width="7px"
-                                        height="7px"></image>
-                                </g>
-                            </a>
-            <a href=""
-                onclick="genModal('Connector pop flash from Top Mid','https://giant.gfycat.com/BoilingRapidBubblefish.mp4')">
-                <g class="flashes t tflash">
-                    <line x1="106" x2="76" y1="56" y2="60"></line>
-
-                    <circle cx="106" cy="56" r="1"></circle>
-
-                    <image xlink: href="/images/csgomaps/flash.png" x="72" y="56.5" width="7px"
-                        height="7px">
-                                </g>
-            </a>
-            <a href=""
-                onclick="genModal('Window pop flash from Window','https://giant.gfycat.com/TartTerribleImago.mp4')">
-                <g class="flashes ct ctflash">
-                    <line x1="59" x2="63" y1="62" y2="55"></line>
-
-                    <circle cx="59" cy="62" r="1"></circle>
-
-                    <image xlink: href="/images/csgomaps/flash.png" x="60" y="51" width="7px"
-                        height="7px">
-                                </g>
-            </a>
-            <a href=""
-                onclick="genModal('Pop flash from under balcony','https://giant.gfycat.com/InfantileIndelibleHyracotherium.mp4')">
-                <g class="flashes ct ctflash">
-                    <line x1="99" x2="98" y1="87" y2="90"></line>
-                    <circle cx="99" cy="87" r="1"></circle>
-                    <circle cx="98" cy="90" r=".001"></circle>
-                    <line x1="98" x2="95" y1="90" y2="83"></line>
-
-                    <image xlink: href="/images/csgomaps/flash.png" x="92" y="79" width="7px"
-                        height="7px">
-                                </g>
-            </a>
-            <a href=""
-                onclick="genModal('Molotov under balcony','https://giant.gfycat.com/DirectRigidAcouchi.mp4')">
-                <g class="molotovs t tmolly">
-                    <line x1="95" x2="97" y1="96" y2="88"></line>
-
-                    <circle cx="95" cy="96" r="1"></circle>
-                    <image xlink: href="/images/csgomaps/molly.png" x="93" y="84" width="7px"
-                                        height="7px"></image>
-                                </g>
-                            </a>
-        <a href=""
-            onclick="genModal('Molotov for front triple/right default plant from A ramp','https://giant.gfycat.com/DifferentPerkyCrab.mp4')">
-            <g class="molotovs t tmolly">
-                <line x1="105" x2="83" y1="78" y2="79"></line>
-                <circle cx="105" cy="78" r="1"></circle>
-                <circle cx="83" cy="79" r=".001"></circle>
-                <line x1="83" x2="82" y1="79" y2="89"></line>
-                <image xlink: href="/images/csgomaps/molly.png" x="79" y="84" width="7px"
-                                        height="7px"></image>
-                                </g>
-                            </a >
-        <a href=""
-            onclick="genModal('Molotov for front triple/right default plant from jungle','https://giant.gfycat.com/AlarmedWigglyFugu.mp4')">
-            <g class="molotovs t tmolly">
-                <line x1="60" x2="79" y1="74" y2="79"></line>
-                <circle cx="60" cy="74" r="1"></circle>
-                <circle cx="79" cy="79" r=".001"></circle>
-                <line x1="79" x2="82" y1="79" y2="89"></line>
-                <image xlink: href="/images/csgomaps/molly.png" x="79" y="84" width="7px"
-                                        height="7px"></image>
-                                </g>
-                            </a >
-                        </svg >
-
-    `);
+    $('#back').click(function(){    
+        $('#mapSelect').fadeIn();
+        $('#mapCol').hide();
+        $('#back').hide();
+    });
 });
+
+function selectMap(map){
+    event.preventDefault();
+    switch (map){
+        case 'Mirage':
+            $('#back').show();
+            $('#mapSelect').hide();
+            $('#mapCol').html(`<img class="img-responsive overlay" src="/images/csgomaps/mirage.png" alt=""> <svg class="svgClass" viewBox="0 0 150 120" height="100%" width="100%" preserveAspectRatio="none"> <a href="" onclick="genModal('Window Smoke from T Spawn','https://giant.gfycat.com/LimitedDecisiveBluebottlejellyfish.mp4')"> <g class="smokes t tsmoke"> <line x1="134" x2="62" y1="66" y2="55"></line> <circle cx="134" cy="66" r="1"></circle> <circle cx="62" cy="55" r="1.5"></circle> <circle cx="60" cy="55" r="1.5"></circle> <circle cx="61" cy="54" r="1.5"></circle> <circle cx="61" cy="56" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Smoke rapida da base TR para o janelão','https://giant.gfycat.com/LittleCloseFlea.mp4')"> <g class="smokes t tsmoke"> <line x1="136" x2="61" y1="40" y2="55"></line> <circle cx="136" cy="40" r="1"></circle> <circle cx="62" cy="55" r="1.5"></circle> <circle cx="60" cy="55" r="1.5"></circle> <circle cx="61" cy="54" r="1.5"></circle> <circle cx="61" cy="56" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Smoke cabecinha da base TR','https://giant.gfycat.com/VillainousViciousDeviltasmanian.mp4')"> <g class="smokes t tsmoke"> <line x1="129" x2="80" y1="68" y2="77"></line> <circle cx="129" cy="68" r="1"></circle> <circle cx="81" cy="77" r="1.5"></circle> <circle cx="79" cy="77" r="1.5"></circle> <circle cx="80" cy="76" r="1.5"></circle> <circle cx="80" cy="78" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Smoke jungle da base TR','https://giant.gfycat.com/FlickeringRemarkableEstuarinecrocodile.mp4')"> <g class="smokes t tsmoke"> <line x1="118" x2="76" y1="74" y2="77"></line> <circle cx="118" cy="74" r="1"></circle> <circle cx="75" cy="77" r="1.5"></circle> <circle cx="73" cy="77" r="1.5"></circle> <circle cx="74" cy="76" r="1.5"></circle> <circle cx="74" cy="78" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Smoke CT da base TR','https://giant.gfycat.com/EnragedZanyBlackfootedferret.mp4')"> <g class="smokes t tsmoke"> <line x1="121" x2="71" y1="65" y2="95"></line> <circle cx="121" cy="65" r="1"></circle> <circle cx="70" cy="96" r="1.5"></circle> <circle cx="68" cy="96" r="1.5"></circle> <circle cx="69" cy="95" r="1.5"></circle> <circle cx="69" cy="97" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Smoke passagem','https://giant.gfycat.com/FlamboyantIllfatedKitten.mp4')"> <g class="smokes t tsmoke"> <line x1="136" x2="90" y1="38" y2="50"></line> <circle cx="136" cy="38" r="1"></circle> <circle cx="89" cy="51" r="1.5"></circle> <circle cx="87" cy="51" r="1.5"></circle> <circle cx="88" cy="50" r="1.5"></circle> <circle cx="88" cy="52" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('GetRight Smoke from B apts','https://giant.gfycat.com/ShyClumsyJackrabbit.mp4')"> <g class="smokes t tsmoke"> <line x1="80" x2="50" y1="24" y2="30"></line> <circle cx="80" cy="24" r="1"></circle> <circle cx="51" cy="30" r="1.5"></circle> <circle cx="49" cy="30" r="1.5"></circle> <circle cx="50" cy="29" r="1.5"></circle> <circle cx="50" cy="31" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Cat Arch Smoke from B apts','https://giant.gfycat.com/FatHonestAsiandamselfly.mp4')"> <g class="smokes t tsmoke"> <line x1="71" x2="50" y1="26" y2="36"></line> <circle cx="71" cy="26" r="1"></circle> <circle cx="51" cy="36" r="1.5"></circle> <circle cx="49" cy="36" r="1.5"></circle> <circle cx="50" cy="35" r="1.5"></circle> <circle cx="50" cy="37" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Market Window Smoke from B apts','https://giant.gfycat.com/FabulousHonestAgouti.mp4')"> <g class="smokes t tsmoke"> <line x1="89" x2="38" y1="20" y2="47"></line> <circle cx="89" cy="20" r="1"></circle> <circle cx="39" cy="47" r="1.5"></circle> <circle cx="37" cy="47" r="1.5"></circle> <circle cx="38" cy="46" r="1.5"></circle> <circle cx="38" cy="48" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Cat Smoke from B apts','https://giant.gfycat.com/MetallicParallelHuman.mp4')"> <g class="smokes t tsmoke"> <line x1="89" x2="58" y1="20" y2="36"></line> <circle cx="89" cy="20" r="1"></circle> <circle cx="60" cy="36" r="1.5"></circle> <circle cx="58" cy="36" r="1.5"></circle> <circle cx="59" cy="35" r="1.5"></circle> <circle cx="59" cy="37" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Window Smoke from Top Mid','https://giant.gfycat.com/GeneralBlindEchidna.mp4')"> <g class="smokes t tsmoke"> <line x1="106" x2="62" y1="56" y2="55"></line> <circle cx="106" cy="56" r="1"></circle> <circle cx="62" cy="55" r="1.5"></circle> <circle cx="60" cy="55" r="1.5"></circle> <circle cx="61" cy="54" r="1.5"></circle> <circle cx="61" cy="56" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Top Cat Smoke from T Spawn','https://giant.gfycat.com/RemorsefulFlawlessCats.mp4')"> <g class="smokes t tsmoke"> <line x1="136" x2="71" y1="40" y2="45"></line> <circle cx="136" cy="40" r="1"></circle> <circle cx="72" cy="45" r="1.5"></circle> <circle cx="70" cy="45" r="1.5"></circle> <circle cx="71" cy="44" r="1.5"></circle> <circle cx="71" cy="46" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Market Door Smoke from T spawn','https://giant.gfycat.com/ExaltedImaginaryGiantschnauzer.mp4')"> <g class="smokes t tsmoke"> <line x1="134" x2="26" y1="29" y2="46"></line> <circle cx="134" cy="29" r="1"></circle> <circle cx="27" cy="46" r="1.5"></circle> <circle cx="25" cy="46" r="1.5"></circle> <circle cx="26" cy="45" r="1.5"></circle> <circle cx="26" cy="47" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('B Apts Balcony Smoke from T spawn','https://giant.gfycat.com/OrdinaryPowerfulGannet.mp4')"> <g class="smokes t tsmoke"> <line x1="136" x2="36" y1="45" y2="23"></line> <circle cx="136" cy="45" r="1"></circle> <circle cx="37" cy="23" r="1.5"></circle> <circle cx="35" cy="23" r="1.5"></circle> <circle cx="36" cy="22" r="1.5"></circle> <circle cx="36" cy="24" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('GetRight Smoke from T spawn of B apts','https://giant.gfycat.com/SpanishJampackedInexpectatumpleco.mp4')"> <g class="smokes t tsmoke"> <line x1="109" x2="50" y1="27" y2="30"></line> <circle cx="109" cy="27" r="1"></circle> <circle cx="51" cy="30" r="1.5"></circle> <circle cx="49" cy="30" r="1.5"></circle> <circle cx="50" cy="29" r="1.5"></circle> <circle cx="50" cy="31" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Cat Arch Smoke from T spawn of B apts','https://giant.gfycat.com/JitteryEvergreenHerring.mp4')"> <g class="smokes t tsmoke"> <line x1="109" x2="50" y1="25" y2="36"></line> <circle cx="109" cy="25" r="1"></circle> <circle cx="51" cy="36" r="1.5"></circle> <circle cx="49" cy="36" r="1.5"></circle> <circle cx="50" cy="35" r="1.5"></circle> <circle cx="50" cy="37" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Deep Jungle Smoke from outside B apts','https://giant.gfycat.com/SoupyInformalHeterodontosaurus.mp4')"> <g class="smokes t tsmoke"> <line x1="107" x2="68" y1="32" y2="75"></line> <circle cx="107" cy="32" r="1"></circle> <circle cx="69" cy="75" r="1.5"></circle> <circle cx="67" cy="75" r="1.5"></circle> <circle cx="68" cy="74" r="1.5"></circle> <circle cx="68" cy="76" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Top Connector Smoke from outside B apts','https://giant.gfycat.com/BlaringDeliciousHydra.mp4')"> <g class="smokes t tsmoke"> <line x1="108" x2="75" y1="31" y2="72"></line> <circle cx="108" cy="31" r="1"></circle> <circle cx="76" cy="72" r="1.5"></circle> <circle cx="74" cy="72" r="1.5"></circle> <circle cx="75" cy="71" r="1.5"></circle> <circle cx="75" cy="73" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Jungle Smoke from Underpass','https://giant.gfycat.com/InnocentBriefInchworm.mp4')"> <g class="smokes t tsmoke"> <line x1="67" x2="74" y1="50" y2="77"></line> <circle cx="67" cy="50" r="1"></circle> <circle cx="75" cy="77" r="1.5"></circle> <circle cx="73" cy="77" r="1.5"></circle> <circle cx="74" cy="76" r="1.5"></circle> <circle cx="74" cy="78" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Connector Smoke from T spawn','https://giant.gfycat.com/TatteredAthleticIbisbill.mp4')"> <g class="smokes t tsmoke"> <line x1="127" x2="75" y1="25" y2="63"></line> <circle cx="127" cy="25" r="1"></circle> <circle cx="76" cy="63" r="1.5"></circle> <circle cx="74" cy="63" r="1.5"></circle> <circle cx="75" cy="62" r="1.5"></circle> <circle cx="75" cy="64" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Triple Smoke from T Spawn','https://giant.gfycat.com/DarlingWelllitAmurminnow.mp4')"> <g class="smokes t tsmoke"> <line x1="135" x2="73" y1="63" y2="90"></line> <circle cx="135" cy="63" r="1"></circle> <circle cx="74" cy="90" r="1.5"></circle> <circle cx="72" cy="90" r="1.5"></circle> <circle cx="73" cy="89" r="1.5"></circle> <circle cx="73" cy="91" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Mid A Site Smoke from T Spawn','https://giant.gfycat.com/NeatPointlessAsiaticmouflon.mp4')"> <g class="smokes t tsmoke"> <line x1="120" x2="82" y1="71" y2="90"></line> <circle cx="120" cy="71" r="1"></circle> <circle cx="83" cy="90" r="1.5"></circle> <circle cx="81" cy="90" r="1.5"></circle> <circle cx="82" cy="89" r="1.5"></circle> <circle cx="82" cy="91" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A Ramp Smoke from CT Spawn','https://giant.gfycat.com/FancyBetterGoshawk.mp4')"> <g class="smokes ct ctsmoke"> <line x1="35" x2="102" y1="87" y2="76"></line> <circle cx="35" cy="87" r="1"></circle> <circle cx="103" cy="76" r="1.5"></circle> <circle cx="101" cy="76" r="1.5"></circle> <circle cx="102" cy="75" r="1.5"></circle> <circle cx="102" cy="77" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Deep B apts Smoke from CT Spawn','https://giant.gfycat.com/ShallowPleasantIcterinewarbler.mp4')"> <g class="smokes ct ctsmoke"> <line x1="45" x2="70" y1="70" y2="27"></line> <circle cx="45" cy="70" r="1"></circle> <circle cx="71" cy="27" r="1.5"></circle> <circle cx="69" cy="27" r="1.5"></circle> <circle cx="70" cy="26" r="1.5"></circle> <circle cx="70" cy="28" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('B apts Smoke from outside Market','https://giant.gfycat.com/AshamedShyGypsymoth.mp4')"> <g class="smokes ct ctsmoke"> <line x1="25" x2="51" y1="42" y2="23"></line> <circle cx="25" cy="42" r="1"></circle> <circle cx="52" cy="23" r="1.5"></circle> <circle cx="50" cy="23" r="1.5"></circle> <circle cx="51" cy="22" r="1.5"></circle> <circle cx="51" cy="24" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('B Apts pop flash','https://giant.gfycat.com/PolishedOrnateBluemorphobutterfly.mp4')"> <g class="flashes t tflash"> <line x1="65" x2="53" y1="28" y2="21"></line> <circle cx="65" cy="28" r="1"></circle> <line x1="53" x2="46" y1="21" y2="26"></line> <circle cx="53" cy="21" r=".001"></circle> <image xlink: href="/images/csgomaps/flash.png" x="42" y="23" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Connector pop flash from Top Mid','https://giant.gfycat.com/BoilingRapidBubblefish.mp4')"> <g class="flashes t tflash"> <line x1="106" x2="76" y1="56" y2="60"></line> <circle cx="106" cy="56" r="1"></circle> <image xlink: href="/images/csgomaps/flash.png" x="72" y="56.5" width="7px" height="7px"> </g> </a> <a href="" onclick="genModal('Window pop flash from Window','https://giant.gfycat.com/TartTerribleImago.mp4')"> <g class="flashes ct ctflash"> <line x1="59" x2="63" y1="62" y2="55"></line> <circle cx="59" cy="62" r="1"></circle> <image xlink: href="/images/csgomaps/flash.png" x="60" y="51" width="7px" height="7px"> </g> </a> <a href="" onclick="genModal('Pop flash from under balcony','https://giant.gfycat.com/InfantileIndelibleHyracotherium.mp4')"> <g class="flashes ct ctflash"> <line x1="99" x2="98" y1="87" y2="90"></line> <circle cx="99" cy="87" r="1"></circle> <circle cx="98" cy="90" r=".001"></circle> <line x1="98" x2="95" y1="90" y2="83"></line> <image xlink: href="/images/csgomaps/flash.png" x="92" y="79" width="7px" height="7px"> </g> </a> <a href="" onclick="genModal('Molotov under balcony','https://giant.gfycat.com/DirectRigidAcouchi.mp4')"> <g class="molotovs t tmolly"> <line x1="95" x2="97" y1="96" y2="88"></line> <circle cx="95" cy="96" r="1"></circle> <image xlink: href="/images/csgomaps/molly.png" x="93" y="84" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Molotov for front triple/right default plant from A ramp','https://giant.gfycat.com/DifferentPerkyCrab.mp4')"> <g class="molotovs t tmolly"> <line x1="105" x2="83" y1="78" y2="79"></line> <circle cx="105" cy="78" r="1"></circle> <circle cx="83" cy="79" r=".001"></circle> <line x1="83" x2="82" y1="79" y2="89"></line> <image xlink: href="/images/csgomaps/molly.png" x="79" y="84" width="7px" height="7px"></image> </g> </a > <a href="" onclick="genModal('Molotov for front triple/right default plant from jungle','https://giant.gfycat.com/AlarmedWigglyFugu.mp4')"> <g class="molotovs t tmolly"> <line x1="60" x2="79" y1="74" y2="79"></line> <circle cx="60" cy="74" r="1"></circle> <circle cx="79" cy="79" r=".001"></circle> <line x1="79" x2="82" y1="79" y2="89"></line> <image xlink: href="/images/csgomaps/molly.png" x="79" y="84" width="7px" height="7px"></image> </g> </a > </svg > `);
+            break;
+        case 'Cache':
+            $('#back').show();
+            $('#mapSelect').hide();
+            $('#mapCol').html(`<img id="imgBox" class="img-responsive overlay" src="/images/csgomaps/cache.png"></img> <svg class="svgClass" viewBox="0 0 150 120" height="100%" width="100%" preserveAspectRatio="none"> <a href="" onclick="genModal('Z Smoke from T spawn','https://giant.gfycat.com/ImpassionedTerrificAntlion.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="129" x2="52" y1="75" y2="75"></line> <circle cx="129" cy="75" r="1"></circle> <circle cx="52" cy="75" r="1.5"></circle> <circle cx="50" cy="75" r="1.5"></circle> <circle cx="51" cy="74" r="1.5"></circle> <circle cx="51" cy="76" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('B Main Cross Smoke from B Main','https://giant.gfycat.com/QueasyUnconsciousGoldenretriever.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="95" x2="80" y1="88" y2="100"></line> <circle cx="95" cy="88" r="1"></circle> <line x1="80" x2="67" y1="100" y2="87"></line> <circle cx="80" cy="100" r=".001"></circle> <circle cx="69" cy="88" r="1.5"></circle> <circle cx="67" cy="88" r="1.5"></circle> <circle cx="68" cy="87" r="1.5"></circle> <circle cx="68" cy="89" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('CT Smoke from Sun Room','https://giant.gfycat.com/BreakableWillingBelugawhale.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="86" x2="47" y1="105" y2="94"></line> <circle cx="86" cy="105" r="1"></circle> <circle cx="49" cy="94" r="1.5"></circle> <circle cx="47" cy="94" r="1.5"></circle> <circle cx="48" cy="93" r="1.5"></circle> <circle cx="48" cy="95" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A Cross Smoke from A Main','https://giant.gfycat.com/ThirdConstantHalcyon.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="80" x2="71" y1="45" y2="35"></line> <circle cx="80" cy="45" r="1"></circle> <circle cx="71" cy="35" r=".001"></circle> <line x1="71" y1="35" x2="62" y2="43"></line> <circle cx="63" cy="43" r="1.5"></circle> <circle cx="61" cy="43" r="1.5"></circle> <circle cx="62" cy="42" r="1.5"></circle> <circle cx="62" cy="44" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A Cat Smoke from outside A Main','https://giant.gfycat.com/UnevenThirstyAmazondolphin.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="95" x2="59" y1="46" y2="46"></line> <circle cx="95" cy="46" r="1"></circle> <circle cx="58" cy="46" r="1.5"></circle> <circle cx="60" cy="46" r="1.5"></circle> <circle cx="59" cy="45" r="1.5"></circle> <circle cx="59" cy="47" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Right Mid Smoke from Mid Main','https://giant.gfycat.com/NervousAnchoredEider.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="107" x2="68" y1="70" y2="66"></line> <circle cx="107" cy="70" r="1"></circle> <circle cx="69" cy="66" r="1.5"></circle> <circle cx="67" cy="66" r="1.5"></circle> <circle cx="68" cy="65" r="1.5"></circle> <circle cx="68" cy="67" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Left Mid Smoke from Mid Main','https://giant.gfycat.com/LiquidWatchfulBorer.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="107" x2="68" y1="67" y2="70"></line> <circle cx="107" cy="67" r="1"></circle> <circle cx="69" cy="70" r="1.5"></circle> <circle cx="67" cy="70" r="1.5"></circle> <circle cx="68" cy="69" r="1.5"></circle> <circle cx="68" cy="71" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('White Box Smoke from T spawn','https://giant.gfycat.com/DetailedFaintCuttlefish.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="129" x2="57" y1="75" y2="65"></line> <circle cx="129" cy="75" r="1"></circle> <circle cx="58" cy="65" r="1.5"></circle> <circle cx="56" cy="65" r="1.5"></circle> <circle cx="57" cy="64" r="1.5"></circle> <circle cx="57" cy="66" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Top Highway Smoke from outside A Main','https://giant.gfycat.com/GlamorousFlawlessAlbertosaurus.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="105" x2="57" y1="63" y2="53"></line> <circle cx="105" cy="63" r="1"></circle> <circle cx="58" cy="53" r="1.5"></circle> <circle cx="56" cy="53" r="1.5"></circle> <circle cx="57" cy="52" r="1.5"></circle> <circle cx="57" cy="54" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Quad Smoke from Mid Boost','https://giant.gfycat.com/CandidGrayAsianlion.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="87" x2="57" y1="63" y2="30"></line> <circle cx="87" cy="63" r="1"></circle> <circle cx="58" cy="30" r="1.5"></circle> <circle cx="56" cy="30" r="1.5"></circle> <circle cx="57" cy="29" r="1.5"></circle> <circle cx="57" cy="31" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Back Site Smoke from outside Squeaky','https://giant.gfycat.com/PracticalJaggedBighornsheep.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="95" x2="52" y1="41" y2="41"></line> <circle cx="95" cy="41" r="1"></circle> <circle cx="53" cy="41" r="1.5"></circle> <circle cx="51" cy="41" r="1.5"></circle> <circle cx="52" cy="40" r="1.5"></circle> <circle cx="52" cy="42" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A cross smoke from T spawn','https://giant.gfycat.com/AbandonedImpossibleClumber.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="122" x2="62" y1="67" y2="43"></line> <circle cx="122" cy="67" r="1"></circle> <circle cx="63" cy="43" r="1.5"></circle> <circle cx="61" cy="43" r="1.5"></circle> <circle cx="62" cy="42" r="1.5"></circle> <circle cx="62" cy="44" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Boost smoke from T spawn - shift walk','https://giant.gfycat.com/GregariousEnchantedIriomotecat.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="140" x2="81" y1="67" y2="63"></line> <circle cx="140" cy="67" r="1"></circle> <circle cx="82" cy="63" r="1.5"></circle> <circle cx="80" cy="63" r="1.5"></circle> <circle cx="81" cy="62" r="1.5"></circle> <circle cx="81" cy="64" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('B Main Smoke from Heaven','https://giant.gfycat.com/DimpledSmoothGnatcatcher.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="52" x2="61" y1="91" y2="84"></line> <circle cx="52" cy="91" r="1"></circle> <circle cx="61" cy="84" r=".001"></circle> <line x1="61" x2="73" y1="84" y2="93"></line> <circle cx="74" cy="93" r="1.5"></circle> <circle cx="72" cy="93" r="1.5"></circle> <circle cx="73" cy="92" r="1.5"></circle> <circle cx="73" cy="94" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A Main Smoke from Fence','https://giant.gfycat.com/NaughtyTanBelugawhale.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="59" x2="70" y1="27" y2="44"></line> <circle cx="59" cy="27" r="1"></circle> <circle cx="70" cy="44" r=".001"></circle> <line x1="70" x2="74" y1="44" y2="38"></line> <circle cx="75" cy="38" r="1.5"></circle> <circle cx="73" cy="38" r="1.5"></circle> <circle cx="74" cy="37" r="1.5"></circle> <circle cx="74" cy="39" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A Main Smoke from Truck','https://giant.gfycat.com/ClearUnimportantImperialeagle.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="36" x2="74" y1="52" y2="38"></line> <circle cx="36" cy="52" r="1"></circle> <circle cx="75" cy="38" r="1.5"></circle> <circle cx="73" cy="38" r="1.5"></circle> <circle cx="74" cy="37" r="1.5"></circle> <circle cx="74" cy="39" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A Default Molly from Truck','https://giant.gfycat.com/UnfoldedBountifulGalago.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="36" x2="58" y1="52" y2="36"></line> <circle cx="36" cy="52" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="54" y="32" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Molotov for headshot from Sun Room','https://giant.gfycat.com/ShockingColorfulBilby.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="86" x2="52" y1="105" y2="100"></line> <circle cx="86" cy="105" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="49" y="97" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Molotov for Checkers from B Main','https://giant.gfycat.com/RevolvingAshamedHairstreakbutterfly.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="82" x2="70" y1="93" y2="93"></line> <circle cx="82" cy="93" r="1"></circle> <circle cx="70" cy="93" r=".001"></circle> <line x1="70" x2="70" y1="93" y2="83"></line> <image xlink:href="/images/csgomaps/molly.png" x="66" y="78" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Back Site Molly from Sun Room','https://giant.gfycat.com/HandmadeImportantDogwoodclubgall.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="78" x2="70" y1="105" y2="100"></line> <circle cx="70" cy="100" r=".001"></circle> <line x1="70" x2="63" y1="100" y2="104"></line> <circle cx="78" cy="105" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="59" y="100" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Vent Molly from outside A Main','https://giant.gfycat.com/PoshCourageousCero.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="93" x2="75" y1="50" y2="78"></line> <circle cx="93" cy="50" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="72" y="73" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Fence Molly from A Main','https://giant.gfycat.com/CautiousDisgustingDunlin.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="80" x2="56" y1="42" y2="30"></line> <circle cx="80" cy="42" r="1"></circle> <circle cx="56" cy="30" r=".001"></circle> <line x1="56" x2="62" y1="30" y2="28"></line> <image xlink:href="/images/csgomaps/molly.png" x="58" y="23" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Boost Molly from Sandbags','https://giant.gfycat.com/WhichPaltryBoaconstrictor.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="60" x2="83" y1="75" y2="63"></line> <circle cx="60" cy="75" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="80" y="58" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Flash for Checkers from B Main','https://giant.gfycat.com/ImaginativeShabbyElkhound.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes t tflash"> <line x1="82" x2="70" y1="93" y2="93"></line> <circle cx="82" cy="93" r="1"></circle> <circle cx="70" cy="93" r=".001"></circle> <line x1="70" x2="70" y1="93" y2="83"></line> <image xlink:href="/images/csgomaps/flash.png" x="66.5" y="79" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('B flash from Sun Room','https://giant.gfycat.com/HatefulOrneryIndusriverdolphin.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes t tflash"> <line x1="86" x2="60" y1="105" y2="100"></line> <circle cx="86" cy="105" r="1"></circle> <image xlink:href="/images/csgomaps/flash.png" x="56" y="96" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('A Main pop flash from back A site','https://giant.gfycat.com/FearlessSingleAmericanavocet.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes ct ctflash"> <line x1="48" x2="75" y1="45" y2="38"></line> <circle cx="48" cy="45" r="1"></circle> <image xlink:href="/images/csgomaps/flash.png" x="72" y="34" width="7px" height="7px"></image> </g> </a> </svg>`);
+            break;
+        case 'Train':
+            $('#back').show();
+            $('#mapSelect').hide();
+            $('#mapCol').html(`<img id="imgBox" class="img-responsive overlay" src="/images/csgomaps/train.png"></img> <svg class="svgClass" viewBox="0 0 150 120" height="100%" width="100%" preserveAspectRatio="none"> <a href="" onclick="genModal('Z Smoke from T spawn','https://giant.gfycat.com/InfantileDopeyAustraliansilkyterrier.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="65" x2="95" y1="29" y2="70"></line> <circle cx="65" cy="29" r="1"></circle> <circle cx="96" cy="70" r="1.5"></circle> <circle cx="94" cy="70" r="1.5"></circle> <circle cx="95" cy="69" r="1.5"></circle> <circle cx="95" cy="71" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Right Side A Bomb Train Smoke from T Spawn','https://giant.gfycat.com/SilkyDiligentIsabellinewheatear.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="59" x2="89" y1="27" y2="66"></line> <circle cx="59" cy="27" r="1"></circle> <circle cx="88" cy="66" r="1.5"></circle> <circle cx="90" cy="66" r="1.5"></circle> <circle cx="89" cy="65" r="1.5"></circle> <circle cx="89" cy="67" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Mid Bomb Train Smoke from T Spawn','https://giant.gfycat.com/IdleGiganticDolphin.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="59" x2="87" y1="25" y2="62"></line> <circle cx="59" cy="25" r="1"></circle> <circle cx="86" cy="62" r="1.5"></circle> <circle cx="88" cy="62" r="1.5"></circle> <circle cx="87" cy="63" r="1.5"></circle> <circle cx="87" cy="61" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Left Side A Bomb Train Smoke from T Spawn','https://giant.gfycat.com/IllinformedWaryAzurevasesponge.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="59" x2="87" y1="29" y2="59"></line> <circle cx="59" cy="29" r="1"></circle> <circle cx="86" cy="59" r="1.5"></circle> <circle cx="88" cy="59" r="1.5"></circle> <circle cx="87" cy="58" r="1.5"></circle> <circle cx="87" cy="60" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Sandwich Smoke from T Spawn','https://giant.gfycat.com/DifferentGrimyAfricanporcupine.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="51" x2="87" y1="28" y2="51"></line> <circle cx="51" cy="28" r="1"></circle> <circle cx="86" cy="51" r="1.5"></circle> <circle cx="88" cy="51" r="1.5"></circle> <circle cx="87" cy="52" r="1.5"></circle> <circle cx="87" cy="50" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Ivy Smoke from Top Ladder','https://giant.gfycat.com/ElegantFinishedCattle.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="58" x2="110" y1="70" y2="48"></line> <circle cx="58" cy="70" r="1"></circle> <circle cx="111" cy="48" r="1.5"></circle> <circle cx="109" cy="48" r="1.5"></circle> <circle cx="110" cy="47" r="1.5"></circle> <circle cx="110" cy="49" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Left Ivy Smoke from Ivy','https://giant.gfycat.com/MildSaltyGreendarnerdragonfly.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="125" x2="116" y1="16" y2="36"></line> <circle cx="125" cy="16" r="1"></circle> <circle cx="116" cy="36" r=".001"></circle> <line x1="116" x2="125" y1="36" y2="48"></line> <circle cx="126" cy="48" r="1.5"></circle> <circle cx="124" cy="48" r="1.5"></circle> <circle cx="125" cy="47" r="1.5"></circle> <circle cx="125" cy="49" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Z Smoke from outside B','https://giant.gfycat.com/IlliterateCheerfulBabirusa.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="42" x2="109" y1="87" y2="82"></line> <circle cx="42" cy="87" r="1"></circle> <circle cx="110" cy="82" r="1.5"></circle> <circle cx="108" cy="82" r="1.5"></circle> <circle cx="109" cy="81" r="1.5"></circle> <circle cx="109" cy="83" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('B ramp Smoke from outside B','https://giant.gfycat.com/DenseJitteryIbis.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="46" x2="70" y1="82" y2="82"></line> <circle cx="46" cy="82" r="1"></circle> <circle cx="71" cy="82" r="1.5"></circle> <circle cx="69" cy="82" r="1.5"></circle> <circle cx="70" cy="81" r="1.5"></circle> <circle cx="70" cy="83" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('T conn Smoke from 2 Train','https://giant.gfycat.com/ImpureHelpfulHornet.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="110" x2="60" y1="66" y2="47"></line> <circle cx="110" cy="66" r="1"></circle> <circle cx="61" cy="47" r="1.5"></circle> <circle cx="59" cy="47" r="1.5"></circle> <circle cx="60" cy="46" r="1.5"></circle> <circle cx="60" cy="48" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Left side B Train Smoke from outside B','https://giant.gfycat.com/SelfishForsakenEmu.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="42" x2="58" y1="93" y2="80"></line> <circle cx="42" cy="93" r="1"></circle> <circle cx="58" cy="80" r=".001"></circle> <line x1="58" x2="75" y1="80" y2="88"></line> <circle cx="75" cy="88" r="1.5"></circle> <circle cx="73" cy="88" r="1.5"></circle> <circle cx="74" cy="89" r="1.5"></circle> <circle cx="74" cy="87" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A site popflash above ladder from outside T Conn','https://giant.gfycat.com/RashSmoothDormouse.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes t tflash"> <line x1="62" x2="63" y1="20" y2="62"></line> <circle cx="62" cy="20" r="1"></circle> <image xlink:href="/images/csgomaps/flash.png" x="59.5" y="58" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Ladder popflash from top Ladder','https://giant.gfycat.com/VeneratedHarmlessAbyssiniangroundhornbill.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes t tflash"> <line x1="59" x2="55" y1="68" y2="68"></line> <circle cx="59" cy="68" r="1"></circle> <image xlink:href="/images/csgomaps/flash.png" x="51" y="64" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Moltov for B default from B halls','https://giant.gfycat.com/ShowyDampEasternnewt.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="46" x2="60" y1="100" y2="105"></line> <circle cx="46" cy="100" r="1"></circle> <circle cx="60" cy="105" r=".001"></circle> <line x1="60" x2="70" y1="105" y2="92"></line> <image xlink:href="/images/csgomaps/molly.png" x="66" y="88" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Moltov for default A from ladder','https://giant.gfycat.com/ForthrightTimelyEuropeanpolecat.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="62" x2="77" y1="68" y2="56"></line> <circle cx="62" cy="68" r="1"></circle> <circle cx="77" cy="56" r=".001"></circle> <line x1="77" x2="86" y1="56" y2="63"></line> <image xlink:href="/images/csgomaps/molly.png" x="82" y="58" width="7px" height="7px"></image> </g> </a> </svg>`);
+            break;
+        case 'Overpass':
+            $('#back').show();
+            $('#mapSelect').hide();
+            $('#mapCol').html(`<img id="imgBox" class="img-responsive overlay" src="/images/csgomaps/overpass.png"></img> <svg class="svgClass" viewBox="0 0 150 120" height="100%" width="100%" preserveAspectRatio="none"> <a href="" onclick="genModal('Bridge Smoke from T Spawn','https://giant.gfycat.com/PessimisticSeriousGalapagosalbatross.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="119" x2="105" y1="73" y2="46"></line> <circle cx="119" cy="73" r="1"></circle> <circle cx="106" cy="46" r="1.5"></circle> <circle cx="104" cy="46" r="1.5"></circle> <circle cx="105" cy="45" r="1.5"></circle> <circle cx="105" cy="47" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('B Site Smoke from T Spawn','https://giant.gfycat.com/ConventionalFlickeringCockatoo.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="119" x2="104" y1="76" y2="38"></line> <circle cx="119" cy="76" r="1"></circle> <circle cx="105" cy="38" r="1.5"></circle> <circle cx="103" cy="38" r="1.5"></circle> <circle cx="104" cy="37" r="1.5"></circle> <circle cx="104" cy="39" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Heaven Smoke from Short B','https://giant.gfycat.com/ThickEarlyBlackfly.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="88" x2="87" y1="55" y2="32"></line> <circle cx="88" cy="55" r="1"></circle> <circle cx="88" cy="32" r="1.5"></circle> <circle cx="86" cy="32" r="1.5"></circle> <circle cx="87" cy="31" r="1.5"></circle> <circle cx="87" cy="33" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Bathrooms Smoke from T Spawn','https://giant.gfycat.com/LeanLimitedAustraliankelpie.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="116" x2="61" y1="90" y2="62"></line> <circle cx="116" cy="90" r="1"></circle> <circle cx="60" cy="62" r="1.5"></circle> <circle cx="62" cy="62" r="1.5"></circle> <circle cx="61" cy="61" r="1.5"></circle> <circle cx="61" cy="63" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Jump Up Smoke from Bathrooms','https://giant.gfycat.com/ImpossibleUnlawfulBooby.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="70" x2="81" y1="56" y2="20"></line> <circle cx="70" cy="56" r="1"></circle> <circle cx="82" cy="20" r="1.5"></circle> <circle cx="80" cy="20" r="1.5"></circle> <circle cx="81" cy="21" r="1.5"></circle> <circle cx="81" cy="19" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Bank Smoke from Long A','https://giant.gfycat.com/TediousBitterAstarte.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="42" x2="67" y1="48" y2="15"></line> <circle cx="42" cy="48" r="1"></circle> <circle cx="68" cy="15" r="1.5"></circle> <circle cx="66" cy="15" r="1.5"></circle> <circle cx="67" cy="14" r="1.5"></circle> <circle cx="67" cy="16" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Left side site Smoke from Long A','https://giant.gfycat.com/WelldocumentedBlueComet.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="36" x2="63" y1="44" y2="22"></line> <circle cx="36" cy="44" r="1"></circle> <circle cx="62" cy="22" r="1.5"></circle> <circle cx="64" cy="22" r="1.5"></circle> <circle cx="63" cy="21" r="1.5"></circle> <circle cx="63" cy="23" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Heaven Smoke from Bathrooms','https://giant.gfycat.com/PerfumedOrderlyDorado.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="67" x2="87" y1="63" y2="32"></line> <circle cx="67" cy="63" r="1"></circle> <circle cx="88" cy="32" r="1.5"></circle> <circle cx="86" cy="32" r="1.5"></circle> <circle cx="87" cy="31" r="1.5"></circle> <circle cx="87" cy="33" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Truck Smoke from Bathrooms','https://giant.gfycat.com/DimwittedScornfulAfricancivet.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="70" x2="75" y1="57" y2="27"></line> <circle cx="70" cy="57" r="1"></circle> <circle cx="76" cy="27" r="1.5"></circle> <circle cx="74" cy="27" r="1.5"></circle> <circle cx="75" cy="26" r="1.5"></circle> <circle cx="75" cy="28" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Right side A Site Smoke from Bathrooms','https://giant.gfycat.com/GreedyRaggedBordercollie.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="70" x2="70" y1="58" y2="27"></line> <circle cx="70" cy="58" r="1"></circle> <circle cx="69" cy="27" r="1.5"></circle> <circle cx="71" cy="27" r="1.5"></circle> <circle cx="70" cy="26" r="1.5"></circle> <circle cx="70" cy="28" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Smoke for Short B tunnel from Graffiti','https://giant.gfycat.com/MediocreUnluckyIsopod.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="81" x2="102" y1="40" y2="62"></line> <circle cx="81" cy="40" r="1"></circle> <circle cx="101" cy="62" r="1.5"></circle> <circle cx="103" cy="62" r="1.5"></circle> <circle cx="102" cy="61" r="1.5"></circle> <circle cx="102" cy="63" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Smoke for right side Graffiti from Short B','https://giant.gfycat.com/GrandioseNippyAmericanredsquirrel.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="96" x2="87" y1="64" y2="43"></line> <circle cx="96" cy="64" r="1"></circle> <circle cx="86" cy="43" r="1.5"></circle> <circle cx="88" cy="43" r="1.5"></circle> <circle cx="87" cy="42" r="1.5"></circle> <circle cx="87" cy="44" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Smoke for left side Graffiti from Short B','https://giant.gfycat.com/WelltodoBruisedBushbaby.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="98" x2="87" y1="64" y2="45"></line> <circle cx="98" cy="64" r="1"></circle> <circle cx="86" cy="45" r="1.5"></circle> <circle cx="88" cy="45" r="1.5"></circle> <circle cx="87" cy="44" r="1.5"></circle> <circle cx="87" cy="46" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Monster Smoke from CT Spawn','https://giant.gfycat.com/TotalImperturbableArabianoryx.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="75" x2="121" y1="18" y2="60"></line> <circle cx="75" cy="18" r="1"></circle> <circle cx="121" cy="60" r=".001"></circle> <line x1="121" x2="122" y1="60" y2="55"></line> <circle cx="121" cy="55" r="1.5"></circle> <circle cx="123" cy="55" r="1.5"></circle> <circle cx="122" cy="54" r="1.5"></circle> <circle cx="122" cy="56" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Fountain control Smoke from CT spawn','https://giant.gfycat.com/MilkyGrimDuckbillcat.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="74" x2="88" y1="17" y2="94"></line> <circle cx="74" cy="17" r="1"></circle> <circle cx="87" cy="94" r="1.5"></circle> <circle cx="89" cy="94" r="1.5"></circle> <circle cx="88" cy="93" r="1.5"></circle> <circle cx="88" cy="95" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Fountain control Smoke from Bathrooms','https://giant.gfycat.com/LastCompetentGuanaco.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="60" x2="81" y1="62" y2="89"></line> <circle cx="60" cy="62" r="1"></circle> <circle cx="80" cy="89" r="1.5"></circle> <circle cx="82" cy="89" r="1.5"></circle> <circle cx="81" cy="88" r="1.5"></circle> <circle cx="81" cy="90" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Short B pop flash from Connector','https://giant.gfycat.com/HelpfulBriskElk.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes"> <line x1="85" x2="91" y1="64" y2="64"></line> <circle cx="85" cy="64" r="1"></circle> <image xlink:href="/images/csgomaps/flash.png" x="88" y="60.5" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Molotov for B Barrels from short B','https://giant.gfycat.com/LawfulFirmHart.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="88" x2="112" y1="55" y2="31"></line> <circle cx="88" cy="55" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="109" y="27" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Molotov for Short B tunnel from Graffiti','https://giant.gfycat.com/HarshPeacefulGreatargus.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="81" x2="104" y1="40" y2="62"></line> <circle cx="81" cy="40" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="101" y="58" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Molly for Fountain control from Bathrooms','https://giant.gfycat.com/FemaleEmbarrassedKinkajou.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="71" x2="85" y1="47" y2="94"></line> <circle cx="71" cy="47" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="82" y="90" width="7px" height="7px"></image> </g> </a> </svg>`);
+            break;
+        case 'Dust2':
+            $('#back').show();
+            $('#mapSelect').hide();
+            $('#mapCol').html(`<img id="imgBox" class="img-responsive overlay" src="/images/csgomaps/dust2.png"></img> <svg class="svgClass" viewBox="0 0 150 120" height="100%" width="100%" preserveAspectRatio="none"> <a href="" onclick="genModal('X Box Smoke from T Spawn','https://giant.gfycat.com/WarySlimyBuffalo.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="76" x2="71" y1="116" y2="52"></line> <circle cx="76" cy="116" r="1"></circle> <circle cx="72" cy="52" r="1.5"></circle> <circle cx="70" cy="52" r="1.5"></circle> <circle cx="71" cy="51" r="1.5"></circle> <circle cx="71" cy="53" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('X Box Smoke from Palm Tree','https://giant.gfycat.com/CircularCreamyHalicore.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="81" x2="64" y1="82" y2="60"></line> <circle cx="64" cy="60" r=".001"></circle> <line x1="64" x2="72" y1="60" y2="51"></line> <circle cx="81" cy="82" r="1"></circle> <circle cx="72" cy="52" r="1.5"></circle> <circle cx="70" cy="52" r="1.5"></circle> <circle cx="71" cy="51" r="1.5"></circle> <circle cx="71" cy="53" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Long A corner smoke from T spawn','https://giant.gfycat.com/AgonizingPortlyAlleycat.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="98" x2="124" y1="100" y2="60"></line> <circle cx="98" cy="100" r="1"></circle> <circle cx="126" cy="59" r="1.5"></circle> <circle cx="124" cy="59" r="1.5"></circle> <circle cx="125" cy="58" r="1.5"></circle> <circle cx="125" cy="60" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A Cross Smoke from Long A','https://giant.gfycat.com/DistantVagueLamprey.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="110" x2="137" y1="70" y2="44"></line> <circle cx="137" cy="44" r=".001"></circle> <line x1="137" x2="122" y1="44" y2="33"></line> <circle cx="110" cy="70" r="1"></circle> <circle cx="123" cy="33" r="1.5"></circle> <circle cx="121" cy="33" r="1.5"></circle> <circle cx="122" cy="32" r="1.5"></circle> <circle cx="122" cy="34" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('CT B Split smoke from Mid','https://giant.gfycat.com/PreciousColossalHectorsdolphin.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="72" x2="64" y1="55" y2="48"></line> <circle cx="64" cy="48" r=".001"></circle> <line x1="64" x2="74" y1="48" y2="33"></line> <circle cx="72" cy="55" r="1"></circle> <circle cx="75" cy="33" r="1.5"></circle> <circle cx="73" cy="33" r="1.5"></circle> <circle cx="74" cy="32" r="1.5"></circle> <circle cx="74" cy="34" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('B tunnel retake smoke','https://giant.gfycat.com/PartialShorttermElkhound.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="49" x2="15" y1="21" y2="45"></line> <circle cx="49" cy="21" r="1"></circle> <circle cx="17" cy="44" r="1.5"></circle> <circle cx="15" cy="44" r="1.5"></circle> <circle cx="16" cy="43" r="1.5"></circle> <circle cx="16" cy="45" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('CT Smoke from Long A','https://giant.gfycat.com/UnimportantOddballArieltoucan.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="100" x2="100" y1="66" y2="31"></line> <circle cx="100" cy="66" r="1"></circle> <circle cx="101" cy="33" r="1.5"></circle> <circle cx="99" cy="33" r="1.5"></circle> <circle cx="100" cy="32" r="1.5"></circle> <circle cx="100" cy="34" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Goose Smoke from Cat','https://giant.gfycat.com/HomelyPiercingHammerheadshark.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="90" x2="118" y1="48" y2="18"></line> <circle cx="90" cy="48" r="1"></circle> <circle cx="119" cy="18" r="1.5"></circle> <circle cx="117" cy="18" r="1.5"></circle> <circle cx="118" cy="17" r="1.5"></circle> <circle cx="118" cy="19" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Top A ramp Smoke from Cat','https://giant.gfycat.com/LightheartedYellowGrebe.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="90" x2="122" y1="46" y2="20"></line> <circle cx="90" cy="46" r="1"></circle> <circle cx="123" cy="20" r="1.5"></circle> <circle cx="121" cy="20" r="1.5"></circle> <circle cx="122" cy="19" r="1.5"></circle> <circle cx="122" cy="21" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('A ramp 2nd Smoke from Cat','https://giant.gfycat.com/SatisfiedSoreChameleon.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="90" x2="122" y1="44" y2="26"></line> <circle cx="90" cy="44" r="1"></circle> <circle cx="123" cy="26" r="1.5"></circle> <circle cx="121" cy="26" r="1.5"></circle> <circle cx="122" cy="25" r="1.5"></circle> <circle cx="122" cy="27" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('XBox One way from T Spawn','https://giant.gfycat.com/RashEasygoingAlligatorgar.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="90" x2="64" y1="85" y2="70"></line> <line x1="64" x2="72" y1="70" y2="51"></line> <circle cx="64" cy="70" r=".001"></circle> <circle cx="90" cy="85" r="1"></circle> <circle cx="72" cy="52" r="1.5"></circle> <circle cx="70" cy="52" r="1.5"></circle> <circle cx="71" cy="51" r="1.5"></circle> <circle cx="71" cy="53" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Cat pop flash from mid','https://giant.gfycat.com/ShinyReasonableAfricanharrierhawk.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes t tflash"> <line x1="76" x2="76" y1="66" y2="49"></line> <circle cx="76" cy="49" r=".001"></circle> <line x1="76" x2="90" y1="49" y2="49"></line> <circle cx="76" cy="66" r="1"></circle> <image xlink:href="/images/csgomaps/flash.png" x="87" y="45" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Cat pop flash from lower mid','https://giant.gfycat.com/AppropriateHarmfulDegus.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes t tflash"> <line x1="65" x2="90" y1="58" y2="49"></line> <circle cx="65" cy="58" r="1"></circle> <image xlink:href="/images/csgomaps/flash.png" x="87" y="45" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Molotov on A default from Cat', 'https://giant.gfycat.com/UltimateKeenCardinal.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs"> <line x1="92" x2="114" y1="40" y2="17"></line> <circle cx="114" cy="17" r=".001"></circle> <line x1="114" x2="119" y1="17" y2="23"></line> <circle cx="92" cy="40" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="116" y="20" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Car Molotov for retaking B', 'https://giant.gfycat.com/CoarseAdmirableHypsilophodon.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="45" x2="27" y1="19" y2="46"></line> <circle cx="45" cy="19" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="24" y="42" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Long A Car Molly', 'https://giant.gfycat.com/FirmNauticalEarthworm.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="110" x2="138" y1="70" y2="40"></line> <circle cx="110" cy="70" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="134" y="36" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Below B window molotov for retaking B', 'https://giant.gfycat.com/FancyHospitableGalapagosmockingbird.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="58" x2="35" y1="35" y2="17"></line> <circle cx="58" cy="35" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="32" y="13" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Back B plat molotov for retaking B', 'https://giant.gfycat.com/OccasionalGrizzledAfricancivet.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="46" x2="15" y1="21" y2="11"></line> <circle cx="46" cy="21" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="11" y="6" width="7px" height="7px"></image> </g> </a> </svg>`);
+            break;
+        case 'Inferno':
+            $('#back').show();
+            $('#mapSelect').hide();
+            $('#mapCol').html(`<img id="imgBox" class="img-responsive overlay" src="/images/csgomaps/inferno.png"></img> <svg class="svgClass" viewBox="0 0 150 120" height="100%" width="100%" preserveAspectRatio="none"> <a href="" onclick="genModal('Library Smoke from Mid','https://giant.gfycat.com/NeglectedElectricGodwit.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="79" x2="115" y1="78" y2="65"></line> <circle cx="79" cy="78" r="1"></circle> <circle cx="116" cy="65" r="1.5"></circle> <circle cx="114" cy="65" r="1.5"></circle> <circle cx="115" cy="64" r="1.5"></circle> <circle cx="115" cy="66" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Construction Smoke from Banana','https://giant.gfycat.com/ConstantPreciousDeer.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="57" x2="66" y1="56" y2="25"></line> <circle cx="57" cy="56" r="1"></circle> <circle cx="67" cy="25" r="1.5"></circle> <circle cx="65" cy="25" r="1.5"></circle> <circle cx="66" cy="24" r="1.5"></circle> <circle cx="66" cy="26" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('CT Smoke from Banana','https://giant.gfycat.com/PlainAthleticCottontail.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="61" x2="76" y1="57" y2="32"></line> <circle cx="61" cy="57" r="1"></circle> <circle cx="77" cy="32" r="1.5"></circle> <circle cx="75" cy="32" r="1.5"></circle> <circle cx="76" cy="31" r="1.5"></circle> <circle cx="76" cy="33" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Deep Arch Smoke from Mid','https://giant.gfycat.com/PleasedGleefulGrayfox.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="79" x2="107" y1="78" y2="65"></line> <circle cx="79" cy="78" r="1"></circle> <circle cx="108" cy="65" r="1.5"></circle> <circle cx="106" cy="65" r="1.5"></circle> <circle cx="107" cy="64" r="1.5"></circle> <circle cx="107" cy="66" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Moto Smoke from Mid','https://giant.gfycat.com/AdorableJaggedAustrianpinscher.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="79" x2="112" y1="78" y2="70"></line> <circle cx="79" cy="78" r="1"></circle> <circle cx="113" cy="70" r="1.5"></circle> <circle cx="111" cy="70" r="1.5"></circle> <circle cx="112" cy="69" r="1.5"></circle> <circle cx="112" cy="71" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Left Mid Smoke from Mid','https://giant.gfycat.com/WarlikeBewitchedBluefish.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="73" x2="90" y1="82" y2="73"></line> <circle cx="73" cy="82" r="1"></circle> <circle cx="89" cy="73" r="1.5"></circle> <circle cx="91" cy="73" r="1.5"></circle> <circle cx="90" cy="74" r="1.5"></circle> <circle cx="90" cy="72" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Right Mid Smoke from Mid','https://giant.gfycat.com/MilkyInsidiousGraysquirrel.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="73" x2="84" y1="82" y2="75"></line> <circle cx="73" cy="82" r="1"></circle> <circle cx="84" cy="75" r=".001"></circle> <line x1="84" x2="90" y1="75" y2="80"></line> <circle cx="89" cy="80" r="1.5"></circle> <circle cx="91" cy="80" r="1.5"></circle> <circle cx="90" cy="81" r="1.5"></circle> <circle cx="90" cy="79" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Arch Smoke from Mid','https://giant.gfycat.com/BiodegradableRigidFowl.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes t tsmoke"> <line x1="73" x2="100" y1="82" y2="60"></line> <circle cx="73" cy="82" r="1"></circle> <circle cx="99" cy="60" r="1.5"></circle> <circle cx="101" cy="60" r="1.5"></circle> <circle cx="100" cy="61" r="1.5"></circle> <circle cx="100" cy="59" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Balc Smoke for retaking A','https://giant.gfycat.com/DeficientMetallicAtlanticridleyturtle.mp4')" data-toggle="modal" data-target="#myModal"> <g class="smokes ct ctsmoke"> <line x1="105" x2="104" y1="64" y2="92"></line> <circle cx="105" cy="64" r="1"></circle> <circle cx="103" cy="92" r="1.5"></circle> <circle cx="105" cy="92" r="1.5"></circle> <circle cx="104" cy="93" r="1.5"></circle> <circle cx="104" cy="91" r="1.5"></circle> </g> </a> <a href="" onclick="genModal('Mid pop flash from Apts','https://giant.gfycat.com/CoordinatedSilverDogwoodclubgall.mp4')" data-toggle="modal" data-target="#myModal"> <g class="flashes t tflash"> <line x1="76" x2="89" y1="83" y2="83"></line> <circle cx="76" cy="83" r="1"></circle> <image xlink:href="/images/csgomaps/flash.png" x="86" y="79" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('New Box Molly from Banana','https://giant.gfycat.com/AgitatedAdoredDunlin.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="65" x2="56" y1="48" y2="35"></line> <circle cx="65" cy="48" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="52" y="31" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Emo Molly from Construction','https://giant.gfycat.com/AnxiousBoilingBorderterrier.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="84" x2="56" y1="25" y2="25"></line> <circle cx="84" cy="25" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="52" y="21" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('1st oranges Molly from Banana','https://giant.gfycat.com/FlusteredBrownGuineapig.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="63" x2="66" y1="48" y2="36"></line> <circle cx="63" cy="48" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="62" y="33" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('Emo Molly from Banana','https://giant.gfycat.com/RingedShyIchidna.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs t tmolly"> <line x1="64" x2="56" y1="51" y2="25"></line> <circle cx="64" cy="51" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="52" y="21" width="7px" height="7px"></image> </g> </a> <a href="" onclick="genModal('A Site Molly for retaking', 'https://giant.gfycat.com/FondHeavyGilamonster.mp4')" data-toggle="modal" data-target="#myModal"> <g class="molotovs ct ctmolly"> <line x1="105" x2="104" y1="64" y2="76"></line> <circle cx="105" cy="64" r="1"></circle> <image xlink:href="/images/csgomaps/molly.png" x="100" y="72" width="7px" height="7px"></image> </g> </a> </svg>`);
+            break;
+    }
+    $('#mapCol').fadeIn('slow');
+}
+
