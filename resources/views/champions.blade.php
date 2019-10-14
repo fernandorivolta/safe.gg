@@ -22,15 +22,14 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <div class="hovereffect">
-                                        <img class="img-responsive" src="http://placehold.it/350x200" alt="">
-                                        <div class="overlay">
-                                           <h2>Hover effect 3</h2>
-                                           <a class="info" href="#">link here</a>
+                                @foreach ($champions as $i=>$champion)
+                                    @if ($i % 3 == 0)
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="row"> 
+                                    @endif
+                                        <div class="col-md-4 champions" style="background-image: url('/images/splash/{{$champion}}_0.jpg');"></div>
+                                @endforeach
+                                
                             </div>
                         </div>
                         <div class="col-md-5">
