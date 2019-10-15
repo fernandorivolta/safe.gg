@@ -70,6 +70,8 @@ Route::middleware(['user_validation'])->group(function () {
         ]);
     });
 
+    Route::get('/champion/{champion}', 'ChampionController@find');
+
     Route::prefix('/pro')->group( function (){
         Route::get('/', 'ProController@index');
         Route::get('/{id}', 'ApiController@profile_pro');

@@ -1,6 +1,13 @@
 .champions {
-    height: 250px;
+    height: 220px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center
+    background-position: 85%;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.champions:hover {
+    background-size: 300%;
+    cursor: pointer;
 }

@@ -1,0 +1,17 @@
+.champion-splash{
+    height: 30rem;
+    background-position: center;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.champion-name{
+    text-transform: uppercase;
+    font-size: 64px;
+    color: #8161d0;
+}
+
+.champion-name-bg{
+    background: rgb(13,12,11);
+    background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(13,12,11) 100%);
+}

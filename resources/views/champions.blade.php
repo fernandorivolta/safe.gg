@@ -19,6 +19,7 @@
                             <div class="row">
                                 <div class="mx-auto">
                                     <h2 class="title">Campeões</h2>
+                                    <hr class="text-light">
                                 </div>
                             </div>
                             <div class="row">
@@ -27,7 +28,12 @@
                                         </div>
                                         <div class="row"> 
                                     @endif
-                                        <div class="col-md-4 champions" style="background-image: url('/images/splash/{{$champion}}_0.jpg');"></div>
+                                        <div class="col-md-3 champions" onclick="champion_page('{{$champion}}')" style="background-image: url('/images/splash/{{$champion}}_0.jpg');">
+                                            <div class="row">
+                                                <span class="mx-auto">{{$champion}}</span>
+                                            </div>
+                                        </div>
+                                    
                                 @endforeach
                                 
                             </div>

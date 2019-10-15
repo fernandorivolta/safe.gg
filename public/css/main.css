@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
 .white-font{
 	color: white !important;
@@ -28,12 +27,16 @@
 	font-family: 'Raleway', sans-serif;
 }
 
+.card{
+	border: none;
+}
+
 .form-control:focus {
 	border-color: #2c0045 !important;
 }
 
 body{
-  font-family: 'Varela Round', sans-serif !important;
+	font-family: 'Oswald', sans-serif;
   background-image: url('/images/background/camilleBG.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
