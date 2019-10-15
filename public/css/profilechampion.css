@@ -5,9 +5,27 @@
     border-top-right-radius: .25rem;
 }
 
+.champion-history{
+    margin-top: 12rem;
+    padding: 3rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.champion-about{
+    background: rgb(13,12,11);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(13,12,11) 58%);
+}
+
 .champion-name{
     text-transform: uppercase;
     font-size: 64px;
+    color: #8161d0;
+}
+
+.champion-sub-name{
+    text-transform: uppercase;
+    font-size: 16px;
     color: #8161d0;
 }
 
