@@ -1,15 +1,14 @@
-.bg-dark{
-	background-color: #1d002e !important;
-}
-
-a:hover{
-	text-decoration: none !important;
-}
-
-a{
-	cursor: pointer;
-}
-
 .navbar{
 	margin-bottom: 10px !important;
+}
+
+.nav-link{
+	color: #bbbbbb !important;
+	transition: all 0.3s;
+}
+
+.nav-link:hover{
+	color: #ff8d1c !important;
+	transform: scale(1.1);
+	transition: all 0.3s;
 }

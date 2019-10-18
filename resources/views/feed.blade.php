@@ -61,7 +61,7 @@
     </div>
     <!---->
     <div class="container">
-        <div class="row">
+        <div class="row p-5">
             <div class="col-md-3" style="padding-right: 8px;">
                 <div class="card bg-dark">
                     <img class="card-img-top img-fluid" id="user-capa"
@@ -123,7 +123,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card bg-dark feed-post">
-                            <textarea rows="3" cols="50" id="textarea" class="bg-dark white-font feed-post-textarea" placeholder="O que voce esta pensando?" maxlength="240" autofocus></textarea>
+                            <textarea rows="3" cols="50" id="textarea" class="white-font feed-post-textarea" placeholder="O que voce esta pensando?" maxlength="240" autofocus></textarea>
                             <div class="row">
                                 <div class="col-md-9 my-auto">
                                 </div>

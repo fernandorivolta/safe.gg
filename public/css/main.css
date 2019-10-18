@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
+.bg-gray{
+	background-color: #212529;
+}
+
+.bg-gray-two{
+	background-color: #30353B;
+}
+
+.bg-orange{
+	background-color: #FF9750;
+}
+
 .white-font{
 	color: white !important;
 }
@@ -29,23 +41,96 @@
 
 .card{
 	border: none;
+	-webkit-box-shadow: 3px 10px 32px -4px rgba(20,20,20,1);
+	-moz-box-shadow: 3px 10px 32px -4px rgba(20,20,20,1);
+	box-shadow: 3px 10px 32px -4px rgba(20,20,20,1);
 }
 
 .form-control:focus {
 	border-color: #2c0045 !important;
 }
 
+button {
+	margin-top: 10px;
+  }
+  
+  .btn-primary {
+	  color: #fff;
+	  background-color: #ff8d1c !important;
+	  border-color: #ff8d1c !important;
+	  transition: all 0.2s;
+  }
+  
+  .btn-primary:hover {
+	  border-radius: 15px;
+	  color: #fff;
+	  transform: scale(1.2);
+	  background-color: #d16900 !important;
+	  border-color: #d16900 !important;
+	box-shadow: 3px 10px 32px -4px rgba(20,20,20,1);
+		
+  }
+  
+  .btn-secondary:hover {
+	  color: #fff ;
+	  background-color: #4a0074 !important;
+	  border-color: #4a0074 !important;
+  }
+  
+  .btn-secondary {
+	  color: #4a0074;
+	  background-color: white !important;
+	  border-color: #4a0074 !important;
+  }
+  
+  
+  .slider {
+	margin-top: 0.8em;
+	-webkit-appearance: none;
+	width: 60%;
+	height: 15px;
+	border-radius: 5px;   
+	background: #d3d3d3;
+	outline: none;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%; 
+	background: #4a0074;
+	cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #4a0074;
+	cursor: pointer;
+  }
+  
 body{
 	font-family: 'Oswald', sans-serif;
-  background-image: url('/images/background/camilleBG.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
+  	background-size: 100%;
+  	background-repeat: no-repeat;
+}
+
+.gray-light-font{
+	color:	#e5e5e5;
+}
+
+.bg-dark{
+	background-color: #25262A !important;
 }
 
 .kaisa-bg{
 	height: 100%; 
-	background-color: #37003f; 
-	background-image: url('../images/background/kaisaBG2.png');
+	background-image: url('../images/background/leona-bg.jpg');
 	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover; 
@@ -54,7 +139,6 @@ body{
 
 .section-row{
 	height: 700px;
-	
 }
 
 .line {

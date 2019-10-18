@@ -15,15 +15,10 @@ nav{
 	transition: 0.3s;
 }
 
-body{
-	background-color: #37003f;
-}
-
 .solid{
 	transition: background-color 1.5s ease;	
-	background-color: #37003f;
+	background-color: #212529;
 }
-
 
 .navbar-toggler-icon{
 	color: #b5b5b5 !important;

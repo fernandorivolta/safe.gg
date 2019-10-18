@@ -1,6 +1,6 @@
 .champions{
   width: 100%;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .card-img{
@@ -13,7 +13,7 @@
     cursor: pointer;
     z-index: 20;
     box-shadow: inset 0 0 1em #8161d0, 0 0 1em #8161d0;
-    transition: all 0.5s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .title{

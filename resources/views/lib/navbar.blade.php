@@ -25,7 +25,7 @@
           CS:GO
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/grenades"><i class="fas fa-bomb"></i> GRANADAS</a>
+          <a class="dropdown-item" href="/grenades">GRANADAS</a>
         </div>
       </li>
       <li class="nav-item">

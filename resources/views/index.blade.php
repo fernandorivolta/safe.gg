@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
 	<div class="navbar-remake container">
-		<a class="navbar-brand animated fadeInLeft" href="#"><img style="width: 90px;" src="../images/icons/safe_gg-logo-nome-branco.png"></a>
+		<a class="navbar-brand animated fadeInLeft" href="#"><img style="width: 90px;" src="../images/icons/safe_gg-logo-nome-branco-versao-2.png"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		   	<span class="navbar-toggler-icon"></span>
 		</button>
@@ -29,16 +29,16 @@
 <div class="kaisa-bg">
 	<div class="container">
 		<div class="row section-row">
-			<div class="col-md-6 my-auto">
+			<div class="col-md-6 my-auto text-index">
 				<div class="row">
 					<h1 class="title white-font">Junte-se a milhares de jogadores</h1>
 				</div>
 				<div class="row">
-					<h6 class="white-font">Faça novas amizades, compartilhe experiências<br> e encontre o seu duo ideal!</h6>
+					<h6 class="gray-light-font">Faça novas amizades, compartilhe experiências<br> e encontre o seu duo ideal!</h6>
 				</div>
 			</div>
 			<div class="col-md-6 my-auto">
-				<div class="align-middle bg-dark rounded form-div" style="opacity: 0.8">
+				<div class="align-middle bg-dark rounded form-div">
 					<form id="signup-form" class="form" action="/user/account" method="post" onsubmit="return validateFormSignUp();">
 						{{ csrf_field() }}
 						<h4 class="white-font text-center">Cadastre-se</h4>
@@ -64,7 +64,7 @@
 	</div>
 </div>
 
-<section style="height: 700px;background-color:	#37003f; overflow: hidden;">
+<section class="section-info bg-gray">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
 			<div class="col-md-6">
@@ -85,7 +85,7 @@
 			</div>
 	</div>
 </section>
-<section style="height: 700px;background-image: url('/images/background/kindredBG.jpg');background-size:100%;background-repeat:no-repeat;">
+<section class="section-info bg-gray-two">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
 		<div class="col-md-6">
@@ -106,7 +106,7 @@
 			</div>
 	</div>
 </section>
-<section style="height: 700px;background-color:	#37003f; overflow: hidden;">
+<section class="section-info bg-gray">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
 		<div class="col-md-6">
@@ -127,7 +127,7 @@
 			</div>
 	</div>
 </section>
-<section style="height: 700px;background-image: url('/images/background/kindredBG.jpg');background-size:100%;background-repeat:no-repeat;">
+<section class="section-info bg-gray-two">
 	<div class="container d-flex h-100">
 		<div class="row justify-content-center align-self-center col-md-12"  data-aos="fade-right" data-aos-delay="300">
 		<div class="col-md-6">
