@@ -1,13 +1,23 @@
-.champions {
-    height: 220px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 85%;
-    margin: 5px;
-    border-radius: 10px;
+.champions{
+  width: 100%;
+  transition: all 0.5s ease-out;
 }
 
-.champions:hover {
-    background-size: 300%;
-    cursor: pointer;
+.card-img{
+  filter: brightness(60%);
 }
+
+.champions:hover .card-img{
+    filter: brightness(120%);
+    transform: scale(1.3);
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: inset 0 0 1em #8161d0, 0 0 1em #8161d0;
+    transition: all 0.5s ease-out;
+}
+
+.title{
+  color: white;
+  font-size: 24px;
+}
+
