@@ -129,7 +129,7 @@
                                 </div>
                                 <div class="col-md-1 my-auto">
                                     <!-- <div class="text-right text-muted textarea-count" id="textarea_feedback">0 / 240</div> -->
-                                    <div id="count"  data-stroke-width="7" data-stroke="purple" data-value="0" data-preset="circle" class="ldBar label-center" data-max="240"></div>
+                                    <div id="count"  data-stroke-width="7" data-stroke="#ff9933" data-value="0" data-preset="circle" class="ldBar label-center" data-max="240"></div>
                                 </div>
                                 <div class="col-md-2 my-auto">
                                     <button id="btn-publicar" class="btn btn-primary btn-publicar">Publicar</button>
