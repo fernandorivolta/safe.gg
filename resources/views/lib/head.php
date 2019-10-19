@@ -23,11 +23,8 @@
 <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
     integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
     crossorigin='anonymous'></script>
-<script src='/alertifyjs/alertify.min.js'></script>
-<link rel='stylesheet' href='/alertifyjs/css/alertify.min.css' />
-<link rel='stylesheet' href='/cropit/crop.css' />
-<link rel='stylesheet' href='/alertifyjs/css/themes/default.min.css' />
-<link rel='stylesheet' href='/css/main.css' />
+<link rel='stylesheet' type='text/css' href='/css/main.css'>
+<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'
     integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css' />

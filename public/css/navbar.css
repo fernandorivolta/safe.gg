@@ -12,3 +12,18 @@
 	transform: scale(1.1);
 	transition: all 0.3s;
 }
+
+.dropdown-menu{
+	background-color: #30353B;
+}
+
+.dropdown-item{
+	color:#bbbbbb;
+	transition: all 0.3s;
+}
+
+.dropdown-item:hover{
+	color: #25262A;
+	background-color: #ff8d1c;
+	transition: all 0.3s;
+}

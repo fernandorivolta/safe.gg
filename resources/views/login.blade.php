@@ -4,14 +4,13 @@
 <head>
   @include('lib.head')
   <link rel='stylesheet' type='text/css' href='/css/main.css'>
-  <link rel='stylesheet' type='text/css' href='/css/loginIndex.css'>
-  <script type="text/javascript" src="/js/loginIndex.js"></script>
+  <link rel='stylesheet' type='text/css' href='/css/login-index.css'>
 </head>
-<body style="background-color:  #1d0149;">
+<body>
   <div class="container">
-    <div class="justify-content-center align-self-center col-md-12 row">
-      <div class="login-form-1 animated fadeIn">
-          <form id="login-form" class="text-left" action="/user/login" method="post" onsubmit="return validateForm();">
+    <div class="justify-content-center align-items-center col-md-12 row h-full">
+      <div class="login-form animated fadeIn p-5">
+          <form id="login-form" class="text-left" action="/user/login" method="post">
             {{ csrf_field() }}
             <img class="img-fluid" src="/images/icons/safe_gg-logo-nome-branco-versao-2.png">
             <div class="login-form-main-message white-font text-center animated fadeIn"><h4 class="line white-font">LOGIN</h4></div>
@@ -26,9 +25,9 @@
                   <input type="password" class="form-control" id="password" name="password" placeholder="Senha">
                 </div>
               </div>
-              <button type="submit" class="btn btn-block btn-light">Entrar</button>
-              <button type="button" class="btn btn-block btn-outline-light" id="btn-create-account"><i class="fas fa-user-plus"></i> Crie uma conta</button>
-              <button type="button" class="btn btn-block btn-outline-light" id="back-home"><i class="fas fa-chevron-left"></i> Voltar</button>
+              <button type="submit" class="btn btn-block btn-login">Entrar</button>
+              <a href="/user/account" class="btn btn-block btn-outline-light" id="btn-create-account"><i class="fas fa-user-plus"></i> Crie uma conta</a>
+              <a href="/" class="btn btn-block btn-outline-light" id="back-home"><i class="fas fa-chevron-left"></i> Voltar</a>
             </div>
           </form>
         </div>

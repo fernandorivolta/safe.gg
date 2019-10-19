@@ -1,0 +1,28 @@
+body{
+    background-color: #30353B;
+    background-image: url("/images/background/swain-bg.jpg");
+}
+
+.login-form{
+    background-color: rgba(10, 10, 10, 0.5);
+    
+}
+
+.h-full{
+    height: 100vh;
+}
+
+.btn-login{
+    color:white;
+    background-color: #30353B;
+    transition: all 0.3s;
+}
+
+.btn-login:hover{
+    color: #30353B;
+    border-radius: 15px;
+    transform: scale(1.1);
+    background-color: #ff7800;
+    box-shadow: 3px 10px 32px -4px rgba(20,20,20,1);
+    transition: all 0.3s;
+}

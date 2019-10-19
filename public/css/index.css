@@ -25,19 +25,6 @@ hr{
     border-color:#626262;
 }
 
-.btn-outline-light{
-    transition: all 0.3s;
-}
-
-.btn-outline-light:hover{
-    border-radius: 15px;
-    transform: scale(1.1);
-    color: black !important;
-    box-shadow: 3px 10px 32px -4px rgba(20,20,20,1);
-    transition: all 0.3s;
-    
-}
-
 .title{
 	font-weight: bold;
 	font-size: 3.875rem !important;

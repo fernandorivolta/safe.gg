@@ -91,18 +91,13 @@ body{
   border-color: #bbb9b9;
 }
 
-
-
-
-
-
 .card-lose{
-  background-image: linear-gradient(to right, #981c1c, #1d002e);
+  background-image: linear-gradient(to right, #981c1c, #500e0e);
   border-right: unset;
 }
 
 .card-win{
-  background-image: linear-gradient(to right, #243f71 , #1d002e);
+  background-image: linear-gradient(to right, #243f71 , #0f1b31);
   border-right: unset;
 }
 

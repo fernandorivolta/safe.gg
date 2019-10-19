@@ -1,0 +1,17 @@
+body{
+    background-color: #30353B;
+}
+
+.user-photo{
+    border-radius: 15px;
+    width: 20rem;
+}
+
+.name-header{
+    border-bottom: 1px solid #30353B;
+}
+
+.form-group{
+    color: white;
+}
+
