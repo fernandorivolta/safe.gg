@@ -35,21 +35,28 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="nome-completo" class="col-md-4 col-form-label">Nome</label>
+                                        <label for="nome-completo" class="col-md-4 col-form-label">Nome de Invocador</label>
                                         <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext w-full" id="nome-completo"
                                                 value="email@example.com">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="nome-completo" class="col-md-4 col-form-label">Nome</label>
+                                        <label for="nome-completo" class="col-md-4 col-form-label">Steam</label>
                                         <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext w-full" id="nome-completo"
                                                 value="email@example.com">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="nome-completo" class="col-md-4 col-form-label">Nome</label>
+                                        <label for="nome-completo" class="col-md-4 col-form-label">Icone</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control-plaintext w-full" id="nome-completo"
+                                                value="email@example.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="nome-completo" class="col-md-4 col-form-label">Capa</label>
                                         <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext w-full" id="nome-completo"
                                                 value="email@example.com">

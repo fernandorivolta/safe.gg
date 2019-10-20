@@ -33,9 +33,9 @@
 				</div>
 			</div>
 			<div class="col-md-9" style="padding-left: 0px;">
-				<div class="card bg-dark feed-body" style="height: 100%;">
+				<div class="card bg-dark" style="height: 100%;">
                     @foreach ($proplayers as $proplayer)
-                        <div class="card card-feed shadow-sm card-pro">
+                        <div class="card m-2 shadow-sm card-pro">
                             <div class="card-body" style="padding: 0.5rem !important">
                                 <div class="row">
                                     <div class="col-md-3">
