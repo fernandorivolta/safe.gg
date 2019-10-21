@@ -1,20 +1,28 @@
-body{
+body {
     background-color: #30353B;
 }
 
-.user-photo{
+.user-photo {
     border-radius: 15px;
     width: 20rem;
 }
 
-.name-header{
+.name-header {
     border-bottom: 1px solid #30353B;
 }
 
-.form-group{
+.form-group {
     color: white;
 }
 
-.col-form-label{
+.col-form-label {
     color: rgb(163, 163, 163);
+}
+
+input {
+    border: 1px solid gray !important;
+    border-radius: 7px;
+    padding-left: 5px;
+    background-color: #252525 !important;
+    color: white !important;
 }

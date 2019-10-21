@@ -43,16 +43,16 @@ class UserController extends Controller
         
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($request->input('id'));
         $user->name = $request->input('name');
-        $user->username = $request->input('username');
-        $user->password = bcrypt($request->input('password'));
         $user->summonerName = $request->input('summonerName');
         $user->steam = $request->input('steam');
-        $user->icon = $request->input('icon');
         $user->save();
+        return response()->json([
+            'message' => 'success' 
+        ]);
     }
 
     public function delete($id)
@@ -70,15 +70,17 @@ class UserController extends Controller
     }
 
     public function set_icon(Request $request){
-        $user = Auth::user();
-        $image = $request->input('fileToUpload');
+        $user = User::findOrFail($request->input('id'));
+        $image = $request->input('photo');
         $image = str_replace('data:image/png;base64,', '', $image);
         $image = str_replace(' ', '+', $image);
         $imageName = str_random(10).'.'.'png';
         \File::put(storage_path(). '/app/public/' . $imageName, base64_decode($image));
         $user->icon = $imageName;
         $user->save();
-        return redirect('/feed');
+        return response()->json([
+            'message' => 'success'
+        ]);
     }
 
     public function login(Request $request){

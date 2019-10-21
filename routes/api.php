@@ -24,8 +24,10 @@ Route::get('/game/{id_user}/unfollow/{id_game}','FollowController@unfollow_game'
 
 Route::get('/user/{id_user}/feed', 'FeedController@user_feed');
 Route::get('/user/{id_followed}/one_match', 'ApiController@one_match');
+Route::post('/user/icon','UserController@set_icon');
 
 Route::post('/user/post', 'PostController@create');
+Route::post('/user/update', 'UserController@update');
 
 Route::get('/post/{post_id}/like/{user_id}', 'PostController@like_post');
 Route::get('/post/{post_id}/unlike/{user_id}', 'PostController@unlike_post');

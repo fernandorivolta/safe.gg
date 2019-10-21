@@ -40,7 +40,6 @@ Route::prefix('/user')->group( function (){
     Route::post('/create','UserController@create');
     Route::post('/login', 'UserController@login');
     Route::get('/logout','UserController@logout');
-    Route::post('/icon','UserController@set_icon');
     Route::get('/search','UserController@index');
     Route::get('/follow/{id}', 'FollowController@follow_user');
     Route::get('/unfollow/{id}', 'FollowController@unfollow_user');

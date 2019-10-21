@@ -26,46 +26,12 @@
 	  </div>
 	</div> -->
 
-    <!-- Icone Crop  -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Escolha seu Icone</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form method="post" action="/user/icon">
-                    {{ csrf_field() }}
-                    <div class="modal-body">
-                        <!--Crop-->
-                        <div class="image-editor">
-                            <input type="file" class="cropit-image-input">
-                            <div class="cropit-preview"></div>
-                            <div class="row">
-                                <input type="range" class="cropit-image-zoom-input slider mx-auto">
-                            </div>
-                            <input type="hidden" name="fileToUpload" id="fileToUpload" class="hidden-image-data"
-                                required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="submit" id="icon-button" class="btn btn-primary export">Salvar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!---->
     <div class="container">
         <div class="row p-5">
             <div class="col-md-3" style="padding-right: 8px;">
                 <div class="card bg-dark">
                     <img class="card-img-top img-fluid" id="user-capa"
-                        src="/images/background/kaisa.jpg"
+                        src="/images/background/leona-bg.jpg"
                         alt="user image">
                     <div class="card-body">
                         <div class="card-title">
@@ -73,11 +39,7 @@
                                 <div class="row">
                                     <img class="user-icon img-fluid" id="user-icon"
                                         src="{{ asset('storage/'.$user->icon) }}" alt="user image">
-                                    <button type="button" class="btn photo-change" data-toggle="modal"
-                                        data-target="#exampleModal">
-                                        <i class="fas fa-camera gray-font" style="height: 200%;"></i>
-                                    </button>
-                                    <span class="user-name my-auto white-font" id="user-name">{{$user->username}}</span>
+                                    <span class="user-name my-auto white-font" id="user-name"><a href="/perfil">{{$user->username}}</a></span>
                                 </div>
                             </div>
                         </div>
