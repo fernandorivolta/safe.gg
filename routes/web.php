@@ -76,11 +76,16 @@ Route::middleware(['user_validation'])->group(function () {
 
     Route::get('/champion/{champion}', 'ChampionController@find');
 
-    Route::prefix('/pro')->group( function (){
+    Route::prefix('/lol/proplayers')->group( function (){
         Route::get('/', 'ProController@index');
         Route::get('/{id}', 'ApiController@profile_pro');
         Route::get('/follow/{id}', 'FollowController@follow_pro');
         Route::get('/unfollow/{id}', 'FollowController@unfollow_pro');
+    });
+
+    Route::prefix('/cs/proplayers')->group( function (){
+        Route::get('/', 'ProCSController@index');
+        Route::get('/{id}', 'ProController@profile_pro');
     });
 });
 

@@ -13,7 +13,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOL</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="/myhistory">MATCH HISTORY</a>
-          <a class="dropdown-item" href="/pro">PROPLAYERS</a>
+          <a class="dropdown-item" href="/lol/proplayers">PROPLAYERS</a>
           <a class="dropdown-item" href="/champions">CHAMPIONS</a>
         </div>
       </li>
@@ -23,6 +23,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="/grenades">GRANADAS</a>
+          <a class="dropdown-item" href="/cs/proplayers">PROPLAYERS</a>
         </div>
       </li>
       <li class="nav-item">
