@@ -5,12 +5,13 @@
   @include('lib.head')
   <link rel='stylesheet' type='text/css' href='/css/main.css'>
   <link rel='stylesheet' type='text/css' href='/css/login-index.css'>
+  <script src="js/login.js"></script>
 </head>
 <body>
   <div class="container">
     <div class="justify-content-center align-items-center col-md-12 row h-full">
       <div class="login-form animated fadeIn p-5">
-          <form id="login-form" class="text-left" action="/user/login" method="post">
+          <form id="login-form" class="text-left" action="/user/login" method="post" onsubmit="return validateFormSignUp();">
             {{ csrf_field() }}
             <img class="img-fluid" src="/images/icons/safe_gg-logo-nome-branco-versao-2.png">
             <div class="login-form-main-message white-font text-center animated fadeIn"><h4 class="line white-font">LOGIN</h4></div>

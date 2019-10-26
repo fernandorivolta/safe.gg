@@ -26,6 +26,23 @@ class UserController extends Controller
     }
 
     public function create(Request $request){
+        $uservalidation = User::where('email', $request->input('email'))->first();
+        $uservalidation2 = User::where('username', $request->input('username'))->first();
+        if($uservalidation){
+            return view('account', [
+                "message" => "Email <u>" . $request->input('email') .  "</u> já cadastrado!",
+                "username" => $request->input('username'),
+                "name" => $request->input('name'),
+                "email" => $request->input('email')
+            ]);
+        }elseif ($uservalidation2) {
+            return view('account', [
+                "message" => "Usuario <u>" . $request->input('username') . "</u> já cadastrado!",
+                "username" => $request->input('username'),
+                "name" => $request->input('name'),
+                "email" => $request->input('email')
+            ]);
+        }
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
@@ -34,6 +51,7 @@ class UserController extends Controller
         $user->summonerName = $request->input('summonerName');
         $user->steam = $request->input('steam');
         $user->birthday = $request->input('birthday');
+        $user->admin = 0;
         $user->save();
         return view('login');
     }
