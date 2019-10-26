@@ -75,13 +75,13 @@
                                     </div>
                                     <div class="col-md-2 my-auto">
                                         @if (in_array($proplayer->id, $followed_proplayers))
-                                        <a href="/pro/unfollow/{{$proplayer->id}}"
+                                        <a href="/lol/proplayers/unfollow/{{$proplayer->id}}"
                                             class="btn btn-outline-primary btn-follow">Unfollow</a>
                                         @else
-                                        <a href="/pro/follow/{{$proplayer->id}}"
+                                        <a href="/lol/proplayers/follow/{{$proplayer->id}}"
                                             class="btn btn-outline-primary btn-follow">Follow</a>
                                         @endif
-                                        <a href="/pro/{{$proplayer->id}}"
+                                        <a href="/lol/proplayers/{{$proplayer->id}}"
                                             class="btn btn-outline-primary btn-profile">Perfil</a>
                                     </div>
                                 </div>
