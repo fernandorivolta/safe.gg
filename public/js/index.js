@@ -23,12 +23,19 @@ $(document).ready(function () {
     $('#back-home').click(function(){
         window.location.href = '/';
     });
+
+    $('img[data-toggle="tooltip"]').tooltip({
+        animated: 'fade',
+        placement: 'top',
+        html: true
+    });
 });
 
 function validateForm(form) {
     var user = document.forms["login-form"]["username"].value;
     var pass = document.forms["login-form"]["password"].value;
     if (user == "" || pass == "") {
+    alertify.set('notifier','position', 'top-right');
       alertify.error('Preencha os campos!');
       return false;
     }else{

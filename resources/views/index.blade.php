@@ -157,22 +157,23 @@
 					</div>
 					<div class="row">
 						<div class="col-md-2">
-							<img class="img-fluid map-logo" src="/images/csgo-map-logo/cache.png" alt="">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/cache.png">
 						</div>
 						<div class="col-md-2">
-							<img class="img-fluid map-logo" src="/images/csgo-map-logo/mirage.png" alt="">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/mirage.png">
 						</div>
 						<div class="col-md-2">
-							<img class="img-fluid map-logo" src="/images/csgo-map-logo/overpass.png" alt="">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/overpass.png">
 						</div>
 						<div class="col-md-2">
-							<img class="img-fluid map-logo" src="/images/csgo-map-logo/train.png" alt="">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/train.png">
 						</div>
 						<div class="col-md-2">
-							<img class="img-fluid map-logo" src="/images/csgo-map-logo/dust_2.png" alt="">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/dust_2.png">
 						</div>
 						<div class="col-md-2">
-							<img class="img-fluid map-logo" src="/images/csgo-map-logo/vertigo.png" alt="">
+							<img id="inferno-logo" data-toggle="tooltip" title="" 
+							class='img-fluid map-logo' src='/images/csgo-map-logo/inferno.png'>
 						</div>
 					</div>
 				</div>
