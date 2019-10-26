@@ -2,8 +2,77 @@
     background-color: #212529;
 }
 
+.map-logo{
+    filter: brightness(70%);
+    transition: 0.3s all;
+}
+
+.map-logo:hover{
+    filter: brightness(100%);
+    transition: 0.3s all;
+}
+
+.main-section{
+	height: 100%; 
+	background-image: url('../images/background/leona-bg.jpg');
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover; 
+	opacity: 1;	
+}
+
+.section-row{
+	height: 100vh;
+}
+
+.card-pro-player{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition: 0.3s all;
+}
+
+.proplayer-name{
+    font-size: 1.5rem;
+    color: #d16900;
+    z-index: 20;
+}
+
+.find-team-section{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/background/lucian-bg.jpg');
+    background-size: cover;
+}
+
+.card-find-team{
+    -webkit-box-shadow: 4px 6px 44px 0px rgba(0,0,0,0.78);
+    -moz-box-shadow: 4px 6px 44px 0px rgba(0,0,0,0.78);
+    box-shadow: 4px 6px 44px 0px rgba(0,0,0,0.78);
+}
+
+.find-team-section::before{
+    filter: grayscale(100%);
+}
+
+.card-title{
+    margin-bottom: .2rem;
+}
+
+.proplayer-game{
+    font-size: .9rem;
+}
+
+.card-pro-player:hover{
+    transform: scale(1.1);
+    filter: none;
+    -webkit-filter: grayscale(0%);
+    transition: 0.3s all;
+}
+
 .section-info{
-    height: 45rem;
+    height: 100vh;
+}
+
+.section-title{
+    padding: 5rem;
 }
 
 .form{

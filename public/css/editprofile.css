@@ -19,10 +19,11 @@ body {
     color: rgb(163, 163, 163);
 }
 
-input {
+.input-profile {
     border: 1px solid gray !important;
     border-radius: 7px;
     padding-left: 5px;
     background-color: #252525 !important;
     color: white !important;
+    z-index: 10;
 }

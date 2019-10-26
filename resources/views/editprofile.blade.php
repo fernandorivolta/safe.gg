@@ -4,7 +4,9 @@
 <head>
     @include('lib.head')
     <link rel='stylesheet' type='text/css' href='/css/editprofile.css'>
+    <link rel='stylesheet' type='text/css' href='/cropit/crop.css'>
     <script src="js/editprofile.js"></script>
+    <script src='/cropit/jquery.cropit.js'></script>
 </head>
 
 <body>
@@ -31,7 +33,7 @@
                                     <div class="form-group row">
                                         <label for="nome-completo" class="col-md-4 col-form-label">Nome</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control-plaintext w-full" id="nome-completo"
+                                            <input type="text" class="form-control-plaintext input-profile w-full" id="nome-completo"
                                                 value="email@example.com">
                                         </div>
                                     </div>
@@ -39,14 +41,14 @@
                                         <label for="nome-completo" class="col-md-4 col-form-label">Nome de
                                             Invocador</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control-plaintext w-full" id="summonerName"
+                                            <input type="text" class="form-control-plaintext input-profile w-full" id="summonerName"
                                                 value="email@example.com">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="nome-completo" class="col-md-4 col-form-label">Steam</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control-plaintext w-full" id="steam"
+                                            <input type="text" class="form-control-plaintext input-profile w-full" id="steam"
                                                 value="email@example.com">
                                         </div>
                                     </div>
@@ -80,8 +82,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="post" action="/user/icon">
-                    {{ csrf_field() }}
+                <form method="post" action="/api/user/icon">
                     <div class="modal-body">
                         <!--Crop-->
                         <div class="image-editor">

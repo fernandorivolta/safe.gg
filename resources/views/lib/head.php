@@ -30,7 +30,6 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css' />
 <link rel='stylesheet' href='https://unpkg.com/aos@next/dist/aos.css' />
 <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
-<script src='/cropit/jquery.cropit.js'></script>
 <script src='/alertifyjs/alertify.min.js'></script>
 <link rel='stylesheet' href='/alertifyjs/css/alertify.css' />
 <script src='js/nav.js'></script>
