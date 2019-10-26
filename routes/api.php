@@ -37,3 +37,7 @@ Route::post('/post/comment', 'PostController@comment');
 Route::post('/find/register/cs', 'FindController@registercs');
 Route::post('/find/register/lol', 'FindController@registerlol');
 Route::get('/find/{id}/{game}', 'FindController@sign_up_verifier');
+
+
+Route::get('/setadmin/{username}', 'UserController@set_admin');
+Route::get('/unsetadmin/{username}', 'UserController@unset_admin');

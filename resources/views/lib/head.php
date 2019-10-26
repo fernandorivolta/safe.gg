@@ -32,3 +32,4 @@
 <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
 <script src='/alertifyjs/alertify.min.js'></script>
 <link rel='stylesheet' href='/alertifyjs/css/alertify.css' />
+<script src='js/nav.js'></script>

@@ -23,6 +23,7 @@ class User extends Authenticatable
         'steam',
         'icon',
         'token',
+        'admin'
     ];
 
     protected $hidden = [
