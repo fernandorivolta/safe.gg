@@ -34,6 +34,10 @@ Route::get('/grenades', function () {
     return view('grenades');
 });
 
+Route::get('/admin', function(){
+    return view('admin');
+});
+
 
 Route::prefix('/user')->group( function (){
     Route::post('/account','UserController@pre_register');

@@ -96,6 +96,34 @@ class UserController extends Controller
         }
     }
 
+    public function set_admin($username){
+        $user = User::where('username', $username)->first();
+        if(!$user){
+            return response()->json([
+                'message' => "user not found"
+            ]);
+        }
+        $user->admin = 1;
+        $user->save();
+        return response()->json([
+            'message' => "success"
+        ]);
+    }
+
+    public function unset_admin($username){
+        $user = User::where('username', $username)->first();
+        if(!$user){
+            return response()->json([
+                'message' => "user not found"
+            ]);
+        }
+        $user->admin = 0;
+        $user->save();
+        return response()->json([
+            'message' => "success"
+        ]);
+    }
+
     public function logout(Request $request){
         Auth::logout();
         return view('index');

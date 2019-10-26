@@ -219,7 +219,6 @@ function get_feed_data(id) {
             $.each(feedarray, function(i, item){
                 if(item.post){
                     var diamesano = item.created_at.split(' ')[0];
-                    console.log(diamesano);
                     var mes = diamesano.split('-')[1];
                     var dia = diamesano.split('-')[2];
                     var ano = diamesano.split('-')[0];
