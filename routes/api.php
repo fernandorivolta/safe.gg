@@ -41,3 +41,6 @@ Route::get('/find/{id}/{game}', 'FindController@sign_up_verifier');
 
 Route::get('/setadmin/{username}', 'UserController@set_admin');
 Route::get('/unsetadmin/{username}', 'UserController@unset_admin');
+
+Route::post('/news/create', 'NewsController@create');
+Route::post('/procs/create', 'ProCSController@create');

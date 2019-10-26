@@ -58,7 +58,6 @@ function get_rank_data_feed(id) {
         success: function (data) {
             $('.rank').html("");
             $.each(data, function (i, ranked) {
-                if (ranked.queueType != 'RANKED_FLEX_SR'){
                     $('.rank').append(`<div class="card bg-dark card-lol-info">
                     <div class="card-body">
                         <div class="card-title">
@@ -84,7 +83,6 @@ function get_rank_data_feed(id) {
                         <p class="card-text user-bio"></p>
                     </div>
                     </div>`);
-                }
             });
         },
         error: function () {
