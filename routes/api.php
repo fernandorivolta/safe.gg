@@ -44,6 +44,7 @@ Route::get('/setadmin/{username}', 'UserController@set_admin');
 Route::get('/unsetadmin/{username}', 'UserController@unset_admin');
 
 Route::post('/news/create', 'NewsController@create');
+Route::delete('/news/{id}/delete', 'NewsController@delete');
 Route::get('/news', 'NewsController@index');
 Route::post('/procs/create', 'ProCSController@create');
 

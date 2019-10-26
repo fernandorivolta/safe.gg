@@ -45,14 +45,14 @@
 .alertify-notifier .ajs-message.ajs-error{
     color: #fff;
     border-color: rgba(217,92,92,.95);
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Oswald', sans-serif;
 	border-radius: 3px;
 }
 
 .alertify-notifier .ajs-message.ajs-success {
     color: #fff;
     border-color: rgba(91,189,114,.95);
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Oswald', sans-serif;
 	border-radius: 3px;
 }
 
