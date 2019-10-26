@@ -25,6 +25,7 @@ Route::get('/game/{id_user}/unfollow/{id_game}','FollowController@unfollow_game'
 Route::get('/user/{id_user}/feed', 'FeedController@user_feed');
 Route::get('/user/{id_followed}/one_match', 'ApiController@one_match');
 Route::post('/user/icon','UserController@set_icon');
+Route::get('/users','UserController@index_api');
 
 Route::post('/user/post', 'PostController@create');
 Route::post('/user/update', 'UserController@update');
@@ -43,4 +44,8 @@ Route::get('/setadmin/{username}', 'UserController@set_admin');
 Route::get('/unsetadmin/{username}', 'UserController@unset_admin');
 
 Route::post('/news/create', 'NewsController@create');
+Route::get('/news', 'NewsController@index');
 Route::post('/procs/create', 'ProCSController@create');
+
+Route::get('/lol/proplayers', 'ProController@index_api');
+Route::get('/cs/proplayers', 'ProCSController@index_api');

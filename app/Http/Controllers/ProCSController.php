@@ -14,6 +14,11 @@ class ProCSController extends Controller
         ]);
    }
 
+   public function index_api(){
+    $list_pro = ProPlayerCS::all();
+    return response()->json($list_pro);
+}
+
    public function create(Request $request)
    {
         $pro = new ProPlayerCS;

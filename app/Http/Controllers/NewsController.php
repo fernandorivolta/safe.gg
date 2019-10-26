@@ -14,7 +14,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $list_news = News::all();
+        return response()->json($list_news);
     }
  
     /**

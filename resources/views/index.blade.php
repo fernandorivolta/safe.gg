@@ -142,7 +142,7 @@
 				</div>
 			</div>
 	</section>
-	<section class="section-info bg-gray-two">
+	<section class="section-info bg-gray">
 		<div class="container d-flex h-100">
 			<div class="row justify-content-center align-self-center col-md-12" data-aos="fade-right"
 				data-aos-delay="300">

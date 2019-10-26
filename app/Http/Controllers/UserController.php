@@ -25,6 +25,12 @@ class UserController extends Controller
         ]);
     }
 
+    public function index_api()
+    {
+        $list_users = User::all();
+        return response()->json($list_users);
+    }
+
     public function create(Request $request){
         $user = new User();
         $user->name = $request->input('name');

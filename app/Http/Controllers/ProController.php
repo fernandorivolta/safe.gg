@@ -33,6 +33,12 @@ class ProController extends Controller
         ]);
     }
 
+    public function index_api()
+    {
+        $list_pro = ProPlayer::all();
+        return response()->json($list_pro);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -1,26 +1,4 @@
 $(document).ready(function () {
-    $("#set-admin").click(function() {
-        let admin_username = $("#user-set-admin").val();
-        if(admin_username.length > 0){
-            $.ajax({
-                type: 'GET',
-                url: `/api/setadmin/${admin_username}`,
-                success: function (data) {
-                    if(data.message == "success"){
-                        alert(`O usuario ${admin_username} se tornou admin`);
-                    }else if(data.message == "user not found"){
-                        alert(`O usuario ${admin_username} nao existe`);
-                    }
-                },
-                error: function () {
-                    alert(`Erro interno`);
-                }
-            });
-        }else{
-            alert("Preencha o campo de username!");
-        }
-    });
-
     $("#unset-admin").click(function() {
         let admin_username = $("#user-unset-admin").val();
         if(admin_username.length > 0){
@@ -125,4 +103,203 @@ $(document).ready(function () {
         }
     });
 
+
+    $('#noticia').on('click', function(){
+        $.ajax({
+            type: 'GET',
+            url: `/api/news`,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $('.content').html(`
+                    <div class="row justify-content-center">
+                        <span class="header-name m-2">NOTÍCIAS</span>
+                    </div>`
+                );
+                $.each(data, function (i, news) {
+                    $('.content').append(`
+                        <div class="row p-2 bt">
+                            <div class="col-md-11 justify-content-center">
+                                <span class="gray-light-font">${news.title}</span>
+                            </div>
+                            <div class="col-md-1 justify-content-center">
+                                <div class="dropdown">
+                                    <a class="side-bar-item-link" href="" class="dropdown-toggle" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Excluir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+                $('.content').append(`
+                    <div class="row justify-content-center m-5">
+                        <a class="btn btn-primary" href="">CRIAR</a>
+                    </div>`
+                );
+            },
+            error: function () {
+                
+            }
+        });
+    });
+
+    $('#lol-proplayer').on('click', function(){
+        $.ajax({
+            type: 'GET',
+            url: `/api/lol/proplayers`,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $('.content').html(`
+                    <div class="row justify-content-center">
+                        <img class="game-logo" src="/images/icons/lol-logo.png"/> 
+                    </div>`
+                );
+                $.each(data, function (i, proplayer) {
+                    $('.content').append(`
+                        <div class="row p-2 bt">
+                            <div class="col-md-11 justify-content-center">
+                                <span class="gray-light-font">${proplayer.nick}</span>
+                            </div>
+                            <div class="col-md-1 justify-content-center">
+                                <div class="dropdown">
+                                    <a class="side-bar-item-link" href="" class="dropdown-toggle" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Excluir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+                $('.content').append(`
+                    <div class="row justify-content-center m-5">
+                        <a class="btn btn-primary" href="">CRIAR</a>
+                    </div>`
+                );
+            },
+            error: function () {
+                
+            }
+        });
+    });
+
+    $('#csgo-proplayer').on('click', function(){
+        $.ajax({
+            type: 'GET',
+            url: `/api/cs/proplayers`,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $('.content').html(`
+                    <div class="row justify-content-center">
+                        <img class="game-logo" src="/images/icons/csgo-logo.png"/> 
+                    </div>`
+                );
+                $.each(data, function (i, proplayer) {
+                    $('.content').append(`
+                        <div class="row p-2 bt">
+                            <div class="col-md-11 justify-content-center">
+                                <span class="gray-light-font">${proplayer.nick}</span>
+                            </div>
+                            <div class="col-md-1 justify-content-center">
+                                <div class="dropdown">
+                                    <a class="side-bar-item-link" href="" class="dropdown-toggle" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Excluir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+                $('.content').append(`
+                    <div class="row justify-content-center m-5">
+                        <a class="btn btn-primary" href="">CRIAR</a>
+                    </div>`
+                );
+            },
+            error: function () {
+                
+            }
+        });
+    });
+
+    $('#usuarios').on('click', function(){
+        $.ajax({
+            type: 'GET',
+            url: `/api/users`,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $('.content').html(`
+                    <div class="row justify-content-center">
+                        <span class="header-name m-2">USUÁRIOS</span>
+                    </div>`
+                );
+                $.each(data, function (i, user) {
+                    $('.content').append(`
+                        <div class="row p-2 bt">
+                            <div class="col-md-11 justify-content-center">
+                                <span class="gray-light-font">${user.name}</span>
+                            </div>
+                            <div class="col-md-1 justify-content-center">
+                                <div class="dropdown">
+                                    <a class="side-bar-item-link" href="" class="dropdown-toggle" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" onclick="set_admin('${user.username}')" href="#">Tornar Administrador</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+            },
+            error: function () {
+                
+            }
+        });
+    });
 });
+
+function set_admin(username){
+    let admin_username = username;
+    if(admin_username.length > 0){
+        $.ajax({
+            type: 'GET',
+            url: `/api/setadmin/${admin_username}`,
+            success: function (data) {
+                if(data.message == "success"){
+                    alertify.notify(`O usuário ${username} se tornou um administrador.`, 'success', 5, function(){  console.log('dismissed'); });
+                }else if(data.message == "user not found"){
+                    alertify.notify(`O usuário ${username} não foi encontrado.`, 'error', 5, function(){  console.log('dismissed'); });
+                }
+            },
+            error: function () {
+                alertify.notify(`Erro ao executar ação.`, 'error', 5, function(){  console.log('dismissed'); });
+            }
+        });
+    }else{
+        alert("Preencha o campo de username!");
+    }
+}
+  
+
+
