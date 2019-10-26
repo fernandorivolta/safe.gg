@@ -143,19 +143,6 @@ body{
 	background-color: #25262A !important;
 }
 
-.kaisa-bg{
-	height: 100%; 
-	background-image: url('../images/background/leona-bg.jpg');
-	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: cover; 
-	opacity: 1;	
-}
-
-.section-row{
-	height: 700px;
-}
-
 .line {
 	margin:0 0 1em;
 	line-height:2em;

@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</nav>
-	<div class="kaisa-bg">
+	<div class="main-section">
 		<div class="container">
 			<div class="row section-row">
 				<div class="col-md-6 my-auto text-index">
@@ -146,22 +146,35 @@
 		<div class="container d-flex h-100">
 			<div class="row justify-content-center align-self-center col-md-12" data-aos="fade-right"
 				data-aos-delay="300">
-				<div class="col-md-6">
-					<div class="card-hover">
-						<div class="card">
-							<div class="card-content">
-								<div class="image" style="background-image: url('/images/funcs/proplayers.png');">
-								</div>
-							</div>
+				<div class="col-md-12 text-index" data-aos="fade-right" data-aos-delay="300">
+					<div class="row justify-content-md-center section-title">
+						<h2 class="align-middle white-font p-3">Dê o próximo passo rumo ao topo</h2>
+						<br>
+						<p class="text-center gray-light-font">Com uma infinidade de guias de granadas para você se
+							tornar um
+							melhor jogador, o SAFE.GG tem todo o material necessário para você se tornar um melhor
+							jogador.</p>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/cache.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/mirage.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/overpass.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/train.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/dust_2.png" alt="">
+						</div>
+						<div class="col-md-2">
+							<img class="img-fluid map-logo" src="/images/csgo-map-logo/vertigo.png" alt="">
 						</div>
 					</div>
-				</div>
-				<div class="col-md-6">
-					<h2 class="align-middle white-font">Dê o próximo passo rumo ao topo</h2>
-					<br>
-					<p class="text-justify white-font">Com uma infinidade de guias de granadas para você se tornar um
-						melhor jogador, o SAFE.GG tem todo o material necessário para você se tornar um melhor jogador.
-					</p>
 				</div>
 			</div>
 	</section>

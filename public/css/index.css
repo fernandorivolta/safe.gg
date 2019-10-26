@@ -2,6 +2,29 @@
     background-color: #212529;
 }
 
+.map-logo{
+    filter: brightness(70%);
+    transition: 0.3s all;
+}
+
+.map-logo:hover{
+    filter: brightness(100%);
+    transition: 0.3s all;
+}
+
+.main-section{
+	height: 100%; 
+	background-image: url('../images/background/leona-bg.jpg');
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover; 
+	opacity: 1;	
+}
+
+.section-row{
+	height: 100vh;
+}
+
 .card-pro-player{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
@@ -15,9 +38,8 @@
 }
 
 .find-team-section{
-    background-image: url('/images/background/lucian-bg.jpg');
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/background/lucian-bg.jpg');
     background-size: cover;
-    filter: gray;
 }
 
 .card-find-team{
@@ -46,7 +68,7 @@
 }
 
 .section-info{
-    height: 45rem;
+    height: 100vh;
 }
 
 .section-title{
