@@ -79,7 +79,7 @@
 		<div class="container d-flex h-100">
 			<div class="col-md-12" data-aos="fade-right" data-aos-delay="300">
 				<div class="row justify-content-md-center section-title">
-					<h2 class="align-middle white-font p-3">Siga seus jogadores favoritos e amigos</h2>
+					<h2 class="align-middle orange-font p-3">Siga seus jogadores favoritos e amigos</h2>
 					<br>
 					<p class="text-center gray-light-font"> De um follow em seu jogador favorito para saber com qual
 						campeão anda jogando
@@ -146,11 +146,11 @@
 		<div class="container d-flex h-100">
 			<div class="row justify-content-center align-self-center col-md-12" data-aos="fade-right"
 				data-aos-delay="300">
-				<div class="col-md-12 text-index" data-aos="fade-right" data-aos-delay="300">
+				<div class="col-md-12" data-aos="fade-right" data-aos-delay="300">
 					<div class="row justify-content-md-center section-title">
-						<h2 class="align-middle white-font p-3">Dê o próximo passo rumo ao topo</h2>
+						<h2 class="align-middle orange-font p-3">Dê o próximo passo rumo ao topo</h2>
 						<br>
-						<p class="text-center gray-light-font">Com uma infinidade de guias de granadas para você se
+						<p class="text-center gray-light-font text-index">Com uma infinidade de guias de granadas para você se
 							tornar um
 							melhor jogador, o SAFE.GG tem todo o material necessário para você se tornar um melhor
 							jogador.</p>
