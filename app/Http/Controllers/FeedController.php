@@ -10,6 +10,9 @@ use App\News;
 use App\User;
 use App\Like;
 use App\Post;
+use App\Comment;
+use App\ProPlayer;
+use App\UserFollowPro;
 use Illuminate\Support\Facades\DB;
 
 class FeedController extends Controller
@@ -73,5 +76,37 @@ class FeedController extends Controller
             'liked_posts' => $list_id
         ], 200);
 
+    }
+
+    public function data_resume(){
+        $likes = Like::all()->count();
+        $users = User::all()->count();
+        $comments = Comment::all()->count();
+        $proplayer_info = UserFollowPro::select('proplayer_id', DB::raw('count(proplayer_id) followers'))->groupBy('proplayer_id')->orderByRaw('COUNT(*) DESC')->limit(1)->get();
+        $games_info = UserFollowGame::select('game_id', DB::raw('count(game_id) users_number'))->groupBy('game_id')->orderByRaw('COUNT(*) DESC')->limit(3)->get();
+        $games = [];
+        foreach ($games_info as $game) {
+            $aux = Game::findOrFail($game->game_id);
+            $games [] = [
+                'name' => $aux->game,
+                'percent' => round(($game->users_number*100)/$users)
+            ];
+        }
+        foreach ($proplayer_info as $proplayer) {
+            $aux = ProPlayer::findOrFail($proplayer->proplayer_id);
+            $proplayer = [
+                'name' => $aux->name,
+                'team' => $aux->team,
+                'photo' => $aux->photo,
+                'followers' => $proplayer->followers
+            ];
+        }
+        return response()->json([
+            'likes' => $likes,
+            'users' => $users,
+            'comments' => $comments,
+            'most_followed_pro' => $proplayer,
+            'most_followed_games' => $games
+        ]);
     }
 }

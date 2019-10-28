@@ -56,3 +56,55 @@ body{
     color: #FF8D1C;
     font-size: 3rem;
 }
+
+.statistics-header{
+    
+}
+
+.statistics-body{
+    font-size: 3rem;
+    color: #22917B;
+}
+
+.card-like{
+    background-image: url('/images/background/card-heart.png');
+    background-repeat: no-repeat;
+    background-position: 150% 40%;
+    background-size: 15vw;
+}
+
+.card-user{
+    background-image: url('/images/background/card-user.png');
+    background-repeat: no-repeat;
+    background-position: 150% 40%;
+    background-size: 15vw;
+}
+
+.card-comment{
+    background-image: url('/images/background/card-comment.png');
+    background-repeat: no-repeat;
+    background-position: 150% 40%;
+    background-size: 15vw;
+}
+
+.card-pro{
+    background-repeat: no-repeat;
+    background-size: 30vw;
+    background-position: -250% 10%
+}
+
+.card-h{
+    height: 14rem;
+}
+
+.f-small{
+    font-size: 1.5rem;
+}
+
+.w-row{
+    width: 2rem;
+}
+
+.mr{
+    margin-right: 2rem;
+}

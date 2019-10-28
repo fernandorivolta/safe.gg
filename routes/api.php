@@ -44,9 +44,12 @@ Route::get('/setadmin/{username}', 'UserController@set_admin');
 Route::get('/unsetadmin/{username}', 'UserController@unset_admin');
 
 Route::post('/news/create', 'NewsController@create');
+Route::put('/news/update', 'NewsController@update');
 Route::delete('/news/{id}/delete', 'NewsController@delete');
 Route::get('/news', 'NewsController@index');
 Route::post('/procs/create', 'ProCSController@create');
 
 Route::get('/lol/proplayers', 'ProController@index_api');
 Route::get('/cs/proplayers', 'ProCSController@index_api');
+
+Route::get('/dashboard/resumo', 'FeedController@data_resume');

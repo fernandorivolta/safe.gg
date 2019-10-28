@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    get_data();
     $("#unset-admin").click(function() {
         let admin_username = $("#user-unset-admin").val();
         if(admin_username.length > 0){
@@ -91,7 +92,7 @@ $(document).ready(function () {
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" onclick='update_form_news(${JSON.stringify(news)})' href="#">Editar</a>
                                         <a class="dropdown-item" onclick="delete_news(${news.id})" href="#">Excluir</a>
                                     </div>
                                 </div>
@@ -305,6 +306,50 @@ function create_form_news(){
     );
 }
 
+function update_form_news(news){
+    console.log(news);
+    $('.content').html(`
+        <div class="row justify-content-center">
+            <span class="header-name m-2">NOTÍCIAS</span>
+        </div>
+        <form>
+            <input type="text" class="d-none" id="news-id" value="${news.id}">
+            <div class="form-group">
+              <label class="gray-light-font" for="news-link">Link da Notícia</label>
+              <input type="text" class="form-control" id="news-link" value="${news.link}" placeholder="https://vs.com.br/artigo...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="news-img">Link da Imagem</label>
+              <input type="text" class="form-control" id="news-img" value="${news.img}" placeholder="https://images.vs.com.br/resize?compression=8...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="news-tag">Tag</label>
+              <input type="text" class="form-control" id="news-tag" value="${news.tag}" placeholder="cs:go, lol...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="news-title">Título da Notícia</label>
+              <input type="text" class="form-control" id="news-title" value="${news.title}" placeholder="TEKKEN: JOGADOR IMPRESSIONA...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="news-body">Conteúdo da Notícia</label>
+              <input type="text" class="form-control" id="news-body" value="${news.body}" placeholder="Para chegar ao topo do competitivo de fighting games...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="news-author">Autor da Notícia</label>
+              <input type="text" class="form-control" id="news-author" value="${news.author}" placeholder="Helena Nogueira...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="news-date">Data da Notícia</label>
+              <input type="date" class="form-control" value="${news.date}" id="news-date">
+            </div>
+            <div class="row justify-content-center m-2">
+                <button type="button" onclick="update_news()" class="btn btn-primary">Confirmar</button>
+            </div>
+        </form>
+        `
+    );
+}
+
 function delete_news(id){
     $.ajax({
         type: 'DELETE',
@@ -365,3 +410,76 @@ function create_news() {
     
 }
 
+function update_news() {
+    let news_id = $("#news-id").val();
+    let news_link = $("#news-link").val();
+    let news_img = $("#news-img").val();
+    let news_tag = $("#news-tag").val();
+    let news_title = $("#news-title").val();
+    let news_body = $("#news-body").val();
+    let news_author = $("#news-author").val();
+    let news_date = $("#news-date").val();
+    if(news_id.length > 0 && news_link.length > 0 && news_img.length > 0 && news_tag.length > 0 && news_title.length > 0 && news_body.length > 0 && news_author.length > 0 && news_date.length > 0){
+        var json = {
+            id: news_id,
+            link : news_link,
+            img : news_img,
+            tag : news_tag,
+            title : news_title,
+            body : news_body,
+            author : news_author,
+            date : news_date
+        }   
+        $.ajax({
+            type: 'PUT',
+            url: `/api/news/update`,
+            contentType: 'application/json',
+            data: JSON.stringify(json),
+            dataType: 'json',
+            success: function (data) {
+                if (data.message == "Success") {
+                    alertify.notify(`Notícia editada com sucesso!`, 'success', 5, function(){  console.log('dismissed'); });
+                }
+                $('#noticia').trigger('click');
+            },
+            error: function () {
+                alertify.notify(`Erro ao criar notícia!`, 'error', 5, function(){  console.log('dismissed'); });
+            }
+        });
+    }else{
+        alertify.notify(`Preencha todos os campos!`, 'error', 5, function(){  console.log('dismissed'); });
+    }
+    
+}
+
+function get_data(){
+    $.ajax({
+        type: 'GET',
+        url: '/api/dashboard/resumo',
+        success: function (data) {
+            $('game-data').html('');
+            $.each(data.most_followed_games, function (i, game) {
+                $('.game-data').append(`
+                    <div class="row">
+                        <span class="gray-font text-uppercase">${game.name}</span>
+                    </div>
+                    <div class="progress m-1">
+                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                            style="width: ${game.percent}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">${game.percent}%
+                        </div>
+                    </div>`
+                );
+            });
+            $('#total-users').html(`${data.users}`);
+            $('#total-likes').html(`${data.likes}`);
+            $('#total-comments').html(`${data.comments}`);
+            $('.card-pro').attr('style',`background-image: url(${data.most_followed_pro.photo});`);
+            $('#pro-name').html(`${data.most_followed_pro.name}`);
+            $('#pro-team').html(`${data.most_followed_pro.team}`);
+            $('#pro-followers').html(`${data.most_followed_pro.followers}`);
+        },
+        error: function () {
+            alertify.notify(`Erro ao resgatar dados!`, 'error', 5, function(){  console.log('dismissed'); });
+        }
+    });
+}
