@@ -34,6 +34,9 @@
             <div class="card bg-dark p-3 m-5">
                 <div class="col-md-12 content">
                     <div class="row">
+                        <span class="header-name m-2">RESUMO</span>
+                    </div>
+                    <div class="row">
                         <div class="col-md-4">
                             <div class="card card-user p-3">
                                 <div class="row">
@@ -97,15 +100,18 @@
                                     <div class="col-md-12">
                                         <div class="row justify-content-end">
                                             <span class="gray-font f-small font-weight-bold mr">NOME</span>
-                                            <span id="pro-name" class="green-font f-small font-weight-bolder">BRTT</span>
+                                            <span id="pro-name"
+                                                class="green-font f-small font-weight-bolder">BRTT</span>
                                         </div>
                                         <div class="row justify-content-end">
                                             <span class="gray-font f-small font-weight-bold mr">TIME</span>
-                                            <span id="pro-team" class="green-font f-small font-weight-bolder">FLAMENGO</span>
+                                            <span id="pro-team"
+                                                class="green-font f-small font-weight-bolder">FLAMENGO</span>
                                         </div>
                                         <div class="row justify-content-end">
                                             <span class="gray-font f-small font-weight-bold mr">SEGUIDORES</span>
-                                            <span id="pro-followers" class="green-font f-small font-weight-bolder">100</span>
+                                            <span id="pro-followers"
+                                                class="green-font f-small font-weight-bolder">100</span>
                                         </div>
                                     </div>
                                 </div>

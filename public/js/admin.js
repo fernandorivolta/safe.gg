@@ -310,7 +310,7 @@ function update_form_news(news){
     console.log(news);
     $('.content').html(`
         <div class="row justify-content-center">
-            <span class="header-name m-2">NOTÍCIAS</span>
+            <span class="header-name bt m-2">NOTÍCIAS</span>
         </div>
         <form>
             <input type="text" class="d-none" id="news-id" value="${news.id}">

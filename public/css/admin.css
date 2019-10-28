@@ -53,12 +53,9 @@ body{
 }
 
 .header-name{
-    color: #FF8D1C;
-    font-size: 3rem;
-}
-
-.statistics-header{
-    
+    color: #bbbbbb;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .statistics-body{
