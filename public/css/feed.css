@@ -151,9 +151,44 @@ body{
 .news-card{
   border: none;
   margin-bottom:10px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.photo-card{
+  height: 12rem;
+}
+
+.info-user-card{
+  height: 5rem;
+}
+
+.font-small{
+  font-size: .7rem;
+}
+
+.font-big{
+  font-size: 1.8rem;
+}
+
+.font-username{
+  font-size: .8rem;;
+}
+
+.edit-icon{
+  color:white;
+  transition: 0.3s all;
+}
+
+.edit-icon:hover{
+  color: #ff8d1c;
+  transform: scale(1.4);
+  transition: 0.3s all;
+}
+
+.border-gray{
+  border-color: #30353B !important;
 }
 
 .news-card::before {
