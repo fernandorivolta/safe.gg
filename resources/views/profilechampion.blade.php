@@ -13,16 +13,16 @@
     <div class="container">
         <div class="row">
             <div class="card bg-dark" style="width: 100%;">
-                <div class="col-md-12">
+                <div class="col-md-12 p-0">
                     <div class="row champion-splash align-items-end" style="background-image: url('/images/splash/Aatrox_0.jpg')">
-                        <div class="col">
+                        <div class="col p-0">
                             <div class="row champion-name-bg">
                                 <div class="mx-auto">
                                     <div class="row">
-                                        <span class="champion-name mx-auto">Aatrox</span>
+                                        <span class="gray-font champion-name mx-auto">Aatrox</span>
                                     </div>
                                     <div class="row">
-                                        <span class="champion-sub-name mx-auto">A espada Darkin</span>
+                                        <span class="orange-font champion-sub-name mx-auto">A espada Darkin</span>
                                     </div>
                                     
                                     

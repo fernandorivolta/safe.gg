@@ -15,7 +15,19 @@ class CreateChampionsTable extends Migration
     {
         Schema::create('champions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 60);
+            $table->text('name');
+            $table->text('lore');
+            $table->text('subname');
+            $table->text('passive');
+            $table->text('passive_img');
+            $table->text('skill_q');
+            $table->text('skill_q_img');
+            $table->text('skill_w');
+            $table->text('skill_w_img');
+            $table->text('skill_e');
+            $table->text('skill_e_img');
+            $table->text('skill_r');
+            $table->text('skill_r_img');
             $table->timestamps();
         });
     }
