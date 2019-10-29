@@ -52,12 +52,7 @@ Route::prefix('/user')->group( function (){
 
 Route::middleware(['user_validation'])->group(function () {
     
-    Route::get('/feed', function(){
-        $user_controller = new UserController;
-        return view('feed', [
-            'user' => $user_controller->user_info()
-        ]);
-    });
+    Route::get('/feed', 'UserController@user_info');
 
     Route::get('/myhistory', function(){
         $user_controller = new UserController;

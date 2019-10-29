@@ -8,6 +8,15 @@
   <script src="js/login.js"></script>
 </head>
 <body>
+  @if (isset($message))
+    <script> 
+      $(document).ready(function(){
+        var messagejs = {!! json_encode($message) !!};
+        alertify.set('notifier','position', 'top-right');
+        alertify.error(messagejs);
+      });
+    </script>
+  @endif
   <div class="container">
     <div class="justify-content-center align-items-center col-md-12 row h-full">
       <div class="login-form animated fadeIn p-5">

@@ -10,7 +10,7 @@ use App\ProPlayer;
 class ApiController extends Controller
 {
     public function get_api_key(){
-        $api_array = ['RGAPI-9cef7edc-9e69-4886-a929-cc3a361d0132'];
+        $api_array = ['RGAPI-0f1e80aa-e5f6-42b3-8f7a-5534367265c3'];
         return $api_array[rand(0,count($api_array)-1)];
     }
 

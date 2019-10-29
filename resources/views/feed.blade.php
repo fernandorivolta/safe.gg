@@ -55,7 +55,7 @@
           <div class="row align-items-center info-user-card">
             <div class="col-md-4 border-right border-gray">
               <div class="row justify-content-center">
-                <span class="green-font font-big">100</span>
+                <span class="green-font font-big">{{$num_posts}}</span>
               </div>
               <div class="row justify-content-center">
                 <span class="gray-light-font font-small">POSTS</span>
@@ -63,7 +63,7 @@
             </div>
             <div class="col-md-4 border-right border-gray">
               <div class="row justify-content-center">
-                <span class="green-font font-big">100</span>
+                <span class="green-font font-big">{{$num_followers}}</span>
               </div>
               <div class="row justify-content-center">
                 <span class="gray-light-font font-small">SEGUIDORES</span>
@@ -71,7 +71,7 @@
             </div>
             <div class="col-md-4">
               <div class="row justify-content-center">
-                <span class="green-font font-big">100</span>
+                <span class="green-font font-big">{{$num_following}}</span>
               </div>
               <div class="row justify-content-center">
                 <span class="gray-light-font font-small">SEGUINDO</span>
@@ -81,7 +81,7 @@
         </div>
         <div class="rank">
           <br>
-          <div class="ph-item bg-dark">
+          <div class="ph-item">
             <div class="ph-col-12">
               <div class="ph-row">
                 <div class="ph-col-12 big"></div>
@@ -97,7 +97,7 @@
               </div>
             </div>
           </div>
-          <div class="ph-item bg-dark">
+          <div class="ph-item">
             <div class="ph-col-12">
               <div class="ph-row">
                 <div class="ph-col-12 big"></div>

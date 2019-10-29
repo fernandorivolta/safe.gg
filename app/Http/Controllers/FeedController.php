@@ -69,6 +69,7 @@ class FeedController extends Controller
             $list_id [] = $like->post_id;
         }
         
+
         return response()->json([
             'news' => $news,
             'posts' => $posts,

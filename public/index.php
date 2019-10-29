@@ -1,5 +1,6 @@
 <?php
 //stream_context_set_default(['http'=>['proxy'=>'192.168.168.1:3128', 'header'=>'Proxy-Authorization: Basic '.base64_encode('1680481712040:X6Q6Y2!')]]);
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

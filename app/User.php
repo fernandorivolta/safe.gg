@@ -53,6 +53,7 @@ class User extends Authenticatable
     }
 
     public function get_ranked_stats($id, $api_key){
+      
       try {
         $ranked_stats = file_get_contents('https://br1.api.riotgames.com/lol/league/v4/entries/by-summoner/' . $id . '?api_key=' . $api_key);
         $ranked_stats = json_decode($ranked_stats, true);
@@ -63,6 +64,7 @@ class User extends Authenticatable
     }
 
     public function get_match_list($id, $api_key, $match_qtd = 4){
+      
       try {
         $match_list = file_get_contents('https://br1.api.riotgames.com/lol/match/v4/matchlists/by-account/' . $id . '?endIndex=' . $match_qtd . '&api_key=' . $api_key);
         $match_list = json_decode($match_list, true);
@@ -73,6 +75,7 @@ class User extends Authenticatable
     }
 
     public function get_match_stats($match_id, $api_key){
+      
       try {
         $match_stats = file_get_contents('https://br1.api.riotgames.com/lol/match/v4/matches/' . $match_id . '?api_key=' . $api_key);
         $match_stats = json_decode($match_stats, true);

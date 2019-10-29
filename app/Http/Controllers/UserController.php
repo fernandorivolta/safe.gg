@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use App\UserFollowUser;
+use App\Post;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -116,7 +118,7 @@ class UserController extends Controller
         if(Auth::attempt($data)){
             return redirect('/feed');
         }else{
-            return view('login');
+            return view('login', ['message' => "Usuário Inválido"]);
         }
     }
 
@@ -155,6 +157,15 @@ class UserController extends Controller
 
     public function user_info(){
         $user = Auth::user();
-        return $user;
+        $num_posts = Post::where('user_id', "=", $user->id)->count();
+        $num_following = UserFollowUser::where("user_id", "=", $user->id)->count();
+        $num_followers = UserFollowUser::where("user_id_followed", "=", $user->id)->count();
+        
+        return view('feed', [
+            'user' => $user,
+            'num_posts' => $num_posts,
+            'num_following' => $num_following,
+            'num_followers' => $num_followers
+        ]);
     }
 }
