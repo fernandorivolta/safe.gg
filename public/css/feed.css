@@ -300,24 +300,6 @@ textarea::-moz-input-placeholder {
   overflow-x: hidden;
   
 }
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #25262A; 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #ff9933; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background:	#ff8000; 
-}
 
 .a{
   color: #ff8000;

@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="col-md-10 content-col">
-            <div class="card bg-dark p-3 m-5">
+            <div class="card bg-dark p-3 m-5 pb-5">
                 <div class="col-md-12 content">
                     <div class="row">
                         <span class="header-name m-2">RESUMO</span>

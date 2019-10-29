@@ -1,4 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+	background: #25262A;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+	background: #ff9933;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+	background: #ff8000;
+}
+
 .btn-outline-light {
 	transition: all 0.3s;
 }
@@ -39,15 +61,15 @@
 	color: #879292 !important;
 }
 
-.orange-font{
+.orange-font {
 	color: #d16900 !important;
 }
 
-.green-font{
-    color: #22917B
+.green-font {
+	color: #22917B
 }
 
-.mt{
+.mt {
 	margin-top: 1rem;
 }
 
@@ -180,7 +202,7 @@ body {
 	margin: 0 0 0 1em;
 }
 
-.row{
+.row {
 	margin-left: 0;
 	margin-right: 0;
 }
