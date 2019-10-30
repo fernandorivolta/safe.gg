@@ -12,14 +12,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card bg-dark">
+                <div class="card bg-dark z-card mb-5">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row justify-content-md-center mt-2">
-                                <span class="gray-font">CS:GO</span>
+                                <span class="gray-font subtitle">CS:GO</span>
                             </div>
                             <div class="row justify-content-md-center mb-3">
-                                <h2 class="title">GRANADAS</h2>
+                                <h2 class="title text-uppercase">GRANADAS</h2>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,12 @@
                         <div class="container" id="contentContainer">
                             <div id="mapChoose">
                                 <div class="col-md-12">
-                                    <div id="back"><i class="fas fa-angle-double-left voltar"></i></div>
+                                    <div class="row p-0 mb-3">
+                                        <div class="voltar" id="back">
+                                            <i class="fas fa-chevron-circle-left" ></i>
+                                            <span>VOLTAR</span>
+                                        </div>
+                                    </div>
                                     <div id="mapSelect">
                                         <div class="row mb-5">
                                             <div class="col p-0 pr-1">
@@ -130,8 +135,8 @@
                                     </div>
                                 </div>
                                 <div id="mapRow" class="row">
-                                    <div style="display:none" id="mapCol"
-                                        class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div id="mapCol" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-5 p-0"
+                                        style="display:none">
                                     </div>
                                 </div>
                             </div>

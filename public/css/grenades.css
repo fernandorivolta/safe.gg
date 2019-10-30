@@ -1,5 +1,15 @@
 .voltar{
-  font-size: 20px;
+  cursor: pointer;
+  color:#879292;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.voltar:hover{
+  color: #ff8d1c;
+  transform: scale(1.1);
+  transition: all 0.2s;
+
 }
 
 .map-card{
@@ -94,7 +104,13 @@ a.thumbnail:hover {
 }
 .close:hover {
   color: inherit;
+
 }
+
+.z-card{
+  z-index: 0;
+}
+
 .overlay {
   width: 100%;
   height: 100%;
