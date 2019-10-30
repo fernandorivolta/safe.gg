@@ -5,6 +5,10 @@
   transition: all 0.2s;
 }
 
+.modal-header{
+  border-bottom: 1px solid #555555;
+}
+
 .voltar:hover{
   color: #ff8d1c;
   transform: scale(1.1);
