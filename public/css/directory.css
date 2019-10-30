@@ -12,6 +12,16 @@
     height: 50vh;
 }
 
+.card-game:hover{
+    filter: brightness(1.2);
+    border: 2px solid #d16900;
+    transition: all 0.2s;
+}
+
+.card-game:hover .white-font span{
+    color: #afafaf;
+}
+
 .game-name{
     font-size: 1.7rem;
 }

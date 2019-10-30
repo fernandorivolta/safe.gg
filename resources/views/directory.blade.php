@@ -5,7 +5,7 @@
     @include('lib.head')
     <link rel='stylesheet' type='text/css' href='/css/directory.css'>
     <link rel='stylesheet' type='text/css' href='/css/loading.css'>
-  	<link rel='stylesheet' type='text/css' href='/css/loading-btn.css'>
+    <link rel='stylesheet' type='text/css' href='/css/loading-btn.css'>
     <script src="/js/data-api.js"></script>
 </head>
 
@@ -15,6 +15,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card bg-dark p-2">
+                    <div class="row justify-content-md-center mt-2">
+                        <span class="gray-font">Games</span>
+                    </div>
+                    <div class="row justify-content-md-center mb-3">
+                        <h2 class="title">PROCURAR</h2>
+                    </div>
                     <div class="row justify-content-md-center">
                         @foreach ($games as $i=>$game)
                         @if ($i % 4 == 0)
@@ -38,12 +44,14 @@
                                         </div>
                                         <div class="row">
                                             <div>
-                                                    @if (in_array($game->id, $followed_games))
-                                                    <a onclick="unfollow_game({{$game->id}}, $(this))" 
-                                                    class="btn btn-outline-primary btn-following ld-ext-right">Seguindo<div class="ld ld-ring ld-spin-fast"></div></a>
+                                                @if (in_array($game->id, $followed_games))
+                                                <a onclick="unfollow_game({{$game->id}}, $(this))"
+                                                    class="btn btn-outline-primary btn-following ld-ext-right">Seguindo
+                                                    <div class="ld ld-ring ld-spin-fast"></div></a>
                                                 @else
-                                                    <a onclick="follow_game({{$game->id}}, $(this))"
-                                                    class="btn btn-follow ld-ext-right">Seguir<div class="ld ld-ring ld-spin-fast"></div></a>
+                                                <a onclick="follow_game({{$game->id}}, $(this))"
+                                                    class="btn btn-follow ld-ext-right">Seguir<div
+                                                        class="ld ld-ring ld-spin-fast"></div></a>
                                                 @endif
                                             </div>
                                         </div>

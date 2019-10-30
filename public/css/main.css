@@ -375,6 +375,11 @@ body {
 	background-color: #ff9b38 !important;
 }
 
+.title{
+	color: white;
+	font-size: 2.5rem;
+}
+
 .btn-follow {
 	cursor: pointer;
 	color: white !important;
