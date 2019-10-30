@@ -361,30 +361,32 @@ body {
 	z-index: 50;
 }
 
-.btn-follow {
-	color: #a300ff !important;
-	border-radius: 100px;
-	border-color: #a300ff !important;
-	width: 100%;
-}
-
-.btn-follow:hover {
-	color: white !important;
-	background-color: #a300ff !important;
-}
-
 .btn-following {
-	color: white !important;
+	cursor: pointer;
+	color: #ff9b38 !important;
 	border-radius: 100px;
-	border-color: #4a0074 !important;
-	background-color: #4a0074;
+	border-color:  #ff9b38 !important;
 	width: 100%;
+	box-shadow: ;
 }
 
 .btn-following:hover {
 	color: white !important;
-	background-color: #7700bb !important;
-	border-color: #7700bb !important;
+	background-color: #ff9b38 !important;
+}
+
+.btn-follow {
+	cursor: pointer;
+	color: white !important;
+	border-radius: 100px;
+	border-color: #d16900 !important;
+	background-color: #d16900;
+	width: 100%;
+}
+
+.btn-follow:hover {
+	background-color: #ff8d1c !important;
+	border-color: #ff8d1c !important;
 }
 
 /* Corrige o efeito estranho do background quando abre um modal */

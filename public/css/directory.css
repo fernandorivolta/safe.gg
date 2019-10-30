@@ -8,3 +8,10 @@
     font-size: 14px;
 }
 
+.card-game{
+    height: 50vh;
+}
+
+.game-name{
+    font-size: 1.7rem;
+}

@@ -1,6 +1,6 @@
 .champion-splash {
     height: 30rem;
-    background-position: center;
+    background-position: inherit;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
 }

@@ -103,8 +103,8 @@ function follow_game(id_game, button) {
                 setTimeout(function () {
                     button.removeClass('running');
                     button.html('Seguindo <div class="ld ld-ring ld-spin-fast"></div>');
-                    button.removeClass('btn-following');
-                    button.addClass('btn-follow');
+                    button.removeClass('btn-follow');
+                    button.addClass('btn-following');
                 }, 500);
                 button.attr('onclick', `unfollow_game(${id_game}, $(this))`);
             }
@@ -127,8 +127,8 @@ function unfollow_game(id_game, button) {
                 setTimeout(function () {
                     button.removeClass('running');
                     button.html('Seguir <div class="ld ld-ring ld-spin-fast"></div>');
-                    button.removeClass('btn-follow');
-                    button.addClass('btn-following');
+                    button.removeClass('btn-following');
+                    button.addClass('btn-follow');
                 }, 500);
                 button.attr('onclick', `follow_game(${id_game}, $(this))`);
             }
