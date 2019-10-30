@@ -45,13 +45,13 @@
                                         <div class="row">
                                             <div>
                                                 @if (in_array($game->id, $followed_games))
-                                                <a onclick="unfollow_game({{$game->id}}, $(this))"
+                                                <button onclick="unfollow_game({{$game->id}}, $(this))"
                                                     class="btn btn-outline-primary btn-following ld-ext-right">Seguindo
-                                                    <div class="ld ld-ring ld-spin-fast"></div></a>
+                                                    <div class="ld ld-ring ld-spin-fast"></div></button>
                                                 @else
-                                                <a onclick="follow_game({{$game->id}}, $(this))"
+                                                <button onclick="follow_game({{$game->id}}, $(this))"
                                                     class="btn btn-follow ld-ext-right">Seguir<div
-                                                        class="ld ld-ring ld-spin-fast"></div></a>
+                                                        class="ld ld-ring ld-spin-fast"></div></button>
                                                 @endif
                                             </div>
                                         </div>

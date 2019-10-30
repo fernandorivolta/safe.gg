@@ -362,12 +362,10 @@ body {
 }
 
 .btn-following {
-	cursor: pointer;
 	color: #ff9b38 !important;
 	border-radius: 100px;
 	border-color:  #ff9b38 !important;
 	width: 100%;
-	box-shadow: ;
 }
 
 .btn-following:hover {
@@ -381,7 +379,6 @@ body {
 }
 
 .btn-follow {
-	cursor: pointer;
 	color: white !important;
 	border-radius: 100px;
 	border-color: #d16900 !important;
