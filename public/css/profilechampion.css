@@ -7,7 +7,17 @@
 
 .champion-history {
     margin-top: 12rem;
-    padding: 3rem;
+    padding: 2rem;
+    text-align: justify;
+}
+
+.skills{
+    font-size: .8rem;
+}
+
+.champion-skills {
+    margin-top: 12rem;
+    padding: 1rem;
     text-align: justify;
     text-justify: inter-word;
 }

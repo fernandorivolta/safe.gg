@@ -21,6 +21,10 @@
 	background: #ff8000;
 }
 
+.font-shadow{
+	text-shadow: 0 0 15px rgba(0,0,0,.8), 0 0 10px rgba(0,0,0,.8);
+}
+
 .btn-outline-light {
 	transition: all 0.3s;
 }

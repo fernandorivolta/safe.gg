@@ -1,23 +1,26 @@
-.champions{
-  width: 100%;
-  transition: all 0.3s ease-out;
+.card-champion{
+  height: 50vh;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.card-img{
-  filter: brightness(60%);
+.card-champion:hover{
+  transform: scale(1.2);
+  filter: brightness(180%);
+  transition: all 0.3s;
+  z-index: 10;
 }
 
-.champions:hover .card-img{
-    filter: brightness(120%);
-    transform: scale(1.3);
-    cursor: pointer;
-    z-index: 20;
-    box-shadow: inset 0 0 1em #8161d0, 0 0 1em #8161d0;
-    transition: all 0.3s ease-out;
+.name-font{
+  font-size: 1.5rem;
+}
+
+.subname-font{
+  font-size: .8rem;
 }
 
 .title{
   color: white;
-  font-size: 24px;
+  font-size: 2.5rem;
 }
 

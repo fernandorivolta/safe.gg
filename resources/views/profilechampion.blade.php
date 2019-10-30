@@ -11,46 +11,94 @@
 <body>
     @include('lib.navbar')
     <div class="container">
-        <div class="row">
-            <div class="card bg-dark" style="width: 100%;">
+        <div class="row m-5">
+            <div class="card bg-dark pb-5">
                 <div class="col-md-12 p-0">
-                    <div class="row champion-splash align-items-end" style="background-image: url('/images/splash/Aatrox_0.jpg')">
+                    <div class="row champion-splash align-items-end"
+                        style="background-image: url('/images/splash/{{$champion->name}}_0.jpg')">
                         <div class="col p-0">
                             <div class="row champion-name-bg">
                                 <div class="mx-auto">
                                     <div class="row">
-                                        <span class="gray-font champion-name mx-auto">Aatrox</span>
+                                        <span class="gray-font champion-name mx-auto font-shadow">{{$champion->name}}</span>
                                     </div>
                                     <div class="row">
-                                        <span class="orange-font champion-sub-name mx-auto">A espada Darkin</span>
+                                        <span
+                                            class="orange-font champion-sub-name mx-auto">{{$champion->subname}}</span>
                                     </div>
-                                    
-                                    
+
+
                                 </div>
                             </div>
-                              
+
                         </div>
                     </div>
                     <div class="row champion-about">
                         <div class="col-md-3">
-                            <div class="champion-history card bg-dark">
-                                <span class="text-light">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a egestas ipsum. Donec sodales lorem sit amet diam fringilla finibus. Cras fermentum eget neque non ullamcorper. Vestibulum fringilla sit amet urna sed tincidunt. Aliquam quis iaculis tortor, vitae sollicitudin turpis. Morbi quis sem risus. Donec et mattis ipsum. Duis in rutrum nulla. Etiam condimentum ipsum sed dolor commodo vulputate. In hac habitasse platea dictumst. Proin condimentum, lacus maximus pellentesque malesuada, nibh nulla pharetra tellus, scelerisque euismod erat sapien vitae lectus. Quisque mattis fringilla orci, in elementum urna imperdiet in.
-                                </span>
+                            <div class="champion-skills card bg-dark">
+                                <div class="row mb-3">
+                                    <div class="col-md-12 p-2 my-auto">
+                                        <div class="row justify-content-center mb-2">
+                                            <img class="img-fluid rounded-circle" src="{{$champion->passive_img}}" alt="">
+                                        </div>
+                                        <div class="row">
+                                            <span class="gray-font skills">{{$champion->passive}}</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-12 p-2 my-auto">
+                                        <div class="row justify-content-center mb-2">
+                                            <img class="img-fluid rounded-circle" src="{{$champion->skill_q_img}}" alt="">
+                                        </div>
+                                        <div class="row">
+                                            <span class="gray-font skills">{{$champion->skill_q}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-2 my-auto">
+                                        <div class="row justify-content-center mb-2">
+                                            <img class="img-fluid rounded-circle" src="{{$champion->skill_w_img}}" alt="">
+                                        </div>
+                                        <div class="row">
+                                            <span class="gray-font skills">{{$champion->skill_w}}</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="champion-history card bg-dark">
                                 <span class="text-light">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a egestas ipsum. Donec sodales lorem sit amet diam fringilla finibus. Cras fermentum eget neque non ullamcorper. Vestibulum fringilla sit amet urna sed tincidunt. Aliquam quis iaculis tortor, vitae sollicitudin turpis. Morbi quis sem risus. Donec et mattis ipsum. Duis in rutrum nulla. Etiam condimentum ipsum sed dolor commodo vulputate. In hac habitasse platea dictumst. Proin condimentum, lacus maximus pellentesque malesuada, nibh nulla pharetra tellus, scelerisque euismod erat sapien vitae lectus. Quisque mattis fringilla orci, in elementum urna imperdiet in.
+                                    {{$champion->lore}}
                                 </span>
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="champion-history card bg-dark">
-                                <span class="text-light">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a egestas ipsum. Donec sodales lorem sit amet diam fringilla finibus. Cras fermentum eget neque non ullamcorper. Vestibulum fringilla sit amet urna sed tincidunt. Aliquam quis iaculis tortor, vitae sollicitudin turpis. Morbi quis sem risus. Donec et mattis ipsum. Duis in rutrum nulla. Etiam condimentum ipsum sed dolor commodo vulputate. In hac habitasse platea dictumst. Proin condimentum, lacus maximus pellentesque malesuada, nibh nulla pharetra tellus, scelerisque euismod erat sapien vitae lectus. Quisque mattis fringilla orci, in elementum urna imperdiet in.
-                                </span>
+                            <div class="champion-skills card bg-dark">
+                                <div class="row mb-3">
+                                    <div class="col-md-12 p-2 my-auto">
+                                        <div class="row justify-content-center mb-2">
+                                            <img class="img-fluid rounded-circle" src="{{$champion->skill_e_img}}" alt="">
+                                        </div>
+                                        <div class="row">
+                                            <span class="gray-font skills">{{$champion->skill_e}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-2 my-auto">
+                                        <div class="row justify-content-center mb-2">
+                                            <img class="img-fluid rounded-circle" src="{{$champion->skill_r_img}}" alt="">
+                                        </div>
+                                        <div class="row">
+                                            <span class="gray-font skills">{{$champion->skill_r}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
