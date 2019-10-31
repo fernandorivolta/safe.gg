@@ -1,15 +1,13 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var user = JSON.parse(localStorage.getItem('user'));
     $('#summonername').val(user.summonerName);
-    $('#csgo-image').on('click', function(){
+    $('.game-cs').on('click', function () {
         verify_user_sign_up('CSGO');
-        $('#menu').hide('slow');
     });
-    $('#lol-image').on('click', function(){
+    $('.game-lol').on('click', function () {
         verify_user_sign_up('LOL');
-        $('#menu').hide('slow');
     });
-    $('.voltar').on('click', function(){
+    $('.voltar').on('click', function () {
         $('#menu').show('slow');
         $('#csgo-find').hide('slow');
         $('#lol-find').hide('slow');
@@ -20,7 +18,7 @@ $(document).ready(function(){
     });
 });
 
-function verify_user_sign_up(game){
+function verify_user_sign_up(game) {
     var user = JSON.parse(localStorage.getItem('user'));
     $.ajax({
         type: 'GET',
@@ -28,97 +26,35 @@ function verify_user_sign_up(game){
         contentType: 'application/json',
         dataType: 'json',
         success: function (data) {
-            if(game=="CSGO"){
-                $('#csgo-info').show();
-                $('#csgo-voltar').show();
-                $('#players-cs').html(' ');
-                $('#players-lol').html(' ');
-                $.each(data.user_list, function(i, item){
-                    $('#players-cs').append(`
-                    <div class="row">
-                    <div class="col-md-12 white-font">
-                          <div class="card-header news-card-text">
-                            ${item.name} - <a href="user/${item.id}">@${item.username}</a>
-                          </div>
-                          <div class="card-body news-card-text">
-                            <div class="row">
-                                <div class="col-md-3 text-center">
-                                    <img style="width:35%" class="img-fluid" src="/storage/${item.icon}" alt="user image">
-                                </div>
-                                <div class="col-md-9 text-left my-auto">
-                                    <div class="col-md-12 text-center">
-                                        <div class="row">
-                                            <div class="col-md-6 text-center">
-                                                <p class="card-text">${item.patente}</p>
-                                                <a class="card-text white-font" target="_nblank" href="${item.steamurl}">Steam URL</a>
-                                            </div>
-                                            <div class="col-md-6 text-center">
-                                                <p class="card-text">${item.funcao}</p>
-                                                <p class="card-text">${item.disponibilidade}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-                    `);
-                //retornar as informacoes da tabela users para montar o card
+            if (!data.user) {
+                alertify.alert('Cadastro necessário!', 'Para prosseguir é necessário se cadastrar na funcionalidade!').set('onok', function (closeEvent) {
+                    $('.card-choose').fadeOut();
+                    if (game == "CSGO") {
+                        setTimeout(function () {
+                            $('.card-form-csgo').fadeIn();
+                        }, 500);
+                    } else {
+                        setTimeout(function () {
+                            $('.card-form-lol').fadeIn();
+                        }, 500);
+                    }
                 });
-            }else if(game == "LOL"){
-                $('#players-cs').html(' ');
-                $('#players-lol').html(' ');
-                $('#players-lol').show();
-                $('#lol-info').show();
-                $('#lol-voltar').show();
-                $.each(data.user_list, function(i, item){
-                    console.log(item);
-                    $('#players-lol').append(`
-                    <div class="row">
-                    <div class="col-md-12 white-font">
-                          <div class="card-header news-card-text">
-                            ${item.name} - <a href="user/${item.id}">@${item.username}</a>
-                          </div>
-                          <div class="card-body news-card-text">
-                            <div class="row">
-                                <div class="col-md-3 text-center">
-                                    <img style="width:35%" class="img-fluid" src="/storage/${item.icon}" alt="user image">
-                                </div>
-                                <div class="col-md-9 text-left my-auto">
-                                    <div class="col-md-12 text-center">
-                                        <div class="row">
-                                            <div class="col-md-6 text-center">
-                                                <p class="card-text">${item.elo}</p>
-                                                <p class="card-text">${item.sumonnername}</p>
-                                            </div>
-                                            <div class="col-md-6 text-center">
-                                                <p class="card-text">${item.posicao}</p>
-                                                <p class="card-text">${item.disponibilidade}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-                    `);
-                });
+            } else {
+                $('.card-choose').fadeOut();
+                console.log('alooooooooo');
+                setTimeout(function () {
+                    $('.users-list').fadeIn();
+                }, 500);
             }
         },
         error: function () {
-            if(game=='CSGO'){
-                $('#csgo-find').show('slow');
-            }else if(game=="LOL"){
-                $('#lol-find').show('slow');
-            }
+
         }
     });
 }
 
-function cadastre_csgo(){
-    $('#steam-url').focus(function(){
+function cadastre_csgo() {
+    $('#steam-url').focus(function () {
         $('#feedback').fadeOut();
     });
     var disp = $('#disponibilidade').val();
@@ -133,7 +69,7 @@ function cadastre_csgo(){
         steamurl: steam_url,
         funcao: funcaoval
     }
-    if(steam_url.length > 0){
+    if (steam_url.length > 0) {
         $.ajax({
             type: 'POST',
             url: `/api/find/register/cs`,
@@ -142,20 +78,22 @@ function cadastre_csgo(){
             dataType: 'json',
             success: function (data) {
                 if (data.message == "Success") {
-                    $('#csgo-find').hide('slow');
+                    alertify.notify('Usuário cadastrado com sucesso', 'success', 5, function () {
+                        console.log('dismissed');
+                    });
                     verify_user_sign_up('CSGO');
                 }
             },
             error: function () {
             }
         });
-    }else{
+    } else {
         $('#feedback').fadeIn();
     }
 }
 
 
-function cadastre_lol(){
+function cadastre_lol() {
     var disp = $('#disponibilidade').val();
     var summonernameval = $('#summonername').val();
     var eloval = $('#patente').val();

@@ -78,6 +78,9 @@ class FindController extends Controller
         switch($game){
             case "CSGO":
                 $user = CsgoFind::where('user_id', '=', $id)->first();
+                if(!$user){
+                    break;
+                }
                 $supported_elos = $this->elo_controller($user->patente, $game);
                 $user_list = DB::table('csgofind')
                 ->leftJoin('users', 'users.id', '=', 'csgofind.user_id')
@@ -86,6 +89,9 @@ class FindController extends Controller
             break;
             case "LOL":
                 $user = LolFind::where('user_id', '=', $id)->first();
+                if(!$user){
+                    break;
+                }
                 $supported_elos = $this->elo_controller($user->elo, $game);
                 $user_list = DB::table('lolfind')
                 ->leftJoin('users', 'users.id', '=', 'lolfind.user_id')

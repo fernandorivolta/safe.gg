@@ -361,6 +361,26 @@ body {
 	z-index: 50;
 }
 
+.ajs-ok:focus {
+    outline: none;
+}
+
+.ajs-ok{
+	border: none;
+	text-decoration: none;
+	color: white !important;
+	border-radius: 100px;
+	border-color:  #22917B !important;
+	background-color: #22917B !important;
+	transition: all 0.3s;
+}
+
+.ajs-ok:hover{
+	transform: scale(1.1);
+	background-color: rgb(17, 70, 59) !important;
+	transition: all 0.3s;
+}
+
 .btn-following {
 	color: #ff9b38 !important;
 	border-radius: 100px;

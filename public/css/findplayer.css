@@ -4,12 +4,24 @@
 	margin-bottom: 10px;
 }
 
+.form-header{
+	width: 8rem;
+}
+
+.row-form{
+	height: 80vh;
+}
+
 .game-side {
 	height: 80vh;
 }
 
 .f-subtitle{
 	font-size: 1rem;
+}
+
+.f-subtitle-two{
+	font-size: 2.5rem;
 }
 
 .f-title{
@@ -26,12 +38,13 @@
 	color: white;
     position: absolute;
     z-index: 10;
-    top: 28vh;
-    left: 35vw;
+	top: 33%;
+    left: 43%;
 }
 
 .game-lol {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.vox-cdn.com/thumbor/o805sJ2Ws0iqyhSCrO1MrxUaKvc=/0x0:1215x717/1200x800/filters:focal(511x262:705x456)/cdn.vox-cdn.com/uploads/chorus_image/image/62356581/2b28479080f95087.0.jpg');
+	cursor: pointer;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/originals/b4/8e/a6/b48ea62e19c59f3e8cdff43e91d2e28a.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -45,11 +58,31 @@
 }
 
 .lol-name{
+	line-height: 2.5rem;
+	font-size: 3rem;
 	visibility: hidden;
 }
 
 .cs-name{
+	font-size: 3rem;
 	visibility: hidden;
+}
+
+.form-label{
+	font-size: .8rem;
+}
+
+.form-input{
+	color: white;
+	border-radius: 0px;
+	border: 0px;
+	border-bottom: 2px solid #22917B;
+	background-color: transparent;
+}
+
+.form-input:focus{
+	outline: none !important;
+	background-color: transparent;
 }
 
 .game-cs:hover .row .cs-name{
@@ -61,16 +94,17 @@
 }
 
 .game-cs {
+	cursor: pointer;
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://brasilguns.com.br/blog/wp-content/uploads/2017/10/Counter-Strike-Global-Offensive-CS-Go-wallpaper-13-WallpapersBQ.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: right;
 	transition: all 0.3s;
 }
 
 .game-cs:hover{
 	filter: brightness(2);
-	background-position: left;
+	background-position: center;
 	transition: all 0.3s;
 }
 
