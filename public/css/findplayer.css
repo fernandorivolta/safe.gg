@@ -4,12 +4,42 @@
 	margin-bottom: 10px;
 }
 
+.img-user{
+	width: 4rem;
+}
+
+.user-item-h{
+	height: 5rem;
+}
+
 .form-header{
 	width: 8rem;
 }
 
-.row-form{
-	height: 80vh;
+.img-small{
+	width: 2rem;
+}
+
+.error-img{
+	width: 22rem;
+}
+
+.card-user{
+	transition: all 0.3s;
+}
+
+.card-user:hover{
+	transform: translateY(-.3rem);
+	box-shadow: 4px 16px 23px 5px rgba(0,0,0,0.55) !important;
+	transition: all 0.3s;
+}
+
+.card-user-subtitle{
+	font-size: .8rem;
+}
+
+.card-user-title{
+	font-size: 2rem;
 }
 
 .game-side {

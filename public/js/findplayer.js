@@ -40,8 +40,114 @@ function verify_user_sign_up(game) {
                     }
                 });
             } else {
+                console.log(data)
+                $('.list').html('');
                 $('.card-choose').fadeOut();
-                console.log('alooooooooo');
+                if (!(data.user_list.length > 0)) {
+                    $('.list').append(`
+                        <div class="row justify-content-center pt-5 p-2">
+                            <img class="error-img" src="/images/funcs/error-404.png" alt="">
+                        </div>
+
+                        <div class="row justify-content-center p-5">
+                            <span class="title gray-font">NENHUM USUÁRIO ENCONTRADO</span>
+                        </div>
+                    `);
+                }
+
+                if (game == "CSGO") {
+                    $.each(data.user_list, function (i, user) {
+                        $('.list').append(`
+                            <div class="card card-user shadow-none bg-dark-two mb-2">
+                                <div class="row p-3 align-items-center" style="background-repeat: no-repeat;background-position: right;background-size: contain;background-image: url(/images/csgo-roles/${user.funcao}.svg);">
+                                    <div class="col-md-2">
+                                        <img class="rounded-circle img-user"
+                                            src="/storage/${user.icon}"
+                                            alt="">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">POSIÇÃO</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="card-user-title text-uppercase font-shadow green-font">${user.funcao}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">ELO</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="card-user-title text-uppercase font-shadow green-font">${user.patente}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">DISPONIBILIDADE</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="card-user-title text-uppercase font-shadow green-font">${user.disponibilidade}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">PERFIL</span>
+                                        </div>
+                                        <div class="row">
+                                            <a href="${user.steam}" class="card-user-title text-uppercase font-shadow green-font">STEAM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    });
+                } else {
+                    $.each(data.user_list, function (i, user) {
+                        $('.list').append(`
+                            <div class="card card-user shadow-none bg-dark-two mb-2">
+                                <div class="row p-3 align-items-center" style="background-repeat: no-repeat;background-position: right;background-size: contain;background-image: url(/images/lol-lanes/${user.posicao}.png);">
+                                    <div class="col-md-2">
+                                        <img class="rounded-circle img-user"
+                                            src="/storage/${user.icon}"
+                                            alt="">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">POSIÇÃO</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="card-user-title text-uppercase font-shadow green-font">${user.posicao}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">ELO</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="card-user-title text-uppercase font-shadow green-font">${user.elo}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">DISPONIBILIDADE</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="card-user-title text-uppercase font-shadow green-font">${user.disponibilidade}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">NICK</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="card-user-title text-uppercase font-shadow green-font">${user.sumonnername}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    });
+                }
                 setTimeout(function () {
                     $('.users-list').fadeIn();
                 }, 500);

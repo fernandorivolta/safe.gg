@@ -179,6 +179,10 @@ body {
 	background-color: #25262A !important;
 }
 
+.bg-dark-two {
+	background-color: #1e1f22 !important;
+}
+
 .line {
 	margin: 0 0 1em;
 	line-height: 2em;

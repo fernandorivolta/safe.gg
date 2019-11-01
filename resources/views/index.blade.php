@@ -126,7 +126,7 @@
 					<div class="card-hover">
 						<div class="card card-find-team">
 							<div class="card-content">
-								<div class="image" style="background-image: url('/images/funcs/proplayers.png');">
+								<div class="image" style="background-image: url('/images/funcs/encontre.png');">
 								</div>
 							</div>
 						</div>

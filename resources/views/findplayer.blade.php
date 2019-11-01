@@ -137,9 +137,24 @@
                         </form>
                     </div>
                 </div>
-                <div class="card bg-dark p-3 users-list" style="display: none">
-                    
-                    
+                <div class="card bg-dark pt-3 pb-3 users-list" style="display: none">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row justify-content-md-center mt-2">
+                                <span class="gray-font subtitle">ENCONTRE</span>
+                            </div>
+                            <div class="row justify-content-md-center mb-3">
+                                <h2 class="title text-uppercase">USUÁRIOS DISPONÍVEIS</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 list">
+                            
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
