@@ -255,7 +255,12 @@ textarea::-moz-input-placeholder {
 }
 
 .fa-heart{
+  cursor: pointer;
   transition: all 0.2s;
+}
+
+.fa-comment{
+  cursor: pointer;
 }
 
 .form-control{

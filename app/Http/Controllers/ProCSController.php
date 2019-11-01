@@ -7,20 +7,20 @@ use App\ProPlayerCS;
 
 class ProCSController extends Controller
 {
-   public function index(){
+    public function index(){
         $list_pro_players = ProPlayerCS::all();
         return view('pro_cs',[
             'proplayers' => $list_pro_players,
         ]);
-   }
+    }
 
-   public function index_api(){
-    $list_pro = ProPlayerCS::all();
-    return response()->json($list_pro);
-}
+    public function index_api(){
+        $list_pro = ProPlayerCS::all();
+        return response()->json($list_pro);
+    }
 
-   public function create(Request $request)
-   {
+    public function create(Request $request)
+    {
         $pro = new ProPlayerCS;
         $pro->roundcontribution = $request->input('roundcontribution');
         $pro->deathperround = $request->input('deathperround');
@@ -37,5 +37,12 @@ class ProCSController extends Controller
         return response()->json([
             'message' => "Success"
         ]);
-   }
+    }
+
+    public function profile_pro($id){
+        $pro = ProPlayerCS::findOrFail($id);
+        return view('profilepro_cs',[
+            'proplayer' => $pro
+        ]);
+    }
 }

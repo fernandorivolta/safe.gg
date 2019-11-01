@@ -75,7 +75,7 @@ Route::middleware(['user_validation'])->group(function () {
 
     Route::prefix('/cs/proplayers')->group( function (){
         Route::get('/', 'ProCSController@index');
-        Route::get('/{id}', 'ProController@profile_pro');
+        Route::get('/{id}', 'ProCSController@profile_pro');
     });
 });
 

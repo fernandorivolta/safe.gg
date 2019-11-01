@@ -1,0 +1,22 @@
+.item-font{
+    font-size: 3rem;
+}
+
+.item-title{
+    font-size: .8rem;
+}
+
+.pro-info{
+    background-color: rgba(10, 10, 10, 0.7);
+}
+
+.f-back{
+    color: white;
+    font-size: 4rem;
+    transition: all 0.3s;
+}
+
+.f-back:hover{
+    color: #22917B;
+    transition: all 0.3s;
+}

@@ -73,7 +73,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2 my-auto">
-                                        <a href="/pro/{{$proplayer->id}}"
+                                        <a href="/cs/proplayers/{{$proplayer->id}}"
                                             class="btn btn-primary btn-profile">Perfil</a>
                                     </div>
                                 </div>
