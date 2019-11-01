@@ -160,9 +160,6 @@ function verify_user_sign_up(game) {
 }
 
 function cadastre_csgo() {
-    $('#steam-url').focus(function () {
-        $('#feedback').fadeOut();
-    });
     var disp = $('#disponibilidade').val();
     var steam_url = $('#steam-url').val();
     var patenteval = $('#patente').val();
@@ -175,27 +172,25 @@ function cadastre_csgo() {
         steamurl: steam_url,
         funcao: funcaoval
     }
-    if (steam_url.length > 0) {
-        $.ajax({
-            type: 'POST',
-            url: `/api/find/register/cs`,
-            contentType: 'application/json',
-            data: JSON.stringify(json),
-            dataType: 'json',
-            success: function (data) {
-                if (data.message == "Success") {
-                    alertify.notify('Usuário cadastrado com sucesso', 'success', 5, function () {
-                        console.log('dismissed');
-                    });
-                    verify_user_sign_up('CSGO');
-                }
-            },
-            error: function () {
+
+    $.ajax({
+        type: 'POST',
+        url: `/api/find/register/cs`,
+        contentType: 'application/json',
+        data: JSON.stringify(json),
+        dataType: 'json',
+        success: function (data) {
+            if (data.message == "Success") {
+                alertify.notify('Usuário cadastrado com sucesso', 'success', 5, function () {
+                    console.log('dismissed');
+                });
+                verify_user_sign_up('CSGO');
             }
-        });
-    } else {
-        $('#feedback').fadeIn();
-    }
+        },
+        error: function () {
+        }
+    });
+
 }
 
 
@@ -212,7 +207,7 @@ function cadastre_lol() {
         elo: eloval,
         posicao: posicaoval
     }
-    console.log(json);
+
     $.ajax({
         type: 'POST',
         url: `/api/find/register/lol`,
