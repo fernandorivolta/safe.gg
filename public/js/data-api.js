@@ -212,88 +212,93 @@ function get_feed_data(id) {
                 feedarray.push(followed_users);
             });
             //shuffle no array pra ficar intercalado
+            console.log(feedarray);
             feedarray.sort(function() { return 0.5 - Math.random() });
             //percorre o array verificando se é post de usuario, noticia ou partida
-            $.each(feedarray, function(i, item){
-                if(item.post){
-                    var diamesano = item.created_at.split(' ')[0];
-                    var mes = diamesano.split('-')[1];
-                    var dia = diamesano.split('-')[2];
-                    var ano = diamesano.split('-')[0];
-                    $('.feed-body').append(`
-                    <div class="row">
-                        <div class="col-md-12 white-font">
-                              <div class="card-header news-card-text">
-                                ${item.name} - <a href="user/${item.id}">@${item.username}</a>
-                              </div>
-                              <div class="card-body news-card-text text-center">
-                                <div class="row">
-                                    <div class="col-md-3 text-center">
-                                        <img style="width:30%" class="img-fluid rounded" src="/storage/${item.icon}" alt="user image">
-                                    </div>
-                                    <div class="col-md-9 text-left my-auto">
-                                        <p class="text-left card-text">${item.post}</p>
-                                    </div>
-                              </div>
-                            <div class="card-footer text-muted text-center news-card-text">
-                                <div class="row">
-                                <div class="col-md-7 text-right">
-                                <a><i onclick="${$.inArray(item.post_id, data.liked_posts) == -1 ? `like_post(${item.post_id}, $(this))" class="far fa-heart "` : `unlike_post(${item.post_id}, $(this))" class="fas fa-heart" style="color: #d64343"`}></i></a><span id="post-${item.post_id}" class="qtd-like"> ${item.num_likes}</span>
-                                </div>
-                                <div class="col-md-2 text-center">
-                                    <a onclick="open_modal(${item.post_id})"><i class="far fa-comment"></i> <span class="qtd-comment"> ${item.num_comments}</span></a>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                ${dia} ${monthNames[parseInt(mes)-1]} ${ano}
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`);
-                }else if(item.author){
-                    $('.feed-body').append(`
-                    <div class="row">
-                        <div class="col-md-12 white-font">
-                            <div class="card news-card" style="background-image:url('${item.img}')">
-                              <div class="card-header news-card-text">
-                                ${item.tag}
-                              </div>
-                              <div class="card-body text-center news-card-text">
-                                <h5 class="card-title">${item.title}</h5>
-                                <p class="card-text">${item.body}</p>
-                                <a href="${item.link}" target="_blank" class="btn btn-primary">Leia Mais</a>
-                              </div>
-                              <div class="card-footer text-muted text-right news-card-text">
-                                ${item.author} - ${item.date}
-                              </div>
-                            </div>
-                        </div>
-                    </div>`);
-                }else if(item.summonerName){
-                    $('.feed-body').append(`
+            if(feedarray.length>0){
+                $.each(feedarray, function(i, item){
+                    if(item.post){
+                        var diamesano = item.created_at.split(' ')[0];
+                        var mes = diamesano.split('-')[1];
+                        var dia = diamesano.split('-')[2];
+                        var ano = diamesano.split('-')[0];
+                        $('.feed-body').append(`
                         <div class="row">
-                            <div class="col-md-12">
-                                <div id="loader-${item.id}">
-                                    <div class="ph-item bg-dark" style="width: 60%"> 
-                                        <div class="ph-col-12">
-                                            <div class="ph-row">
-                                              <div class="ph-col-4"></div>
-                                            </div>
-                                            <div class="ph-row">
-                                              <div class="ph-col-4 big"></div>
-                                            </div>
+                            <div class="col-md-12 white-font">
+                                  <div class="card-header news-card-text">
+                                    ${item.name} - <a href="user/${item.id}">@${item.username}</a>
+                                  </div>
+                                  <div class="card-body news-card-text text-center">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center">
+                                            <img style="width:30%" class="img-fluid rounded" src="/storage/${item.icon}" alt="user image">
                                         </div>
-                                        <div class="ph-col-2">
-                                            <div class="ph-avatar"></div>
+                                        <div class="col-md-9 text-left my-auto">
+                                            <p class="text-left card-text">${item.post}</p>
                                         </div>
+                                  </div>
+                                <div class="card-footer text-muted text-center news-card-text">
+                                    <div class="row">
+                                    <div class="col-md-7 text-right">
+                                    <a><i onclick="${$.inArray(item.post_id, data.liked_posts) == -1 ? `like_post(${item.post_id}, $(this))" class="far fa-heart "` : `unlike_post(${item.post_id}, $(this))" class="fas fa-heart" style="color: #d64343"`}></i></a><span id="post-${item.post_id}" class="qtd-like"> ${item.num_likes}</span>
+                                    </div>
+                                    <div class="col-md-2 text-center">
+                                        <a onclick="open_modal(${item.post_id})"><i class="far fa-comment"></i> <span class="qtd-comment"> ${item.num_comments}</span></a>
+                                    </div>
+                                    <div class="col-md-3 text-right">
+                                    ${dia} ${monthNames[parseInt(mes)-1]} ${ano}
+                                    </div>
                                     </div>
                                 </div>
-                                <div id="${item.id}"></div>
                             </div>
-                        </div>`);  
-                    get_one_match(item.id, item.summonerName, item.username);
-                }
-            });
+                        </div>`);
+                    }else if(item.author){
+                        $('.feed-body').append(`
+                        <div class="row">
+                            <div class="col-md-12 white-font">
+                                <div class="card news-card" style="background-image:url('${item.img}')">
+                                  <div class="card-header news-card-text">
+                                    ${item.tag}
+                                  </div>
+                                  <div class="card-body text-center news-card-text">
+                                    <h5 class="card-title">${item.title}</h5>
+                                    <p class="card-text">${item.body}</p>
+                                    <a href="${item.link}" target="_blank" class="btn btn-primary">Leia Mais</a>
+                                  </div>
+                                  <div class="card-footer text-muted text-right news-card-text">
+                                    ${item.author} - ${item.date}
+                                  </div>
+                                </div>
+                            </div>
+                        </div>`);
+                    }else if(item.summonerName){
+                        $('.feed-body').append(`
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="loader-${item.id}">
+                                        <div class="ph-item bg-dark" style="width: 60%"> 
+                                            <div class="ph-col-12">
+                                                <div class="ph-row">
+                                                  <div class="ph-col-4"></div>
+                                                </div>
+                                                <div class="ph-row">
+                                                  <div class="ph-col-4 big"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ph-col-2">
+                                                <div class="ph-avatar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="${item.id}"></div>
+                                </div>
+                            </div>`);  
+                        get_one_match(item.id, item.summonerName, item.username);
+                    }
+                });
+            }else{
+                $('.feed-body').append('<br><h4 class="white-font text-center">Você ainda não segue nada, siga algum jogo para visualizar as noticias</h4><br>');
+            }
             
             //get_rank_data_feed(id);
         },
