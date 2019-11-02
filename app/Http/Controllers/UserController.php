@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $list_followed_user = [];
         $user = Auth::user();
-        $list_users = User::where('username', '!=', $user->username)->where('username', 'like', '%'.$request->input('user').'%')->orderBy('username', 'asc')->limit(5)->get();
+        $list_users = User::where('username', '!=', $user->username)->where('username', 'like', '%'.$request->input('user').'%')->orderBy('username', 'asc')->limit(10)->get();
         $aux_followed = DB::table('userfollowuser')->where('user_id', '=', $user->id)->pluck('user_id_followed');
         foreach ($aux_followed as $follow){
             $list_followed_user [] = $follow;
@@ -184,6 +184,16 @@ class UserController extends Controller
             'num_posts' => $num_posts,
             'num_following' => $num_following,
             'num_followers' => $num_followers
+        ]);
+    }
+
+    public function users_info($id){
+        $user = User::find($id);
+        $posts = Post::where('user_id', "=", $id)->get();
+
+        return view('profileuser',[
+            "user" => $user,
+            "posts" => $posts
         ]);
     }
 }

@@ -43,7 +43,7 @@ Route::prefix('/user')->group( function (){
     Route::get('/search','UserController@index');
     Route::get('/follow/{id}', 'FollowController@follow_user');
     Route::get('/unfollow/{id}', 'FollowController@unfollow_user');
-    Route::get('/{id}', 'ApiController@users_info');
+    Route::get('/{id}', 'UserController@users_info');
 });
 
 Route::middleware(['user_validation'])->group(function () {

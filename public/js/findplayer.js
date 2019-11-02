@@ -57,6 +57,7 @@ function verify_user_sign_up(game) {
 
                 if (game == "CSGO") {
                     $.each(data.user_list, function (i, user) {
+                        console.log(user);
                         $('.list').append(`
                             <div class="card card-user shadow-none bg-dark-two mb-2">
                                 <div class="row p-3 align-items-center" style="background-repeat: no-repeat;background-position: right;background-size: contain;background-image: url(/images/csgo-roles/${user.funcao}.svg);">
@@ -64,6 +65,14 @@ function verify_user_sign_up(game) {
                                         <img class="rounded-circle img-user"
                                             src="/storage/${user.icon}"
                                             alt="">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <span class="card-user-subtitle font-shadow gray-font">NAME</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="card-user-title text-uppercase font-shadow green-font">${user.name}</span>
+                                        </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="row">
@@ -94,7 +103,7 @@ function verify_user_sign_up(game) {
                                             <span class="card-user-subtitle font-shadow gray-font">PERFIL</span>
                                         </div>
                                         <div class="row">
-                                            <a href="${user.steam}" class="card-user-title text-uppercase font-shadow green-font">STEAM</span>
+                                            <a href="${user.steamurl}" class="card-user-title text-uppercase font-shadow green-font">STEAM</span>
                                         </div>
                                     </div>
                                 </div>

@@ -70,7 +70,7 @@
                             <div class="row m-2">
                                 <label class="form-label gray-font" for="steam-url">Steam URL
                                 </label>
-                                <input type="text" class="form-control form-input" id="steam-url"
+                                <input required type="text" class="form-control form-input" id="steam-url"
                                     placeholder="https://steamcommunity.com/profiles/76561198113326302">
                             </div>
                             <div class="row m-2">
