@@ -21,10 +21,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/account', function (){
-    return view('account');
-});
-
 Route::get('/players', function () {
     return view('findplayer');
 });
@@ -40,7 +36,7 @@ Route::get('/admin', function(){
 
 
 Route::prefix('/user')->group( function (){
-    Route::post('/account','UserController@pre_register');
+    Route::match(['get', 'post'], '/account','UserController@pre_register');
     Route::post('/create','UserController@create');
     Route::post('/login', 'UserController@login');
     Route::get('/logout','UserController@logout');

@@ -38,6 +38,7 @@ class UserController extends Controller
         $uservalidation2 = User::where('username', $request->input('username'))->first();
         if($uservalidation){
             return view('account', [
+                "message_code" => "NOK",
                 "message" => "Email <u>" . $request->input('email') .  "</u> já cadastrado!",
                 "username" => $request->input('username'),
                 "name" => $request->input('name'),
@@ -45,6 +46,7 @@ class UserController extends Controller
             ]);
         }elseif ($uservalidation2) {
             return view('account', [
+                "message_code" => "NOK",
                 "message" => "Usuario <u>" . $request->input('username') . "</u> já cadastrado!",
                 "username" => $request->input('username'),
                 "name" => $request->input('name'),
@@ -61,7 +63,10 @@ class UserController extends Controller
         $user->birthday = $request->input('birthday');
         $user->admin = 0;
         $user->save();
-        return view('login');
+        return view('login', [
+            "message_code" => "OK",
+            "message" => "Usuario <u>" . $request->input('username') . "</u> criado com sucesso!"
+        ]);
     }
 
     public function show()
@@ -88,11 +93,21 @@ class UserController extends Controller
     }
 
     public function pre_register(Request $request){
-        return view('account',[
-            'username' => $request->input('username'),
-            'email' => $request->input('email'),
-            'name' => $request->input('name')
-        ]);
+        $checked = $request->has('username') ? true: false;
+
+        if($checked){
+            return view('account',[
+                'username' => $request->input('username'),
+                'email' => $request->input('email'),
+                'name' => $request->input('name')
+            ]);
+        }else{
+            return view('account',[
+                'username' => "",
+                'email' => "",
+                'name' => ""
+            ]);
+        }
     }
 
     public function set_icon(Request $request){
