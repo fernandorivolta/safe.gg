@@ -264,6 +264,49 @@ function set_admin(username){
     }
 }
 
+function update_form_proplayer_cs(proplayer){
+    $('.content').html(`
+        <div class="row justify-content-center">
+            <span class="header-name bt m-2">NOTÍCIAS</span>
+        </div>
+        <form>
+            <input type="text" class="d-none" id="proplayer-id" value="${proplayer.id}">
+            <div class="form-group">
+              <label class="gray-light-font" for="proplayer-roundcontribution">Round Contribution</label>
+              <input type="text" class="form-control" id="proplayer-roundcontribution" value="${proplayer.roundcontribution}" placeholder="https://vs.com.br/artigo...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="proplayer-deathperround">Death per Round</label>
+              <input type="text" class="form-control" id="proplayer-deathperround" value="${proplayer.deathperround}" placeholder="https://images.vs.com.br/resize?compression=8...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="proplayer-tag">Tag</label>
+              <input type="text" class="form-control" id="proplayer-tag" value="${proplayer.tag}" placeholder="cs:go, lol...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="proplayer-title">Título da Notícia</label>
+              <input type="text" class="form-control" id="proplayer-title" value="${proplayer.title}" placeholder="TEKKEN: JOGADOR IMPRESSIONA...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="proplayer-body">Conteúdo da Notícia</label>
+              <input type="text" class="form-control" id="proplayer-body" value="${proplayer.body}" placeholder="Para chegar ao topo do competitivo de fighting games...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="proplayer-author">Autor da Notícia</label>
+              <input type="text" class="form-control" id="proplayer-author" value="${proplayer.author}" placeholder="Helena Nogueira...">
+            </div>
+            <div class="form-group">
+              <label class="gray-light-font" for="proplayer-date">Data da Notícia</label>
+              <input type="date" class="form-control" value="${proplayer.date}" id="proplayer-date">
+            </div>
+            <div class="row justify-content-center m-2">
+                <button type="button" onclick="update_news()" class="btn btn-primary">Confirmar</button>
+            </div>
+        </form>
+        `
+    );
+}
+
 function create_form_news(){
     $('.content').html(`
         <div class="row justify-content-center">

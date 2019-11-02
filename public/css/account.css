@@ -1,0 +1,17 @@
+body{
+    background-image: url('/images/background/yasuo-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.img-logo{
+    width: 10rem;
+}
+
+.form-label{
+    font-size: .8rem;
+}
+
+#register-form{
+    background-color: rgba(10, 10, 10, 0.5);
+}

@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-md-11">
                             <div class="row justify-content-md-center mt-2">
-                                <span class="gray-font subtitle">CS/PROPLAYERS</span>
+                                <span class="gray-font subtitle">CS:GO / PROPLAYERS</span>
                             </div>
                             <div class="row justify-content-md-center mb-3">
                                 <h2 class="title text-uppercase">{{$proplayer->nick}}</h2>
