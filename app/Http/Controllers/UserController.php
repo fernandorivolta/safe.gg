@@ -133,7 +133,10 @@ class UserController extends Controller
         if(Auth::attempt($data)){
             return redirect('/feed');
         }else{
-            return view('login', ['message' => "Usuário Inválido"]);
+            return view('login', [
+                'message' => "Usuário Inválido",
+                'message_code' => "NOK"
+            ]);
         }
     }
 

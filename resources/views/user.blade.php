@@ -53,7 +53,7 @@
                                             <a onclick="follow_user({{$user->id}}, $(this))"
                                                 class="btn btn-outline-primary btn-following ld-ext-right">Seguir<div class="ld ld-ring ld-spin-fast"></div></a>
                                             @endif
-                                            <!--<a href="/user/{{$user->id}}" class="btn btn-outline-primary btn-profile">Perfil</a>-->
+                                            <a style="margin-top: 5px;" href="/user/{{$user->id}}" class="btn btn-outline-primary btn-following">Perfil</a>
                                         </div>
                                     </div>
                                 </div>

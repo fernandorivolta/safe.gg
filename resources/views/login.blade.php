@@ -5,7 +5,6 @@
   @include('lib.head')
   <link rel='stylesheet' type='text/css' href='/css/main.css'>
   <link rel='stylesheet' type='text/css' href='/css/login-index.css'>
-  <script src="js/login.js"></script>
 </head>
 <body>
   @if (isset($message))

@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @include('lib.head')
+  @include('lib.head')
+  <link rel='stylesheet' type='text/css' href='/css/main.css'>
+  <link rel='stylesheet' type='text/css' href='/css/login-index.css'>
 </head>
-<body style="background-color:  #1d0149;">
+<body>
   @if (isset($message))
     <script> 
       $(document).ready(function(){
+        var messagecode = {!! json_encode($message_code) !!};
         var messagejs = {!! json_encode($message) !!};
         alertify.set('notifier','position', 'top-right');
-        alertify.error(messagejs);
+        if(messagecode == "NOK"){
+          alertify.error(messagejs);
+        }else{
+          alertify.success(messagejs);
+        }
       });
     </script>
   @endif
   <div class="container">
-    <div class="justify-content-center align-self-center col-md-12 row">
-      <div class="login-form-1 animated fadeIn">
-        <form id="register-form" class="text-left" action="/user/create" method="post">
-          {{ csrf_field() }}
-          <img src="/images/icons/safe_gg-logo-nome-branco-versao-2.png">
+    <div class="justify-content-center align-items-center col-md-12 row h-full">
+      <div class="login-form animated fadeIn p-5">
+          <form id="login-form" class="text-left" action="/user/create" method="post">
+            {{ csrf_field() }}
+            <img src="/images/icons/safe_gg-logo-nome-branco-versao-2.png">
           <div class="login-form-main-message"><h4 class="white-font line animated fadeIn">Cadastre-se</h4></div>
             <div class="main-login-form">
               <div class="login-group">
@@ -47,11 +54,11 @@
                   <input required type="date" class="form-control" id="datanasc" name="birthday">
                 </div>
               </div>
-              <button type="submit" class="btn btn-block btn-outline-light">Cadastrar</button>
-              <a type="button" href="/" class="btn btn-block btn-outline-light"><i class="fas fa-chevron-left"></i> Voltar</a>
+              <button type="submit" class="btn btn-block btn-login">Cadastrar</button>
+              <a href="/" class="btn btn-block btn-outline-light" id="back-home"><i class="fas fa-chevron-left"></i> Voltar</a>
             </div>
-        </form>
-      </div>
+          </form>
+        </div>
     </div>
   </div>
 </body>
