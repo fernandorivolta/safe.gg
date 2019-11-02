@@ -5,15 +5,19 @@
   @include('lib.head')
   <link rel='stylesheet' type='text/css' href='/css/main.css'>
   <link rel='stylesheet' type='text/css' href='/css/login-index.css'>
-  <script src="js/login.js"></script>
 </head>
 <body>
   @if (isset($message))
     <script> 
       $(document).ready(function(){
+        var messagecode = {!! json_encode($message_code) !!};
         var messagejs = {!! json_encode($message) !!};
         alertify.set('notifier','position', 'top-right');
-        alertify.error(messagejs);
+        if(messagecode == "NOK"){
+          alertify.error(messagejs);
+        }else{
+          alertify.success(messagejs);
+        }
       });
     </script>
   @endif
@@ -28,11 +32,11 @@
               <div class="login-group">
                 <div class="form-group">
                   <label for="username" class="sr-only">Username</label>
-                  <input type="text" class="form-control" id="username" name="username" placeholder="User">
+                  <input type="text" class="form-control" id="username" name="username" placeholder="User" required>
                 </div>
                 <div class="form-group">
                   <label for="password" class="sr-only">Senha</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Senha">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
                 </div>
               </div>
               <button type="submit" class="btn btn-block btn-login">Entrar</button>

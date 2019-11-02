@@ -1,3 +1,0 @@
-function validateFormSignUp() {
-    //continuar daqui
-}

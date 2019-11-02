@@ -21,10 +21,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/account', function (){
-    return view('account');
-});
-
 Route::get('/players', function () {
     return view('findplayer');
 });
@@ -40,14 +36,14 @@ Route::get('/admin', function(){
 
 
 Route::prefix('/user')->group( function (){
-    Route::post('/account','UserController@pre_register');
+    Route::match(['get', 'post'], '/account','UserController@pre_register');
     Route::post('/create','UserController@create');
     Route::post('/login', 'UserController@login');
     Route::get('/logout','UserController@logout');
     Route::get('/search','UserController@index');
     Route::get('/follow/{id}', 'FollowController@follow_user');
     Route::get('/unfollow/{id}', 'FollowController@unfollow_user');
-    Route::get('/{id}', 'ApiController@users_info');
+    Route::get('/{id}', 'UserController@users_info');
 });
 
 Route::middleware(['user_validation'])->group(function () {

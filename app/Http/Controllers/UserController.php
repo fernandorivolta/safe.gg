@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $list_followed_user = [];
         $user = Auth::user();
-        $list_users = User::where('username', '!=', $user->username)->where('username', 'like', '%'.$request->input('user').'%')->orderBy('username', 'asc')->limit(5)->get();
+        $list_users = User::where('username', '!=', $user->username)->where('username', 'like', '%'.$request->input('user').'%')->orderBy('username', 'asc')->limit(10)->get();
         $aux_followed = DB::table('userfollowuser')->where('user_id', '=', $user->id)->pluck('user_id_followed');
         foreach ($aux_followed as $follow){
             $list_followed_user [] = $follow;
@@ -38,6 +38,7 @@ class UserController extends Controller
         $uservalidation2 = User::where('username', $request->input('username'))->first();
         if($uservalidation){
             return view('account', [
+                "message_code" => "NOK",
                 "message" => "Email <u>" . $request->input('email') .  "</u> já cadastrado!",
                 "username" => $request->input('username'),
                 "name" => $request->input('name'),
@@ -45,6 +46,7 @@ class UserController extends Controller
             ]);
         }elseif ($uservalidation2) {
             return view('account', [
+                "message_code" => "NOK",
                 "message" => "Usuario <u>" . $request->input('username') . "</u> já cadastrado!",
                 "username" => $request->input('username'),
                 "name" => $request->input('name'),
@@ -61,7 +63,10 @@ class UserController extends Controller
         $user->birthday = $request->input('birthday');
         $user->admin = 0;
         $user->save();
-        return view('login');
+        return view('login', [
+            "message_code" => "OK",
+            "message" => "Usuario <u>" . $request->input('username') . "</u> criado com sucesso!"
+        ]);
     }
 
     public function show()
@@ -88,11 +93,21 @@ class UserController extends Controller
     }
 
     public function pre_register(Request $request){
-        return view('account',[
-            'username' => $request->input('username'),
-            'email' => $request->input('email'),
-            'name' => $request->input('name')
-        ]);
+        $checked = $request->has('username') ? true: false;
+
+        if($checked){
+            return view('account',[
+                'username' => $request->input('username'),
+                'email' => $request->input('email'),
+                'name' => $request->input('name')
+            ]);
+        }else{
+            return view('account',[
+                'username' => "",
+                'email' => "",
+                'name' => ""
+            ]);
+        }
     }
 
     public function set_icon(Request $request){
@@ -118,7 +133,10 @@ class UserController extends Controller
         if(Auth::attempt($data)){
             return redirect('/feed');
         }else{
-            return view('login', ['message' => "Usuário Inválido"]);
+            return view('login', [
+                'message' => "Usuário Inválido",
+                'message_code' => "NOK"
+            ]);
         }
     }
 
@@ -166,6 +184,16 @@ class UserController extends Controller
             'num_posts' => $num_posts,
             'num_following' => $num_following,
             'num_followers' => $num_followers
+        ]);
+    }
+
+    public function users_info($id){
+        $user = User::find($id);
+        $posts = Post::where('user_id', "=", $id)->get();
+
+        return view('profileuser',[
+            "user" => $user,
+            "posts" => $posts
         ]);
     }
 }

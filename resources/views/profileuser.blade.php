@@ -8,6 +8,12 @@
   	<link rel='stylesheet' type='text/css' href='/css/feed.css'>
   	<link rel='stylesheet' type='text/css' href='/css/searchPro.css'>
 </head>
+<script> 
+  $(document).ready(function(){
+	var posts = {!! json_encode($posts) !!};
+	console.log(posts);
+  });
+</script>
 <body>
     @include('lib.navbar')
 	<div class="container">
@@ -58,84 +64,28 @@
 			</div>
 			<div class="col-md-9" style="padding-left: 0px;">
 				<div class="card feed-body bg-dark" style="height: 100%;">
-				@foreach ($user_match_info as $match)
-            		@if($match['win'])
-            		    <div class="card card-feed shadow-sm card-win white-font">
-            		@else
-            		    <div class="card card-feed shadow-sm card-lose white-font">
-            		@endif
-            	    <div class="card-body" style="padding: 0.5rem !important">
-            	        <div class="col-md-12">
-            	            <div class="row">
-            	                <span>{{$match['queue']}} </span>
-            	                <div class="my-auto circle-card">
-            	                    <i class="fas fa-circle fa-xs"></i>
-            	                </div>
-            	                <small class="span-card my-auto">
-            	                    {{$match['gameDuration']}}
-            	                </small>
-            	            </div>
-            	            <hr style="width:100%; margin-bottom: 10px;">
-            	            <div class="row">
-            	                <div class="col-md-3 my-auto">
-            	                    <div class="row">
-            	                        <img class="img-champion img-fluid rounded-circle mx-auto" src="/images/squares/{{$match['championName']}}.png">
-            	                    </div>
-            	                    <div class="row">
-            	                        <p class="text-center mx-auto">Level {{$match['champLevel']}}</p>
-            	                    </div>
-            	                </div>
-            	                <div class="col-md-2 my-auto">
-            	                    <div class="row">
-            	                        <img class="img-spell img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/Summoner{{$match['spell1']}}.png">
-            	                        <img class="img-perk img-fluid" src="https://opgg-static.akamaized.net/images/lol/perk/{{$match['runa1']}}.png">
-            	                    </div>
-            	                    <div class="row">
-            	                        <img class="img-spell img-fluid" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/Summoner{{$match['spell2']}}.png">
-            	                        <img class="img-perk img-fluid" src="https://opgg-static.akamaized.net/images/lol/perkStyle/{{$match['runa2']}}.png">
-            	                    
-            	                    </div>
-            	                </div>
-            	                <div class="col-md-2 my-auto">
-            	                    <div class="row">
-            	                        <span>{{$match['kills']}}<small class="card-bars">/</small><span style="color: #a7a7a7;">{{$match['deaths']}}</span><small class="card-bars">/</small>{{$match['assists']}}</span>
-            	                    </div>
-            	                    <div class="row">
-            	                        <span>{{$match['kda']}} <small class="span-card">KDA</small></span>
-            	                    </div>
-            	                    <div class="row">
-            	                        <span>{{$match['totalMinionsKilled']}}<small class="span-card" data-tooltip="Minions por minuto" data-tooltip-position="bottom">({{round(($match['totalMinionsKilled']/($match['gameDurationSec']/60)),1)}}) CS</small></span>
-            	                    </div>
-            	                </div>
-            	                <div class="col-md-2 my-auto">
-            	                    <div class="row">
-            	                        @if($match['item0'])
-            	                            <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item0']}}.png">
-            	                        @endif
-            	                        @if($match['item1'])
-            	                            <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item1']}}.png">
-            	                        @endif
-            	                        @if($match['item2'])
-            	                            <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item2']}}.png">
-            	                        @endif
-            	                    </div>
-            	                    <div class="row">
-            	                        @if($match['item3'])
-            	                            <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item3']}}.png">
-            	                        @endif
-            	                        @if($match['item4'])
-            	                            <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item4']}}.png">
-            	                        @endif
-            	                        @if($match['item5'])
-            	                            <img class="img-fluid item-card" src="https://opgg-static.akamaized.net/images/lol/item/{{$match['item5']}}.png">
-            	                        @endif
-            	                    </div>
-            	                </div>
-            	            </div>
-            	        </div>
-            	    </div>
-            	</div>
-            	@endforeach
+					@if (count($posts) > 0)
+						@foreach ($posts as $post)
+							<div class="row">
+								<div class="col-md-12 white-font">
+									  <div class="card-header news-card-text">
+										{{$user->name}}
+									  </div>
+									  <div class="card-body news-card-text text-center">
+										<div class="row">
+											<div class="col-md-3 text-center">
+												<img style="width:30%" class="img-fluid rounded" src="/storage/{{$user->icon}}" alt="user image">
+											</div>
+											<div class="col-md-9 text-left my-auto">
+												<p class="text-left card-text">{{$post->post}}</p>
+											</div>
+									  </div>
+								</div>
+							</div>
+						@endforeach
+					@else	
+						<h2 class='text-center white-font mx-auto'>O usuário não tem nenhum post</h2>
+					@endif
 				</div>
 			</div>
 		</div>
