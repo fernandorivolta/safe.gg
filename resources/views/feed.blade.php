@@ -27,7 +27,7 @@
 	</div> -->
 
   <div class="container">
-    <div class="row p-5">
+    <div class="row">
       <div class="col-md-3" style="padding-right: 8px;">
         <div class="card bg-dark">
           <div class="row photo-card"

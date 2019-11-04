@@ -39,69 +39,46 @@ class ProController extends Controller
         return response()->json($list_pro);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $pro = new ProPlayer;
+        $pro->nick = $request->input('nick');
+        $pro->team = $request->input('team');
+        $pro->region = $request->input('region');
+        $pro->position = $request->input('position');
+        $pro->photo = $request->input('photo');
+        $pro->nationality = $request->input('nationality');
+        $pro->name = $request->input('name');
+        $pro->account_id = $request->input('account_id');
+        $pro->save();
+        return response()->json([
+            'message' => 'Success'
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function update(Request $request)
     {
-        //
+        $pro = ProPlayer::findOrFail($request->input('id'));
+        $pro->nick = $request->input('nick');
+        $pro->team = $request->input('team');
+        $pro->region = $request->input('region');
+        $pro->position = $request->input('position');
+        $pro->photo = $request->input('photo');
+        $pro->nationality = $request->input('nationality');
+        $pro->name = $request->input('name');
+        $pro->account_id = $request->input('account_id');
+        $pro->save();
+        return response()->json([
+            'message' => 'Success'
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
+    public function delete($id)
     {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $pro = ProPlayer::findOrFail($id);
+        $pro->delete();
+        return response()->json([
+            'message' => 'Success'
+        ]);
     }
 }

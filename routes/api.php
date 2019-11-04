@@ -47,9 +47,17 @@ Route::post('/news/create', 'NewsController@create');
 Route::put('/news/update', 'NewsController@update');
 Route::delete('/news/{id}/delete', 'NewsController@delete');
 Route::get('/news', 'NewsController@index');
-Route::post('/procs/create', 'ProCSController@create');
+
 
 Route::get('/lol/proplayers', 'ProController@index_api');
+Route::post('/lol/proplayers/create', 'ProController@create');
+Route::delete('/lol/{id}/delete', 'ProController@delete');
+Route::put('/lol/{id}/update', 'ProController@update');
+
+
 Route::get('/cs/proplayers', 'ProCSController@index_api');
+Route::post('/cs/proplayers/create', 'ProCSController@create');
+Route::delete('/cs/{id}/delete', 'ProCSController@delete');
+Route::put('/cs/{id}/update', 'ProCSController@update');
 
 Route::get('/dashboard/resumo', 'FeedController@data_resume');

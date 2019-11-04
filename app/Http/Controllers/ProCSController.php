@@ -29,13 +29,41 @@ class ProCSController extends Controller
         $pro->team = $request->input('team');
         $pro->age = $request->input('age');
         $pro->proplayername = $request->input('proplayername');
-        $pro->nationality = $request->input('nacionality');
+        $pro->nationality = $request->input('nationality');
         $pro->nick = $request->input('nick');
         $pro->steamlink = $request->input('steamlink');
         $pro->save();
 
         return response()->json([
             'message' => "Success"
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $pro = ProPlayerCS::findOrFail($request->input('id'));
+        $pro->roundcontribution = $request->input('roundcontribution');
+        $pro->deathperround = $request->input('deathperround');
+        $pro->mapsplayed = $request->input('mapsplayed');
+        $pro->kddiff = $request->input('kddiff');
+        $pro->team = $request->input('team');
+        $pro->age = $request->input('age');
+        $pro->proplayername = $request->input('proplayername');
+        $pro->nationality = $request->input('nationality');
+        $pro->nick = $request->input('nick');
+        $pro->steamlink = $request->input('steamlink');
+        $pro->save();
+
+        return response()->json([
+            'message' => "Success"
+        ]);
+    }
+
+    public function delete($id){
+        $pro = ProPlayerCS::findOrFail($id);
+        $pro->delete();
+        return response()->json([
+            'message' => 'Success'
         ]);
     }
 
