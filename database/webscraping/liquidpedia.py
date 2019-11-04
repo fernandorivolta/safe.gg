@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from requests.auth import HTTPBasicAuth
 
-prowrite = open("pro.sql", "a")
-pro = ['s1mple', 'coldzera', 'fer', 'fallen', 'kng', 'taco', 'lucas', 'hen1', 'kscerato', 'ablej', 'niko', 'device', 'zywoo', 'sergej', 'xyp9x', 'magiskb0y']
+prowrite = open("pro.sql", "w")
+pro = ['CeRq','jw','flusha','krimz', 'olofmeister', 'f0rest', 'Golden', 'kennyS', 's1mple', 'coldzera', 'fer', 'fallen', 'kng', 'guardian', 'rain', 'shox', 'nbk', 'taco', 'lucas', 'hen1', 'tarik', 'elige', 'stewie2k', 'Twistzz', 'gla1ve', 'nitr0', 'dupreeh', 'brehze', 'kscerato', 'ablej', 'niko', 'device', 'zywoo', 'sergej', 'xyp9x', 'magiskb0y']
 roundcontribution = ""
 deathperround = ""
 mapsplayed = ""
@@ -42,7 +42,7 @@ for proname in pro:
             mapsplayed = right[1].get_text().split(' ')[0]
             deathperround = right[2].get_text().split(' ')[0]
             roundcontribution = right[3].get_text().split(' ')[0]
-            insert = "INSERT INTO proplayercs (roundcontribution, deathperround, mapsplayed, kddiff, team, age, nacionality, proplayername, nick, steamlink, created_at, updated_at) values ('" + roundcontribution + "','" + deathperround + "','" + mapsplayed + "','" + kddiff + "','" + team + "','" + age + "','" + nacionality + "','" + proplayername + "','" + nick + "','" + steamlink + "', 'sysdate()', 'sysdate()');"  
+            insert = "INSERT INTO proplayercs (roundcontribution, deathperround, mapsplayed, kddiff, team, age, nationality, proplayername, nick, steamlink, created_at, updated_at) values ('" + roundcontribution + "','" + deathperround + "','" + mapsplayed + "','" + kddiff + "','" + team + "','" + age + "','" + nacionality + "','" + proplayername + "','" + nick + "','" + steamlink + "', sysdate(), sysdate());"  
             prowrite.write(insert + "\n")
 
         except:
