@@ -9,7 +9,7 @@
 	@include('lib.navbar');
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3" style="padding-right: 8px;">
+			<!-- <div class="col-md-3" style="padding-right: 8px;">
 				<div class="card bg-dark">
 					<div class="card-body">
 					    <div class="card-title">
@@ -30,9 +30,20 @@
 					    </div>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-9" style="padding-left: 0px;">
+			</div> -->
+			<div class="col-md-12" style="padding-left: 0px;">
 				<div class="card bg-dark" style="height: 100%;">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row justify-content-md-center mt-2">
+                        <span class="gray-font subtitle">CS:GO</span>
+                    </div>
+                    <div class="row justify-content-md-center mb-3">
+                        <h2 class="title text-uppercase">Pro Players</h2>
+                    </div>
+                </div>
+            </div>
                     @foreach ($proplayers as $proplayer)
                         <div class="card m-2 shadow-sm card-pro">
                             <div class="card-body" style="padding: 0.5rem !important">

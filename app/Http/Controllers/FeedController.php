@@ -54,7 +54,7 @@ class FeedController extends Controller
         ->leftJoin('games', 'games.id', '=', 'userfollowgames.game_id')
         ->leftJoin('news', 'news.tag', '=', 'games.tag')
         ->where('userfollowgames.user_id', '=', $id)
-        ->orderBy('news.date', 'desc')
+        ->orderBy('news.created_at', 'desc')
         ->simplePaginate(2);
         
         $followed_users = DB::table('users')

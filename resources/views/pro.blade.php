@@ -4,13 +4,13 @@
     @include('lib.head')
     <script type='text/javascript' src='/js/searchpro.js'></script>
   	<link rel='stylesheet' type='text/css' href='/css/navbar.css'>
-  	<link rel='stylesheet' type='text/css' href='/css/searchPro.css'>
+    <link rel='stylesheet' type='text/css' href='/css/proplayercs.css'>
 </head>
 <body>
 	@include('lib.navbar');
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3" style="padding-right: 8px;">
+			<!-- <div class="col-md-3" style="padding-right: 8px;">
 				<div class="card bg-dark">
 					<div class="card-body">
 					    <div class="card-title">
@@ -31,9 +31,20 @@
 					    </div>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-9" style="padding-left: 0px;">
+			</div> -->
+			<div class="col-md-12" style="padding-left: 0px;">
+            
 				<div class="card bg-dark" style="height: 100%;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row justify-content-md-center mt-2">
+                        <span class="gray-font subtitle">LOL</span>
+                    </div>
+                    <div class="row justify-content-md-center mb-3">
+                        <h2 class="title text-uppercase">Pro Players</h2>
+                    </div>
+                </div>
+            </div>
                     @foreach ($proplayers as $proplayer)
                         <div class="card m-2 shadow-sm card-pro">
                             <div class="card-body" style="padding: 0.5rem !important">
@@ -74,15 +85,15 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2 my-auto">
-                                        @if (in_array($proplayer->id, $followed_proplayers))
+                                        <!-- @if (in_array($proplayer->id, $followed_proplayers))
                                         <a href="/lol/proplayers/unfollow/{{$proplayer->id}}"
                                             class="btn btn-outline-primary btn-follow">Unfollow</a>
                                         @else
                                         <a href="/lol/proplayers/follow/{{$proplayer->id}}"
                                             class="btn btn-outline-primary btn-follow">Follow</a>
-                                        @endif
+                                        @endif -->
                                         <a href="/lol/proplayers/{{$proplayer->id}}"
-                                            class="btn btn-outline-primary btn-profile">Perfil</a>
+                                            class="btn btn-primary btn-profile">Perfil</a>
                                     </div>
                                 </div>
                             </div>

@@ -13,7 +13,7 @@ jornalista = ""
 data = ""
 insertArray = []
 
-newswrite = open("news.sql", "a")
+newswrite = open("news.sql", "w")
 newsread = open("news.sql", encoding="utf-8").readlines()
 r = requests.get("https://vs.com.br/")
 if r.status_code == 200:
@@ -40,5 +40,5 @@ if r.status_code == 200:
                         elif element.name == "div" and 'ksRZpX' in element.find('address')['class'] and 'ksRZpY' in element.find('time')['class']:
                             jornalista = element.find('address').get_text()
                             data = element.find('time').get_text()
-                insert = "insert into news (link, img, tag, title, body, author, date) values ('https://vs.com.br" + linknoticia + "', '"  + imagemnoticia + "', '"  + tag + "', '"  + manchete + "', '"  + info + "', '"  + jornalista + "', '"  + data + "');"
+                insert = "insert into news (link, img, tag, title, body, author, date, created_at) values ('https://vs.com.br" + linknoticia + "', '"  + imagemnoticia + "', '"  + tag + "', '"  + manchete + "', '"  + info + "', '"  + jornalista + "', '"  + data + "', sysdate());"
                 newswrite.write(insert + "\n")               

@@ -30,7 +30,7 @@ function get_match_data_async(id) {
             $('#loader').remove();
         },
         error: function () {
-            $('#loader').remove();  
+            $('#loader').remove();
             // $('#loader').remove();
         }
     });
@@ -58,7 +58,7 @@ function get_rank_data_feed(id) {
         success: function (data) {
             $('.rank').html("");
             $.each(data, function (i, ranked) {
-                    $('.rank').append(`<div class="card bg-dark card-lol-info">
+                $('.rank').append(`<div class="card bg-dark card-lol-info">
                     <div class="card-body">
                         <div class="card-title">
                             <span class="ranked-title white-font">${ranked.queueType.replace('_', ' ').replace('_', ' ')}</span>
@@ -199,7 +199,7 @@ function get_feed_data(id) {
                 "Abril", "Maio", "Junho", "Julho",
                 "Agosto", "Setembro", "Outubro",
                 "Novembro", "Dezembro"
-              ];
+            ];
             //acrescenta tudo pra um array auxiliar
             var feedarray = []
             $.each(data.news.data, function (i, news) {
@@ -213,11 +213,13 @@ function get_feed_data(id) {
             });
             //shuffle no array pra ficar intercalado
             console.log(feedarray);
-            feedarray.sort(function() { return 0.5 - Math.random() });
+            feedarray.sort(function () {
+                return 0.5 - Math.random()
+            });
             //percorre o array verificando se é post de usuario, noticia ou partida
-            if(feedarray.length>0){
-                $.each(feedarray, function(i, item){
-                    if(item.post){
+            if (feedarray.length > 0) {
+                $.each(feedarray, function (i, item) {
+                    if (item.post) {
                         var diamesano = item.created_at.split(' ')[0];
                         var mes = diamesano.split('-')[1];
                         var dia = diamesano.split('-')[2];
@@ -252,7 +254,7 @@ function get_feed_data(id) {
                                 </div>
                             </div>
                         </div>`);
-                    }else if(item.author){
+                    } else if (item.author) {
                         $('.feed-body').append(`
                         <div class="row">
                             <div class="col-md-12 white-font">
@@ -271,7 +273,7 @@ function get_feed_data(id) {
                                 </div>
                             </div>
                         </div>`);
-                    }else if(item.summonerName){
+                    } else if (item.summonerName) {
                         $('.feed-body').append(`
                             <div class="row">
                                 <div class="col-md-12">
@@ -292,14 +294,14 @@ function get_feed_data(id) {
                                     </div>
                                     <div id="${item.id}"></div>
                                 </div>
-                            </div>`);  
+                            </div>`);
                         get_one_match(item.id, item.summonerName, item.username);
                     }
                 });
-            }else{
+            } else {
                 $('.feed-body').append('<br><h4 class="white-font text-center">Você ainda não segue nada, siga algum jogo para visualizar as noticias</h4><br>');
             }
-            
+
             //get_rank_data_feed(id);
         },
         error: function () {
@@ -308,7 +310,7 @@ function get_feed_data(id) {
     });
 }
 
-function get_one_match(id_followed, summonerName, username){
+function get_one_match(id_followed, summonerName, username) {
     $.ajax({
         type: 'GET',
         url: `/api/user/${id_followed}/one_match`,
@@ -323,21 +325,21 @@ function get_one_match(id_followed, summonerName, username){
     });
 };
 
-function comment(id_post){
+function comment(id_post) {
     now = new Date;
     var monthNames = [
         "Jan", "Fev", "Mar",
         "Abr", "Maio", "Jun", "Jul",
         "Ago", "Set", "Out",
         "Nov", "Dez"
-      ];
+    ];
     var text = $('#comentario').val();
     var user = JSON.parse(localStorage.getItem('user'));
     var json = {
-        user_id : user.id,
-        post_id : id_post,
-        comment : text
-    }        
+        user_id: user.id,
+        post_id: id_post,
+        comment: text
+    }
     $.ajax({
         type: 'POST',
         url: `/api/post/comment`,
@@ -347,7 +349,7 @@ function comment(id_post){
         success: function (data) {
             if (data.message == "Success") {
                 $('#modal-comments').prepend(`
-                <div id="postednow" class="card card-comment" style="border: none; display: none">
+                <div id="postednow shadow-none" class="card card-comment" style="border: none; display: none">
                 <div class="card-header" style="border: none" style="background-color: #dee2e6">
                   <a class="user-nick" href="user/${user.id}">${user.name}</a> <span class="text-muted">@${user.username} - ${now.getDate()} ${monthNames[now.getMonth()]}</span>
                 </div>
@@ -362,23 +364,22 @@ function comment(id_post){
                   </div>
                 </div>
             </div>`);
-            $("#postednow").fadeIn('slow');
-            $('#comentario').val('');
+                $("#postednow").fadeIn('slow');
+                $('#comentario').val('');
             }
         },
-        error: function () {
-        }
+        error: function () {}
     });
 }
 
-function open_modal(post_id){
+function open_modal(post_id) {
     var monthNames = [
         "Jan", "Fev", "Mar",
         "Abr", "Maio", "Jun", "Jul",
         "Ago", "Set", "Out",
         "Nov", "Dez"
-      ];
-    $('#modal').modal('show'); 
+    ];
+    $('#modal').modal('show');
     $.ajax({
         type: 'GET',
         url: `/api/post/${post_id}/modal`,
@@ -388,12 +389,12 @@ function open_modal(post_id){
             $('#modal-post').html(data.post_info[0].post);
             $('#modal-img').attr('src', `/storage/${data.post_info[0].icon}`);
             $('#btn-comentar').attr('onClick', `comment(${post_id})`);
-            $.each(data.comments, function(i, item){
+            $.each(data.comments, function (i, item) {
                 var diamesano = item.created_at.split(' ')[0];
                 var mes = diamesano.split('-')[1];
                 var dia = diamesano.split('-')[2];
                 $(`#modal-comments`).append(`
-                        <div class="card card-comment" style="border: none">
+                        <div class="card card-comment shadow-none" style="border: none">
                             <div class="card-header" style="border: none" style="background-color: #dee2e6">
                               <a class="user-nick" href="user/${item.id}">${item.name}</a> <span class="text-muted">@${item.username} - ${dia} ${monthNames[parseInt(mes)-1]}</span>
                             </div>
@@ -410,7 +411,6 @@ function open_modal(post_id){
                         </div>`);
             });
         },
-        error: function () {
-        }
+        error: function () {}
     });
 }
