@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,7 +50,12 @@ Route::middleware(['user_validation'])->group(function () {
     
     Route::get('/feed', 'UserController@user_info');
 
-    Route::get('/myhistory', 'UserController@user_info');
+    Route::get('/myhistory', function(){
+        $user = Auth::user();
+        return view('myhistory', [ 
+            'user' => $user
+        ]);
+    });
 
     Route::get('/procurar', 'GameController@index');
 

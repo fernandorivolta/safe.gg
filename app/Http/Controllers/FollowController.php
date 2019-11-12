@@ -28,7 +28,7 @@ class FollowController extends Controller
         if($follow){
             $follow->delete();
         }
-        return redirect('/pro');
+        return redirect('/lol/proplayers');
     }
     
     public function follow_pro($id){
@@ -39,7 +39,7 @@ class FollowController extends Controller
             $follow->proplayer_id = $id;
             $follow->save();
         }
-        return redirect('/pro');
+        return redirect('/lol/proplayers');
     }
 
     public function unfollow_user($id_user, $id_followed){

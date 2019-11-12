@@ -85,13 +85,13 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2 my-auto">
-                                        <!-- @if (in_array($proplayer->id, $followed_proplayers))
+                                        @if (in_array($proplayer->id, $followed_proplayers))
                                         <a href="/lol/proplayers/unfollow/{{$proplayer->id}}"
-                                            class="btn btn-outline-primary btn-follow">Unfollow</a>
+                                            class="btn btn-primary btn-profile">Unfollow</a>
                                         @else
                                         <a href="/lol/proplayers/follow/{{$proplayer->id}}"
-                                            class="btn btn-outline-primary btn-follow">Follow</a>
-                                        @endif -->
+                                            class="btn btn-primary btn-profile">Follow</a>
+                                        @endif
                                         <a href="/lol/proplayers/{{$proplayer->id}}"
                                             class="btn btn-primary btn-profile">Perfil</a>
                                     </div>
