@@ -63,7 +63,7 @@ class User extends Authenticatable
       }
     }
 
-    public function get_match_list($id, $api_key, $match_qtd = 4){
+    public function get_match_list($id, $api_key, $match_qtd = 8){
       
       try {
         $match_list = file_get_contents('https://br1.api.riotgames.com/lol/match/v4/matchlists/by-account/' . $id . '?endIndex=' . $match_qtd . '&api_key=' . $api_key);

@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/user/{id}/history', 'ApiController@user_match_history');
+Route::get('/user/{id}/get_history', 'ApiController@get_match_history');
 
 Route::get('/user/{id}/rank','ApiController@ranked_info');
 
